@@ -5,7 +5,9 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
-<jsp:include page="/plantillas/header.jsp"/>
 
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Refresh" content="1;url=inicio/principal.jsp"/>
 </html>
 
