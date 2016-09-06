@@ -116,11 +116,11 @@
 
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="tel_fijo" type="text" class="validate">
+                                    <input id="tel_fijo" type="number" class="validate">
                                     <label for="tel_fijo">Telefono fijo</label> 
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="tel_cel" type="text" class="validate">
+                                    <input id="tel_cel" type="number" class="validate">
                                     <label for="tel_cel">Telefono celular</label> 
                                 </div>
                             </div>
@@ -204,6 +204,6 @@
                                 </div>
                             </div>
                             <br></br>
-                                
-                            
-                            
+
+
+
