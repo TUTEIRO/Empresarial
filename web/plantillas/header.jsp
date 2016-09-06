@@ -38,7 +38,7 @@
                     clear: 'Limpiar',
                     close: 'Cerrar'
                 });
-                
+
                 $('select').material_select();
 
             });
@@ -54,11 +54,13 @@
 
         <div class="container">
             <div class="imagen" style="width:100%;"> 
-                <img src="../images/banner.png"alt="" style="max-width:100%;">
+                <a href="../inicio/principal.jsp">
+                    <img src="../images/banner.png"alt="" style="max-width:100%;" >
+                </a>
             </div>
 
 
-            <div class="card-panel  purple lighten-3" >
+            <div class="card-panel  green darken-3" >
                 <span class="white-text "><center>FORMULARIOS</center></span>
             </div>
 

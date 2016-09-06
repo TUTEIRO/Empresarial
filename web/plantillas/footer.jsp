@@ -4,14 +4,8 @@
     Author     : tuto2
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
+<div class="card-panel  green darken-3" >
+    <span class="white-text ">Carlos Quintero - 1151098; Mauricio Peñaranda - 1151106; Farid Peñaranda - 1151108</span>
+</div>
+</body>
 </html>

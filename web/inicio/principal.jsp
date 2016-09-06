@@ -13,7 +13,7 @@
                         <div class="card-image">
                             <img src="../images/person.png">
                             <span class="card-title">
-                                <span class="purple-text" style="font-weight: bold;">CONTACTO</span>
+                                <span class="green-text" style="font-weight: bold;">CONTACTO</span>
                             </span>
                         </div>
                         <div class="card-content">
@@ -50,7 +50,4 @@
 
 
 
-    </body>
-
-
-</html>
+ <jsp:include page="../plantillas/footer.jsp"/>
