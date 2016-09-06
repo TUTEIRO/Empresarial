@@ -206,18 +206,4 @@
                             <br></br>
                                 
                             
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
-                                        <i class="mdi-content-send right"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
+                            
