@@ -20,7 +20,7 @@
                             <p>Formulario para registrar contacto</p>
                         </div>
                         <div class="card-action">
-                            <a href="#">Acceder formulario</a>
+                            <a href="../formularios/contacto.jsp">Acceder formulario</a>
                         </div>
                     </div>
                 </div>
