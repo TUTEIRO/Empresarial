@@ -38,7 +38,8 @@
                     clear: 'Limpiar',
                     close: 'Cerrar'
                 });
-
+                
+                $('select').material_select();
 
             });
 
