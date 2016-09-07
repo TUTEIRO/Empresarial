@@ -5,7 +5,6 @@
 --%>
 
 <section id="contacto" class="contacto">
-    <div class="container">
         <div class="card-panel  white" >
             <h4><span class="green-text" style="font-weight: bold;">CONTACTO</span></h4>
 
@@ -84,7 +83,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <select>
-                                        <option value="" disable selected>Seleccione una opcion</option>
+                                        <option value="" disable selected>--Seleccione una opción--</option>
                                         <option value="1">Primaria</option>
                                         <option value="2">Bachiller</option>
                                         <option value="3">Tecnica</option>
@@ -116,11 +115,11 @@
 
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="tel_fijo" type="number" class="validate">
+                                    <input id="tel_fijo" type="tel" class="validate">
                                     <label for="tel_fijo">Telefono fijo</label> 
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="tel_cel" type="number" class="validate">
+                                    <input id="tel_cel" type="tel" class="validate">
                                     <label for="tel_cel">Telefono celular</label> 
                                 </div>
                             </div>

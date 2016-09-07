@@ -5,7 +5,7 @@
 --%>
 
 <section id="empresa" class="empresa">
-    <div class="container">
+    
         <div class="card-panel  white" >
             <h4><span class="green-text" style="font-weight: bold;">EMPRESA</span></h4>
 
@@ -110,11 +110,11 @@
 
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="tel_fijo_empresa" type="number" class="validate">
+                                    <input id="tel_fijo_empresa" type="tel" class="validate">
                                     <label for="tel_fijo_empresa">Teléfono fijo</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="tel_movil_empresa" type="number" class="validate">
+                                    <input id="tel_movil_empresa" type="tel" class="validate">
                                     <label for="tel_movil_empresa">Teléfono móvil</label>
                                 </div>
                             </div>
@@ -175,3 +175,4 @@
                                     Si
                                 </label>
                             </div>
+        <jsp:include page="formEmpTurist.jsp"/>

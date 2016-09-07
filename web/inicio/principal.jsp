@@ -28,9 +28,9 @@
     <div class="col s12 m6">
         <div class="card">
             <div class="card-image">
-                <img src="../images/edif.jpeg">
+                <img src="../images/edifcios.png">
                 <span class="card-title">
-                    <span class="white-text" style="font-weight: bold;">EMPRESA</span>
+                    <span class="green-text" style="font-weight: bold;">EMPRESA</span>
                 </span>
             </div>
             <div class="card-content">
