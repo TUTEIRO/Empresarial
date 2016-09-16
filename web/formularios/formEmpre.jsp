@@ -3,9 +3,10 @@
     Created on : 6/09/2016, 01:49:34 PM
     Author     : tuto2
 --%>
-<script type="text/javascript" src="js/general.js"></script>
+<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+<script type="text/javascript" src="js/cargarFormulario.js"></script>
 
-<form id="empresa" class="empresa">
+<section id="empresa" class="empresa">
     
         <div class="card-panel  white" >
             <h4><span class="green-text" style="font-weight: bold;">EMPRESA</span></h4>
@@ -177,8 +178,11 @@
                                 <h6> ¿Es empresa turistica?</h6>
                                 <label>
                                     No
-                                    <input type="checkbox" onclick="cargarEmpresaT()">
+                                    <input type="checkbox" id="empT" onclick="cargarEmpresaT()">
                                     <span class="lever"></span>
                                     Si
                                 </label>
+                            </div>
+                            <div id="formEmpresaT">
+                                
                             </div>
