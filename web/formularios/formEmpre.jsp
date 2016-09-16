@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="input-field col s3">
                                     <p>
-                                        <input name="group3" type="radio" id="otras" />
+                                        <input class="validate" type="text" id="otras" />
                                         <label for="otras">Otras</label>
                                     </p>
                                 </div>
@@ -74,25 +74,31 @@
                                     <input id="fecha_constitucion" type="text" class="datepicker">
                                     <label for="fecha_constitucion">Fecha de constitución</label>
                                 </div>
-                                <div class="input-field col s6">
+                                <div class="input-field col s2">
                                     <label> No de empleados</label>
                                 </div>
-                                <div class="input-field col s2">
+                                <div class="input-field col s1">
                                     <p>
-                                        <input name="group4" type="radio" id="tc"/>
+                                        <input class="validate" type="number" id="tc"/>
                                         <label for="tc">TC</label>
                                     </p>
                                 </div>
-                                <div class="input-field col s2">
+                                <div class="input-field col s1">
                                     <p>
-                                        <input name="group4" type="radio" id="mt"/>
+                                        <input class="validate" type="number" id="mt"/>
                                         <label for="mt">MT</label>
                                     </p>
                                 </div>
-                                <div class="input-field col s2">
+                                <div class="input-field col s1">
                                     <p>
-                                        <input name="group4" type="radio" id="otro"/>
-                                        <label for="otro">Otro</label>
+                                        <input class="validate" type="number" id="directo"/>
+                                        <label for="directo">Directo</label>
+                                    </p>
+                                </div>
+                                <div class="input-field col s1">
+                                    <p>
+                                        <input class="validate" type="number" id="indirecto"/>
+                                        <label for="indirecto">Indirecto</label>
                                     </p>
                                 </div>
                             </div>
@@ -175,4 +181,4 @@
                                     Si
                                 </label>
                             </div>
-        <jsp:include page="formEmpTurist.jsp"/>
+   
