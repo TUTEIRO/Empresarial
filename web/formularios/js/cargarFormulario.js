@@ -22,3 +22,6 @@ function nuevoAjax() {
     return xmlhttp;
 }
 
+function cargarEmpresaT(){
+    
+}

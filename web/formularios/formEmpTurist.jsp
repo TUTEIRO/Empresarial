@@ -4,7 +4,7 @@
     Author     : FARID SANTIAGO
 --%>
 
-<br></br>
+
 <div class="row">
     <div class="input-field col s4">
         <label>Tipo de empresa turistica</label>

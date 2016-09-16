@@ -3,8 +3,9 @@
     Created on : 6/09/2016, 01:49:34 PM
     Author     : tuto2
 --%>
+<script type="text/javascript" src="js/general.js"></script>
 
-<section id="empresa" class="empresa">
+<form id="empresa" class="empresa">
     
         <div class="card-panel  white" >
             <h4><span class="green-text" style="font-weight: bold;">EMPRESA</span></h4>
@@ -176,9 +177,8 @@
                                 <h6> ¿Es empresa turistica?</h6>
                                 <label>
                                     No
-                                    <input type="checkbox">
+                                    <input type="checkbox" onclick="cargarEmpresaT()">
                                     <span class="lever"></span>
                                     Si
                                 </label>
                             </div>
-   
