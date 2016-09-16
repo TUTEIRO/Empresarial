@@ -59,9 +59,48 @@
                 </a>
             </div>
 
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="../formularios/contacto.jsp">Contacto</a></li>
+                <li class="divider"></li>
+                <li><a href="../formularios/empresa.jsp">Empresa</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Entidades adscritas</a></li>
+            </ul>
 
-            <div class="card-panel  green darken-3" >
-                <span class="white-text "><center>FORMULARIOS</center></span>
-            </div>
+            <ul id="dropdown2" class="dropdown-content">
+                <li><a href="#!">Contacto</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Empresa</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Entidades adscritas</a></li>
+            </ul>
 
+            <ul id="dropdown3" class="dropdown-content">
+                <li><a href="#!">Contacto</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Empresa</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Entidades adscritas</a></li>
+            </ul>
+
+            <nav>
+
+                <div class="nav-wrapper green darken-3">
+                    <ul class="hide-on-med-and-down"> 
+                        <div class="row">
+                            <div class=" col s4">
+                                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Registro<i class="material-icons right">library_add</i></a></li>
+                            </div>
+                            <div class="col s4">
+                                <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Consultar<i class="material-icons right">search</i></a></li>
+                            </div>
+                            <div class="col s4">
+                                <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Editar<i class="material-icons right">mode_edit</i></a></li>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </nav>
+
+            
 
