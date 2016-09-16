@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package co.edu.ufps.negocio;
+package dto;
 
 /**
  *
- * @author tuto2
+ * @author quagg
  */
-public class Negocio {
+public class FormularioDTO {
     
 }
