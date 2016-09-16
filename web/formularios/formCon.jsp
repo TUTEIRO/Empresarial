@@ -168,7 +168,7 @@
                                 </div>
                                 <div class="input-field col s3">
                                     <p>
-                                        <input name="group2" type="radio" id="otro" />
+                                        <input class="validate" type="text" id="otro" />
                                         <label for="otro">Otro</label>
                                     </p> 
                                 </div>
