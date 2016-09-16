@@ -70,7 +70,7 @@
             </ul>
 
             <ul id="dropdown2" class="dropdown-content">
-                <li><a href="#!">Contacto</a></li>
+                <li><a href="../consultas/contacto.jsp">Contacto</a></li>
                 <li class="divider"></li>
                 <li><a href="#!">Empresa</a></li>
                 <li class="divider"></li>
@@ -88,18 +88,19 @@
             <nav>
 
                 <div class="nav-wrapper green darken-3">
-                    <ul class="hide-on-med-and-down"> 
-                        <div class="row">
-                            <div class=" col s4">
-                                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Registro<i class="material-icons right">library_add</i></a></li>
-                            </div>
-                            <div class="col s4">
-                                <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Consultar<i class="material-icons right">search</i></a></li>
-                            </div>
-                            <div class="col s4">
-                                <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Editar<i class="material-icons right">mode_edit</i></a></li>
-                            </div>
-                        </div>
+                    
+                    <a href="../inicio/principal.jsp" class="brand-logo">MINCIT<i class="material-icons left">business</i></a>
+                    <ul class="right hide-on-med-and-down"> 
+                        
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Registro
+                                <i class="material-icons right">library_add</i></a></li>
+
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Consultar
+                                <i class="material-icons right">search</i></a></li>
+
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Editar
+                                <i class="material-icons right">mode_edit</i></a></li>
+
                     </ul>
                 </div>
             </nav>
