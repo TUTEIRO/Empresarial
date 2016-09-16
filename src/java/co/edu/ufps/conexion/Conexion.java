@@ -10,5 +10,8 @@ package co.edu.ufps.conexion;
  * @author tuto2
  */
 public class Conexion {
+
+    public Conexion() {
+    }
     
 }
