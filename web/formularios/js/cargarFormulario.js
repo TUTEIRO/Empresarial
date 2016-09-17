@@ -23,7 +23,7 @@ function nuevoAjax() {
 }
 
 function cargarEmpresaT(){
-    alert("entro");
+
     var div = "formEmpresaT";
     var resul = document.getElementById("empT");
     var eleccion = "";
@@ -32,7 +32,7 @@ function cargarEmpresaT(){
     }else{
         eleccion = resul.value+"0";
     }
-    alert(eleccion);
+
     ajax = nuevoAjax();
     
     parametros = "empresaTuristica=" + eleccion;
