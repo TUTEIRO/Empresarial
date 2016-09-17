@@ -8,7 +8,6 @@
 <%
     
     String empresaT = request.getParameter("empresaTuristica");
-    System.out.println(empresaT);
     if(empresaT.equals("on1")){
 %>   
    <jsp:include page="../formEmpTurist.jsp"/> 

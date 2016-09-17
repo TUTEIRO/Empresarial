@@ -37,7 +37,6 @@ function cargarEmpresaT(){
     
     parametros = "empresaTuristica=" + eleccion;
     url = "Procesar/cargarEmpresaTuristica.jsp";
-    alert("entro2");
                 ajax.open("POST",url,true);
 		ajax.setRequestHeader('Content-Type','application/x-www-form-urlencoded');   
 		ajax.send(parametros);
