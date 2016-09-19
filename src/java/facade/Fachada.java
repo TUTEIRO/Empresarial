@@ -7,9 +7,11 @@ package facade;
 
 import dto.ContactoDTO;
 import dto.EmpresaDTO;
+import java.util.ArrayList;
 import negocio.contacto.ControlContacto;
 import negocio.empresa.ControlEmpresa;
 import negocio.turistica.ControlTuristica;
+import negocio.utilidades.ControlUtilidades;
 
 /**
  *
@@ -90,5 +92,15 @@ public class Fachada {
     
     public boolean editarEntidadAds(){
         return false;
+    }
+    
+    public ArrayList<String> cargarMun(String dpto) throws Exception{
+        ControlUtilidades utilidades = new ControlUtilidades();
+        return utilidades.cargarMun(dpto);
+    }
+    
+    public ArrayList<String> cargarDptos() throws Exception{
+        ControlUtilidades utilidades = new ControlUtilidades();
+        return utilidades.cargarDptos();
     }
 }
