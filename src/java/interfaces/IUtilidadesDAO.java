@@ -16,4 +16,9 @@ public interface IUtilidadesDAO {
     public ArrayList<String> cargarDptos() throws Exception;
     public ArrayList<String> cargarMun(String dept) throws Exception;
     public boolean asociar(String contacto_dato, String empresa_dato, String form_dato) throws Exception;
+    public ArrayList<String> cargarTipoAgenciaTuristica() throws Exception;
+    public ArrayList<String> cargarTipoAlojamientoTuristico() throws Exception;
+    public ArrayList<String> cargarTipoTurismo() throws Exception;
+    public ArrayList<String> cargarEtnicidad() throws Exception;
+    
 }

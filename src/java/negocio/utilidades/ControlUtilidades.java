@@ -28,4 +28,24 @@ public class ControlUtilidades {
         UtilidadesDAO dao = new UtilidadesDAO();
         return dao.asociar(contacto_dato, empresa_dato, form_dato);
     }
+    
+    public ArrayList<String> cargarTipoAgenciaTuristica() throws Exception{
+        UtilidadesDAO dao = new UtilidadesDAO();
+        return dao.cargarTipoAgenciaTuristica();
+    }
+    
+    public ArrayList<String> cargarTipoAlojamientoTuristico() throws Exception{
+        UtilidadesDAO dao = new UtilidadesDAO();
+        return dao.cargarTipoAlojamientoTuristico();
+    }
+    
+    public ArrayList<String> cargarTipoTurismo() throws Exception{
+        UtilidadesDAO dao = new UtilidadesDAO();
+        return dao.cargarTipoTurismo();
+    }
+    
+    public ArrayList<String> cargarEtnicidad() throws Exception{
+        UtilidadesDAO dao = new UtilidadesDAO();
+        return dao.cargarEtnicidad();
+    }
 }
