@@ -14,6 +14,6 @@ import java.util.ArrayList;
 public interface IUtilidadesDAO {
     
     public ArrayList<String> cargarDptos() throws Exception;
-    public ArrayList<String> cargarMun() throws Exception;
+    public ArrayList<String> cargarMun(String dept) throws Exception;
     public boolean asociar(String contacto_dato, String empresa_dato, String form_dato) throws Exception;
 }
