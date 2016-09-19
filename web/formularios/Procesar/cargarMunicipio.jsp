@@ -13,7 +13,7 @@
 
     <select  class="browser-default"id="mun" name="mun">
         <%
-
+            request.setCharacterEncoding("UTF-8");
             String dep = request.getParameter("departamento");
             Fachada fachada = new Fachada();
             ArrayList<String> lista = fachada.cargarMun(dep);

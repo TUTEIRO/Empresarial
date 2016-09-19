@@ -3,7 +3,7 @@
     Created on : 3/09/2016, 11:13:50 AM
     Author     : tuto2
 --%>
-
+<%request.setCharacterEncoding("UTF-8"); %>F
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

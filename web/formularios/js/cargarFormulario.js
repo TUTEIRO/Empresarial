@@ -102,4 +102,20 @@ function registrarContacto() {
     var discapacidad = document.getElementById("discapacidad");
     var antiguedad_cargo = document.getElementById("anos_cargo");
     var condicion_desplazado = document.getElementById("desplazado");
+    
+    var despla = "";
+    if (condicion_desplazado.type === 'checkbox' && condicion_desplazado.checked === true) {
+        despla = condicion_desplazado.value + "1";
+    } else {
+        despla = condicion_desplazado.value + "0";
+    }
+    
+    var dis= "";
+    if (discapacidad.type === 'checkbox' && discapacidad.checked === true) {
+        discapacidad = condicion_desplazado.value + "1";
+    } else {
+        discapacidad = condicion_desplazado.value + "0";
+    }
+    
+    
 }
