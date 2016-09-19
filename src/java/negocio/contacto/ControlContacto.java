@@ -21,4 +21,9 @@ public class ControlContacto {
         return dao.registrarContacto(contacto);
     }
     
+    public ContactoDTO consultarContacto(String tipo, String dato) throws Exception{
+        ContactoDAO dao = new ContactoDAO();
+        return dao.consultarContacto(tipo, dato);
+    }
+    
 }

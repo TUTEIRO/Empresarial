@@ -13,5 +13,5 @@ import dto.EmpresaDTO;
 public interface IEmpresaDAO {
     
     public boolean registrarEmpresa(EmpresaDTO dto) throws Exception;
-    public EmpresaDTO consultarEmpresa (String dato) throws Exception;
+    public EmpresaDTO consultarEmpresa (String tipo, String dato) throws Exception;
 }

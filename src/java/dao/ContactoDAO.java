@@ -20,7 +20,7 @@ public class ContactoDAO implements IContactoDAO{
     }
 
     @Override
-    public ContactoDTO consultarContacto(String dato) throws Exception {
+    public ContactoDTO consultarContacto(String tipo, String dato) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

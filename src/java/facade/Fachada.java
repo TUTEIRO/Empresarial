@@ -5,6 +5,8 @@
  */
 package facade;
 
+import dto.ContactoDTO;
+import dto.EmpresaDTO;
 import negocio.contacto.ControlContacto;
 import negocio.empresa.ControlEmpresa;
 import negocio.turistica.ControlTuristica;
@@ -56,12 +58,14 @@ public class Fachada {
         return false;
     }
     
-    public boolean consultarContacto(){
-        return false;
+    public ContactoDTO consultarContacto(String tipo, String dato) throws Exception{
+        ControlContacto con = new ControlContacto();
+        return con.consultarContacto(tipo, dato);
     }
     
-    public boolean consultarEmpresa(){
-        return false;
+    public EmpresaDTO consultarEmpresa(String tipo, String dato) throws Exception{
+        ControlEmpresa emp = new ControlEmpresa();
+        return emp.consultarEmpresa(tipo, dato);
     }
     
     public boolean consultarEmpresaTur(){

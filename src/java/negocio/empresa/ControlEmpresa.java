@@ -28,4 +28,9 @@ public class ControlEmpresa {
         return dao.registrarEmpresa(empresa);
     }
     
+    public EmpresaDTO consultarEmpresa(String tipo, String dato) throws Exception{
+        EmpresaDAO dao = new EmpresaDAO();
+        return dao.consultarEmpresa(tipo, dato);
+    }
+    
 }

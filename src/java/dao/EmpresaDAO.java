@@ -20,7 +20,7 @@ public class EmpresaDAO implements IEmpresaDAO{
     }
 
     @Override
-    public EmpresaDTO consultarEmpresa(String dato) throws Exception {
+    public EmpresaDTO consultarEmpresa(String tipo, String dato) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

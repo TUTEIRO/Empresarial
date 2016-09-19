@@ -13,5 +13,5 @@ import dto.ContactoDTO;
 public interface IContactoDAO {
     
     public boolean registrarContacto (ContactoDTO dto) throws Exception;
-    public ContactoDTO consultarContacto (String dato) throws Exception;
+    public ContactoDTO consultarContacto (String tipo, String dato) throws Exception;
 }
