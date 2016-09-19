@@ -32,19 +32,19 @@
                             </div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group1" type="radio" id="masculi" />
+                                    <input name="group1" type="radio" id="genero" value="masculino" />
                                     <label for="masculi">Masculino</label>
                                 </p> 
                             </div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group1" type="radio" id="femeni" />
+                                    <input name="group1" type="radio" id="genero" value="femenino" />
                                     <label for="femeni">Femenino</label>
                                 </p> 
                             </div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group1" type="radio" id="lgtbi" />
+                                    <input name="group1" type="radio" id="genero" value="lgtbi" />
                                     <label for="lgtbi">LGTBI</label>
                                 </p> 
                             </div>
@@ -84,7 +84,7 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <select>
+                                <select id="niv_estud">
                                     <option value="" disable selected>--Seleccione una opción--</option>
                                     <option value="1">Primaria</option>
                                     <option value="2">Bachiller</option>
@@ -121,7 +121,7 @@
 
                             </div>
                             <div id="municipio">
-                                <div class="input-field col s12">
+                                <div class="input-field col s6">
 
                                     <select id="mun" name="mun">
                                         <option value="" disabled selected>Elige una opcion</option>
@@ -158,19 +158,19 @@
                             </div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group2" type="radio" id="gitanos" />
+                                    <input name="group2" type="radio" id="grupo_etnico" value="gitanos" />
                                     <label for="gitanos">Rrom(Gitanos)</label>
                                 </p> 
                             </div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group2" type="radio" id="indigenas" />
+                                    <input name="group2" type="radio" id="grupo_etnico" value="indigenas" />
                                     <label for="indigenas">Indigenas</label>
                                 </p> 
                             </div>
                             <div class="input-field col s4">
                                 <p>
-                                    <input name="group2" type="radio" id="afro" />
+                                    <input name="group2" type="radio" id="grupo_etnico" value="afrocolombiano" />
                                     <label for="afro">Afrocolombianos</label>
                                 </p> 
                             </div>
@@ -182,7 +182,7 @@
                             </div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group2" type="radio" id="raizales" />
+                                    <input name="group2" type="radio" id="grupo_etnico" value="raizales" />
                                     <label for="raizales">Raizales</label>
                                 </p> 
                             </div>

@@ -22,51 +22,49 @@ function nuevoAjax() {
     return xmlhttp;
 }
 
-function cargarEmpresaT(){
+function cargarEmpresaT() {
 
     var div = "formEmpresaT";
     var resul = document.getElementById("empT");
     var eleccion = "";
-    if(resul.type==='checkbox' && resul.checked === true){
-        eleccion = resul.value+"1";
-    }else{
-        eleccion = resul.value+"0";
+    if (resul.type === 'checkbox' && resul.checked === true) {
+        eleccion = resul.value + "1";
+    } else {
+        eleccion = resul.value + "0";
     }
 
     ajax = nuevoAjax();
-    
+
     parametros = "empresaTuristica=" + eleccion;
     url = "Procesar/cargarEmpresaTuristica.jsp";
-                ajax.open("POST",url,true);
-		ajax.setRequestHeader('Content-Type','application/x-www-form-urlencoded');   
-		ajax.send(parametros);
-		
-		ajax.onreadystatechange=function()
-		{
-		  if (ajax.readyState==4)
-		  {
-		    if (ajax.status == 200)
-		    {          	       	 
-		       	  
-		        document.getElementById(div).innerHTML = ajax.responseText;
-		         	             
-		    }
-		    else
-		    {    
-		          
-		         document.getElementById(div).innerHTML = ajax.responseText;
-		         
-		    }
-		  } 
-		  else
-		  {
-		    document.getElementById(div).value = "Cargando";
-		  }
-		}		
+    ajax.open("POST", url, true);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.send(parametros);
+
+    ajax.onreadystatechange = function ()
+    {
+        if (ajax.readyState == 4)
+        {
+            if (ajax.status == 200)
+            {
+
+                document.getElementById(div).innerHTML = ajax.responseText;
+
+            } else
+            {
+
+                document.getElementById(div).innerHTML = ajax.responseText;
+
+            }
+        } else
+        {
+            document.getElementById(div).value = "Cargando";
+        }
+    }
 }
 
-function cargarMunicipiosAjax(sel){
-    
+function cargarMunicipiosAjax(sel) {
+
     var div = "municipio";
     var resul = sel;
     ajax = nuevoAjax();
@@ -82,5 +80,26 @@ function cargarMunicipiosAjax(sel){
                 document.getElementById(div).innerHTML = rta;
             }
         }
-    }	
+    }
+}
+
+function registrarContacto() {
+    var nombre = document.getElementById("first_name");
+    var apellidos = document.getElementById("last_name");
+    var cc = document.getElementById("num_ced");
+    var cargo = document.getElementById("cargo");
+    var lugar_nto = document.getElementById("lugar_nac");
+    var fecha_nto = document.getElementById("fecha_nac");
+    var nivel_estudio = document.getElementById("niv_estud");
+    var direccion = document.getElementById("direccion");
+    var ciudad = document.getElementById("municipio");
+    var dpto = document.getElementById("departamento");
+    var celular = document.getElementById("tel_cel");
+    var fijo = document.getElementById("tel_fijo");
+    var email = document.getElementById("email");
+    var genero = document.getElementById("genero");
+    var etnia = document.getElementById("grupo_etnico");
+    var discapacidad = document.getElementById("discapacidad");
+    var antiguedad_cargo = document.getElementById("anos_cargo");
+    var condicion_desplazado = document.getElementById("desplazado");
 }

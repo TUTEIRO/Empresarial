@@ -2,9 +2,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="facade.Fachada"%>
 <%@page import="java.util.ArrayList"%>
+<script language="javascript">
+    $(document).ready(function () {
+        $(".button-collapse").sideNav();
+        $('select').material_select();
+    });
+</script>
+<label for="mun">Municipio</label>
+<div class="input-field col s6">
 
-<div class="input-field col s12">
-    <select id="mun" name="mun">
+    <select  class="browser-default"id="mun" name="mun">
         <%
 
             String dep = request.getParameter("departamento");
@@ -21,6 +28,6 @@
 
 
     </select>
-    <label for="mun">Municipio</label>
+
 
 </div>

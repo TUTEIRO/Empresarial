@@ -42,8 +42,14 @@
                 $('select').material_select();
 
                 $(".button-collapse").sideNav();
-                
-                
+
+                $(document).on('change', function (e) {
+                    $('select').material_select();
+                });
+                $('select').on('contentChanged', function () {
+                    // re-initialize (update)
+                    $(this).material_select();
+                });
 
             });
 
@@ -90,10 +96,10 @@
             <nav>
 
                 <div class="nav-wrapper green darken-3">
-                    
+
                     <a href="../inicio/principal.jsp" class="brand-logo">MINCIT<i class="material-icons left">business</i></a>
                     <ul class="right hide-on-med-and-down"> 
-                        
+
                         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Registro
                                 <i class="material-icons right">library_add</i></a></li>
 
