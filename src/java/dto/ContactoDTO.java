@@ -18,6 +18,28 @@ public class ContactoDTO {
     public ContactoDTO() {
     }
 
+    public ContactoDTO(String nombres, String apellidos, String cc, String cargo, String lugar_nto, String fecha_nto, String nivel_estudio, String direccion, String ciudad, String dpto, String celular, String fijo, String email, String genero, String etnia, String discapacidad, int antiguedad_cargo, boolean condicion_desplazado) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.cc = cc;
+        this.cargo = cargo;
+        this.lugar_nto = lugar_nto;
+        this.fecha_nto = fecha_nto;
+        this.nivel_estudio = nivel_estudio;
+        this.direccion = direccion;
+        this.ciudad = ciudad;
+        this.dpto = dpto;
+        this.celular = celular;
+        this.fijo = fijo;
+        this.email = email;
+        this.genero = genero;
+        this.etnia = etnia;
+        this.discapacidad = discapacidad;
+        this.antiguedad_cargo = antiguedad_cargo;
+        this.condicion_desplazado = condicion_desplazado;
+    }
+
+    
     public String getNombres() {
         return nombres;
     }

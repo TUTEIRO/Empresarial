@@ -17,6 +17,30 @@ public class TuristicaDTO {
     public TuristicaDTO() {
     }
 
+    public TuristicaDTO(boolean posee_seguro, boolean posee_reg_nal, boolean export_servicios, boolean libro_migracion_Col, 
+            boolean impuesto_turismo, boolean codigo_etica, String seguro, String poliza, String cert_sostenibilidad, 
+            String grupo_etnico, String cc_extranjeria, String tipo_turistica, String tipo_alojamiento, 
+            String tur_desarrollo, String observaciones, String empresa_asign) {
+        this.posee_seguro = posee_seguro;
+        this.posee_reg_nal = posee_reg_nal;
+        this.export_servicios = export_servicios;
+        this.libro_migracion_Col = libro_migracion_Col;
+        this.impuesto_turismo = impuesto_turismo;
+        this.codigo_etica = codigo_etica;
+        this.seguro = seguro;
+        this.poliza = poliza;
+        this.cert_sostenibilidad = cert_sostenibilidad;
+        this.grupo_etnico = grupo_etnico;
+        this.cc_extranjeria = cc_extranjeria;
+        this.tipo_turistica = tipo_turistica;
+        this.tipo_alojamiento = tipo_alojamiento;
+        this.tur_desarrollo = tur_desarrollo;
+        this.observaciones = observaciones;
+        this.empresa_asign = empresa_asign;
+    }
+
+    
+    
     public boolean isPosee_seguro() {
         return posee_seguro;
     }

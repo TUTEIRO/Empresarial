@@ -72,7 +72,7 @@
             <ul id="dropdown2" class="dropdown-content">
                 <li><a href="../consultas/contacto.jsp">Contacto</a></li>
                 <li class="divider"></li>
-                <li><a href="#!">Empresa</a></li>
+                <li><a href="../consultas/empresa.jsp">Empresa</a></li>
                 <li class="divider"></li>
                 <li><a href="#!">Entidades adscritas</a></li>
             </ul>
