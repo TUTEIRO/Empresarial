@@ -105,10 +105,6 @@
 
                         <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Consultar
                                 <i class="material-icons right">search</i></a></li>
-
-                        <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Editar
-                                <i class="material-icons right">mode_edit</i></a></li>
-
                     </ul>
                 </div>
             </nav>
