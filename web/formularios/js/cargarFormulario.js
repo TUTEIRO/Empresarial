@@ -64,3 +64,23 @@ function cargarEmpresaT(){
 		  }
 		}		
 }
+
+function cargarMunicipiosAjax(sel){
+    
+    var div = "municipio";
+    var resul = sel;
+    ajax = nuevoAjax();
+    parametros = "departamento=" + resul.value;
+    url = "Procesar/cargarMunicipio.jsp";
+    ajax.open("POST", url, true);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.send(parametros);
+    ajax.onreadystatechange = function () {
+        if (ajax.readyState == 4) {
+            if (ajax.status == 200) {
+                var rta = ajax.responseText;
+                document.getElementById(div).innerHTML = rta;
+            }
+        }
+    }	
+}
