@@ -103,4 +103,24 @@ public class Fachada {
         ControlUtilidades utilidades = new ControlUtilidades();
         return utilidades.cargarDptos();
     }
+    
+    public ArrayList<String> cargarTipoAlojamientoTuristico() throws Exception{
+        ControlUtilidades utilidades = new ControlUtilidades();
+        return utilidades.cargarTipoAlojamientoTuristico();
+    }
+    
+    public ArrayList<String> cargarTipoAgenciaTuristica() throws Exception{
+        ControlUtilidades utilidades = new ControlUtilidades();
+        return utilidades.cargarTipoAgenciaTuristica();
+    }
+    
+    public ArrayList<String> cargarTipoTurismo() throws Exception{
+        ControlUtilidades utilidades = new ControlUtilidades();
+        return utilidades.cargarTipoTurismo();
+    }
+    
+    public ArrayList<String> cargarEtnicidad() throws Exception{
+        ControlUtilidades utilidades = new ControlUtilidades();
+        return utilidades.cargarEtnicidad();
+    }
 }
