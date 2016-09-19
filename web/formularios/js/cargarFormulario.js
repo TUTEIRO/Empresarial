@@ -117,5 +117,33 @@ function registrarContacto() {
         discapacidad = condicion_desplazado.value + "0";
     }
     
+     ajax = nuevoAjax();
+
+    parametros = "nombre="+nombre+"&apellidos="+apellidos+"&cc"+cc+"&cargo="+cargo+"&lugar_nto"+lugar_nto;
+    url = "Procesar/registrarContacto.jsp";
+    ajax.open("POST", url, true);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.send(parametros);
+
+    ajax.onreadystatechange = function ()
+    {
+        if (ajax.readyState == 4)
+        {
+            if (ajax.status == 200)
+            {
+
+                document.getElementById(div).innerHTML = ajax.responseText;
+
+            } else
+            {
+
+                document.getElementById(div).innerHTML = ajax.responseText;
+
+            }
+        } else
+        {
+            document.getElementById(div).value = "Cargando";
+        }
+    }
     
 }
