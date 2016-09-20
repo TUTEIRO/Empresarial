@@ -13,17 +13,4 @@ import java.util.ArrayList;
  */
 public class Tester {
     
-    public static void main(String[] args) throws Exception {
-        UtilidadesDAO dao = new UtilidadesDAO();
-        ArrayList<String> dept = dao.cargarDptos();
-        int a = 0;
-        for(String d : dept){
-            ArrayList<String> mun = dao.cargarMun(d);
-            for(String m : mun){
-                System.out.println(m);
-            }
-            System.out.println("----" + a);
-            a++;
-        } 
-    }
 }
