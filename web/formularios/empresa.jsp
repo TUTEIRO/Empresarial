@@ -3,7 +3,7 @@
     Created on : 6/09/2016, 01:48:45 PM
     Author     : tuto2
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="../plantillas/header.jsp"/>
 
 <div class="row">

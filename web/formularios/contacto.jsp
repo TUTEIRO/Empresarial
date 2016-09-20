@@ -3,7 +3,7 @@
     Created on : 5/09/2016, 04:34:27 PM
     Author     : tuto2
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="../plantillas/header.jsp"/>
 
 <jsp:include page="formCon.jsp"/>

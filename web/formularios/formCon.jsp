@@ -3,6 +3,7 @@
     Created on : 6/09/2016, 11:32:09 AM
     Author     : tuto2
 --%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <script type="text/javascript" src="js/cargarFormulario.js"></script>
 <%@page import="java.util.ArrayList"%>
 <%@page import="facade.Fachada"%>
@@ -57,7 +58,7 @@
                             </div>
                             <div class="input-field col s2">
                                 <input id="anos_cargo" type="number" class="validate">
-                                <label for="anos_cargo">Años en cargo</label>
+                                <label for="anos_cargo">AÃ±os en cargo</label>
                             </div>
                         </div>
 
@@ -85,7 +86,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <select id="niv_estud">
-                                    <option value="" disable selected>--Seleccione una opción--</option>
+                                    <option value="" disable selected>--Seleccione una opciÃ³n--</option>
                                     <option value="1">Primaria</option>
                                     <option value="2">Bachiller</option>
                                     <option value="3">Tecnica</option>

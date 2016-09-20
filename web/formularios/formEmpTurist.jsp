@@ -3,7 +3,7 @@
     Created on : 07-sep-2016, 11:02:07
     Author     : FARID SANTIAGO
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <div class="row">
     <div class="input-field col s4">
@@ -38,13 +38,13 @@
     <div class="input-field col s4">
         <p>
             <input type="checkbox" id="guia" />
-            <label for="guia">Guía</label>
+            <label for="guia">GuÃ­a</label>
         </p>
     </div>
     <div class="input-field col s4">
         <p>
             <input type="checkbox" id="rep_turistica" />
-            <label for="rep_turistica">Representación turístic</label>
+            <label for="rep_turistica">RepresentaciÃ³n turÃ­stic</label>
         </p>
     </div>
     <div class="input-field col s4">
@@ -106,13 +106,13 @@
     <div class="input-field col s4">
         <p>
             <input type="checkbox" id="receptivo" />
-            <label for="receptivo">Posada turística</label>
+            <label for="receptivo">Posada turÃ­stica</label>
         </p>
     </div>
     <div class="input-field col s4">
         <p>
             <input type="checkbox" id="apart_turi" />
-            <label for="apart_turi">Apartamento turístico</label>
+            <label for="apart_turi">Apartamento turÃ­stico</label>
         </p>
     </div>
     <div class="input-field col s4">
@@ -175,7 +175,7 @@
     <div class="input-field col s4">
         <p>
             <input type="checkbox" id="nautico" />
-            <label for="nautico">Náutico</label>
+            <label for="nautico">NÃ¡utico</label>
         </p>
     </div>
     <div class="input-field col s4">
@@ -203,7 +203,7 @@
         </p>
     </div>
     <div class="input-field col s4">
-        <label for="cual">¿Cuál?<input type="text" name="cual" id="cual" class="validate"></label>
+        <label for="cual">Â¿CuÃ¡l?<input type="text" name="cual" id="cual" class="validate"></label>
         
     </div>
 </div>
