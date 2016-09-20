@@ -27,12 +27,15 @@ and open the template in the editor.
         <br></br>
 
         <div class="container ">
-            <div class="container white z-depth-5 green darken-3">
+            <div class="container white z-depth-5" style="background-image: url(images/bgbody.jpg)">
                 <br></br>
                 <div class="container">
                     <div class="row">
                         <form class="col s12">
                             <div class="row">
+                                <div class="input-field col s12 ">
+                                    <img src="images/logoMinisterio.png"/>
+                                </div>
                                 <div class="input-field col s12 ">
                                     <i class="material-icons prefix">account_circle</i>
                                     <input placeholder="Usuario" id="usuario" type="text" class="validate white-text">
