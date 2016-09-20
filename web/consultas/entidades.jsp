@@ -1,3 +1,10 @@
+<%-- 
+    Document   : entidades
+    Created on : 19-sep-2016, 21:16:26
+    Author     : FARID SANTIAGO
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="../plantillas/header.jsp"/>
 
 <br></br>
@@ -10,14 +17,14 @@
         </div>
         <div class="input-field col s3">
             <p>
-                <input name="group6" type="radio" id="nombre_contacto" />
-                <label for="nombre_contacto">Nombre de contato</label>
+                <input name="group8" type="radio" id="nombre_entidad" />
+                <label for="nombre_entidad">Nombre de entidad</label>
             </p> 
         </div>
         <div class="input-field col s3">
             <p>
-                <input name="group6" type="radio" id="cedula" />
-                <label for="cedula">Cedula</label>
+                <input name="group8" type="radio" id="nit_entidad" />
+                <label for="nit_entidad">NIT de entidad</label>
             </p> 
         </div>
         
@@ -27,8 +34,8 @@
         <div class="nav-wrapper">
             <form>
                 <div class="input-field green darken-3">
-                    <input id="buscar_contacto" type="search" required>
-                    <label for="buscar_contacto"><i class="material-icons left">search</i></label>
+                    <input id="buscar_entidad" type="search" required>
+                    <label for="buscar_entidad"><i class="material-icons left">search</i></label>
                     <i class="material-icons">close</i>
                 </div>
             </form>
@@ -41,9 +48,10 @@
     <thead>
         <tr>
             <th data-field="nombre">Nombre</th>
-            <th data-field="apellido">Apellido</th>
-            <th data-field="cedula">Cedula</th>
+            <th data-field="nit">NIT</th>
+            <th data-field="direccion">Direccion</th>
             <th data-field="telefono">Telefono</th>
+            <th data-field="url">URL Web Site</th>
             <th data-field="editar">Editar</th>
 
         </tr>
@@ -54,6 +62,7 @@
 </table>
 
 <br></br>
+
 
 
 

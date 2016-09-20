@@ -1,12 +1,13 @@
 <%-- 
-    Document   : contacto
-    Created on : 5/09/2016, 04:34:27 PM
-    Author     : tuto2
+    Document   : entidades
+    Created on : 19-sep-2016, 20:52:09
+    Author     : FARID SANTIAGO
 --%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="../plantillas/header.jsp"/>
 
-<jsp:include page="formCon.jsp"/>
+<jsp:include page="formEntidades.jsp"/>
 
                             <div class="row">
                                 <div class="input-field col s12">
@@ -22,4 +23,6 @@
     </div>
 </section>
 
- <jsp:include page="../plantillas/footer.jsp"/>
+
+
+<jsp:include page="../plantillas/footer.jsp"/>

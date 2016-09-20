@@ -3,7 +3,7 @@
     Created on : 3/09/2016, 11:13:50 AM
     Author     : tuto2
 --%>
-<%request.setCharacterEncoding("UTF-8"); %>
+<%request.setCharacterEncoding("UTF-8");%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -59,34 +59,34 @@
         </script> 
     </head>
 
-    
+
     <body background="../images/main-bg.png">
 
 
         <div class="container">
             <div class="imagen" style="width:100%;"> 
                 <a href="../inicio/principal.jsp">
-                    <img src="../images/banner.png"alt="" style="max-width:100%;" >
+                    <img src="../images/banner.png" alt="" style="max-width:100%;" >
                 </a>
             </div>
 
             <ul id="dropdown1" class="dropdown-content green darken-4" >
-                <li><a href="../formularios/contacto.jsp"><span class="white-text" >Contacto</span></a></li>
+                <li><a href="../formularios/contacto.jsp"><i class="tiny material-icons">perm_identity</i><span class="white-text" >Contacto</span></a></li>
                 <li class="divider"></li>
-                <li><a href="../formularios/empresa.jsp"><span class="white-text" >Empresa</span></a></li>
+                <li><a href="../formularios/empresa.jsp"><i class="tiny material-icons">business</i><span class="white-text" >Empresa</span></a></li>
                 <li class="divider"></li>
-                <li><a href="../formularios/entidad.jsp"><span class="white-text" whidt="100%" >Entidades adscritas</span></a></li>
+                <li><a href="../formularios/entidades.jsp"><i class="tiny material-icons">store</i><span class="white-text" whidt="100%">Entidades adscritas</span></a></li>
             </ul>
 
             <ul id="dropdown2" class="dropdown-content green darken-4" >
-                <li><a href="../consultas/contacto.jsp"><span class="white-text" >Contacto</span></a></li>
+                <li><a href="../consultas/contacto.jsp"><i class="tiny material-icons">perm_identity</i><span class="white-text" >Contacto</span></a></li>
                 <li class="divider"></li>
-                <li><a href="../consultas/empresa.jsp"><span class="white-text" >Empresa</span></a></li>
+                <li><a href="../consultas/empresa.jsp"><i class="tiny material-icons">business</i><span class="white-text" >Empresa</span></a></li>
                 <li class="divider"></li>
-                <li><a href="../consultas/entidad.jsp"><span class="white-text" >Entidades adscritas</span></a></li>
+                <li><a href="../consultas/entidades.jsp"><i class="tiny material-icons">store</i><span class="white-text" >Entidades adscritas</span></a></li>
             </ul>
 
-           
+
 
             <nav>
 
@@ -95,7 +95,7 @@
                     <a href="../inicio/principal.jsp" class="brand-logo">MINCIT<i class="material-icons left">business</i></a>
                     <ul class="right hide-on-med-and-down"> 
 
-                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Registro
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Registrar
                                 <i class="material-icons right">library_add</i></a></li>
 
                         <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Consultar

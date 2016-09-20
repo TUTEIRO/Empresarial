@@ -10,14 +10,14 @@
         </div>
         <div class="input-field col s3">
             <p>
-                <input name="group7" type="radio" id="nombre" />
-                <label for="nombre">Nombre</label>
+                <input name="group7" type="radio" id="nombre_empresa" />
+                <label for="nombre_empresa">Nombre de empresa</label>
             </p> 
         </div>
         <div class="input-field col s3">
             <p>
-                <input name="group8" type="radio" id="nit" />
-                <label for="nit">NIT</label>
+                <input name="group8" type="radio" id="nit_empresa" />
+                <label for="nit_empresa">NIT de empresa</label>
             </p> 
         </div>
         
@@ -27,8 +27,8 @@
         <div class="nav-wrapper">
             <form>
                 <div class="input-field green darken-3">
-                    <input id="search" type="search" required>
-                    <label for="search"><i class="material-icons left">search</i></label>
+                    <input id="buscar_empresa" type="search" required>
+                    <label for="buscar_empresa"><i class="material-icons left">search</i></label>
                     <i class="material-icons">close</i>
                 </div>
             </form>
