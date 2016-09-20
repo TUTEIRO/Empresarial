@@ -59,6 +59,7 @@
         </script> 
     </head>
 
+    
     <body background="../images/main-bg.png">
 
 
@@ -69,29 +70,23 @@
                 </a>
             </div>
 
-            <ul id="dropdown1" class="dropdown-content">
-                <li><a href="../formularios/contacto.jsp">Contacto</a></li>
+            <ul id="dropdown1" class="dropdown-content green darken-4" >
+                <li><a href="../formularios/contacto.jsp"><span class="white-text" >Contacto</span></a></li>
                 <li class="divider"></li>
-                <li><a href="../formularios/empresa.jsp">Empresa</a></li>
+                <li><a href="../formularios/empresa.jsp"><span class="white-text" >Empresa</span></a></li>
                 <li class="divider"></li>
-                <li><a href="#!">Entidades adscritas</a></li>
+                <li><a href="../formularios/entidad.jsp"><span class="white-text" whidt="100%" >Entidades adscritas</span></a></li>
             </ul>
 
-            <ul id="dropdown2" class="dropdown-content">
-                <li><a href="../consultas/contacto.jsp">Contacto</a></li>
+            <ul id="dropdown2" class="dropdown-content green darken-4" >
+                <li><a href="../consultas/contacto.jsp"><span class="white-text" >Contacto</span></a></li>
                 <li class="divider"></li>
-                <li><a href="../consultas/empresa.jsp">Empresa</a></li>
+                <li><a href="../consultas/empresa.jsp"><span class="white-text" >Empresa</span></a></li>
                 <li class="divider"></li>
-                <li><a href="#!">Entidades adscritas</a></li>
+                <li><a href="../consultas/entidad.jsp"><span class="white-text" >Entidades adscritas</span></a></li>
             </ul>
 
-            <ul id="dropdown3" class="dropdown-content">
-                <li><a href="#!">Contacto</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">Empresa</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">Entidades adscritas</a></li>
-            </ul>
+           
 
             <nav>
 
