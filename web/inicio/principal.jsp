@@ -29,7 +29,7 @@
                 <i class="material-icons circle blue">library_add</i>
                 <span class="title" style="font-weight: bold;">Registrar entidad adscrita</span>
                 <p>Haz click para registrar un entidad en el MINCIT</p>
-                <a href="../formularios/entidad.jsp" class="secondary-content"><i class="material-icons">input</i></a>
+                <a href="../formularios/entidades.jsp" class="secondary-content"><i class="material-icons">input</i></a>
             </li>
         </ul>
 
@@ -45,15 +45,15 @@
             </li>
             <li class="collection-item avatar">
                 <i class="material-icons circle green">search</i>
-                <span class="title" style="font-weight: bold;">Registrar empresa</span>
+                <span class="title" style="font-weight: bold;">Consultar empresa</span>
                 <p>Haz click para consultar un empresa en el MINCIT</p>
                 <a href="../consultas/empresa.jsp" class="secondary-content"><i class="material-icons">input</i></a>
             </li>
             <li class="collection-item avatar">
                 <i class="material-icons circle blue">search</i>
-                <span class="title" style="font-weight: bold;">Registrar entidad adscrita</span>
+                <span class="title" style="font-weight: bold;">Consultar entidad adscrita</span>
                 <p>Haz click para consultar un entidad en el MINCIT</p>
-                <a href="../consultas/entidad.jsp" class="secondary-content"><i class="material-icons">input</i></a>
+                <a href="../consultas/entidades.jsp" class="secondary-content"><i class="material-icons">input</i></a>
             </li>
         </ul>
 
