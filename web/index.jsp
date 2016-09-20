@@ -46,9 +46,9 @@ and open the template in the editor.
 
                                 </div>
                                 <div class="input-field col s12 ">
-                                    <button class="btn" type="submit" name=""><a href="inicio/principal.jsp">Iniciar sesion
+                                    <a class="btn" type="submit" name="" href="inicio/principal.jsp">Iniciar sesion
                                         <i class="mdi-content-send center"></i></a>
-                                    </button>
+
                                 </div>
                             </div>
                         </form>
