@@ -84,7 +84,7 @@ function cargarMunicipiosAjax(sel) {
 }
 
 function registrarContacto() {
-    alert("entro");
+    alert("sdasd");
     var div = "mostrarRegistro";
     var nombre = document.getElementById("first_name");
     var apellidos = document.getElementById("last_name");
@@ -100,39 +100,35 @@ function registrarContacto() {
     var fijo = document.getElementById("tel_fijo");
     var email = document.getElementById("email");
     var genero = document.getElementById("genero");
-    var obtenerGenero = "";
-    if(genero.type === 'checkbox' && genero.checked === true){
-        obtenerGenero = genero.value;
-    }
-    var etnia = document.getElementById("grupo_etnico");
-    var obtenerEtnia = "";
-    if(etnia.type === 'checkbox' && etnia.checked === true){
-        obtenerEtnia = etnia.value;
-    }
+    
+    
+    alert("sdasd3");
+    var etnia = document.getElementById("etnia");
+    
     var discapacidad = document.getElementById("discapacidad");
     var antiguedad_cargo = document.getElementById("anos_cargo");
     var condicion_desplazado = document.getElementById("desplazado");
-    
+   
     var despla = "";
     if (condicion_desplazado.type === 'checkbox' && condicion_desplazado.checked === true) {
         despla =  "Si";
     } else {
         despla = "No";
     }
-    
+    alert("sdasd6");
     var dis= "";
     if (discapacidad.type === 'checkbox' && discapacidad.checked === true) {
         discapacidad =  "Si";
     } else {
         discapacidad =  "No";
     }
-    
+    alert("sdasd7");
      ajax = nuevoAjax();
 
     parametros = "nombres="+nombre.value+"&apellidos="+apellidos.value+"&cc"+cc.value+"&cargo="+cargo.value+"&lugar_nto"+lugar_nto.value
     "&fecha_nto="+fecha_nto.value+"&nivel_estudio="+nivel_estudio.value+"&direccion="+direccion.value+"&ciudad="+ciudad.value+"&dpto="+dpto.value
-    "&celular="+celular.value+"&fijo="+fijo.value+"&email="+email.value+"&genero="+obtenerGenero+"&etnia="+obtenerEtnia+"&discapacidad="+dis+"&antiguedad="+antiguedad_cargo.value+"&desplazado="+despla;
-    url = "Procesar/registrarContacto.jsp";
+    "&celular="+celular.value+"&fijo="+fijo.value+"&email="+email.value+"&genero="+genero.value+"&etnia="+etnia.value+"&discapacidad="+dis+"&antiguedad="+antiguedad_cargo.value+"&desplazado="+despla;
+    url = "procesar/registrarContacto.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     ajax.send(parametros);

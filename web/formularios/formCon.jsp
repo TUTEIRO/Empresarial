@@ -28,30 +28,32 @@
                             </div>
                         </div>
 
-                                   <div class="row">
-                                <div class="input-field col s3">
+                        <div class="row" id="seleccion">
+                            <div class="input-field col s3">
 
-                                    <label>Genero</label> 
-                                </div>
-                                <div class="input-field col s3">
-                                    <p>
-                                        <input name="group1" type="radio" id="masculino" />
-                                        <label for="masculino">Masculino</label>
-                                    </p> 
-                                </div>
-                                <div class="input-field col s3">
-                                    <p>
-                                        <input name="group1" type="radio" id="femenino" />
-                                        <label for="femenino">Femenino</label>
-                                    </p> 
-                                </div>
-                                <div class="input-field col s3">
-                                    <p>
-                                        <input name="group1" type="radio" id="lgtbi" />
-                                        <label for="lgtbi">LGTBI</label>
-                                    </p> 
-                                </div>
+                                <label>Genero</label> 
                             </div>
+                            <div class="input-field col s3">
+                                <p>
+                                    <input id="masculino" name="group1" type="radio" value="masculino" onchange="" >
+                                    <label for="masculino">Masculino</label>
+                                </p> 
+                            </div>
+                            <div class="input-field col s3">
+                                <p>
+                                    <input id="femenino" name="group1" type="radio" value="femenino"  >
+                                    <label for="femenino">Femenino</label>
+                                </p> 
+                            </div>
+                            <div class="input-field col s3">
+                                <p>
+                                    <input id="lgtbi" name="group1" type="radio" value="lgtbi"  >
+                                    <label for="lgtbi">LGTBI</label>
+                                </p> 
+                            </div>
+                            <input hidden="true" name="genero" id="genero" type="text" value="es" class="validate">
+
+                        </div>
                         <div class="row">
                             <div class="input-field col s10">
                                 <input id="cargo" type="text" class="validate">
@@ -87,7 +89,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <select id="niv_estud">
-                                    <option value="" disable selected>--Seleccione una opción--</option>
+                                    <option value="" disabled selected>--Seleccione una opción--</option>
                                     <option value="1">Primaria</option>
                                     <option value="2">Bachiller</option>
                                     <option value="3">Tecnica</option>
@@ -153,43 +155,44 @@
                             </div>
                         </div>
 
-                                    <div class="row">
-                                <div class="input-field col s3">
+                        <div class="row" id="seleccion2">
+                            <div class="input-field col s3">
 
-                                    <label>Grupo Étnico</label> 
-                                </div>
-                                <div class="input-field col s3">
-                                    <p>
-                                        <input name="group2" type="radio" id="gitanos" />
-                                        <label for="gitanos">Rrom(gitanos)</label>
-                                    </p> 
-                                </div>
-                                <div class="input-field col s3">
-                                    <p>
-                                        <input name="group2" type="radio" id="indigenas" />
-                                        <label for="indigenas">Indigenas</label>
-                                    </p> 
-                                </div>
-                                <div class="input-field col s3">
-                                    <p>
-                                        <input name="group2" type="radio" id="afrocolombianos" />
-                                        <label for="afrocolombianos">Afrocolombianos</label>
-                                    </p> 
-                                </div>
-                                <div class="input-field col s3"></div>
-                                <div class="input-field col s3">
-                                    <p>
-                                        <input name="group2" type="radio" id="Raizales" />
-                                        <label for="Raizales">Raizales</label>
-                                    </p>
-                                </div>
-                                <div class="input-field col s3">
-                                    <p>
-                                        <input name="group2" type="radio" id="otro" />
-                                        <label for="otro">Otro</label>
-                                    </p>
-                                </div>
+                                <label>Grupo Étnico</label> 
                             </div>
+                            <div class="input-field col s3">
+                                <p>
+                                    <input name="group2" type="radio" id="gitanos" />
+                                    <label for="gitanos">Rrom(gitanos)</label>
+                                </p> 
+                            </div>
+                            <div class="input-field col s3">
+                                <p>
+                                    <input name="group2" type="radio" id="indigenas" />
+                                    <label for="indigenas">Indigenas</label>
+                                </p> 
+                            </div>
+                            <div class="input-field col s3">
+                                <p>
+                                    <input name="group2" type="radio" id="afrocolombianos" />
+                                    <label for="afrocolombianos">Afrocolombianos</label>
+                                </p> 
+                            </div>
+                            <div class="input-field col s3"></div>
+                            <div class="input-field col s3">
+                                <p>
+                                    <input name="group2" type="radio" id="Raizales" />
+                                    <label for="Raizales">Raizales</label>
+                                </p>
+                            </div>
+                            <div class="input-field col s3">
+                                <p>
+                                    <input name="group2" type="radio" id="otro" />
+                                    <label for="otro">Otro</label>
+                                </p>
+                            </div>
+                        </div>
+                        <input hidden="true" name="etnia" id="etnia" type="text" value="es" class="validate">
 
                         <div class="row">
                             <div class="input-field col s3">
@@ -219,10 +222,10 @@
                                 </div>
                             </div>
                         </div>
-                                 <br></br>
-                              
-                       
+                        <br></br>
 
 
-<script type="text/javascript" src="js/cargarFormulario.js"></script>
-<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+
+
+                        <script type="text/javascript" src="js/cargarFormulario.js"></script>
+                        <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
