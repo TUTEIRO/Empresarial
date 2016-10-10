@@ -27,7 +27,7 @@ public class UtilidadesDAO implements IUtilidadesDAO {
 
     @Override
     public ArrayList<String> cargarMun(String dept) throws Exception {
-        ArrayList<String> mun = new ArrayList();
+        ArrayList<String> mun = new ArrayList<String>();
         conn = Conexion.conectar();
         PreparedStatement stmt = null;
         int number = findNumber(dept);
@@ -49,7 +49,7 @@ public class UtilidadesDAO implements IUtilidadesDAO {
 
     @Override
     public ArrayList<String> cargarDptos() throws Exception {
-        ArrayList<String> dptos = new ArrayList();
+        ArrayList<String> dptos = new ArrayList<String>();
         conn = Conexion.conectar();
         PreparedStatement stmt = null;
         try {
@@ -173,7 +173,7 @@ public class UtilidadesDAO implements IUtilidadesDAO {
 
     @Override
     public ArrayList<String> cargarTipoAgenciaTuristica() throws Exception {
-        ArrayList<String> agencias = new ArrayList();
+        ArrayList<String> agencias = new ArrayList<String>();
         conn = Conexion.conectar();
         PreparedStatement stmt = null;
         try {
@@ -194,7 +194,7 @@ public class UtilidadesDAO implements IUtilidadesDAO {
 
     @Override
     public ArrayList<String> cargarTipoAlojamientoTuristico() throws Exception {
-        ArrayList<String> agencias = new ArrayList();
+        ArrayList<String> agencias = new ArrayList<String>();
         conn = Conexion.conectar();
         PreparedStatement stmt = null;
         try {
@@ -215,7 +215,7 @@ public class UtilidadesDAO implements IUtilidadesDAO {
 
     @Override
     public ArrayList<String> cargarTipoTurismo() throws Exception {
-        ArrayList<String> agencias = new ArrayList();
+        ArrayList<String> agencias = new ArrayList<String>();
         conn = Conexion.conectar();
         PreparedStatement stmt = null;
         try {
@@ -236,7 +236,7 @@ public class UtilidadesDAO implements IUtilidadesDAO {
 
     @Override
     public ArrayList<String> cargarEtnicidad() throws Exception {
-        ArrayList<String> etnias = new ArrayList();
+        ArrayList<String> etnias = new ArrayList<String>();
         conn = Conexion.conectar();
         PreparedStatement stmt = null;
         try {

@@ -3,6 +3,7 @@
     Created on : 6/09/2016, 01:49:34 PM
     Author     : tuto2
 --%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
 <script type="text/javascript" src="js/cargarFormulario.js"></script>
 
@@ -36,7 +37,7 @@
                             <div class="row">
                                 <div class="input-field col s3">
 
-                                    <label>Constituci髇 legal</label> 
+                                    <label>Constituci贸n legal</label> 
                                 </div>
                                 <div class="input-field col s3">
                                     <p>
@@ -53,7 +54,7 @@
                                 <div class="input-field col s3">
                                     <p>
                                         <input name="group3" type="radio" id="sAnonima" />
-                                        <label for="sAnonima">S. An髇ima</label>
+                                        <label for="sAnonima">S. An贸nima</label>
                                     </p> 
                                 </div>
                                 <div class="input-field col s3"></div>
@@ -74,7 +75,7 @@
                             <div class="row">
                                 <div class="input-field col s6">
                                     <input id="fecha_constitucion" type="text" class="datepicker">
-                                    <label for="fecha_constitucion">Fecha de constituci髇</label>
+                                    <label for="fecha_constitucion">Fecha de constituci贸n</label>
                                 </div>
                                 <div class="input-field col s2">
                                     <label> No de empleados</label>
@@ -108,7 +109,7 @@
                             <div class="row">
                                 <div class="input-field col s6">
                                     <input id="direccion_empresa" type="text" class="validate">
-                                    <label for="direccion_empresa">Direcci髇 de la empresa</label>
+                                    <label for="direccion_empresa">Direcci贸n de la empresa</label>
                                 </div>
                                 <div class="input-field col s6">
                                     <input id="ciudad_empresa" type="text" class="validate">
@@ -119,18 +120,18 @@
                             <div class="row">
                                 <div class="input-field col s6">
                                     <input id="tel_fijo_empresa" type="tel" class="validate">
-                                    <label for="tel_fijo_empresa">Tel閒ono fijo</label>
+                                    <label for="tel_fijo_empresa">Tel茅fono fijo</label>
                                 </div>
                                 <div class="input-field col s6">
                                     <input id="tel_movil_empresa" type="tel" class="validate">
-                                    <label for="tel_movil_empresa">Tel閒ono m髒il</label>
+                                    <label for="tel_movil_empresa">Tel茅fono m贸vil</label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s6">
                                     <input id="correo_empresa" type="email" class="validate">
-                                    <label for="correo_empresa">Correo electr髇ico</label>
+                                    <label for="correo_empresa">Correo electr贸nico</label>
                                 </div>
                                 <div class="input-field col s6">
                                     <input id="sitio_web" type="text" placeholder="www.example.com" class="validate">
@@ -141,7 +142,7 @@
                             <div class="row">
                                 <div class="input-field col s12">
                                     <textarea id="servicios" class="materialize-textarea"></textarea>
-                                    <label for="servicios">Descripci髇 de servicios que ofrece</label>
+                                    <label for="servicios">Descripci贸n de servicios que ofrece</label>
                                 </div>
                             </div>
 
@@ -169,13 +170,13 @@
 
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="a駉_renovacion" type="text" class="validate"/>
-                                    <label for="a駉_renovacion">口ltimo a駉 de renovaci髇?</label>
+                                    <input id="a帽o_renovacion" type="text" class="validate"/>
+                                    <label for="a帽o_renovacion">驴脷ltimo a帽o de renovaci贸n?</label>
                                 </div>
                             </div>
 
                             <div class="switch">
-                                <h6> 縀s empresa turistica?</h6>
+                                <h6> 驴Es empresa turistica?</h6>
                                 <label>
                                     No
                                     <input type="checkbox" id="empT" onclick="cargarEmpresaT()">

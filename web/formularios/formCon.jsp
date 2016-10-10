@@ -3,7 +3,8 @@
     Created on : 6/09/2016, 11:32:09 AM
     Author     : tuto2
 --%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<script type="text/javascript" src="js/cargarFormulario.js"></script>
 <%@page import="java.util.ArrayList"%>
 <%@page import="facade.Fachada"%>
 
