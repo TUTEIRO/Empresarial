@@ -11,14 +11,14 @@ package dto;
  */
 public class ContactoDTO {
     
-    private String nombres, apellidos, cc, cargo, lugar_nto, fecha_nto, nivel_estudio, direccion, ciudad, dpto, celular, fijo, email, genero, etnia, discapacidad;
+    private String nombres, apellidos, cc, cargo, lugar_nto, fecha_nto, nivel_estudio, direccion, ciudad, dpto, celular, fijo, email, genero, etnia, condicion_desplazado, discapacidad;
     private int antiguedad_cargo;
-    private boolean condicion_desplazado;
+
 
     public ContactoDTO() {
     }
 
-    public ContactoDTO(String nombres, String apellidos, String cc, String cargo, String lugar_nto, String fecha_nto, String nivel_estudio, String direccion, String ciudad, String dpto, String celular, String fijo, String email, String genero, String etnia, String discapacidad, int antiguedad_cargo, boolean condicion_desplazado) {
+    public ContactoDTO(String nombres, String apellidos, String cc, String cargo, String lugar_nto, String fecha_nto, String nivel_estudio, String direccion, String ciudad, String dpto, String celular, String fijo, String email, String genero, String etnia, String discapacidad, int antiguedad_cargo, String condicion_desplazado) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.cc = cc;
@@ -38,6 +38,18 @@ public class ContactoDTO {
         this.antiguedad_cargo = antiguedad_cargo;
         this.condicion_desplazado = condicion_desplazado;
     }
+
+    public ContactoDTO(String nombres, String apellidos, String cc, String direccion, String ciudad, String celular, String email) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.cc = cc;
+        this.direccion = direccion;
+        this.ciudad = ciudad;
+        this.celular = celular;
+        this.email = email;
+    }
+    
+    
 
     
     public String getNombres() {
@@ -176,11 +188,11 @@ public class ContactoDTO {
         this.antiguedad_cargo = antiguedad_cargo;
     }
 
-    public boolean isCondicion_desplazado() {
+    public String getCondicion_desplazado() {
         return condicion_desplazado;
     }
 
-    public void setCondicion_desplazado(boolean condicion_desplazado) {
+    public void setCondicion_desplazado(String condicion_desplazado) {
         this.condicion_desplazado = condicion_desplazado;
     }
     

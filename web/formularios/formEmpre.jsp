@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="input-field col s3">
                                     <p>
-                                        <input class="validate" type="text" id="otras" />
+                                        <input name="group3" type="radio" id="otras" />
                                         <label for="otras">Otras</label>
                                     </p>
                                 </div>

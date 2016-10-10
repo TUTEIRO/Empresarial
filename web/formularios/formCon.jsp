@@ -3,17 +3,19 @@
     Created on : 6/09/2016, 11:32:09 AM
     Author     : tuto2
 --%>
-<script type="text/javascript" src="js/cargarFormulario.js"></script>
+
 <%@page import="java.util.ArrayList"%>
 <%@page import="facade.Fachada"%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <section id="contacto" class="contacto">
     <div class="card-panel  white" >
         <h4><span class="green-text" style="font-weight: bold;">CONTACTO</span></h4>
-
+        <div id="mostrarRegistro"></div>
         <div class="row">
             <div class="col s12 ">
                 <div class="row">
-                    <form class="col s12">
+                    <form class="col s12" name="registrarFormContacto" id="registrarFormContacto" action="javascript:registrarContacto()" method="post">
                         <div class="row">
                             <div class="input-field col s6">
                                 <input id="first_name" type="text" class="validate">
@@ -25,31 +27,30 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="input-field col s3">
+                                   <div class="row">
+                                <div class="input-field col s3">
 
-                                <label for="">Genero</label> 
+                                    <label>Genero</label> 
+                                </div>
+                                <div class="input-field col s3">
+                                    <p>
+                                        <input name="group1" type="radio" id="masculino" />
+                                        <label for="masculino">Masculino</label>
+                                    </p> 
+                                </div>
+                                <div class="input-field col s3">
+                                    <p>
+                                        <input name="group1" type="radio" id="femenino" />
+                                        <label for="femenino">Femenino</label>
+                                    </p> 
+                                </div>
+                                <div class="input-field col s3">
+                                    <p>
+                                        <input name="group1" type="radio" id="lgtbi" />
+                                        <label for="lgtbi">LGTBI</label>
+                                    </p> 
+                                </div>
                             </div>
-                            <div class="input-field col s3">
-                                <p>
-                                    <input name="group1" type="radio" id="genero" value="masculino" />
-                                    <label for="masculi">Masculino</label>
-                                </p> 
-                            </div>
-                            <div class="input-field col s3">
-                                <p>
-                                    <input name="group1" type="radio" id="genero" value="femenino" />
-                                    <label for="femeni">Femenino</label>
-                                </p> 
-                            </div>
-                            <div class="input-field col s3">
-                                <p>
-                                    <input name="group1" type="radio" id="genero" value="lgtbi" />
-                                    <label for="lgtbi">LGTBI</label>
-                                </p> 
-                            </div>
-                        </div>
-
                         <div class="row">
                             <div class="input-field col s10">
                                 <input id="cargo" type="text" class="validate">
@@ -57,7 +58,7 @@
                             </div>
                             <div class="input-field col s2">
                                 <input id="anos_cargo" type="number" class="validate">
-                                <label for="anos_cargo">Años en cargo</label>
+                                <label for="anos_cargo">AÃ±os en cargo</label>
                             </div>
                         </div>
 
@@ -85,7 +86,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <select id="niv_estud">
-                                    <option value="" disable selected>--Seleccione una opción--</option>
+                                    <option value="" disable selected>--Seleccione una opciÃ³n--</option>
                                     <option value="1">Primaria</option>
                                     <option value="2">Bachiller</option>
                                     <option value="3">Tecnica</option>
@@ -151,48 +152,43 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="input-field col s2">
+                                    <div class="row">
+                                <div class="input-field col s3">
 
-                                <label for="">Grupo etnico</label> 
+                                    <label>Grupo Ã‰tnico</label> 
+                                </div>
+                                <div class="input-field col s3">
+                                    <p>
+                                        <input name="group2" type="radio" id="gitanos" />
+                                        <label for="gitanos">Rrom(gitanos)</label>
+                                    </p> 
+                                </div>
+                                <div class="input-field col s3">
+                                    <p>
+                                        <input name="group2" type="radio" id="indigenas" />
+                                        <label for="indigenas">Indigenas</label>
+                                    </p> 
+                                </div>
+                                <div class="input-field col s3">
+                                    <p>
+                                        <input name="group2" type="radio" id="afrocolombianos" />
+                                        <label for="afrocolombianos">Afrocolombianos</label>
+                                    </p> 
+                                </div>
+                                <div class="input-field col s3"></div>
+                                <div class="input-field col s3">
+                                    <p>
+                                        <input name="group2" type="radio" id="Raizales" />
+                                        <label for="Raizales">Raizales</label>
+                                    </p>
+                                </div>
+                                <div class="input-field col s3">
+                                    <p>
+                                        <input name="group2" type="radio" id="otro" />
+                                        <label for="otro">Otro</label>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="input-field col s3">
-                                <p>
-                                    <input name="group2" type="radio" id="grupo_etnico" value="gitanos" />
-                                    <label for="gitanos">Rrom(Gitanos)</label>
-                                </p> 
-                            </div>
-                            <div class="input-field col s3">
-                                <p>
-                                    <input name="group2" type="radio" id="grupo_etnico" value="indigenas" />
-                                    <label for="indigenas">Indigenas</label>
-                                </p> 
-                            </div>
-                            <div class="input-field col s4">
-                                <p>
-                                    <input name="group2" type="radio" id="grupo_etnico" value="afrocolombiano" />
-                                    <label for="afro">Afrocolombianos</label>
-                                </p> 
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="input-field col s2">
-
-                            </div>
-                            <div class="input-field col s3">
-                                <p>
-                                    <input name="group2" type="radio" id="grupo_etnico" value="raizales" />
-                                    <label for="raizales">Raizales</label>
-                                </p> 
-                            </div>
-                            <div class="input-field col s3">
-                                <p>
-                                    <input class="validate" type="text" id="otro" />
-                                    <label for="otro">Otro</label>
-                                </p> 
-                            </div>
-                        </div>
 
                         <div class="row">
                             <div class="input-field col s3">
@@ -222,7 +218,22 @@
                                 </div>
                             </div>
                         </div>
-                        <br></br>
+                                 <br></br>
+                                <div class="row">
+                                <div class="input-field col s12">
+                                    <input class="btn waves-effect waves-light" type="button" name="botonRegistrar" id="botonRegistrar" value="Registrar"/>
+                                      
+                                   
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+                       
 
 
-
+<script type="text/javascript" src="js/cargarFormulario.js"></script>
+<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>

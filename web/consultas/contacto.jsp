@@ -43,13 +43,16 @@
             <th data-field="nombre">Nombre</th>
             <th data-field="apellido">Apellido</th>
             <th data-field="cedula">Cedula</th>
+            <th data-field="direccion">Direccion</th>
+            <th data-field="ciudad">Ciudad</th>
             <th data-field="telefono">Telefono</th>
+            <th data-field="email">E-mail</th>
             <th data-field="editar">Editar</th>
 
         </tr>
     </thead>
     <tr>
-        <td colspan ="5" ><center>No se encuentran datos con la busqueda digitada</center></td>
+        <td colspan ="5" ><center>----No se encuentran datos con la busqueda digitada----</center></td>
 </tr>
 </table>
 

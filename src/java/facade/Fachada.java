@@ -27,7 +27,7 @@ public class Fachada {
     public boolean registrarContacto(String nombres, String apellidos, String cc, String cargo, String lugar_nto,
             String fecha_nto, String nivel_estudio, String direccion, String ciudad, String dpto, String celular, 
             String fijo, String email, String genero, String etnia, String discapacidad, int antiguedad_cargo, 
-            boolean condicion_desplazado) throws Exception{
+            String condicion_desplazado) throws Exception{
         ControlContacto contacto = new ControlContacto();
         return contacto.registrarContacto(nombres, apellidos, cc, cargo, lugar_nto, fecha_nto, nivel_estudio, direccion,
                 ciudad, dpto, celular, fijo, email, genero, etnia, discapacidad, antiguedad_cargo, condicion_desplazado);
