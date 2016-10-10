@@ -9,7 +9,7 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html>
     <head>
-
+        <link rel="shortcut icon" href="">
         <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->

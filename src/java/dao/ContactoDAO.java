@@ -11,23 +11,24 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import util.Conexion;
 
 /**
  *
  * @author quagg
  */
-public class ContactoDAO implements IContactoDAO{
-    
+public class ContactoDAO implements IContactoDAO {
+
     private Connection conn = null;
 
     @Override
     public boolean registrarContacto(ContactoDTO dto) throws Exception {
-     
+
         conn = Conexion.conectar();
-        boolean exito =false;
+        boolean exito = false;
         PreparedStatement stmt = null;
-        try{
+        try {
             stmt = conn.prepareStatement("INSERT INTO contacto(cto_nombres, cto_apellidos, cto_cc, cto_cargo, cto_antiguedad_cargo, cto_lugar_nacimiento, cto_fecha_nacimiento, cto_nivel_estudio, cto_direccion, cto_ciudad, cto_departamento, cto_celular, cto_fijo, cto_email, cto_genero, cto_etnia, cto_condicion_desplazado, cto_discapacidad) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             stmt.setString(1, dto.getNombres());
             stmt.setString(2, dto.getApellidos());
@@ -52,11 +53,11 @@ public class ContactoDAO implements IContactoDAO{
                 stmt.close();
                 exito = true;
             }
-             stmt.close();
-        }catch(Exception e){
-          e.printStackTrace();
-        }finally{
-            if(conn != null){
+            stmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
                 conn.close();
             }
         }
@@ -64,27 +65,39 @@ public class ContactoDAO implements IContactoDAO{
     }
 
     @Override
-    public ContactoDTO consultarContacto(String tipo, String dato) throws Exception {
-     
-         conn = Conexion.conectar();
+    public ArrayList<ContactoDTO> consultarContacto(String tipo, String dato) throws Exception {
+        ArrayList<ContactoDTO> list = new ArrayList();
+        conn = Conexion.conectar();
         PreparedStatement stmt = null;
-        ContactoDTO contacto=null;
-        try{
-            stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_cc="+dato);
-            ResultSet res = stmt.executeQuery();
-            while(res.next()){
-                contacto = new ContactoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(9), res.getString(10), res.getString(12), res.getString(14));
+        ContactoDTO contacto = null;
+        try {
+            if (tipo.equals("nombre")) {
+                stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_nombres=" + dato);
+                ResultSet res = stmt.executeQuery();
+                while (res.next()) {
+                    contacto = new ContactoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(9), res.getString(10), res.getString(12), res.getString(14));
+                    list.add(contacto);
+                }
+                stmt.close();
+                res.close();
+            } else if (tipo.equals("cc")) {
+                stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_cc=" + dato);
+                ResultSet res = stmt.executeQuery();
+                while (res.next()) {
+                    contacto = new ContactoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(9), res.getString(10), res.getString(12), res.getString(14));
+                    list.add(contacto);
+                }
+                stmt.close();
+                res.close();
             }
-            stmt.close();
-            res.close();
-        }catch (SQLException ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
             if (conn != null) {
                 conn.close();
             }
         }
-        return contacto;
+        return list;
     }
-    
+
 }

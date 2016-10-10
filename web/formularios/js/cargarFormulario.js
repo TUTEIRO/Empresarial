@@ -127,7 +127,7 @@ function registrarContacto() {
         discapacidad =  "No";
     }
     
-     ajax = nuevoAjax();
+    ajax = nuevoAjax();
 
     parametros = "nombres="+nombre.value+"&apellidos="+apellidos.value+"&cc"+cc.value+"&cargo="+cargo.value+"&lugar_nto"+lugar_nto.value
     "&fecha_nto="+fecha_nto.value+"&nivel_estudio="+nivel_estudio.value+"&direccion="+direccion.value+"&ciudad="+ciudad.value+"&dpto="+dpto.value

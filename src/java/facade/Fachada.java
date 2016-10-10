@@ -60,7 +60,7 @@ public class Fachada {
         return false;
     }
     
-    public ContactoDTO consultarContacto(String tipo, String dato) throws Exception{
+    public ArrayList<ContactoDTO> consultarContacto(String tipo, String dato) throws Exception{
         ControlContacto con = new ControlContacto();
         return con.consultarContacto(tipo, dato);
     }
