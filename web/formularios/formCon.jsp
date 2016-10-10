@@ -8,7 +8,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="facade.Fachada"%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <section id="contacto" class="contacto">
     <div class="card-panel  white" >
         <h4><span class="green-text" style="font-weight: bold;">CONTACTO</span></h4>
