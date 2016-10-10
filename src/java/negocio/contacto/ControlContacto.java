@@ -7,6 +7,7 @@ package negocio.contacto;
 
 import dao.ContactoDAO;
 import dto.ContactoDTO;
+import java.util.ArrayList;
 
 /**
  *
@@ -21,7 +22,7 @@ public class ControlContacto {
         return dao.registrarContacto(contacto);
     }
     
-    public ContactoDTO consultarContacto(String tipo, String dato) throws Exception{
+    public ArrayList<ContactoDTO> consultarContacto(String tipo, String dato) throws Exception{
         ContactoDAO dao = new ContactoDAO();
         return dao.consultarContacto(tipo, dato);
     }
