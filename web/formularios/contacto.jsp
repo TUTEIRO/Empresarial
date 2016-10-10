@@ -10,6 +10,18 @@
 
 <jsp:include page="formCon.jsp"/>
 
-                            
+<div class="row">
+    <div class="input-field col s12">
+        <input class="btn waves-effect waves-light" type="button" name="botonRegistrar" id="botonRegistrar" value="Registrar"/>
 
- <jsp:include page="../plantillas/footer.jsp"/>
+
+    </div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>      
+
+<jsp:include page="../plantillas/footer.jsp"/>
