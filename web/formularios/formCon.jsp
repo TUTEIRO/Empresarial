@@ -220,19 +220,7 @@
                             </div>
                         </div>
                                  <br></br>
-                                <div class="row">
-                                <div class="input-field col s12">
-                                    <input class="btn waves-effect waves-light" type="button" name="botonRegistrar" id="botonRegistrar" value="Registrar"/>
-                                      
-                                   
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-        </div>
-    </div>
-</section>
+                              
                        
 
 
