@@ -162,32 +162,32 @@
                             </div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group2" type="radio" id="gitanos" value="gitanos"/>
+                                    <input name="group2" type="radio" id="gitanos" value="2"/>
                                     <label for="gitanos">Rrom(gitanos)</label>
                                 </p> 
                             </div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group2" type="radio" id="indigenas" value="indigenas" />
+                                    <input name="group2" type="radio" id="indigenas" value="1" />
                                     <label for="indigenas">Indigenas</label>
                                 </p> 
                             </div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group2" type="radio" id="afrocolombianos" value="afrocolombianos"/>
+                                    <input name="group2" type="radio" id="afrocolombianos" value="3"/>
                                     <label for="afrocolombianos">Afrocolombianos</label>
                                 </p> 
                             </div>
                             <div class="input-field col s3"></div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group2" type="radio" id="Raizales" value="raizales"/>
+                                    <input name="group2" type="radio" id="Raizales" value="4"/>
                                     <label for="Raizales">Raizales</label>
                                 </p>
                             </div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group2" type="radio" id="otro" value="otro"/>
+                                    <input name="group2" type="radio" id="otro" value="5"/>
                                     <label for="otro">Otro</label>
                                 </p>
                             </div>

@@ -29,14 +29,37 @@ public class ContactoDAO implements IContactoDAO {
         boolean exito = false;
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("INSERT INTO contacto(cto_nombres, cto_apellidos, cto_cc, cto_cargo, cto_antiguedad_cargo, cto_lugar_nacimiento, cto_fecha_nacimiento, cto_nivel_estudio, cto_direccion, cto_ciudad, cto_departamento, cto_celular, cto_fijo, cto_email, cto_genero, cto_etnia, cto_condicion_desplazado, cto_discapacidad) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            stmt = conn.prepareStatement("INSERT INTO  `ufps_1`.`contacto` (\n"
+                    + "`cto_nombres` ,\n"
+                    + "`cto_apellidos` ,\n"
+                    + "`cto_cc` ,\n"
+                    + "`cto_cargo` ,\n"
+                    + "`cto_anios_cargo` ,\n"
+                    + "`cto_lugar_nacimiento` ,\n"
+                    + "`cto_fecha_nacimiento` ,\n"
+                    + "`cto_nivel_estudio` ,\n"
+                    + "`cto_direccion` ,\n"
+                    + "`cto_ciudad` ,\n"
+                    + "`cto_departamento` ,\n"
+                    + "`cto_celular` ,\n"
+                    + "`cto_fijo` ,\n"
+                    + "`cto_email` ,\n"
+                    + "`cto_genero` ,\n"
+                    + "`cto_etnia` ,\n"
+                    + "`cto_condicion_desplazado` ,\n"
+                    + "`cto_discapacidad` ,\n"
+                    + "`cto_correo_masivo`\n"
+                    + ")\n"
+                    + "VALUES (\n"
+                    + "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?\n"
+                    + ");");
             stmt.setString(1, dto.getNombres());
             stmt.setString(2, dto.getApellidos());
             stmt.setString(3, dto.getCc());
             stmt.setString(4, dto.getCargo());
-            stmt.setInt(5, dto.getAntiguedad_cargo());
-            stmt.setString(6, dto.getLugar_nto());
-            stmt.setString(7, dto.getFecha_nto());
+            stmt.setInt(5, dto.getAnio_cargo());
+            stmt.setString(6, dto.getLugar_nacimiento());
+            stmt.setString(7, dto.getFecha_nacimiento());
             stmt.setString(8, dto.getNivel_estudio());
             stmt.setString(9, dto.getDireccion());
             stmt.setString(10, dto.getCiudad());
@@ -45,9 +68,10 @@ public class ContactoDAO implements IContactoDAO {
             stmt.setString(13, dto.getFijo());
             stmt.setString(14, dto.getEmail());
             stmt.setString(15, dto.getGenero());
-            stmt.setString(16, dto.getEtnia());
+            stmt.setInt(16, dto.getEtnia());
             stmt.setString(17, dto.getCondicion_desplazado());
             stmt.setString(18, dto.getDiscapacidad());
+            stmt.setInt(19, 0);
             int total = stmt.executeUpdate();
             if (total > 0) {
                 stmt.close();
@@ -75,7 +99,7 @@ public class ContactoDAO implements IContactoDAO {
                 stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_nombres=" + dato);
                 ResultSet res = stmt.executeQuery();
                 while (res.next()) {
-                    contacto = new ContactoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(9), res.getString(10), res.getString(12), res.getString(14));
+//                    contacto = new ContactoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(9), res.getString(10), res.getString(12), res.getString(14));
                     list.add(contacto);
                 }
                 stmt.close();
@@ -84,7 +108,7 @@ public class ContactoDAO implements IContactoDAO {
                 stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_cc=" + dato);
                 ResultSet res = stmt.executeQuery();
                 while (res.next()) {
-                    contacto = new ContactoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(9), res.getString(10), res.getString(12), res.getString(14));
+//                    contacto = new ContactoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(9), res.getString(10), res.getString(12), res.getString(14));
                     list.add(contacto);
                 }
                 stmt.close();

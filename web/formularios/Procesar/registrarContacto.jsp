@@ -9,6 +9,7 @@
 <!DOCTYPE html>
 <%
         String nombres = request.getParameter("nombres");
+        System.out.println(nombres);
         String apellidos = request.getParameter("apellidos");
         String cc = request.getParameter("cc");
         String cargo = request.getParameter("cargo");
@@ -22,22 +23,23 @@
         String fijo = request.getParameter("fijo");
         String email = request.getParameter("email");
         String genero = request.getParameter("genero");
+        System.out.println(genero);
         String discapacidad = request.getParameter("discapacidad");      
         String desplazado = request.getParameter("desplazado");
-        String etnia = request.getParameter("etnia");
-        int antiguedad = Integer.parseInt(request.getParameter("antiguedad"));
-
+        int etnia = Integer.parseInt(request.getParameter("etnia"));
+        String antiguedad = request.getParameter("antiguedad");
+        int ant = Integer.parseInt(antiguedad);
         Fachada fachada = new Fachada();
-        boolean exito = fachada.registrarContacto(nombres, apellidos, cc, cargo, lugar_nto, fecha_nto, nivel_estudio, direccion, ciudad, dpto, celular, fijo, email, genero, etnia, discapacidad, antiguedad, desplazado);
+        boolean exito = fachada.registrarContacto(nombres, apellidos, cc, cargo, lugar_nto, fecha_nto, nivel_estudio, direccion, ciudad, dpto, celular, fijo, email, genero, etnia, discapacidad, ant, desplazado);
         
         if(exito){
 %>
-<h6><label class="green-text"><center>¡Registro Exitoso!</center></label></h6>
+<h5><label class="green-text"><center>¡Registro Exitoso!</center></label></h5>
 
 <%
         }else{
             
-  %><h6><label class="green-text"><center>¡Registro Fallido!</center></label></h6>
+  %><h5><label class="green-text"><center>¡Registro Fallido!</center></label></h5>
   
   <%
         }

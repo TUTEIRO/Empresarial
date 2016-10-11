@@ -11,20 +11,19 @@ package dto;
  */
 public class ContactoDTO {
     
-    private String nombres, apellidos, cc, cargo, lugar_nto, fecha_nto, nivel_estudio, direccion, ciudad, dpto, celular, fijo, email, genero, etnia, condicion_desplazado, discapacidad;
-    private int antiguedad_cargo;
-
+    private String nombres, apellidos, cc, cargo, lugar_nacimiento, fecha_nacimiento, nivel_estudio, direccion, ciudad, dpto, celular, fijo, email, genero, discapacidad, condicion_desplazado;
+    private int anio_cargo, correo_masivo, etnia;
 
     public ContactoDTO() {
     }
 
-    public ContactoDTO(String nombres, String apellidos, String cc, String cargo, String lugar_nto, String fecha_nto, String nivel_estudio, String direccion, String ciudad, String dpto, String celular, String fijo, String email, String genero, String etnia, String discapacidad, int antiguedad_cargo, String condicion_desplazado) {
+    public ContactoDTO(String nombres, String apellidos, String cc, String cargo, String lugar_nacimiento, String fecha_nacimiento, String nivel_estudio, String direccion, String ciudad, String dpto, String celular, String fijo, String email, String genero, String discapacidad, String condicion_desplazado, int etnia, int anio_cargo) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.cc = cc;
         this.cargo = cargo;
-        this.lugar_nto = lugar_nto;
-        this.fecha_nto = fecha_nto;
+        this.lugar_nacimiento = lugar_nacimiento;
+        this.fecha_nacimiento = fecha_nacimiento;
         this.nivel_estudio = nivel_estudio;
         this.direccion = direccion;
         this.ciudad = ciudad;
@@ -33,25 +32,13 @@ public class ContactoDTO {
         this.fijo = fijo;
         this.email = email;
         this.genero = genero;
-        this.etnia = etnia;
         this.discapacidad = discapacidad;
-        this.antiguedad_cargo = antiguedad_cargo;
         this.condicion_desplazado = condicion_desplazado;
+        this.etnia = etnia;
+        this.anio_cargo = anio_cargo;
+        this.correo_masivo = 0;
     }
 
-    public ContactoDTO(String nombres, String apellidos, String cc, String direccion, String ciudad, String celular, String email) {
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.cc = cc;
-        this.direccion = direccion;
-        this.ciudad = ciudad;
-        this.celular = celular;
-        this.email = email;
-    }
-    
-    
-
-    
     public String getNombres() {
         return nombres;
     }
@@ -84,20 +71,20 @@ public class ContactoDTO {
         this.cargo = cargo;
     }
 
-    public String getLugar_nto() {
-        return lugar_nto;
+    public String getLugar_nacimiento() {
+        return lugar_nacimiento;
     }
 
-    public void setLugar_nto(String lugar_nto) {
-        this.lugar_nto = lugar_nto;
+    public void setLugar_nacimiento(String lugar_nacimiento) {
+        this.lugar_nacimiento = lugar_nacimiento;
     }
 
-    public String getFecha_nto() {
-        return fecha_nto;
+    public String getFecha_nacimiento() {
+        return fecha_nacimiento;
     }
 
-    public void setFecha_nto(String fecha_nto) {
-        this.fecha_nto = fecha_nto;
+    public void setFecha_nacimiento(String fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
     }
 
     public String getNivel_estudio() {
@@ -164,14 +151,6 @@ public class ContactoDTO {
         this.genero = genero;
     }
 
-    public String getEtnia() {
-        return etnia;
-    }
-
-    public void setEtnia(String etnia) {
-        this.etnia = etnia;
-    }
-
     public String getDiscapacidad() {
         return discapacidad;
     }
@@ -180,20 +159,36 @@ public class ContactoDTO {
         this.discapacidad = discapacidad;
     }
 
-    public int getAntiguedad_cargo() {
-        return antiguedad_cargo;
-    }
-
-    public void setAntiguedad_cargo(int antiguedad_cargo) {
-        this.antiguedad_cargo = antiguedad_cargo;
-    }
-
     public String getCondicion_desplazado() {
         return condicion_desplazado;
     }
 
     public void setCondicion_desplazado(String condicion_desplazado) {
         this.condicion_desplazado = condicion_desplazado;
+    }
+
+    public int getEtnia() {
+        return etnia;
+    }
+
+    public void setEtnia(int etnia) {
+        this.etnia = etnia;
+    }
+
+    public int getAnio_cargo() {
+        return anio_cargo;
+    }
+
+    public void setAnio_cargo(int anio_cargo) {
+        this.anio_cargo = anio_cargo;
+    }
+
+    public int getCorreo_masivo() {
+        return correo_masivo;
+    }
+
+    public void setCorreo_masivo(int correo_masivo) {
+        this.correo_masivo = correo_masivo;
     }
     
     
