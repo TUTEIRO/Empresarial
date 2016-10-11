@@ -33,7 +33,7 @@
 
 <div class="row">
     <div class="col s12">
-        <input id="buttoncheck" type="submit" class="btn center-align green darken-3 right" value="Registrar">
+        <input id="buttoncheck" type="submit" class="btn center-align green darken-3 right" value="Registrar" >
         
     </div>
 </div>

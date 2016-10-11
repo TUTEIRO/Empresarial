@@ -34,12 +34,12 @@
         
         if(exito){
 %>
-<h5><label class="green-text"><center>¡Registro Exitoso!</center></label></h5>
+<h5><label class="green-text"><center>¡REGISTRO EXITOSO!</center></label></h5>
 
 <%
         }else{
             
-  %><h5><label class="green-text"><center>¡Registro Fallido!</center></label></h5>
+  %><h5><label class="green-text"><center>¡EL CONTACTO YA SE ENCUENTRA REGISTRADO EN LA BASE DE DATOS!</center></label></h5>
   
   <%
         }

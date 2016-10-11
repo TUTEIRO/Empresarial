@@ -47,7 +47,7 @@ function cargarEmpresaT() {
         {
             if (ajax.status == 200)
             {
-
+                
                 document.getElementById(div).innerHTML = ajax.responseText;
 
             } else
@@ -148,7 +148,7 @@ function registrarContacto() {
                 document.getElementById('tel_fijo').value = '';
                 document.getElementById('email').value = '';
                 document.getElementById('genero').value = '';
-                document.getElementById('etnia').value = '';
+                document.getElementById('etnia').checked = false;
                 document.getElementById('discapacidad').value = '';
                 document.getElementById('anos_cargo').value = '';
                 document.getElementById('desplazado').value = ''; 
