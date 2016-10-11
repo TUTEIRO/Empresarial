@@ -18,18 +18,18 @@
                         <form class="col s12">
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="nombre_empresa" type="text" class="validate">
+                                    <input required id="nombre_empresa" type="text" class="validate">
                                     <label for="nombre_empresa">Nombre de la empresa</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="nit" type="text" class="validate">
+                                    <input required id="nit" type="text" class="validate">
                                     <label for="nit">Nit</label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <input id="representante" type="text" class="validate">
+                                    <input required id="representante" type="text" class="validate">
                                     <label for="representante">Nombre del representante legal</label>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
 
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="fecha_constitucion" type="text" class="datepicker">
+                                    <input required id="fecha_constitucion" type="text" class="datepicker">
                                     <label for="fecha_constitucion">Fecha de constitución</label>
                                 </div>
                                 <div class="input-field col s2">
@@ -82,25 +82,25 @@
                                 </div>
                                 <div class="input-field col s1">
                                     <p>
-                                        <input class="validate" type="number" id="tc"/>
+                                        <input required class="validate" type="number" min="0" id="tc"/>
                                         <label for="tc">TC</label>
                                     </p>
                                 </div>
                                 <div class="input-field col s1">
                                     <p>
-                                        <input class="validate" type="number" id="mt"/>
+                                        <input required class="validate" type="number" min="0" id="mt"/>
                                         <label for="mt">MT</label>
                                     </p>
                                 </div>
                                 <div class="input-field col s1">
                                     <p>
-                                        <input class="validate" type="number" id="directo"/>
+                                        <input required class="validate" type="number" min="0" id="directo"/>
                                         <label for="directo">Directo</label>
                                     </p>
                                 </div>
                                 <div class="input-field col s1">
                                     <p>
-                                        <input class="validate" type="number" id="indirecto"/>
+                                        <input required class="validate" type="number" min="0" id="indirecto"/>
                                         <label for="indirecto">Indirecto</label>
                                     </p>
                                 </div>
@@ -108,40 +108,40 @@
 
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="direccion_empresa" type="text" class="validate">
+                                    <input required id="direccion_empresa" type="text" class="validate">
                                     <label for="direccion_empresa">Dirección de la empresa</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="ciudad_empresa" type="text" class="validate">
+                                    <input required id="ciudad_empresa" type="text" class="validate">
                                     <label for="ciudad_empresa">Ciudad</label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="tel_fijo_empresa" type="tel" class="validate">
+                                    <input required id="tel_fijo_empresa" type="tel" class="validate">
                                     <label for="tel_fijo_empresa">Teléfono fijo</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="tel_movil_empresa" type="tel" class="validate">
+                                    <input required id="tel_movil_empresa" type="tel" class="validate">
                                     <label for="tel_movil_empresa">Teléfono móvil</label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s6">
-                                    <input id="correo_empresa" type="email" class="validate">
+                                    <input required id="correo_empresa" type="email" class="validate">
                                     <label for="correo_empresa">Correo electrónico</label>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="sitio_web" type="text" placeholder="www.example.com" class="validate">
+                                    <input required id="sitio_web" type="text" placeholder="www.example.com" class="validate">
                                     <label for="sitio_web">Sitio web</label>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <textarea id="servicios" class="materialize-textarea"></textarea>
+                                    <textarea  required id="servicios" class="materialize-textarea"></textarea>
                                     <label for="servicios">Descripción de servicios que ofrece</label>
                                 </div>
                             </div>
@@ -163,7 +163,7 @@
                                     </p>
                                 </div>
                                 <div class="input-field col s6">
-                                    <input id="num_reg_mercantil" type="number" class="validate">
+                                    <input id="num_reg_mercantil" type="number" min="0" class="validate">
                                     <label for="num_reg_mercantil">Nro. de registro mercantil</label>
                                 </div>
                             </div>

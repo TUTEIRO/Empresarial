@@ -8,7 +8,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-    
         String nombres = request.getParameter("nombres");
         String apellidos = request.getParameter("apellidos");
         String cc = request.getParameter("cc");
@@ -17,18 +16,18 @@
         String fecha_nto = request.getParameter("fecha_nto");
         String nivel_estudio = request.getParameter("nivel_estudio");
         String direccion = request.getParameter("direccion");
-        String ciudad = request.getParameter("ciudad");
+        String ciudad = request.getParameter("ciudad");     
         String dpto = request.getParameter("dpto");
         String celular = request.getParameter("celular");
         String fijo = request.getParameter("fijo");
         String email = request.getParameter("email");
         String genero = request.getParameter("genero");
-        String etnia = request.getParameter("etnia");
-        String discapacidad = request.getParameter("discapacidad");
-        int antiguedad = Integer.parseInt(request.getParameter("antiguedad"));
+        String discapacidad = request.getParameter("discapacidad");      
         String desplazado = request.getParameter("desplazado");
+        String etnia = request.getParameter("etnia");
+        int antiguedad = Integer.parseInt(request.getParameter("antiguedad"));
+
         Fachada fachada = new Fachada();
-    
         boolean exito = fachada.registrarContacto(nombres, apellidos, cc, cargo, lugar_nto, fecha_nto, nivel_estudio, direccion, ciudad, dpto, celular, fijo, email, genero, etnia, discapacidad, antiguedad, desplazado);
         
         if(exito){

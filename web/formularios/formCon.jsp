@@ -19,11 +19,11 @@
                     <form class="col s12" name="registrarFormContacto" id="registrarFormContacto" action="javascript:registrarContacto()" method="post">
                         <div class="row">
                             <div class="input-field col s6">
-                                <input id="first_name" type="text" class="validate">
+                                <input required id="first_name" type="text" class="validate">
                                 <label for="first_name">Nombres</label>
                             </div>
                             <div class="input-field col s6">
-                                <input id="last_name" type="text" class="validate">
+                                <input required id="last_name" type="text" class="validate">
                                 <label for="last_name">Apellidos</label>
                             </div>
                         </div>
@@ -56,11 +56,11 @@
                         </div>
                         <div class="row">
                             <div class="input-field col s10">
-                                <input id="cargo" type="text" class="validate">
+                                <input required id="cargo" type="text" class="validate">
                                 <label for="cargo">Cargo</label>
                             </div>
                             <div class="input-field col s2">
-                                <input id="anos_cargo" type="number" class="validate">
+                                <input required id="anos_cargo" name="anos_cargo" type="number" min="0" class="validate">
                                 <label for="anos_cargo">Años en cargo</label>
                             </div>
                         </div>
@@ -68,12 +68,12 @@
 
                         <div class="row">
                             <div class="input-field col s8">
-                                <input id="lugar_nac" type="text" class="validate">
+                                <input required id="lugar_nac" type="text" class="validate">
                                 <label for="lugar_nac">Lugar nacimiento</label>
                             </div>
                             <div class="input-field col s4">
                                 <label for="fecha_nac">Fecha nacimiento</label>
-                                <input id ="fecha_nac"type="text" class="datepicker">
+                                <input required id ="fecha_nac"type="text" class="datepicker">
                             </div>
                         </div>
 
@@ -81,7 +81,7 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="num_ced" type="number" class="validate">
+                                <input required id="num_ced" type="text" class="validate">
                                 <label for="num_ced">Numero de cedula</label>
                             </div>
                         </div>
@@ -90,12 +90,12 @@
                             <div class="input-field col s12">
                                 <select id="niv_estud">
                                     <option value="" disabled selected>--Seleccione una opción--</option>
-                                    <option value="1">Primaria</option>
-                                    <option value="2">Bachiller</option>
-                                    <option value="3">Tecnica</option>
-                                    <option value="4">Profesional</option>
-                                    <option value="5">Postgrado</option>
-                                    <option value="6">Otros</option>
+                                    <option value="primaria">Primaria</option>
+                                    <option value="bachiller">Bachiller</option>
+                                    <option value="tecnica">Tecnica</option>
+                                    <option value="profesional">Profesional</option>
+                                    <option value="postgrado">Postgrado</option>
+                                    <option value="otros">Otros</option>
                                 </select>
                                 <label for="niv_estud">Nivel de estudio</label>
                             </div>
@@ -103,7 +103,7 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="direccion" type="text" class="validate">
+                                <input required id="direccion" type="text" class="validate">
                                 <label for="direccion">Direccion</label> 
                             </div>
                         </div>
@@ -139,18 +139,18 @@
 
                         <div class="row">
                             <div class="input-field col s6">
-                                <input id="tel_fijo" type="tel" class="validate">
+                                <input required id="tel_fijo" type="tel" class="validate">
                                 <label for="tel_fijo">Telefono fijo</label> 
                             </div>
                             <div class="input-field col s6">
-                                <input id="tel_cel" type="tel" class="validate">
+                                <input required id="tel_cel" type="tel" class="validate">
                                 <label for="tel_cel">Telefono celular</label> 
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="email" type="email" class="validate">
+                                <input required id="email" type="email" class="validate">
                                 <label for="email">E-Mail</label>
                             </div>
                         </div>
@@ -162,38 +162,38 @@
                             </div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group2" type="radio" id="gitanos" />
+                                    <input name="group2" type="radio" id="gitanos" value="gitanos"/>
                                     <label for="gitanos">Rrom(gitanos)</label>
                                 </p> 
                             </div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group2" type="radio" id="indigenas" />
+                                    <input name="group2" type="radio" id="indigenas" value="indigenas" />
                                     <label for="indigenas">Indigenas</label>
                                 </p> 
                             </div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group2" type="radio" id="afrocolombianos" />
+                                    <input name="group2" type="radio" id="afrocolombianos" value="afrocolombianos"/>
                                     <label for="afrocolombianos">Afrocolombianos</label>
                                 </p> 
                             </div>
                             <div class="input-field col s3"></div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group2" type="radio" id="Raizales" />
+                                    <input name="group2" type="radio" id="Raizales" value="raizales"/>
                                     <label for="Raizales">Raizales</label>
                                 </p>
                             </div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input name="group2" type="radio" id="otro" />
+                                    <input name="group2" type="radio" id="otro" value="otro"/>
                                     <label for="otro">Otro</label>
                                 </p>
                             </div>
-                        </div>
+                       
                         <input hidden="true" name="etnia" id="etnia" type="text" value="es" class="validate">
-
+                         </div>
                         <div class="row">
                             <div class="input-field col s3">
                                 <label for="desplazado">Desplazado</label> 
@@ -202,7 +202,7 @@
                                 <div class="switch">
                                     <label>
                                         No
-                                        <input type="checkbox">
+                                        <input type="checkbox" id="desplazado" name="desplazado">
                                         <span class="lever"></span>
                                         Si
                                     </label>
@@ -215,7 +215,7 @@
                                 <div class="switch">
                                     <label>
                                         No
-                                        <input type="checkbox">
+                                        <input type="checkbox" id="discapacidad" name="discapacidad">
                                         <span class="lever"></span>
                                         Si
                                     </label>
