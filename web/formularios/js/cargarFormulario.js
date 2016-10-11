@@ -134,6 +134,25 @@ function registrarContacto() {
             {
 
                 document.getElementById(div).innerHTML = ajax.responseText;
+                document.getElementById('first_name').value = '';
+                document.getElementById('last_name').value = '';
+                document.getElementById('num_ced').value = '';
+                document.getElementById('cargo').value = '';
+                document.getElementById('lugar_nac').value = '';
+                document.getElementById('fecha_nac').value = '';
+                document.getElementById('niv_estud').value = '';
+                document.getElementById('direccion').value = '';
+                document.getElementById('mun').value = '';
+                document.getElementById('departamento').value = '';
+                document.getElementById('tel_cel').value = '';
+                document.getElementById('tel_fijo').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('genero').value = '';
+                document.getElementById('etnia').value = '';
+                document.getElementById('discapacidad').value = '';
+                document.getElementById('anos_cargo').value = '';
+                document.getElementById('desplazado').value = ''; 
+                document.getElementById('first_name').focus();
 
             } else
             {
@@ -146,5 +165,6 @@ function registrarContacto() {
             document.getElementById(div).value = "Cargando";
         }
     }
+    
     
 }
