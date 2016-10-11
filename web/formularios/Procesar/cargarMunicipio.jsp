@@ -8,10 +8,11 @@
         $('select').material_select();
     });
 </script>
-<label for="mun">Municipio</label>
+
 <div class="input-field col s6">
 
-    <select  class="browser-default"id="mun" name="mun">
+    <select  id="mun" name="mun">
+        <option value="" disabled selected>Elige una opcion</option>
         <%
             request.setCharacterEncoding("UTF-8");
             String dep = request.getParameter("departamento");
@@ -28,6 +29,7 @@
 
 
     </select>
+    <label for="mun">Municipio</label>
 
 
 </div>

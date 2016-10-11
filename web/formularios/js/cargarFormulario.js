@@ -78,6 +78,7 @@ function cargarMunicipiosAjax(sel) {
             if (ajax.status == 200) {
                 var rta = ajax.responseText;
                 document.getElementById(div).innerHTML = rta;
+                $('#mun').material_select();
             }
         }
     }
