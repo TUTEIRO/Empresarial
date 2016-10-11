@@ -14,6 +14,7 @@
 
     Fachada fachada = new Fachada();
     ArrayList<ContactoDTO> cto = fachada.consultarContacto(tipo, dato);
+    if(!cto.isEmpty()){
 %>
 
 <table class="striped highlight" bgcolor="white">
@@ -42,5 +43,7 @@
         <th data-field="email"><%= c.getEmail()%></th>
         <th data-field="editar">Editar</th>
     </tr>
+    <%}}else{%>
+    <p>No se encontró un dato.</p>
     <%}%>
 </table>

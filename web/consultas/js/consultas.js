@@ -24,23 +24,15 @@ function nuevoAjax() {
 
 function consultarContacto() {
     var div = "tablaF";
-    var radios = document.getElementsByName('group6');
-    var rate_value;
-    for (var i = 0; i < radios.length; i++) {
-        if (radios[i].checked) {
-            rate_value = radios[i].value;
-        }
-    }
-    var dato = documment.getElementById('buscar_contacto');
-    
+    var radios = document.getElementById('tipo');
+    var dato = document.getElementById('buscar_contacto');
     ajax = nuevoAjax();
 
-    parametros = "tipo="+rate_value.value+"&dato="+dato.value;
+    parametros = "tipo="+radios.value+"&dato="+dato.value;
     url = "Procesar/ejecutarConsulta.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     ajax.send(parametros);
-
     ajax.onreadystatechange = function ()
     {
         if (ajax.readyState == 4)

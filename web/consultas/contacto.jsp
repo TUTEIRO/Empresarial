@@ -2,11 +2,24 @@
 <script type="text/javascript" src="js/consultas.js"></script>
 <%@page import="java.util.ArrayList"%>
 <%@page import="facade.Fachada"%>
+<script type="text/javascript">
+    $(document).ready(function () {
 
+
+        $('#radios').click(function() {
+            
+            var var_name = $("input[name='group6']:checked").val();
+            $('#tipo').val(var_name);
+            
+        });
+        
+        
+    });
+</script>
 <br></br>
 <div class="card-panel  white" >
 
-    <div class="row">
+    <div class="row" id="radios">
         <div class="input-field col s4">
 
             <label for=""><h5>Buscar por</h5></label> 
@@ -25,6 +38,7 @@
         </div>
 
     </div>
+    <input hidden="true" id="tipo" name="tipo"/>
 
     <nav>
         <div class="nav-wrapper">
@@ -36,10 +50,12 @@
                 </div>
             </form>
             <script>
-                document.getElementById('busq').addEventListener('keypress', function (event) {
-                    if (event.keyCode === 13) {
-                        event.preventDefault();
-                    }
+                $(document).ready(function ()) {
+                    $("#busq").addEventListener('keypress', function (event) {
+                        if (event.keyCode === 13) {
+                            event.preventDefault();
+                        }
+                    });
                 });
             </script>
         </div>

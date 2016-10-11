@@ -96,19 +96,35 @@ public class ContactoDAO implements IContactoDAO {
         ContactoDTO contacto = null;
         try {
             if (tipo.equals("nombre")) {
-                stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_nombres=" + dato);
+                stmt = conn.prepareStatement("SELECT * \n"
+                        + "FROM contacto\n"
+                        + "WHERE cto_nombres =  \""+ dato + "\"");
                 ResultSet res = stmt.executeQuery();
                 while (res.next()) {
-//                    contacto = new ContactoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(9), res.getString(10), res.getString(12), res.getString(14));
+                    contacto = new ContactoDTO();
+                    contacto.setNombres(res.getString(1));
+                    contacto.setApellidos(res.getString(2));
+                    contacto.setCc(res.getString(3));
+                    contacto.setDireccion(res.getString(9));
+                    contacto.setCiudad(res.getString(10));
+                    contacto.setCelular(res.getString(12));
+                    contacto.setEmail(res.getString(14));
                     list.add(contacto);
                 }
                 stmt.close();
                 res.close();
             } else if (tipo.equals("cc")) {
-                stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_cc=" + dato);
+                stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_cc=" + dato + ";");
                 ResultSet res = stmt.executeQuery();
                 while (res.next()) {
-//                    contacto = new ContactoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(9), res.getString(10), res.getString(12), res.getString(14));
+                    contacto = new ContactoDTO();
+                    contacto.setNombres(res.getString(1));
+                    contacto.setApellidos(res.getString(2));
+                    contacto.setCc(res.getString(3));
+                    contacto.setDireccion(res.getString(9));
+                    contacto.setCiudad(res.getString(10));
+                    contacto.setCelular(res.getString(12));
+                    contacto.setEmail(res.getString(14));
                     list.add(contacto);
                 }
                 stmt.close();
