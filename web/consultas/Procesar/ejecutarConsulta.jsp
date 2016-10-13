@@ -41,9 +41,32 @@
         <th data-field="ciudad"><%= c.getCiudad()%></th>
         <th data-field="telefono"><%= c.getCelular()%></th>
         <th data-field="email"><%= c.getEmail()%></th>
-        <th data-field="editar">Editar</th>
+        <th data-field="editar"><a class="btn waves-effect waves-light green" href="../formularios/ModificarCon.jsp?tipo=<%=tipo%>&dato=<%=dato%>">Editar</a></th>
     </tr>
+    </table>
     <%}}else{%>
-    <p>No se encontró un dato.</p>
+    <table class="striped highlight" bgcolor="white">
+    <thead>
+        <tr>
+            <th data-field="nombre">Nombre</th>
+            <th data-field="apellido">Apellido</th>
+            <th data-field="cedula">Cedula</th>
+            <th data-field="direccion">Direccion</th>
+            <th data-field="ciudad">Ciudad</th>
+            <th data-field="telefono">Telefono</th>
+            <th data-field="email">E-mail</th>
+            <th data-field="editar">Editar</th>
+        </tr>
+    </thead>
+     <tr>
+        <th></th>
+        <th ></th>
+        <th ></th>
+        <th ></th>
+        <th >No se encontrarón resultados</th>
+        <th ></th>
+        <th ></th>
+        <th ></th>
+    </tr>
+    </table>
     <%}%>
-</table>

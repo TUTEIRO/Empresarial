@@ -12,7 +12,7 @@
 <section id="contacto" class="contacto">
     <div class="card-panel  white" >
         <h4><span class="green-text" style="font-weight: bold;">CONTACTO</span></h4>
-        <div id="mostrarRegistro"></div>
+      
         <div class="row">
             <div class="col s12 ">
                 <div class="row">

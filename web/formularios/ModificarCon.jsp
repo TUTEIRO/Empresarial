@@ -1,8 +1,9 @@
 <%-- 
-    Document   : contacto
-    Created on : 5/09/2016, 04:34:27 PM
-    Author     : tuto2
+    Document   : ModifcarCon
+    Created on : 12-oct-2016, 22:41:28
+    Author     : FARID SANTIAGO
 --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="../plantillas/header.jsp"/>
 <script type="text/javascript" src="js/cargarFormulario.js"></script>
@@ -29,16 +30,16 @@
         
     });
 </script>
-<jsp:include page="formCon.jsp"/>
+<jsp:include page="formConModificar.jsp"/>
 
 <div class="row">
     <div class="col s12">
-        <input id="buttoncheck" type="submit" class="waves-effect waves-light btn modal-trigger" href="#modal1" value="Registrar" >
+        <input id="buttoncheck" type="submit" class="waves-effect waves-light btn modal-trigger" href="#modal1" value="Actualizar" >
         
     </div>
 </div>
 <div id="modal1" class="modal">
-    <div id="mostrarRegistro">
+    <div id="actualizar">
    
     </div>
 </div>
@@ -50,3 +51,4 @@
 </section>      
 
 <jsp:include page="../plantillas/footer.jsp"/>
+

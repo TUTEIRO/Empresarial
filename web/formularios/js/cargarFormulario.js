@@ -47,7 +47,7 @@ function cargarEmpresaT() {
         {
             if (ajax.status == 200)
             {
-                
+
                 document.getElementById(div).innerHTML = ajax.responseText;
 
             } else
@@ -107,21 +107,21 @@ function registrarContacto() {
     var despla = "";
     alert(antiguedad_cargo.value);
     if (condicion_desplazado.type === 'checkbox' && condicion_desplazado.checked === true) {
-        despla =  "Si";
+        despla = "Si";
     } else {
         despla = "No";
     }
-    var dis= "";
+    var dis = "";
     if (discapacidad.type === 'checkbox' && discapacidad.checked === true) {
-        dis =  "Si";
+        dis = "Si";
     } else {
-        dis =  "No";
+        dis = "No";
     }
     ajax = nuevoAjax();
 
-    parametros = "nombres="+nombre.value+"&apellidos="+apellidos.value+"&cc="+cc.value+"&cargo="+cargo.value+"&lugar_nto="+lugar_nto.value+
-    "&fecha_nto="+fecha_nto.value+"&nivel_estudio="+nivel_estudio.value+"&direccion="+direccion.value+"&ciudad="+ciudad.value+"&dpto="+dpto.value+
-    "&celular="+celular.value+"&fijo="+fijo.value+"&email="+email.value+"&genero="+genero.value+"&etnia="+etnia.value+"&discapacidad="+dis+"&antiguedad="+antiguedad_cargo.value+"&desplazado="+despla;
+    parametros = "nombres=" + nombre.value + "&apellidos=" + apellidos.value + "&cc=" + cc.value + "&cargo=" + cargo.value + "&lugar_nto=" + lugar_nto.value +
+            "&fecha_nto=" + fecha_nto.value + "&nivel_estudio=" + nivel_estudio.value + "&direccion=" + direccion.value + "&ciudad=" + ciudad.value + "&dpto=" + dpto.value +
+            "&celular=" + celular.value + "&fijo=" + fijo.value + "&email=" + email.value + "&genero=" + genero.value + "&etnia=" + etnia.value + "&discapacidad=" + dis + "&antiguedad=" + antiguedad_cargo.value + "&desplazado=" + despla;
     url = "Procesar/registrarContacto.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -132,7 +132,11 @@ function registrarContacto() {
         {
             if (ajax.status == 200)
             {
-
+                $(document).ready(function () {
+                    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                    $('.modal-trigger').leanModal();
+                });
+                 $('#modal1').openModal();
                 document.getElementById(div).innerHTML = ajax.responseText;
                 document.getElementById('first_name').value = '';
                 document.getElementById('last_name').value = '';
@@ -151,7 +155,7 @@ function registrarContacto() {
                 document.getElementById('etnia').checked = false;
                 document.getElementById('discapacidad').value = '';
                 document.getElementById('anos_cargo').value = '';
-                document.getElementById('desplazado').value = ''; 
+                document.getElementById('desplazado').value = '';
                 document.getElementById('first_name').focus();
 
             } else
@@ -165,6 +169,6 @@ function registrarContacto() {
             document.getElementById(div).value = "Cargando";
         }
     }
-    
-    
+
+
 }

@@ -9,7 +9,6 @@
 <!DOCTYPE html>
 <%
         String nombres = request.getParameter("nombres");
-        System.out.println(nombres);
         String apellidos = request.getParameter("apellidos");
         String cc = request.getParameter("cc");
         String cargo = request.getParameter("cargo");
@@ -34,12 +33,27 @@
         
         if(exito){
 %>
-<h5><label class="green-text"><center>¡REGISTRO EXITOSO!</center></label></h5>
+ <div class="modal-content">
+     <h2><label class="green-text"><center>¡¡REGISTRO EXITOSO!!</center></label></h2>
+      <p>El contacto se ha registrado satifactoriamente en la base de datos</p>
+    </div>
+    <div class="modal-footer">
+      <a href="../inicio/principal.jsp" class=" modal-action modal-close waves-effect waves-green btn-flat">Volver al inicio</a>
+       <a href="contacto.jsp" class=" modal-action modal-close waves-effect waves-green btn-flat">Continuar</a>
+    </div>
+
 
 <%
         }else{
             
-  %><h5><label class="green-text"><center>¡EL CONTACTO YA SE ENCUENTRA REGISTRADO EN LA BASE DE DATOS!</center></label></h5>
+  %><div class="modal-content">
+     <h2><label class="green-text"><center>¡¡REGISTRO FALLIDO!!</center></label></h2>
+      <p>Ha ocurrido un errror a la hora de registrar el contacto. Puede ser fallo de conexión a la base de datos o el contacto ya existe en la base de datos, si es esta por favor verifque la cedula</p>
+    </div>
+    <div class="modal-footer">
+        <a href="../inicio/principal.jsp" class=" modal-action modal-close waves-effect waves-green btn-flat">Volver al inicio</a>
+      <a href="contacto.jsp" class=" modal-action modal-close waves-effect waves-green btn-flat">Continuar</a>
+    </div>
   
   <%
         }

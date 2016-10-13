@@ -105,9 +105,14 @@ public class ContactoDAO implements IContactoDAO {
                     contacto.setNombres(res.getString(1));
                     contacto.setApellidos(res.getString(2));
                     contacto.setCc(res.getString(3));
+                    contacto.setCargo(res.getString(4));
+                    contacto.setAnio_cargo(res.getInt(5));
+                    contacto.setNivel_estudio(res.getString(8));
                     contacto.setDireccion(res.getString(9));
                     contacto.setCiudad(res.getString(10));
+                    contacto.setDpto(res.getString(11));
                     contacto.setCelular(res.getString(12));
+                     contacto.setFijo(res.getString(13));
                     contacto.setEmail(res.getString(14));
                     list.add(contacto);
                 }
@@ -121,9 +126,14 @@ public class ContactoDAO implements IContactoDAO {
                     contacto.setNombres(res.getString(1));
                     contacto.setApellidos(res.getString(2));
                     contacto.setCc(res.getString(3));
+                    contacto.setCargo(res.getString(4));
+                    contacto.setAnio_cargo(res.getInt(5));
+                    contacto.setNivel_estudio(res.getString(8));
                     contacto.setDireccion(res.getString(9));
                     contacto.setCiudad(res.getString(10));
+                    contacto.setDpto(res.getString(11));
                     contacto.setCelular(res.getString(12));
+                    contacto.setFijo(res.getString(13));
                     contacto.setEmail(res.getString(14));
                     list.add(contacto);
                 }
