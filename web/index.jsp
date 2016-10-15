@@ -19,9 +19,29 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <script type="text/javascript" src="materialize/js/jquery-3.1.0.js"></script>
         <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+        <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
 
     </head>
 
+    <script language="javascript">
+
+        $(document).ready(function () {
+
+            $('select').material_select();
+
+            $(".button-collapse").sideNav();
+
+            $(document).on('change', function (e) {
+                $('select').material_select();
+            });
+            $('select').on('contentChanged', function () {
+                // re-initialize (update)
+                $(this).material_select();
+            });
+
+        });
+    </script>
     <body background="images/main-bg.png">
         <br></br>
         <br></br>
@@ -31,30 +51,45 @@ and open the template in the editor.
                 <br></br>
                 <div class="container">
                     <div class="row">
-                        <form class="col s12">
+                        <form class="col s12" method="post" action="javascript:validarUsuario()" name="login" id="login">
                             <div class="row">
                                 <div class="input-field col s12 ">
                                     <img src="images/logoMinisterio.png"/>
                                 </div>
+
                                 <div class="input-field col s12 ">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input placeholder="Usuario" id="usuario" type="text" class="validate white-text">
+                                    <input placeholder="Usuario" id="usuario" type="text" class="validate ">
                                     <label for="usuario">Usuario</label>
 
                                 </div>
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">vpn_key</i>
-                                    <input placeholder="Contraseña" id="contraseña" type="password" class="validate white-text">
+                                    <input placeholder="Contraseña" id="contraseña" type="password" class="validate ">
                                     <label for="contraseña">Contraseña</label>
 
                                 </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+
+                                        <i class="material-icons prefix">recent_actors</i>
+                                        <select id="tipo_usuario">
+                                            <option value="" disabled selected>--Seleccione una opción--</option>
+                                            <option value="administrador">Administrador</option>
+                                            <option value="empresa">Empresa</option>
+                                        </select>
+                                        <label for="tipo_usuario">Tipo usuario</label>
+                                    </div>
+                                </div>
                                 <div class="input-field col s12 ">
-                                    <a class="btn" type="submit" name="" href="inicio/principal.jsp">Iniciar sesion
-                                        <i class="mdi-content-send center"></i></a>
+                                    <button type="submit" class="btn  btn-success" 
+                                            name="ingresar" id="ingresar" value="Ingresar" />Ingresar</button>
+
 
                                 </div>
                             </div>
                         </form>
+                        <label id="divError"></label>
                     </div>
                 </div>
                 <br></br>
