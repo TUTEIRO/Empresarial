@@ -11,21 +11,21 @@
 <%@page import="facade.Fachada"%>
 
 <%
-        String tipo = request.getParameter("tipo");
-        String dato = request.getParameter("dato");
-        Fachada fachada = new Fachada();
-        ArrayList<ContactoDTO> dto = fachada.consultarContacto(tipo, dato);
-        for(ContactoDTO c: dto){
+    String tipo = request.getParameter("tipo");
+    String dato = request.getParameter("dato");
+    Fachada fachada = new Fachada();
+    ArrayList<ContactoDTO> dto = fachada.consultarContacto(tipo, dato);
+    for (ContactoDTO c : dto) {
 %>
 <section id="contacto" class="contacto">
     <div class="card-panel  white" >
         <h4><span class="green-text" style="font-weight: bold;"> ACTUALIZAR CONTACTO</span></h4>
-      
+
         <div class="row">
             <div class="col s12 ">
                 <div class="row">
                     <form class="col s12" name="actualizarFormContacto" id="registrarFormContacto" action="javascript:actualizarContacto()" method="post">
-                         <div class="row">
+                        <div class="row">
                             <div class="input-field col s12">
                                 <input  id="num_ced" type="text" class="validate" value="<%=c.getCc()%>" readonly="true">
                                 <label for="num_ced">Numero de cedula</label>
@@ -37,12 +37,12 @@
                                 <label for="first_name">Nombres</label>
                             </div>
                             <div class="input-field col s6">
-                                <input required id="last_name" type="text" class="validate" value="<%=c.getApellidos()%>">
+                                <input required id="last_name" type="text" class="validate" value="<%=c.getApellidos()%>" readonly="true">
                                 <label for="last_name">Apellidos</label>
                             </div>
                         </div>
 
-                   
+
                         <div class="row">
                             <div class="input-field col s10">
                                 <input required id="cargo" type="text" class="validate" value="<%=c.getCargo()%>">
@@ -53,7 +53,7 @@
                                 <label for="anos_cargo">Años en cargo</label>
                             </div>
                         </div>
-                         <div class="row">
+                        <div class="row">
                             <div class="input-field col s12">
                                 <select id="niv_estud">
                                     <option value="" disabled selected><%=c.getNivel_estudio()%></option>
@@ -67,13 +67,13 @@
                                 <label for="niv_estud">Nivel de estudio</label>
                             </div>
                         </div>
-                                    
-                                    <div class="row">
+
+                        <div class="row">
 
                             <div class="input-field col s6">
                                 <select id="departamento" name="departamento" onchange="javascript:cargarMunicipiosAjax(this)" >
                                     <option value="" disabled selected><%=c.getDpto()%></option>
-                                    <% 
+                                    <%
                                         ArrayList<String> lista = fachada.cargarDptos();
                                         for (String d : lista) {
                                     %>
@@ -122,7 +122,7 @@
                                 <label for="email">E-Mail</label>
                             </div>
                         </div>
-                              
+
                         <br></br>
 
 
@@ -130,6 +130,6 @@
 
                         <script type="text/javascript" src="js/cargarFormulario.js"></script>
                         <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
-<%
-}                           
-%>
+                        <%
+                            }
+                        %>
