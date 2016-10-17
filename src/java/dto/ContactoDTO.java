@@ -39,6 +39,33 @@ public class ContactoDTO {
         this.correo_masivo = 0;
     }
 
+    public ContactoDTO(String nombres, String apellidos, String cc, String cargo, String nivel_estudio, String direccion, String ciudad, String dpto, String celular, String fijo, String email, int anio_cargo) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.cc = cc;
+        this.cargo = cargo;
+        this.nivel_estudio = nivel_estudio;
+        this.direccion = direccion;
+        this.ciudad = ciudad;
+        this.dpto = dpto;
+        this.celular = celular;
+        this.fijo = fijo;
+        this.email = email;
+        this.anio_cargo = anio_cargo;
+    }
+
+    public ContactoDTO(String nombres, String apellidos, String cc, String direccion, String ciudad, String celular, String email) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.cc = cc;
+        this.direccion = direccion;
+        this.ciudad = ciudad;
+        this.celular = celular;
+        this.email = email;
+    }
+    
+    
+
     public String getNombres() {
         return nombres;
     }

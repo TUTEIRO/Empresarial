@@ -27,7 +27,7 @@
         <div class="input-field col s4">
             <p>
                 <input name="group6" type="radio" id="nombre_contacto" value="nombre"/>
-                <label for="nombre_contacto">Nombre de contato</label>
+                <label for="nombre_contacto">Nombre de contacto</label>
             </p> 
         </div>
         <div class="input-field col s4">

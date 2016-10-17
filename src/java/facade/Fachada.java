@@ -78,8 +78,9 @@ public class Fachada {
         return false;
     }
     
-    public boolean editarContacto(){
-        return false;
+    public boolean editarContacto(String cedula, String nombres, String apellido, String cargo, int anio_cargo, String nivel_estudio, String dpto, String ciudad, String direccion, String fijo, String celular, String email) throws Exception{
+        ControlContacto control = new ControlContacto();
+        return control.actualizarContacto(cedula, nombres, apellido, cargo, anio_cargo, nivel_estudio, dpto, ciudad, direccion, fijo, celular, email);
     }
     
     public boolean editarEmpresa(){

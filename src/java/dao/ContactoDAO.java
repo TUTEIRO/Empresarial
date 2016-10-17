@@ -96,30 +96,16 @@ public class ContactoDAO implements IContactoDAO {
         ContactoDTO contacto = null;
         try {
             if (tipo.equals("nombre")) {
-                stmt = conn.prepareStatement("SELECT * \n"
-                        + "FROM contacto\n"
-                        + "WHERE cto_nombres =  \""+ dato + "\"");
+                stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_nombres='"+ dato+"'");
                 ResultSet res = stmt.executeQuery();
                 while (res.next()) {
-                    contacto = new ContactoDTO();
-                    contacto.setNombres(res.getString(1));
-                    contacto.setApellidos(res.getString(2));
-                    contacto.setCc(res.getString(3));
-                    contacto.setCargo(res.getString(4));
-                    contacto.setAnio_cargo(res.getInt(5));
-                    contacto.setNivel_estudio(res.getString(8));
-                    contacto.setDireccion(res.getString(9));
-                    contacto.setCiudad(res.getString(10));
-                    contacto.setDpto(res.getString(11));
-                    contacto.setCelular(res.getString(12));
-                     contacto.setFijo(res.getString(13));
-                    contacto.setEmail(res.getString(14));
+                    contacto = new ContactoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(9), res.getString(10), res.getString(12), res.getString(14));
                     list.add(contacto);
                 }
                 stmt.close();
                 res.close();
             } else if (tipo.equals("cc")) {
-                stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_cc=" + dato + ";");
+                stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_cc="+ dato);
                 ResultSet res = stmt.executeQuery();
                 while (res.next()) {
                     contacto = new ContactoDTO();
@@ -148,6 +134,38 @@ public class ContactoDAO implements IContactoDAO {
             }
         }
         return list;
+    }
+
+    @Override
+    public boolean actualizarContacto(ContactoDTO dto) throws Exception {
+        conn = Conexion.conectar();
+        PreparedStatement stmt = null;
+        boolean exito = false;
+        try {
+            stmt = conn.prepareStatement("UPDATE contacto SET cto_nombres=?,cto_apellidos=?,cto_cargo=?,cto_anios_cargo=?,cto_nivel_estudio=?,cto_departamento=?,cto_ciudad=?,cto_direccion=?,cto_fijo=?,cto_celular=?,cto_email=? WHERE cto_cc='"+dto.getCc()+"'");
+            stmt.setString(1, dto.getNombres());
+            stmt.setString(2, dto.getApellidos());
+            stmt.setString(3, dto.getCargo());
+            stmt.setInt(4, dto.getAnio_cargo());
+            stmt.setString(5, dto.getNivel_estudio());
+            stmt.setString(6, dto.getDpto());
+            stmt.setString(7, dto.getCiudad());
+            stmt.setString(8, dto.getDireccion());
+            stmt.setString(9, dto.getFijo());
+            stmt.setString(10, dto.getCelular());
+            stmt.setString(11, dto.getEmail());
+            int total = stmt.executeUpdate();
+            if (total > 0) {
+                exito = true;
+            }
+        } catch (SQLException ex) {
+            throw ex;
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return exito;
     }
 
 }

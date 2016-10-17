@@ -105,7 +105,6 @@ function registrarContacto() {
     var antiguedad_cargo = document.getElementById("anos_cargo");
     var condicion_desplazado = document.getElementById("desplazado");
     var despla = "";
-    alert(antiguedad_cargo.value);
     if (condicion_desplazado.type === 'checkbox' && condicion_desplazado.checked === true) {
         despla = "Si";
     } else {
@@ -136,7 +135,7 @@ function registrarContacto() {
                     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
                     $('.modal-trigger').leanModal();
                 });
-                 $('#modal1').openModal();
+                $('#modal1').openModal();
                 document.getElementById(div).innerHTML = ajax.responseText;
                 document.getElementById('first_name').value = '';
                 document.getElementById('last_name').value = '';
@@ -169,6 +168,5 @@ function registrarContacto() {
             document.getElementById(div).value = "Cargando";
         }
     }
-
-
 }
+

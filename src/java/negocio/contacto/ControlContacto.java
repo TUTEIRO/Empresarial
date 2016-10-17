@@ -27,4 +27,9 @@ public class ControlContacto {
         return dao.consultarContacto(tipo, dato);
     }
     
+    public boolean actualizarContacto(String cedula, String nombres, String apellido, String cargo, int anio_cargo, String nivel_estudio, String dpto, String ciudad, String direccion, String fijo, String celular, String email) throws Exception{
+        ContactoDAO actualizar = new ContactoDAO();
+        ContactoDTO dto = new ContactoDTO(nombres, apellido, fijo, cargo, nivel_estudio, direccion, ciudad, dpto, celular, fijo, email, anio_cargo);
+        return actualizar.actualizarContacto(dto);
+    }
 }

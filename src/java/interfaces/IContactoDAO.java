@@ -15,4 +15,5 @@ public interface IContactoDAO {
     
     public boolean registrarContacto (ContactoDTO dto) throws Exception;
     public ArrayList<ContactoDTO> consultarContacto (String tipo, String dato) throws Exception;
+    public boolean actualizarContacto(ContactoDTO dto) throws Exception;
 }

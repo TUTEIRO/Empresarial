@@ -6,7 +6,6 @@
 
 <%@page import="dto.ContactoDTO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<script type="text/javascript" src="js/cargarFormulario.js"></script>
 <%@page import="java.util.ArrayList"%>
 <%@page import="facade.Fachada"%>
 
@@ -24,7 +23,7 @@
         <div class="row">
             <div class="col s12 ">
                 <div class="row">
-                    <form class="col s12" name="actualizarFormContacto" id="registrarFormContacto" action="javascript:actualizarContacto()" method="post">
+                    <form class="col s12" name="actualizarFormContacto" id="actualizarFormContacto" action="javascript:modificarContacto()" method="post">
                         <div class="row">
                             <div class="input-field col s12">
                                 <input  id="num_ced" type="text" class="validate" value="<%=c.getCc()%>" readonly="true">
@@ -37,7 +36,7 @@
                                 <label for="first_name">Nombres</label>
                             </div>
                             <div class="input-field col s6">
-                                <input required id="last_name" type="text" class="validate" value="<%=c.getApellidos()%>" readonly="true">
+                                <input required id="last_name" type="text" class="validate" value="<%=c.getApellidos()%>">
                                 <label for="last_name">Apellidos</label>
                             </div>
                         </div>
@@ -125,10 +124,10 @@
 
                         <br></br>
 
+                        
 
 
-
-                        <script type="text/javascript" src="js/cargarFormulario.js"></script>
+                        <script type="text/javascript" src="js/modificar.js"></script>
                         <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
                         <%
                             }
