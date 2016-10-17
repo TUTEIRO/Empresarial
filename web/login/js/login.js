@@ -5,7 +5,14 @@
  */
 
 
-function nuevoAjax() {
+var pos = 1;
+var posD = 1;
+
+
+/* Crea el objeto AJAX. Esta funcion es generica para cualquier utilidad de este tipo, por
+ lo que se puede copiar tal como esta aqui */
+function nuevoAjax()
+{
     var xmlhttp = false;
     try {
         // Creacion del objeto AJAX para navegadores no IE Ejemplo:Mozilla, Safari 
@@ -36,7 +43,7 @@ function validarUsuario() {
     ajax = nuevoAjax();
     alert("aqui 5");
     parametros = "usuario=" + usuario + "&contraseña=" + contraseña + "&aleatorio=" + aleatorio + "&tipo=" + tipo_usuario;
-    url = "procesarSesion.jsp";
+    url = "procesar/procesarSesion.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     ajax.send(parametros);
