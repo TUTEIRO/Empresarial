@@ -51,7 +51,7 @@ and open the template in the editor.
                 <br></br>
                 <div class="container">
                     <div class="row">
-                        <form class="col s12" method="post" name="login" id="login">
+                        <form class="col s12" method="post" action="procesarSesion.jsp" name="login" id="login">
                             <div class="row">
                                 <div class="input-field col s12 ">
                                     <img src="../images/logoMinisterio.png"/>
