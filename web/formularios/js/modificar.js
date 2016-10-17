@@ -23,7 +23,6 @@ function nuevoAjax() {
 }
 
 function modificarContacto() {
-        alert("entro");
         var div = "actualizar";
         var nombre = document.getElementById("first_name");
         var apellidos = document.getElementById("last_name");

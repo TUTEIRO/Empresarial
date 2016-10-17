@@ -10,10 +10,9 @@
 <%@page import="facade.Fachada"%>
 
 <%
-    String tipo = request.getParameter("tipo");
-    String dato = request.getParameter("dato");
+    String cc = request.getParameter("cc");
     Fachada fachada = new Fachada();
-    ArrayList<ContactoDTO> dto = fachada.consultarContacto(tipo, dato);
+    ArrayList<ContactoDTO> dto = fachada.consultarContacto("cc", cc);
     for (ContactoDTO c : dto) {
 %>
 <section id="contacto" class="contacto">

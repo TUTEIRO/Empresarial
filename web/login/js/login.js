@@ -61,7 +61,6 @@ function validarUsuario() {
                         login.action = "../inicio/principal.jsp";
                         login.submit();
                     } else if (rta.indexOf("2") >= 0) {
-                        alert("empresa");
                         login.action = "";
                         login.submit();
                     }
@@ -75,7 +74,6 @@ function validarUsuario() {
                         login.action = "../inicio/principal.jsp";
                         login.submit();
                     } else if (rta.indexOf("2") >= 0) {
-                        alert("empresa");
                         login.action = "";
                         login.submit();
                     } else if(rta.indexOf("3") >= 0){

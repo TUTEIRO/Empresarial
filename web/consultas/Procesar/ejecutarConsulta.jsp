@@ -41,7 +41,7 @@
         <th data-field="ciudad"><%= c.getCiudad()%></th>
         <th data-field="telefono"><%= c.getCelular()%></th>
         <th data-field="email"><%= c.getEmail()%></th>
-        <th data-field="editar"><a class="btn waves-effect waves-light green" href="../formularios/ModificarCon.jsp?tipo=<%=tipo%>&dato=<%=dato%>">Editar</a></th>
+        <th data-field="editar"><a class="btn waves-effect waves-light green" href="../formularios/ModificarCon.jsp?cc=<%=c.getCc()%>">Editar</a></th>
     </tr>
     </table>
     <%}}else{%>

@@ -137,12 +137,12 @@ public class ContactoDAO implements IContactoDAO {
     }
 
     @Override
-    public boolean actualizarContacto(ContactoDTO dto) throws Exception {
+    public boolean actualizarContacto(String cc, ContactoDTO dto) throws Exception {
         conn = Conexion.conectar();
         PreparedStatement stmt = null;
         boolean exito = false;
         try {
-            stmt = conn.prepareStatement("UPDATE contacto SET cto_nombres=?,cto_apellidos=?,cto_cargo=?,cto_anios_cargo=?,cto_nivel_estudio=?,cto_departamento=?,cto_ciudad=?,cto_direccion=?,cto_fijo=?,cto_celular=?,cto_email=? WHERE cto_cc='"+dto.getCc()+"'");
+            stmt = conn.prepareStatement("UPDATE contacto SET cto_nombres=?,cto_apellidos=?,cto_cargo=?,cto_anios_cargo=?,cto_nivel_estudio=?,cto_departamento=?,cto_ciudad=?,cto_direccion=?,cto_fijo=?,cto_celular=?,cto_email=? WHERE cto_cc='"+cc+"'");
             stmt.setString(1, dto.getNombres());
             stmt.setString(2, dto.getApellidos());
             stmt.setString(3, dto.getCargo());
