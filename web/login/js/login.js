@@ -68,7 +68,7 @@ function validarUsuario() {
                 }
             } else {
                 var rta = ajax.responseText;
-                if (rta.indexOf("1") < 0 && rta.indexOf("2") < 0) {
+                if (rta.indexOf("1") < 0 && rta.indexOf("2") < 0 && rta.indexOf("3") < 0) {
                     document.getElementById("divError").innerHTML = ajax.responseText;
                 } else {
                     if (rta.indexOf("1") >= 0) {
@@ -76,6 +76,10 @@ function validarUsuario() {
                         login.submit();
                     } else if (rta.indexOf("2") >= 0) {
                         alert("empresa");
+                        login.action = "";
+                        login.submit();
+                    } else if(rta.indexOf("3") >= 0){
+                        alert("Error de autenticación");
                         login.action = "";
                         login.submit();
                     }

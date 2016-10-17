@@ -20,5 +20,6 @@ public interface IUtilidadesDAO {
     public ArrayList<String> cargarTipoAlojamientoTuristico() throws Exception;
     public ArrayList<String> cargarTipoTurismo() throws Exception;
     public ArrayList<String> cargarEtnicidad() throws Exception;
+    public boolean login(String type, String user, String pw) throws Exception;
     
 }

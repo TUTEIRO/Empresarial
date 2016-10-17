@@ -123,4 +123,9 @@ public class Fachada {
         ControlUtilidades utilidades = new ControlUtilidades();
         return utilidades.cargarEtnicidad();
     }
+    
+    public boolean login(String type, String user, String pw) throws Exception{
+        ControlUtilidades utilidades = new ControlUtilidades();
+        return utilidades.login(type, user, pw);
+    }
 }

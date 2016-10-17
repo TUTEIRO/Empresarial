@@ -179,7 +179,7 @@ public class UtilidadesDAO implements IUtilidadesDAO {
         try {
             stmt = conn.prepareStatement("SELECT * FROM `tur_tipo`");
             ResultSet rs = stmt.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 agencias.add(rs.getString(1));
             }
         } catch (Exception e) {
@@ -200,7 +200,7 @@ public class UtilidadesDAO implements IUtilidadesDAO {
         try {
             stmt = conn.prepareStatement("SELECT * from `tur_tipo_alojamiento`");
             ResultSet rs = stmt.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 agencias.add(rs.getString(1));
             }
         } catch (Exception e) {
@@ -221,7 +221,7 @@ public class UtilidadesDAO implements IUtilidadesDAO {
         try {
             stmt = conn.prepareStatement("SELECT * from `tur_tipo_turismo`");
             ResultSet rs = stmt.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 agencias.add(rs.getString(1));
             }
         } catch (Exception e) {
@@ -242,7 +242,7 @@ public class UtilidadesDAO implements IUtilidadesDAO {
         try {
             stmt = conn.prepareStatement("SELECT * from `contacto_etnicidad`");
             ResultSet rs = stmt.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 etnias.add(rs.getString(2));
             }
         } catch (Exception e) {
@@ -253,5 +253,30 @@ public class UtilidadesDAO implements IUtilidadesDAO {
             }
         }
         return etnias;
+    }
+
+    @Override
+    public boolean login(String type, String user, String pw) throws Exception {
+        boolean exito = false;
+        conn = Conexion.conectar();
+        PreparedStatement stmt = null;
+        try {
+            if(type.equalsIgnoreCase("administrador")){
+                stmt = conn.prepareStatement("SELECT user_cc, user_pw from `sistema_user` WHERE user_cc = '" + user + "'"
+                        + "AND user_pw = '" + pw + "'");
+                ResultSet rs = stmt.executeQuery();
+                while(rs.next()){
+                    if(rs.getString(1).equals(user) && rs.getString(2).equals(pw))
+                        exito = true;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return exito;
     }
 }

@@ -48,4 +48,9 @@ public class ControlUtilidades {
         UtilidadesDAO dao = new UtilidadesDAO();
         return dao.cargarEtnicidad();
     }
+    
+    public boolean login(String type, String user, String pw) throws Exception{
+        UtilidadesDAO dao = new UtilidadesDAO();
+        return dao.login(type, user, pw);
+    }
 }
