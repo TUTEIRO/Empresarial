@@ -31,18 +31,18 @@ function nuevoAjax()
 
 
 function validarUsuario() {
-    alert("aqui");
+
     var usuario = document.getElementById("usuario");
-    alert("aqui 2");
-    var contraseña = document.getElementById("contraseña");
-    alert("aqui 3");
+
+    var contrasena = document.getElementById("contrasena");
+
     var tipo_usuario = document.getElementById("tipo_usuario");
-    alert("aqui 4");
-    validarUsuarioAjax(usuario, contraseña, tipo_usuario);
+
+
     aleatorio = Math.random();
     ajax = nuevoAjax();
-    alert("aqui 5");
-    parametros = "usuario=" + usuario + "&contraseña=" + contraseña + "&aleatorio=" + aleatorio + "&tipo=" + tipo_usuario;
+    
+    parametros = "usuario=" + usuario.value + "&contrasena=" + contrasena.value + "&aleatorio=" + aleatorio + "&tipo=" + tipo_usuario.value;
     url = "procesar/procesarSesion.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');

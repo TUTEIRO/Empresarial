@@ -19,7 +19,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <script type="text/javascript" src="../materialize/js/jquery-3.1.0.js"></script>
         <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
-       
+
         <script type="text/javascript" src="js/login.js"></script>
 
     </head>
@@ -65,22 +65,22 @@ and open the template in the editor.
                                 </div>
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">vpn_key</i>
-                                    <input placeholder="Contraseña" id="contraseña" type="password" class="validate ">
-                                    <label for="contraseña">Contraseña</label>
+                                    <input placeholder="Contraseña" id="contrasena" type="password" class="validate ">
+                                    <label for="contrasena">Contraseña</label>
 
                                 </div>
-                                <div class="row">
-                                    <div class="input-field col s12">
 
-                                        <i class="material-icons prefix">recent_actors</i>
-                                        <select id="tipo_usuario">
-                                            <option value="" disabled selected>--Seleccione una opción--</option>
-                                            <option value="administrador">Administrador</option>
-                                            <option value="empresa">Empresa</option>
-                                        </select>
-                                        <label for="tipo_usuario">Tipo usuario</label>
-                                    </div>
+                                <div class="input-field col s12">
+
+                                    <i class="material-icons prefix">recent_actors</i>
+                                    <select id="tipo_usuario">
+                                        <option value="" disabled selected>--Seleccione una opción--</option>
+                                        <option value="administrador">Administrador</option>
+                                        <option value="empresa">Empresa</option>
+                                    </select>
+                                    <label for="tipo_usuario">Tipo usuario</label>
                                 </div>
+
                                 <div class="input-field col s12 ">
                                     <button type="button" class="btn  btn-success" onclick="validarUsuario();"
                                             name="ingresar" id="ingresar" value="Ingresar" />Ingresar</button>
@@ -99,6 +99,6 @@ and open the template in the editor.
 
 
 
-    
+
 </html>
 

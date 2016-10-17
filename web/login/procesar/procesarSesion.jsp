@@ -6,24 +6,27 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
+    System.out.println("hola");
     String user = request.getParameter("usuario");
-    String password = request.getParameter("contraseña");
+    System.out.println("hola2");
+    String password = request.getParameter("contrasena");
+    System.out.println("hola3");
     String tipo = request.getParameter("tipo");
+    System.out.println("hola4");
     String mensaje = "";
-    if (true) {
-        if (tipo.equals("administrador")) {
-            System.out.println("Entro");
-            mensaje = "1";
-        } else if(tipo.equals("empresa")) {
-            System.out.println("yo igual");
-            mensaje= "2";
-        }
-        session.setAttribute("usuario", tipo);;
-        session.setAttribute("estadoSesion", true);
 
-        session.setMaxInactiveInterval(1 * 60 * 60);
-    } else {
-        mensaje = "Datos incorrectos";
+    System.out.println(tipo);
+    if (tipo.equals("administrador")) {
+        System.out.println("Entro");
+        mensaje = "1";
+    } else if (tipo.equals("empresa")) {
+        System.out.println("yo igual");
+        mensaje = "2";
     }
+    session.setAttribute("usuario", tipo);;
+    session.setAttribute("estadoSesion", true);
+
+    session.setMaxInactiveInterval(1 * 60 * 60);
+
 %>
 <%= mensaje%>
