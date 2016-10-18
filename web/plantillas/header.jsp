@@ -59,7 +59,13 @@
         </script> 
     </head>
 
-
+    <%
+        
+        if (session.getAttribute("usuario") == null) {
+            System.out.println("usuario");
+            response.sendRedirect("login/index.jsp");
+        } 
+    %>
     <body background="../images/main-bg.png">
 
 
@@ -69,7 +75,7 @@
                     <img src="../images/banner.png" alt="" style="max-width:100%;" alt='' >
                 </a>
                 <a href="../index.jsp">
-                   <img src="../images/logout.png" title='Cerrar sesion' style='position:absolute; top:35px; right:230px; width: 40px' title='HOJAS' alt=''/>
+                    <img src="../images/logout.png" title='Cerrar sesion' style='position:absolute; top:35px; right:230px; width: 40px' title='HOJAS' alt=''/>
                 </a>
             </div>
 

@@ -96,7 +96,7 @@ public class ContactoDAO implements IContactoDAO {
         ContactoDTO contacto = null;
         try {
             if (tipo.equals("nombre")) {
-                stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_nombres='"+ dato+"'");
+                stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_nombres LIKE '%"+ dato+"%'");
                 ResultSet res = stmt.executeQuery();
                 while (res.next()) {
                     contacto = new ContactoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(9), res.getString(10), res.getString(12), res.getString(14));
