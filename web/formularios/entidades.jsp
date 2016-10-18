@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%if (session.getAttribute("usuario") == null) {
+        System.out.println("usuario");
+
+        response.sendRedirect("../index.jsp");
+    }%>
 <jsp:include page="../plantillas/header.jsp"/>
 
 <jsp:include page="formEntidades.jsp"/>

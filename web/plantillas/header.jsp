@@ -60,11 +60,13 @@
     </head>
 
     <%
-        
+
         if (session.getAttribute("usuario") == null) {
             System.out.println("usuario");
-            response.sendRedirect("login/index.jsp");
-        } 
+            
+           %> <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=../index.jsp"> <%
+            response.sendRedirect("../index.jsp");
+        }
     %>
     <body background="../images/main-bg.png">
 
@@ -113,5 +115,5 @@
                 </div>
             </nav>
 
-
+           
 

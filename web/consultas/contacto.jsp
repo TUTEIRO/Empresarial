@@ -1,4 +1,9 @@
 <jsp:include page="../plantillas/header.jsp"/>
+<%if (session.getAttribute("usuario") == null) {
+        System.out.println("usuario");
+
+        response.sendRedirect("../index.jsp");
+    }%>
 <script type="text/javascript" src="js/consultas.js"></script>
 <%@page import="java.util.ArrayList"%>
 <%@page import="facade.Fachada"%>

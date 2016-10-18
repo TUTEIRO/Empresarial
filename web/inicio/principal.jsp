@@ -5,7 +5,11 @@
 --%>
 
 <jsp:include page="../plantillas/header.jsp"/>
+<%if (session.getAttribute("usuario") == null) {
+        System.out.println("usuario");
 
+        response.sendRedirect("../index.jsp");
+    }%>
 <div class="row">
 
     <div class="col s5">

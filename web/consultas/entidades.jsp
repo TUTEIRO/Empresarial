@@ -6,7 +6,11 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="../plantillas/header.jsp"/>
+<%if (session.getAttribute("usuario") == null) {
+        System.out.println("usuario");
 
+        response.sendRedirect("../index.jsp");
+    }%>
 <br></br>
 <div class="card-panel  white" >
 
