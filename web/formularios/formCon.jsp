@@ -4,7 +4,7 @@
     Author     : tuto2
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<script type="text/javascript" src="js/cargarFormulario.js"></script>
+
 <%@page import="java.util.ArrayList"%>
 <%@page import="facade.Fachada"%>
 
@@ -228,5 +228,5 @@
 
 
 
-                        <script type="text/javascript" src="js/cargarFormulario.js"></script>
+                        
                         <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
