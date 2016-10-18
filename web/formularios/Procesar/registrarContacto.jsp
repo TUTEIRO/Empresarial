@@ -26,6 +26,7 @@
         String discapacidad = request.getParameter("discapacidad");      
         String desplazado = request.getParameter("desplazado");
         int etnia = Integer.parseInt(request.getParameter("etnia"));
+        System.out.println(etnia);
         String antiguedad = request.getParameter("antiguedad");
         int ant = Integer.parseInt(antiguedad);
         Fachada fachada = new Fachada();

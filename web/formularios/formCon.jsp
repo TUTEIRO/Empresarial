@@ -35,7 +35,7 @@
                             </div>
                             <div class="input-field col s3">
                                 <p>
-                                    <input id="masculino" name="group1" type="radio" value="masculino" onchange="" >
+                                    <input id="masculino" name="group1" type="radio" value="masculino" onchange=""  checked="checked">
                                     <label for="masculino">Masculino</label>
                                 </p> 
                             </div>
@@ -192,7 +192,8 @@
                                 </p>
                             </div>
                        
-                        <input hidden="true" name="etnia" id="etnia" type="text" value="es" class="validate">
+                        <input hidden="true" name="etnia" id="etnia" type="number" value="0" class="validate">
+                        
                          </div>
                         <div class="row">
                             <div class="input-field col s3">

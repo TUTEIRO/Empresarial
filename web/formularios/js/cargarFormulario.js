@@ -101,6 +101,7 @@ function registrarContacto() {
     var email = document.getElementById("email");
     var genero = document.getElementById("genero");
     var etnia = document.getElementById("etnia");
+    
     var discapacidad = document.getElementById("discapacidad");
     var antiguedad_cargo = document.getElementById("anos_cargo");
     var condicion_desplazado = document.getElementById("desplazado");
