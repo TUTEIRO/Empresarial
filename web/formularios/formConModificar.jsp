@@ -9,13 +9,15 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="facade.Fachada"%>
 
+
 <%
     String cc = request.getParameter("cc");
     Fachada fachada = new Fachada();
     ArrayList<ContactoDTO> dto = fachada.consultarContacto("cc", cc);
     for (ContactoDTO c : dto) {
 %>
-<section id="contacto" class="contacto">
+
+<section id="contacto" class="contacto" >
     <div class="card-panel  white" >
         <h4><span class="green-text" style="font-weight: bold;"> ACTUALIZAR CONTACTO</span></h4>
 
@@ -35,7 +37,7 @@
                                 <label for="first_name">Nombres</label>
                             </div>
                             <div class="input-field col s6">
-                                <input required id="last_name" type="text" class="validate" value="<%=c.getApellidos()%>">
+                                <input required id="last_name" type="text" class="validate" value="<%=c.getApellidos()%>"readonly="true">
                                 <label for="last_name">Apellidos</label>
                             </div>
                         </div>
@@ -67,9 +69,15 @@
                         </div>
 
                         <div class="row">
+                            <div class="input-field col s12">
+                                <input required id="direccion" type="text" class="validate" value="<%=c.getDireccion()%>">
+                                <label for="direccion">Direccion</label> 
+                            </div>
+                        </div>
+                        <div class="row">
 
                             <div class="input-field col s6">
-                                <select id="departamento" name="departamento" onchange="javascript:cargarMunicipiosAjax(this)" >
+                                <select id="departamento" name="departamento" onchange="javascript:cargarMunicipiosModi(this)" >
                                     <option value="" disabled selected><%=c.getDpto()%></option>
                                     <%
                                         ArrayList<String> lista = fachada.cargarDptos();
@@ -82,7 +90,7 @@
                                 <label>Departamento</label>
 
                             </div>
-                            <div id="municipio">
+                            <div id="municipio" >
                                 <div class="input-field col s6">
 
                                     <select id="mun" name="mun">
@@ -95,12 +103,7 @@
 
                         </div>
 
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input required id="direccion" type="text" class="validate" value="<%=c.getDireccion()%>">
-                                <label for="direccion">Direccion</label> 
-                            </div>
-                        </div>
+
 
 
                         <div class="row">
@@ -123,7 +126,7 @@
 
                         <br></br>
 
-                        
+
 
 
                         <script type="text/javascript" src="js/modificar.js"></script>
