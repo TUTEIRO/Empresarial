@@ -12,8 +12,8 @@ package dto;
 public class EmpresaDTO {
     
     private String nombre, nit, nombre_rep_legal, tipo_constitucion, fecha_constitucion, direccion, ciudad, telefono, celular, email, url_website, tipo_empresa, num_mercantil, date_renov_mercantil, codigo_CIIU, act_internacional, paises_trabajo, servicios, como_info;
-    private int constitucion_legal, emp_tc, emp_mc, emp_directos, emp_indirectos;
-    private boolean emp_reg_mercantil, internet_bsns;
+    private int constitucion_legal, emp_tc, emp_mc, emp_directos, emp_indirectos, emp_reg_mercantil;
+    private boolean internet_bsns;
     
     public EmpresaDTO() {
     }
