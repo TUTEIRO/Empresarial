@@ -14,7 +14,7 @@
 
     Fachada fachada = new Fachada();
     ArrayList<ContactoDTO> cto = fachada.consultarContacto(tipo, dato);
-    if(!cto.isEmpty()){
+    if (!cto.isEmpty()) {
 %>
 
 <table class="striped highlight" bgcolor="white">
@@ -43,9 +43,13 @@
         <th data-field="email"><%= c.getEmail()%></th>
         <th data-field="editar"><a class="btn waves-effect waves-light green" href="../formularios/ModificarCon.jsp?cc=<%=c.getCc()%>">Editar</a></th>
     </tr>
-    </table>
-    <%}}else{%>
-    <table class="striped highlight" bgcolor="white">
+
+<% }%>
+</table>
+<%
+
+    } else {%>
+<table class="striped highlight" bgcolor="white">
     <thead>
         <tr>
             <th data-field="nombre">Nombre</th>
@@ -58,7 +62,7 @@
             <th data-field="editar">Editar</th>
         </tr>
     </thead>
-     <tr>
+    <tr>
         <th></th>
         <th ></th>
         <th ></th>
@@ -68,5 +72,5 @@
         <th ></th>
         <th ></th>
     </tr>
-    </table>
-    <%}%>
+</table>
+<%}%>
