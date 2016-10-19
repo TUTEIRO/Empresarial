@@ -11,8 +11,8 @@ package dto;
  */
 public class EmpresaDTO {
     
-    private String nombre, nit, nombre_rep_legal, tipo_constitucion, fecha_constitucion, direccion, ciudad, telefono, celular, email, url_website, tipo_empresa, num_mercantil, date_renov_mercantil, codigo_CIIU, act_internacional, paises_trabajo, servicios, como_info;
-    private int constitucion_legal, emp_tc, emp_mc, emp_directos, emp_indirectos, emp_reg_mercantil;
+    private String nombre, nit, nombre_rep_legal, tipo_constitucion, fecha_constitucion, direccion, ciudad, telefono, celular, email, url_website, tipo_empresa, num_mercantil, date_renov_mercantil, codigo_CIIU, act_internacional, paises_trabajo, servicios, como_info, emp_reg_mercantil;
+    private int constitucion_legal, emp_tc, emp_mc, emp_directos, emp_indirectos;
     private boolean internet_bsns;
     
     public EmpresaDTO() {
@@ -23,7 +23,7 @@ public class EmpresaDTO {
             String celular, String email, String url_website, String tipo_empresa, 
             String num_mercantil, String date_renov_mercantil, String codigo_CIIU, String act_internacional, 
             String paises_trabajo, String servicios, String como_info, int constitucion_legal, int emp_tc, int emp_mc, 
-            int emp_directos, boolean emp_reg_mercantil, boolean internet_bsns) {
+            int emp_directos, String emp_reg_mercantil, boolean internet_bsns) {
         this.nombre = nombre;
         this.nit = nit;
         this.nombre_rep_legal = nombre_rep_legal;
@@ -51,6 +51,19 @@ public class EmpresaDTO {
         this.internet_bsns = internet_bsns;
     }
 
+    public EmpresaDTO(String nombre, String nit, String nombre_rep_legal, String tipo_constitucion, String direccion, String ciudad, String telefono, String email, String url_website) {
+        this.nombre = nombre;
+        this.nit = nit;
+        this.nombre_rep_legal = nombre_rep_legal;
+        this.tipo_constitucion = tipo_constitucion;
+        this.direccion = direccion;
+        this.ciudad = ciudad;
+        this.telefono = telefono;
+        this.email = email;
+        this.url_website = url_website;
+    }
+
+    
     
     public String getNombre() {
         return nombre;
@@ -244,11 +257,11 @@ public class EmpresaDTO {
         this.constitucion_legal = constitucion_legal;
     }
 
-    public boolean isEmp_reg_mercantil() {
+    public String getEmp_reg_mercantil() {
         return emp_reg_mercantil;
     }
 
-    public void setEmp_reg_mercantil(boolean emp_reg_mercantil) {
+    public void setEmp_reg_mercantil(String emp_reg_mercantil) {
         this.emp_reg_mercantil = emp_reg_mercantil;
     }
 
