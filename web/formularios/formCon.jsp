@@ -7,8 +7,10 @@
 
 <%@page import="java.util.ArrayList"%>
 <%@page import="facade.Fachada"%>
-
-
+<script type="text/javascript" src="js/cargarMunicipio.js"></script>
+<script language="javascript">
+    $('select').material_select();
+</script>
 <section id="contacto" class="contacto">
     <div class="card-panel  white" >
         <h4><span class="green-text" style="font-weight: bold;">CONTACTO</span></h4>
@@ -51,7 +53,7 @@
                                     <label for="lgtbi">LGTBI</label>
                                 </p> 
                             </div>
-                            <input hidden="true" name="genero" id="genero" type="text" value="es" class="validate">
+                            <input hidden="true" name="genero" id="genero" type="text" value="masculino" class="validate">
 
                         </div>
                         <div class="row">
@@ -229,4 +231,4 @@
 
 
                         
-                        <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+                        

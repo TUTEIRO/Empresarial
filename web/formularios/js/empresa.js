@@ -22,12 +22,12 @@ function nuevoAjax() {
     return xmlhttp;
 }
 
-function registrarEmpresa(){
-    
+function registrarEmpresa() {
+
 }
 
-function consultarEmpresa(){
-    
+function consultarEmpresa() {
+
 }
 
 function cargarEmpresaT() {
@@ -71,29 +71,10 @@ function cargarEmpresaT() {
     }
 }
 
-function cargarMunicipiosAjax(sel) {
 
-    var div = "municipio";
-    var resul = sel;
-    ajax = nuevoAjax();
-    parametros = "departamento=" + resul.value;
-    url = "Procesar/cargarMunicipio.jsp";
-    ajax.open("POST", url, true);
-    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    ajax.send(parametros);
-    ajax.onreadystatechange = function () {
-        if (ajax.readyState == 4) {
-            if (ajax.status == 200) {
-                var rta = ajax.responseText;
-                document.getElementById(div).innerHTML = rta;
-                $('#mun').material_select();
-            }
-        }
-    }
-}
 
 function registrarContacto() {
-    var div = "mostrarRegistro";
+    var div = "mostrarModal";
     var nombre = document.getElementById("first_name");
     var apellidos = document.getElementById("last_name");
     var cc = document.getElementById("num_ced");
@@ -110,6 +91,7 @@ function registrarContacto() {
     var genero = document.getElementById("genero");
     var etnia = document.getElementById("etnia");
     
+
     var discapacidad = document.getElementById("discapacidad");
     var antiguedad_cargo = document.getElementById("anos_cargo");
     var condicion_desplazado = document.getElementById("desplazado");
@@ -130,7 +112,7 @@ function registrarContacto() {
     parametros = "nombres=" + nombre.value + "&apellidos=" + apellidos.value + "&cc=" + cc.value + "&cargo=" + cargo.value + "&lugar_nto=" + lugar_nto.value +
             "&fecha_nto=" + fecha_nto.value + "&nivel_estudio=" + nivel_estudio.value + "&direccion=" + direccion.value + "&ciudad=" + ciudad.value + "&dpto=" + dpto.value +
             "&celular=" + celular.value + "&fijo=" + fijo.value + "&email=" + email.value + "&genero=" + genero.value + "&etnia=" + etnia.value + "&discapacidad=" + dis + "&antiguedad=" + antiguedad_cargo.value + "&desplazado=" + despla;
-    url = "Procesar/registrarContacto.jsp";
+    url = "Procesar/registrarContactoEmp.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     ajax.send(parametros);
@@ -140,11 +122,13 @@ function registrarContacto() {
         {
             if (ajax.status == 200)
             {
+                
                 $(document).ready(function () {
                     // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
                     $('.modal-trigger').leanModal();
                 });
-                $('#modal1').openModal();
+                $('#modal3').openModal();
+                
                 document.getElementById(div).innerHTML = ajax.responseText;
                 document.getElementById('first_name').value = '';
                 document.getElementById('last_name').value = '';
@@ -166,10 +150,15 @@ function registrarContacto() {
                 document.getElementById('desplazado').value = '';
                 document.getElementById('first_name').focus();
 
+                document.getElementById('empresa').style.display = 'block';       
+                document.getElementById('contacto').style.display = 'none';     
+                
+
             } else
             {
 
                 document.getElementById(div).innerHTML = ajax.responseText;
+
 
             }
         } else

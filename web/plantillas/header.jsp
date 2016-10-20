@@ -23,7 +23,11 @@
             $(document).ready(function () {
                 $('.datepicker').pickadate({
                     selectMonths: true, // Creates a dropdown to control month
-                    selectYears: 15, // Creates a dropdown of 15 years to control year
+                    selectYears: 99,
+                    
+                    max: true,
+                    closeOnSelect: true,
+                    
                     format: 'yyyy-mm-dd',
                     labelMonthNext: 'Mes siguiente',
                     labelMonthPrev: 'Mes anterior',
@@ -32,11 +36,12 @@
                     monthsFull: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
                     monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
                     weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
-                    weekdaysShort: ['Dom', 'Lun', 'Mts', 'Mie', 'Jue', 'Vie', 'Sab'],
-                    weekdaysLetter: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+                    weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
+                    weekdaysLetter: [ 'D', 'L', 'M', 'X', 'J', 'V', 'S' ],
                     today: 'Hoy',
                     clear: 'Limpiar',
-                    close: 'Cerrar'
+                    close: 'Cerrar',
+                    firstDay: true
                 });
 
                 $('select').material_select();
@@ -63,9 +68,8 @@
 
         if (session.getAttribute("usuario") == null) {
             System.out.println("usuario");
-            
-           %> <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=../index.jsp"> <%
-            response.sendRedirect("../index.jsp");
+
+    %> <META HTTP-EQUIV="REFRESH" CONTENT="1;URL=../index.jsp"> <%                   response.sendRedirect("../index.jsp");
         }
     %>
     <body background="../images/main-bg.png">
@@ -115,5 +119,5 @@
                 </div>
             </nav>
 
-           
+
 

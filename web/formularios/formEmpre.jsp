@@ -4,10 +4,9 @@
     Author     : tuto2
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
-<script type="text/javascript" src="js/cargarFormulario.js"></script>
 
-<section id="empresa" class="empresa">
+
+<section id="empresaForm" class="empresa">
     
         <div class="card-panel  white" >
             <h4><span class="green-text" style="font-weight: bold;">EMPRESA</span></h4>

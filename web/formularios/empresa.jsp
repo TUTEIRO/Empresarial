@@ -11,10 +11,48 @@
     }%>
 <jsp:include page="../plantillas/header.jsp"/>
 <script type="text/javascript" src="js/empresa.js"></script>
-<script>
+<script type="text/javascript" src="js/cambioForm.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
 
+
+        $('#seleccion').click(function () {
+
+            var var_name = $("input[name='group1']:checked").val();
+            $('#genero').val(var_name);
+
+        });
+
+        $('#seleccion2').click(function () {
+
+            var var_name = $("input[name='group2']:checked").val();
+            $('#etnia').val(var_name);
+
+        });
+
+        $('#contactoBTN').click(function () {
+            cambiarForm3();
+            cambiarForm("true");
+
+        });
+
+        $('#empresaBTN').click(function () {
+            cambiarForm2();
+            cambiarForm("false");
+
+        });
+        $('#registrarCont').click(function () {
+            cambiarForm3();
+            cambiarForm("true");
+
+        });
+
+
+    });
 </script>
 
+
+<%--
 <div class="row">
     <div class="col s12">
         <ul class="tabs">
@@ -23,14 +61,38 @@
         </ul>
     </div>
 </div>
+--%>
+<div id="selec" class="row ">
+    <a id="contactoBTN" >
+        <div   class="col s6 card-panel grey black-text">
+            <center>
+                <span >
+                    Contacto
+                </span>
+            </center>
+        </div>
+    </a>
+    <a id="empresaBTN">
+        <div  class="col s6 card-panel grey lighten-2 black-text">
+            <center>
+                <span >
+                    Empresa
+                </span>
+            </center>
+        </div>
+    </a>
+</div>
 <div id="contacto" class="col s12">
     <jsp:include page="formCon.jsp"/>
 
     <div class="row">
         <div class="input-field col s12">
-            <button id="cont" class="btn waves-effect waves-light" type="submit" name="action">Registrar/Continuar
-                <i class="mdi-content-send right"></i>
-            </button>
+            <input id="registrarCont"type="submit" class="waves-effect waves-light modal-trigger btn right" value="Continuar" >
+        </div>
+    </div>
+    <div id="modal3" class="modal">
+        <div id="mostrarModal">
+
         </div>
     </div>
 </form>
@@ -48,7 +110,7 @@
 
 
 
-<div id="empresa" class="col s12">
+<div id="empresa" class="col s12" style="display: none;  ">
     <jsp:include page="formEmpre.jsp"/>
     <div class="row">
         <div class="input-field col s12">
