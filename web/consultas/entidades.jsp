@@ -54,6 +54,7 @@
             <th data-field="nombre">Nombre</th>
             <th data-field="nit">NIT</th>
             <th data-field="direccion">Direccion</th>
+            <th data-field="ciudad">Ciudad</th>
             <th data-field="telefono">Telefono</th>
             <th data-field="url">URL Web Site</th>
             <th data-field="editar">Editar</th>
@@ -61,7 +62,7 @@
         </tr>
     </thead>
     <tr>
-        <td colspan ="5" ><center>No se encuentran datos con la busqueda digitada</center></td>
+        <td colspan ="7" ><center>No se encuentran datos con la busqueda digitada</center></td>
 </tr>
 </table>
 

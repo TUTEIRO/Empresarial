@@ -11,14 +11,14 @@
     $(document).ready(function () {
 
 
-        $('#radios').click(function() {
-            
+        $('#radios').click(function () {
+
             var var_name = $("input[name='group6']:checked").val();
             $('#tipo').val(var_name);
-            
+
         });
-        
-        
+
+
     });
 </script>
 <br></br>
@@ -84,6 +84,7 @@
             </tr>
         </thead>
         <tr>
+            <td colspan ="8" ><center>No se encuentran datos con la busqueda digitada</center></td>
         </tr>
     </table>
 </div>

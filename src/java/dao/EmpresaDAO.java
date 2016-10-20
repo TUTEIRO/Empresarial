@@ -5,10 +5,14 @@
  */
 package dao;
 
+import dto.ContactoDTO;
 import dto.EmpresaDTO;
 import interfaces.IEmpresaDAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import util.Conexion;
 
 /**
@@ -26,7 +30,7 @@ public class EmpresaDAO implements IEmpresaDAO{
         boolean exito = false;
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("INSERT INTO  `ufps_1`.`contacto` (\n"
+            stmt = conn.prepareStatement("INSERT INTO  `ufps_1`.`empresa` (\n"
                     + "`emp_nombre` ,\n"
                     + "`emp_nit` ,\n"
                     + "`emp_nombre_rep_legal` ,\n"
@@ -64,13 +68,13 @@ public class EmpresaDAO implements IEmpresaDAO{
             stmt.setString(10, dto.getEmail());
             stmt.setString(11, dto.getUrl_website());
             stmt.setString(12, dto.getTipo_empresa());
-            stmt.setString(13, dto.get);
+            stmt.setString(13, dto.getEmp_reg_mercantil());
             stmt.setString(14, dto.getNum_mercantil());
             stmt.setString(15, dto.getDate_renov_mercantil());
             stmt.setString(16, dto.getCodigo_CIIU());
             stmt.setString(17, dto.getAct_internacional());
             stmt.setString(18, dto.getPaises_trabajo());
-            stmt.setInt(19, dto.get);
+//            stmt.setBoolean(19, dto.getinternet);
             stmt.setString(20, dto.getServicios());
             stmt.setString(21, dto.getComo_info());
             int total = stmt.executeUpdate();
@@ -90,8 +94,50 @@ public class EmpresaDAO implements IEmpresaDAO{
     }
 
     @Override
-    public EmpresaDTO consultarEmpresa(String tipo, String dato) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public ArrayList<EmpresaDTO> consultarEmpresa(String tipo, String dato) throws Exception {
+        
+        ArrayList<EmpresaDTO> list = new ArrayList();
+        conn = Conexion.conectar();
+        PreparedStatement stmt = null;
+        EmpresaDTO empresa = null;
+        try {
+            if (tipo.equals("nombre")) {
+                stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_nombre LIKE '%"+ dato+"%'");
+                ResultSet res = stmt.executeQuery();
+                while (res.next()) {
+                    empresa = new EmpresaDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(6), res.getString(7), res.getString(8), res.getString(10), res.getString(11));
+                    list.add(empresa);
+                }
+                stmt.close();
+                res.close();
+            } else if (tipo.equals("nit")) {
+                stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_nit="+ dato);
+                ResultSet res = stmt.executeQuery();
+                while (res.next()) {
+                    empresa = new EmpresaDTO();
+                    empresa.setNombre(res.getString(1));
+                    empresa.setNit(res.getString(2));
+                    empresa.setNombre_rep_legal(res.getString(3));
+                    empresa.setTipo_constitucion(res.getString(4));
+                    empresa.setDireccion(res.getString(6));
+                    empresa.setCiudad(res.getString(7));
+                    empresa.setTelefono(res.getString(8));
+                    empresa.setEmail(res.getString(10));
+                    empresa.setUrl_website(res.getString(11));
+                    list.add(empresa);
+                }
+                stmt.close();
+                res.close();
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return list;
     }
-    
+
+ 
 }

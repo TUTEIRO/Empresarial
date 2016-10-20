@@ -5,6 +5,7 @@
  */
 package interfaces;
 import dto.EntidadDTO;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,5 +14,5 @@ import dto.EntidadDTO;
 public interface IEntidadDAO {
     
     public boolean registrarEntidad(EntidadDTO dto) throws Exception;
-    public EntidadDTO consultarEntidad(String dato) throws Exception;
+    public ArrayList<EntidadDTO> consultarEntidad(String dato, String tipo) throws Exception;
 }
