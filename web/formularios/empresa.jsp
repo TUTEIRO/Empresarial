@@ -19,6 +19,7 @@
         $('#seleccion').click(function () {
 
             var var_name = $("input[name='group1']:checked").val();
+
             $('#genero').val(var_name);
 
         });
@@ -26,7 +27,24 @@
         $('#seleccion2').click(function () {
 
             var var_name = $("input[name='group2']:checked").val();
+
             $('#etnia').val(var_name);
+
+        });
+
+        $('#cons_legal').click(function () {
+
+            var var_name = $("input[name='group7']:checked").val();
+
+            $('#cons_ot').val(var_name);
+            
+            if (var_name === 'otras') {
+                
+                $('#cons_otros').prop("readonly",false);
+            } else {
+                
+                $('#cons_otros').prop("readonly",true);
+            }
 
         });
 

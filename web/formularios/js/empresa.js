@@ -123,32 +123,9 @@ function registrarContacto() {
             if (ajax.status == 200)
             {
                 
-                $(document).ready(function () {
-                    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-                    $('.modal-trigger').leanModal();
-                });
-                $('#modal3').openModal();
                 
-                document.getElementById(div).innerHTML = ajax.responseText;
-                document.getElementById('first_name').value = '';
-                document.getElementById('last_name').value = '';
-                document.getElementById('num_ced').value = '';
-                document.getElementById('cargo').value = '';
-                document.getElementById('lugar_nac').value = '';
-                document.getElementById('fecha_nac').value = '';
-                document.getElementById('niv_estud').value = '';
-                document.getElementById('direccion').value = '';
-                document.getElementById('mun').value = '';
-                document.getElementById('departamento').value = '';
-                document.getElementById('tel_cel').value = '';
-                document.getElementById('tel_fijo').value = '';
-                document.getElementById('email').value = '';
-                document.getElementById('genero').value = '';
-                document.getElementById('etnia').checked = false;
-                document.getElementById('discapacidad').value = '';
-                document.getElementById('anos_cargo').value = '';
-                document.getElementById('desplazado').value = '';
-                document.getElementById('first_name').focus();
+                
+                
 
                 document.getElementById('empresa').style.display = 'block';       
                 document.getElementById('contacto').style.display = 'none';     

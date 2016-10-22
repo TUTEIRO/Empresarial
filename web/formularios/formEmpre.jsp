@@ -33,42 +33,47 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row" id="cons_legal">
                                 <div class="input-field col s3">
 
                                     <label>Constitución legal</label> 
                                 </div>
                                 <div class="input-field col s3">
                                     <p>
-                                        <input name="group3" type="radio" id="sas" />
+                                        <input name="group7" type="radio" id="sas" value="sas" checked="checked"/>
                                         <label for="sas">SAS</label>
                                     </p> 
                                 </div>
                                 <div class="input-field col s3">
                                     <p>
-                                        <input name="group3" type="radio" id="ltda" />
+                                        <input name="group7" type="radio" id="ltda" value="ltda"/>
                                         <label for="ltda">Ltda</label>
                                     </p> 
                                 </div>
                                 <div class="input-field col s3">
                                     <p>
-                                        <input name="group3" type="radio" id="sAnonima" />
+                                        <input name="group7" type="radio" id="sAnonima" value="sAnonima"/>
                                         <label for="sAnonima">S. Anónima</label>
                                     </p> 
                                 </div>
                                 <div class="input-field col s3"></div>
                                 <div class="input-field col s3">
                                     <p>
-                                        <input name="group3" type="radio" id="personaN" />
+                                        <input name="group7" type="radio" id="personaN" value="personaN"/>
                                         <label for="personaN">Persona natural</label>
                                     </p>
                                 </div>
                                 <div class="input-field col s3">
                                     <p>
-                                        <input name="group3" type="radio" id="otras" />
+                                        <input name="group7" type="radio" id="otras" value="otras"/>
                                         <label for="otras">Otras</label>
                                     </p>
                                 </div>
+                                <div class="input-field col s3">
+                                    <input id="cons_otros" type="text" class="" readonly="true" placeholder="¿cual otro?">
+                                    
+                                </div>
+                                <input hidden="true" name="cons_ot" id="cons_ot" type="text" value="sas" class="validate">
                             </div>
 
                             <div class="row">
