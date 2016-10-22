@@ -150,34 +150,37 @@
                                 </div>
                             </div>
 
-                            <div class="row">
+                            <div class="row" id="regis_mer">
                                 <div class="input-field col s2">
                                     <label>Tiene registro mercantil</label>
                                 </div>
                                 <div class="input-field col s2">
                                     <p>
-                                        <input name="group5" type="radio" id="si"/>
-                                        <label for="si">Si</label>
+                                        <input name="group5" type="radio" id="no" value="no"checked="checked"/>
+                                        <label for="no">No</label>
                                     </p>
                                 </div>
                                 <div class="input-field col s2">
                                     <p>
-                                        <input name="group5" type="radio" id="no"/>
-                                        <label for="si">No</label>
+                                        <input name="group5" type="radio" id="si" value="si"/>
+                                        <label for="si">Si</label>
                                     </p>
                                 </div>
-                                <div class="input-field col s6">
-                                    <input id="num_reg_mercantil" type="number" min="0" class="validate">
-                                    <label for="num_reg_mercantil">Nro. de registro mercantil</label>
+                                
+                                <div class="input-field col s3">
+                                    <input id="num_reg_mercantil" type="number" min="0" readonly="true" 
+                                           placeholder="Nro. de registro mercantil">
+                                    
                                 </div>
+                                <div class="input-field col s3">
+                                    <input id="ano_renovacion" placeholder="Último año de renovación" 
+                                           type="text" class="datepicker"/>
+                                    
+                                </div>
+                                <input hidden="true" name="regis_mercan" id="regis_mercan" type="text" value="no" class="validate">
                             </div>
 
-                            <div class="row">
-                                <div class="input-field col s6">
-                                    <input id="año_renovacion" type="text" class="validate"/>
-                                    <label for="año_renovacion">¿Último año de renovación?</label>
-                                </div>
-                            </div>
+                            
 
                             <div class="switch">
                                 <h6> ¿Es empresa turistica?</h6>

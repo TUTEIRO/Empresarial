@@ -13,9 +13,12 @@
 <script type="text/javascript" src="js/empresa.js"></script>
 <script type="text/javascript" src="js/cambioForm.js"></script>
 <script type="text/javascript">
+
+
     $(document).ready(function () {
 
-
+        
+        
         $('#seleccion').click(function () {
 
             var var_name = $("input[name='group1']:checked").val();
@@ -37,13 +40,31 @@
             var var_name = $("input[name='group7']:checked").val();
 
             $('#cons_ot').val(var_name);
-            
+
             if (var_name === 'otras') {
-                
-                $('#cons_otros').prop("readonly",false);
+
+                $('#cons_otros').prop("readonly", false);
             } else {
-                
-                $('#cons_otros').prop("readonly",true);
+
+                $('#cons_otros').prop("readonly", true);
+            }
+
+        });
+
+        $('#regis_mer').click(function () {
+
+            var var_name = $("input[name='group5']:checked").val();
+
+            $('#regis_mercan').val(var_name);
+
+            if (var_name === 'si') {
+
+                $('#num_reg_mercantil').prop("readonly", false);
+                $('#ano_renovacion').prop("readonly", false);
+            } else {
+
+                $('#num_reg_mercantil').prop("readonly", true);
+                $('#ano_renovacion').prop("readonly", true);
             }
 
         });
@@ -65,7 +86,7 @@
 
         });
 
-
+        
     });
 </script>
 
