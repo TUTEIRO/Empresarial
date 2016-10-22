@@ -174,16 +174,29 @@
                                 </div>
                                 <div class="input-field col s3">
                                     <input id="ano_renovacion" placeholder="Último año de renovación" 
-                                           type="text" class="datepicker"/>
+                                           type="number" min="0" size="4"/>
                                     
                                 </div>
                                 <input hidden="true" name="regis_mercan" id="regis_mercan" type="text" value="no" class="validate">
                             </div>
-
-                            
-
-                            <div class="switch">
-                                <h6> ¿Es empresa turistica?</h6>
+                             <div class="input-field col s3">
+                                <label for="neg_internet">¿Realiza negocios por internet?</label> 
+                            </div>
+                            <div class="input-field col s3">
+                                <div class="switch">
+                                    <label>
+                                        No
+                                        <input type="checkbox" id="neg_internet" name="neg_internet">
+                                        <span class="lever"></span>
+                                        Si
+                                    </label>
+                                </div>
+                            </div>
+                             <div class="input-field col s3">
+                                <label for="empT">¿Es empresa turistica?</label> 
+                            </div>
+                            <div class="input-field col s3">
+                                <div class="switch">
                                 <label>
                                     No
                                     <input type="checkbox" id="empT" onclick="cargarEmpresaT()">
@@ -191,6 +204,8 @@
                                     Si
                                 </label>
                             </div>
+                            </div>
+                            <br><br><br><br>
                             <div id="formEmpresaT">
                                 
                             </div>

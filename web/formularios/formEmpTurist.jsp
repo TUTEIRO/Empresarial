@@ -5,7 +5,8 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<div class="row">
+<form id="emp_turistica">
+    <div class="row" id="tipo_emp_turistica">
     <div class="input-field col s4">
         <label>Tipo de empresa turistica</label>
     </div>
@@ -85,7 +86,7 @@
     </div>
 </div>
 
-<div class="row">
+    <div class="row" id="tipo_alojamiento">
     <div class="input-field col s4">
         <label>Tipo de alojamiento</label>
     </div>
@@ -148,7 +149,7 @@
 </div>
 
 
-<div class="row">
+    <div class="row" id="tipo_turismo_desa">
     <div class="input-field col s4">
         <label>Tipo de turismo que desarrolla</label>
     </div>
@@ -207,6 +208,6 @@
         
     </div>
 </div>
-
+</form>
 
 

@@ -11,9 +11,8 @@ package dto;
  */
 public class EmpresaDTO {
     
-    private String nombre, nit, nombre_rep_legal, tipo_constitucion, fecha_constitucion, direccion, ciudad, telefono, celular, email, url_website, tipo_empresa, num_mercantil, date_renov_mercantil, codigo_CIIU, act_internacional, paises_trabajo, servicios, como_info, emp_reg_mercantil;
+    private String nombre, nit, nombre_rep_legal, tipo_constitucion, fecha_constitucion, direccion, ciudad, telefono, celular, email, url_website, tipo_empresa, num_mercantil, date_renov_mercantil, codigo_CIIU, act_internacional, paises_trabajo, servicios, como_info, emp_reg_mercantil, internet_bsns;
     private int constitucion_legal, emp_tc, emp_mc, emp_directos, emp_indirectos;
-    private boolean internet_bsns;
     
     public EmpresaDTO() {
     }
@@ -23,7 +22,7 @@ public class EmpresaDTO {
             String celular, String email, String url_website, String tipo_empresa, 
             String num_mercantil, String date_renov_mercantil, String codigo_CIIU, String act_internacional, 
             String paises_trabajo, String servicios, String como_info, int constitucion_legal, int emp_tc, int emp_mc, 
-            int emp_directos, String emp_reg_mercantil, boolean internet_bsns) {
+            int emp_directos, String emp_reg_mercantil, String internet_bsns) {
         this.nombre = nombre;
         this.nit = nit;
         this.nombre_rep_legal = nombre_rep_legal;
@@ -62,6 +61,22 @@ public class EmpresaDTO {
         this.email = email;
         this.url_website = url_website;
     }
+
+    public EmpresaDTO(String nit, int emp_tc, int emp_mc, int emp_directos, int emp_indirectos) {
+        this.nit = nit;
+        this.emp_tc = emp_tc;
+        this.emp_mc = emp_mc;
+        this.emp_directos = emp_directos;
+        this.emp_indirectos = emp_indirectos;
+    }
+
+    public EmpresaDTO(String nit, String num_mercantil, String date_renov_mercantil) {
+        this.nit = nit;
+        this.num_mercantil = num_mercantil;
+        this.date_renov_mercantil = date_renov_mercantil;
+    }
+    
+    
 
     
     
@@ -265,11 +280,11 @@ public class EmpresaDTO {
         this.emp_reg_mercantil = emp_reg_mercantil;
     }
 
-    public boolean isInternet_bsns() {
+    public String getInternet_bsns() {
         return internet_bsns;
     }
 
-    public void setInternet_bsns(boolean internet_bsns) {
+    public void setInternet_bsns(String internet_bsns) {
         this.internet_bsns = internet_bsns;
     }
     

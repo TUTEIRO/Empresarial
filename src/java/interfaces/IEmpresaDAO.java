@@ -15,4 +15,7 @@ public interface IEmpresaDAO {
     
     public boolean registrarEmpresa(EmpresaDTO dto) throws Exception;
     public ArrayList<EmpresaDTO> consultarEmpresa (String tipo, String dato) throws Exception;
+    public boolean registrarEmpleadosEmpresa(EmpresaDTO dto) throws Exception;
+    public boolean registrarRegistroMercantil(EmpresaDTO dto) throws Exception;
+    
 }

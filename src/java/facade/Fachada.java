@@ -41,7 +41,7 @@ public class Fachada {
             String celular, String email, String url_website, String tipo_empresa, 
             String num_mercantil, String date_renov_mercantil, String codigo_CIIU, String act_internacional, 
             String paises_trabajo, String servicios, String como_info, int constitucion_legal, int emp_tc, int emp_mc, 
-            int emp_directos, String emp_reg_mercantil, boolean internet_bsns) throws Exception{
+            int emp_directos, String emp_reg_mercantil, String internet_bsns) throws Exception{
         ControlEmpresa empresa = new ControlEmpresa();
         return empresa.registrarEmpresa(nombre, nit, nombre_rep_legal, tipo_constitucion, fecha_constitucion, direccion,
                 ciudad, telefono, celular, email, url_website, tipo_empresa, num_mercantil, date_renov_mercantil, 

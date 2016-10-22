@@ -23,7 +23,102 @@ function nuevoAjax() {
 }
 
 function registrarEmpresa() {
+    
+    var cc_empleado = document.getElementById("num_ced");
+    var nombre = document.getElementById("nombre_empresa");
+    var nit = document.getElementById("nit");
+    var rep_legal = document.getElementById("representante");
+    var constitucion_legal = document.getElementById("cons_ot");
+    var fecha_constitucion = document.getElementById("fecha_constitucion");
+    var empleados_tc = document.getElementById("tc");
+    var empleados_mt = document.getElementById("mt");
+    var empleados_directo = document.getElementById("directo");
+    var empleados_indirecto = document.getElementById("indirecto");
+    var direccion = document.getElementById("direccion_empresa");
+    var ciudad = document.getElementById("ciudad_empresa");
+    var fijo = document.getElementById("tel_fijo__empresa");
+    var celular = document.getElementById("tel_movil_empresa");
+    var email = document.getElementById("correo_empresa");
+    var sitio_web = document.getElementById("sitio_web");
+    var servicios = document.getElementById("servicios");
+    var reg_mercantil = document.getElementById("regis_mercan");
+    var num_reg_mercantil = document.getElementById("num_reg_mercantil");
+    var renovacion_mercantil = document.getElementById("ano_renovacion");
+    var neg_internet = document.getElementById("neg_internet");
+    var negocio_internet = "";
+    if (neg_internet.type === 'checkbox' && neg_internet.checked === true) {
+        negocio_internet = "Si";
+    } else {
+        negocio_internet = "No";
+    }
+    var empresa_turistica = document.getElementById("empT");
+    var es_empresa_turistica = "";
+    if (empresa_turistica.type === 'checkbox' && empresa_turistica.checked === true) {
+        es_empresa_turistica = "Si";
+    } else {
+        es_empresa_turistica = "No";
+    }
+    var checkboxes1 = document.getElementById("tipo_emp_turistica");
+    var tipo_emp_turistica = "";
+    for (var x = 0; x < checkboxes1.elements.length; x++) {
+        if ((checkboxes1[x].type === 'checkbox') && (checkboxes1[x].checked === true)) {
+            var tipo1 = checkboxes1[x].value;
+            tipo_emp_turistica = tipo_emp_turistica.concat(tipo1, "\n");
+        }
+    }
+    var checkboxes2 = document.getElementById("tipo_alojamiento");
+    var tipo_alojamiento = "";
+     for (var x = 0; x < checkboxes2.elements.length; x++) {
+        if ((checkboxes2[x].type === 'checkbox') && (checkboxes2[x].checked === true)) {
+            var tipo2 = checkboxes2[x].value;
+            tipo_alojamiento = tipo_alojamiento.concat(tipo2, "\n");
+        }
+    }
+    var checkboxes3 = document.getElementById("tipo_turismo_desa");
+    var tipo_turismo_desa = "";
+     for (var x = 0; x < checkboxes3.elements.length; x++) {
+        if ((checkboxes3[x].type === 'checkbox') && (checkboxes3[x].checked === true)) {
+            var tipo3 = checkboxes3[x].value;
+            tipo_turismo_desa = tipo_turismo_desa.concat(tipo3, "\n");
+        }
+    }
+    
+    ajax = nuevoAjax();
 
+    parametros = "cc_contacto=" + cc_empleado.value + "&nombre=" + nombre.value + "&nit=" + nit.value + "&representante=" + rep_legal.value + "&constitucion_legal=" +constitucion_legal.value+ 
+            "&fecha_constitucion=" +fecha_constitucion.value+ "&empleados_tc=" +empleados_tc.value+ "&empleados_mt=" +empleados_mt.value+
+            "&empleados_directo=" +empleados_directo.value+ "&empleados_indirecto=" +empleados_indirecto.value+ "&direccion=" +direccion.value+
+            "&ciudad=" +ciudad.value+ "&fijo=" +fijo.value+ "&celular=" +celular.value+ "&email=" +email.value+ "&sitio_web=" +sitio_web.value+
+            "&servicios=" +servicios.value+ "&reg_mercantil=" +reg_mercantil.value+ "&num_reg_mercantil=" +num_reg_mercantil.value+
+            "&ano_renovacion=" +renovacion_mercantil.value+ "&negocio_internet=" +negocio_internet+ "&es_empresa_turistica=" +es_empresa_turistica+ "&tipo_emp_turistica=" +tipo_emp_turistica+
+            "&tipo_alojamiento=" +tipo_alojamiento+ "&tipo_turismo_desa=" +tipo_turismo_desa;
+    url = "Procesar/registrarEmpresa.jsp";
+    ajax.open("POST", url, true);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.send(parametros);
+    
+    ajax.onreadystatechange = function ()
+    {
+        if (ajax.readyState == 4)
+        {
+            if (ajax.status == 200)
+            {
+
+                document.getElementById(div).innerHTML = ajax.responseText;
+
+            } else
+            {
+
+                document.getElementById(div).innerHTML = ajax.responseText;
+
+            }
+        } else
+        {
+            document.getElementById(div).value = "Cargando";
+        }
+    }
+    
+    
 }
 
 function consultarEmpresa() {

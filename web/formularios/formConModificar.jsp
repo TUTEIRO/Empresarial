@@ -56,7 +56,7 @@
                         <div class="row">
                             <div class="input-field col s12">
                                 <select id="niv_estud">
-                                    <option value="" disabled selected><%=c.getNivel_estudio()%></option>
+                                    <option value="<%=c.getNivel_estudio()%>" disabled selected><%=c.getNivel_estudio()%></option>
                                     <option value="primaria">Primaria</option>
                                     <option value="bachiller">Bachiller</option>
                                     <option value="tecnica">Tecnica</option>

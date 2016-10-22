@@ -139,5 +139,15 @@ public class EmpresaDAO implements IEmpresaDAO{
         return list;
     }
 
+    @Override
+    public boolean registrarEmpleadosEmpresa(EmpresaDTO dto) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean registrarRegistroMercantil(EmpresaDTO dto) throws Exception {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
  
 }
