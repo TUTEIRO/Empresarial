@@ -34,7 +34,31 @@
             $('#etnia').val(var_name);
 
         });
+      
+           $('#seguro_viaje').click(function () {
+            var var_name = $("input[name='group10']:checked").val();
 
+            $('#seg_viaje').val(var_name);
+
+            if (var_name === 'si_s') {
+           
+                $('#seguro_cual').prop("readonly", false);
+            } else {
+
+                $('#seguro_cual').prop("readonly", true);
+            }
+
+        });
+        
+          
+        $('#certificado_sostenibilidad').click(function () {
+
+            var var_name = $("input[name='group11']:checked").val();
+
+            $('#cer_sostenibilidad').val(var_name);
+
+        });
+        
         $('#cons_legal').click(function () {
 
             var var_name = $("input[name='group7']:checked").val();
@@ -49,6 +73,40 @@
                 $('#cons_otros').prop("readonly", true);
             }
 
+        });
+        
+        
+        
+         $('#act_internacional').click(function () {
+
+            var var_name = $("input[name='group9']:checked").val();
+
+            $('#actividad_int').val(var_name);
+
+        });
+        
+         $('#tipo_empresa').click(function () {
+
+            var var_name = $("input[name='group8']:checked").val();
+
+            $('#tipo_emp').val(var_name);
+
+            if (var_name === 'otra') {
+
+                $('#tipo_otra').prop("readonly", false);
+            } else {
+
+                $('#tipo_otra').prop("readonly", true);
+            }
+            
+            if(var_name === 'comercial'){
+                $('#comercial_ventas_mayor').prop("disabled", false);
+                $('#comercial_ventas_menor').prop("disabled", false);
+            }else{
+                $('#comercial_ventas_mayor').prop("disabled", true);
+                $('#comercial_ventas_menor').prop("disabled", true);
+            }
+            
         });
 
         $('#regis_mer').click(function () {

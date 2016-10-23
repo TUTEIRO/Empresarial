@@ -42,24 +42,23 @@ public class EmpresaDAO implements IEmpresaDAO{
                     + "`emp_celular` ,\n"
                     + "`emp_email` ,\n"
                     + "`emp_url_website` ,\n"
-                    + "`emp_tipo_empresa` ,\n"
+                    + "`emp_es_turistica` ,\n"
                     + "`emp_reg_mercantil` ,\n"
-                    + "`emp_num_reg_mercantil` ,\n"
-                    + "`emp_renovacion_mercantil` ,\n"
+                    + "`tipo_empresa` ,\n"
                     + "`emp_codigo_CIIU` ,\n"
                     + "`emp_act_internacional` ,\n"
                     + "`emp_paises_trabajo` ,\n"
                     + "`emp_internet_bsns`\n"
                     + "`emp_servicios` \n"
-                    + "`emp_como_informacion` \n"
+                    + "`emp_contacto_ref` \n"
                     + ")\n"
                     + "VALUES (\n"
-                    + "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?\n"
+                    + "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?\n"
                     + ");");
             stmt.setString(1, dto.getNombre());
             stmt.setString(2, dto.getNit());
             stmt.setString(3, dto.getNombre_rep_legal());
-            stmt.setInt(4, dto.getConstitucion_legal());
+            stmt.setString(4, dto.getTipo_constitucion());
             stmt.setString(5, dto.getFecha_constitucion());
             stmt.setString(6, dto.getDireccion());
             stmt.setString(7, dto.getCiudad());
@@ -69,14 +68,13 @@ public class EmpresaDAO implements IEmpresaDAO{
             stmt.setString(11, dto.getUrl_website());
             stmt.setString(12, dto.getTipo_empresa());
             stmt.setString(13, dto.getEmp_reg_mercantil());
-            stmt.setString(14, dto.getNum_mercantil());
-            stmt.setString(15, dto.getDate_renov_mercantil());
-            stmt.setString(16, dto.getCodigo_CIIU());
-            stmt.setString(17, dto.getAct_internacional());
-            stmt.setString(18, dto.getPaises_trabajo());
-//            stmt.setBoolean(19, dto.getinternet);
-            stmt.setString(20, dto.getServicios());
-            stmt.setString(21, dto.getComo_info());
+            stmt.setString(14, dto.getTipo_empresa());
+            stmt.setString(15, dto.getCodigo_CIIU());
+            stmt.setString(16, dto.getAct_internacional());
+            stmt.setString(17, dto.getPaises_trabajo());
+            stmt.setString(18, dto.getInternet_bsns());
+            stmt.setString(19, dto.getServicios());
+            stmt.setString(20, dto.getCc_contacto());
             int total = stmt.executeUpdate();
             if (total > 0) {
                 stmt.close();
@@ -141,12 +139,72 @@ public class EmpresaDAO implements IEmpresaDAO{
 
     @Override
     public boolean registrarEmpleadosEmpresa(EmpresaDTO dto) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        conn = Conexion.conectar();
+        boolean exito = false;
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("INSERT INTO  `ufps_1`.`empresa_empleados` (\n"
+                    + "`empp_nit` ,\n"
+                    + "`empp_tc` ,\n"
+                    + "`empp_mt` ,\n"
+                    + "`empp_directos` ,\n"
+                    + "`empp_indirectos` ,\n"
+                    + ")\n"
+                    + "VALUES (\n"
+                    + "?,?,?,?,?\n"
+                    + ");");
+            stmt.setString(1, dto.getNit());
+            stmt.setInt(2, dto.getEmp_tc());
+            stmt.setInt(3, dto.getEmp_mc());
+            stmt.setInt(4, dto.getEmp_directos());
+            stmt.setInt(5, dto.getEmp_indirectos());
+            int total = stmt.executeUpdate();
+            if (total > 0) {
+                stmt.close();
+                exito = true;
+            }
+            stmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return exito;
     }
 
     @Override
     public boolean registrarRegistroMercantil(EmpresaDTO dto) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        conn = Conexion.conectar();
+        boolean exito = false;
+        PreparedStatement stmt = null;
+        try {
+            stmt = conn.prepareStatement("INSERT INTO  `ufps_1`.`empresa_reg_mercantil` (\n"
+                    + "`empresa_nit` ,\n"
+                    + "`emp_num_reg_mercantil` ,\n"
+                    + "`emp_renovacion_mercantil` ,\n"
+                    + ")\n"
+                    + "VALUES (\n"
+                    + "?,?,?\n"
+                    + ");");
+            stmt.setString(1, dto.getNit());
+            stmt.setString(2, dto.getNum_mercantil());
+            stmt.setString(3, dto.getDate_renov_mercantil());
+            int total = stmt.executeUpdate();
+            if (total > 0) {
+                stmt.close();
+                exito = true;
+            }
+            stmt.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.close();
+            }
+        }
+        return exito;
     }
 
  

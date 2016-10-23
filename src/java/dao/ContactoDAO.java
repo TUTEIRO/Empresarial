@@ -168,4 +168,9 @@ public class ContactoDAO implements IContactoDAO {
         return exito;
     }
 
+    @Override
+    public boolean registrarContactoTemporal(ContactoDTO dto) throws Exception {
+      return false;  
+    }
+
 }

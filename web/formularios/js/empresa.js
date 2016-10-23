@@ -44,6 +44,10 @@ function registrarEmpresa() {
     var reg_mercantil = document.getElementById("regis_mercan");
     var num_reg_mercantil = document.getElementById("num_reg_mercantil");
     var renovacion_mercantil = document.getElementById("ano_renovacion");
+    var tipo_empresa = document.getElementById("tipo_emp");
+    var codigo_ciiu = document.getElementById("codigoCIIU");
+    var actividad_int = document.getElementById("actividad_int");
+    var paises_trabajo = document.getElementById("paises_comercializa");
     var neg_internet = document.getElementById("neg_internet");
     var negocio_internet = "";
     if (neg_internet.type === 'checkbox' && neg_internet.checked === true) {
@@ -90,7 +94,7 @@ function registrarEmpresa() {
             "&empleados_directo=" +empleados_directo.value+ "&empleados_indirecto=" +empleados_indirecto.value+ "&direccion=" +direccion.value+
             "&ciudad=" +ciudad.value+ "&fijo=" +fijo.value+ "&celular=" +celular.value+ "&email=" +email.value+ "&sitio_web=" +sitio_web.value+
             "&servicios=" +servicios.value+ "&reg_mercantil=" +reg_mercantil.value+ "&num_reg_mercantil=" +num_reg_mercantil.value+
-            "&ano_renovacion=" +renovacion_mercantil.value+ "&negocio_internet=" +negocio_internet+ "&es_empresa_turistica=" +es_empresa_turistica+ "&tipo_emp_turistica=" +tipo_emp_turistica+
+            "&ano_renovacion=" +renovacion_mercantil.value+ "&tipo_empresa=" +tipo_empresa.value + "&codigo_ciiu=" +codigo_ciiu.value+ "&actividad_int=" +actividad_int.value+ "&paises_trabajo=" +paises_trabajo.value+ "&negocio_internet=" +negocio_internet+ "&es_empresa_turistica=" +es_empresa_turistica+ "&tipo_emp_turistica=" +tipo_emp_turistica+
             "&tipo_alojamiento=" +tipo_alojamiento+ "&tipo_turismo_desa=" +tipo_turismo_desa;
     url = "Procesar/registrarEmpresa.jsp";
     ajax.open("POST", url, true);

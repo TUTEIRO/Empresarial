@@ -11,18 +11,17 @@ package dto;
  */
 public class EmpresaDTO {
     
-    private String nombre, nit, nombre_rep_legal, tipo_constitucion, fecha_constitucion, direccion, ciudad, telefono, celular, email, url_website, tipo_empresa, num_mercantil, date_renov_mercantil, codigo_CIIU, act_internacional, paises_trabajo, servicios, como_info, emp_reg_mercantil, internet_bsns;
-    private int constitucion_legal, emp_tc, emp_mc, emp_directos, emp_indirectos;
+    private String nombre, nit, nombre_rep_legal, tipo_constitucion, fecha_constitucion, direccion, ciudad, telefono, celular, email, url_website, es_empresa_turistica, tipo_empresa,  num_mercantil, date_renov_mercantil, codigo_CIIU, act_internacional, paises_trabajo, servicios, emp_reg_mercantil, internet_bsns, cc_contacto;
+    private int emp_tc, emp_mc, emp_directos, emp_indirectos;
     
     public EmpresaDTO() {
     }
 
     public EmpresaDTO(String nombre, String nit, String nombre_rep_legal, String tipo_constitucion, 
             String fecha_constitucion, String direccion, String ciudad, String telefono, 
-            String celular, String email, String url_website, String tipo_empresa, 
-            String num_mercantil, String date_renov_mercantil, String codigo_CIIU, String act_internacional, 
-            String paises_trabajo, String servicios, String como_info, int constitucion_legal, int emp_tc, int emp_mc, 
-            int emp_directos, String emp_reg_mercantil, String internet_bsns) {
+            String celular, String email, String url_website, String es_empresa_turistica, String tipo_empresa,
+            String codigo_CIIU, String act_internacional, String paises_trabajo, String servicios,
+            String emp_reg_mercantil, String internet_bsns, String cc_contacto) {
         this.nombre = nombre;
         this.nit = nit;
         this.nombre_rep_legal = nombre_rep_legal;
@@ -35,19 +34,14 @@ public class EmpresaDTO {
         this.email = email;
         this.url_website = url_website;
         this.tipo_empresa = tipo_empresa;
-        this.num_mercantil = num_mercantil;
-        this.date_renov_mercantil = date_renov_mercantil;
+        this.es_empresa_turistica = es_empresa_turistica;
         this.codigo_CIIU = codigo_CIIU;
         this.act_internacional = act_internacional;
         this.paises_trabajo = paises_trabajo;
         this.servicios = servicios;
-        this.como_info = como_info;
-        this.constitucion_legal = constitucion_legal;
-        this.emp_tc = emp_tc;
-        this.emp_mc = emp_mc;
-        this.emp_directos = emp_directos;
         this.emp_reg_mercantil = emp_reg_mercantil;
         this.internet_bsns = internet_bsns;
+        this.cc_contacto = cc_contacto;
     }
 
     public EmpresaDTO(String nombre, String nit, String nombre_rep_legal, String tipo_constitucion, String direccion, String ciudad, String telefono, String email, String url_website) {
@@ -256,22 +250,6 @@ public class EmpresaDTO {
         this.servicios = servicios;
     }
 
-    public String getComo_info() {
-        return como_info;
-    }
-
-    public void setComo_info(String como_info) {
-        this.como_info = como_info;
-    }
-
-    public int getConstitucion_legal() {
-        return constitucion_legal;
-    }
-
-    public void setConstitucion_legal(int constitucion_legal) {
-        this.constitucion_legal = constitucion_legal;
-    }
-
     public String getEmp_reg_mercantil() {
         return emp_reg_mercantil;
     }
@@ -286,6 +264,22 @@ public class EmpresaDTO {
 
     public void setInternet_bsns(String internet_bsns) {
         this.internet_bsns = internet_bsns;
+    }
+
+    public String getCc_contacto() {
+        return cc_contacto;
+    }
+
+    public void setCc_contacto(String cc_contacto) {
+        this.cc_contacto = cc_contacto;
+    }
+
+    public String getEs_empresa_turistica() {
+        return es_empresa_turistica;
+    }
+
+    public void setEs_empresa_turistica(String es_empresa_turistica) {
+        this.es_empresa_turistica = es_empresa_turistica;
     }
     
     
