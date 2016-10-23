@@ -72,7 +72,7 @@
                         <div class="file-field input-field col s12">
                             <div class="btn">
                                 <span>Logo de la entidad</span>
-                                <input type="file">
+                                <input accept="image/x-png, image/gif, image/jpeg" type="file">
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text" placeholder="Subir archivo de imagen del logo de la entidad">

@@ -3,7 +3,8 @@
     Created on : 3/09/2016, 11:13:50 AM
     Author     : tuto2
 --%>
-<%request.setCharacterEncoding("UTF-8");%>
+<%request.setCharacterEncoding("UTF-8");
+    response.setContentType("text/html;charset=UTF-8");%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,10 +25,8 @@
                 $('.datepicker').pickadate({
                     selectMonths: true, // Creates a dropdown to control month
                     selectYears: 99,
-                    
                     max: true,
                     closeOnSelect: true,
-                    
                     format: 'yyyy-mm-dd',
                     labelMonthNext: 'Mes siguiente',
                     labelMonthPrev: 'Mes anterior',
@@ -37,7 +36,7 @@
                     monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
                     weekdaysFull: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
                     weekdaysShort: ['Dom', 'Lun', 'Mar', 'Mie', 'Jue', 'Vie', 'Sab'],
-                    weekdaysLetter: [ 'D', 'L', 'M', 'X', 'J', 'V', 'S' ],
+                    weekdaysLetter: ['D', 'L', 'M', 'X', 'J', 'V', 'S'],
                     today: 'Hoy',
                     clear: 'Limpiar',
                     close: 'Cerrar',

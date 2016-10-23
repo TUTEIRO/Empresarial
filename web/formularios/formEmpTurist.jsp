@@ -6,6 +6,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 
+
 <form id="emp_turistica">
     <div class="row" id="seguro_viaje">
         <div class="input-field col s3">
@@ -27,7 +28,7 @@
             <input id="seguro_cual" type="text" class="" readonly="true" placeholder="¿cual?">
 
         </div>
-        <input hidden="true" name="seg_viaje" id="seg_viaje" type="text" value="no_s" class="validate">
+        <input hidden="true" name="seg_viaje" id="seg_viaje" type="text" value="No" class="validate">
     </div>
     <div class="input-field col s3">
         <label for="reg_nac_turismo">Registro nacional de turismo</label> 
@@ -362,14 +363,14 @@
 </form>
 <script type="text/javascript">
     $(document).ready(function () {
-        
-    $('#seguro_viaje').click(function () {
+
+        $('#seguro_viaje').click(function () {
             var var_name = $("input[name='group10']:checked").val();
 
             $('#seg_viaje').val(var_name);
 
             if (var_name === 'Si') {
-           
+
                 $('#seguro_cual').prop("readonly", false);
             } else {
 
@@ -377,8 +378,8 @@
             }
 
         });
-        
-          
+
+
         $('#certificado_sostenibilidad').click(function () {
 
             var var_name = $("input[name='group11']:checked").val();
@@ -387,6 +388,6 @@
 
         });
 
-     });
+    });
 </script>
 

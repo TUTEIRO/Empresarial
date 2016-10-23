@@ -35,11 +35,12 @@ public class TuristicaDAO implements ITuristicaDAO{
                     + "VALUES (\n"
                     + "?,?,?,?,?\n"
                     + ");");
-            stmt.setString(1, dto.getNit());
-            stmt.setInt(2, dto.getEmp_tc());
-            stmt.setInt(3, dto.getEmp_mc());
-            stmt.setInt(4, dto.getEmp_directos());
-            stmt.setInt(5, dto.getEmp_indirectos());
+            
+//            stmt.setString(1, dto.getNit());
+//            stmt.setInt(2, dto.getEmp_tc());
+//            stmt.setInt(3, dto.getEmp_mc());
+//            stmt.setInt(4, dto.getEmp_directos());
+//            stmt.setInt(5, dto.getEmp_indirectos());
             int total = stmt.executeUpdate();
             if (total > 0) {
                 stmt.close();

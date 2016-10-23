@@ -16,7 +16,7 @@
 
 
     $(document).ready(function () {
-
+        
         
         
         $('#seleccion').click(function () {
@@ -35,20 +35,7 @@
 
         });
       
-           $('#seguro_viaje').click(function () {
-            var var_name = $("input[name='group10']:checked").val();
-
-            $('#seg_viaje').val(var_name);
-
-            if (var_name === 'si_s') {
            
-                $('#seguro_cual').prop("readonly", false);
-            } else {
-
-                $('#seguro_cual').prop("readonly", true);
-            }
-
-        });
         
           
         $('#certificado_sostenibilidad').click(function () {
