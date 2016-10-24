@@ -23,7 +23,7 @@ function nuevoAjax() {
 }
 
 function registrarEmpresa() {
-
+    alert("entro");
     var cc_empleado = document.getElementById("num_ced");
     var nombre = document.getElementById("nombre_empresa");
     var nit = document.getElementById("nit");

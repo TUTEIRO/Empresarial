@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col s12 ">
                 <div class="row">
-                    <form class="col s12">
+                    <form class="col s12" action="javascript:registrarEmpresa()" name="formEmpresa" id="formEmpresa">
                         <div class="row">
                             <div class="input-field col s6">
                                 <input required id="nombre_empresa" type="text" class="validate">

@@ -198,9 +198,8 @@
     <jsp:include page="formEmpre.jsp"/>
     <div class="row">
         <div class="input-field col s12">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+            <input class="btn waves-effect waves-light" type="submit" name="action" value="enviar">
                 <i class="mdi-content-send right"></i>
-            </button>
         </div>
     </div>
 </div>
