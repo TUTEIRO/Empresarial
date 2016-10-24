@@ -32,4 +32,21 @@ public class ControlContacto {
         ContactoDTO dto = new ContactoDTO(nombres, apellido, fijo, cargo, nivel_estudio, direccion, ciudad, dpto, celular, fijo, email, anio_cargo);
         return actualizar.actualizarContacto(cedula, dto);
     }
+    
+    public boolean registrarContactoTemporal(String nombres, String apellidos, String cc, String cargo, String lugar_nto, String fecha_nto, String nivel_estudio, String direccion, String ciudad, String dpto, String celular, String fijo, String email, String genero, int etnia, String discapacidad, int antiguedad_cargo, String condicion_desplazado) throws Exception{
+        ContactoDAO dao = new ContactoDAO();
+        ContactoDTO contacto = new ContactoDTO(nombres, apellidos, cc, cargo, lugar_nto, fecha_nto, nivel_estudio, direccion, ciudad, dpto, celular, fijo, email, genero, discapacidad, condicion_desplazado, etnia, antiguedad_cargo);
+        return dao.registrarContactoTemporal(contacto);
+    }
+    
+     public ArrayList<ContactoDTO> consultarContactoTemporal(String tipo, String dato) throws Exception{
+        ContactoDAO dao = new ContactoDAO();
+        return dao.consultarContactoTemporal(tipo, dato);
+    }
+     
+     public boolean registrarContactoEmpresa(ContactoDTO dto) throws Exception{
+         
+         ContactoDAO dao = new ContactoDAO();
+         return dao.registrarContacto(dto);
+     }
 }

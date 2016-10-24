@@ -17,4 +17,5 @@ public interface IContactoDAO {
     public ArrayList<ContactoDTO> consultarContacto (String tipo, String dato) throws Exception;
     public boolean actualizarContacto(String cc, ContactoDTO dto) throws Exception;
     public boolean registrarContactoTemporal(ContactoDTO dto) throws Exception;
+    public ArrayList<ContactoDTO> consultarContactoTemporal(String tipo, String dato) throws Exception;
 }

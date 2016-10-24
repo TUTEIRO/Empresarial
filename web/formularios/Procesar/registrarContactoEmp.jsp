@@ -30,7 +30,7 @@
         String antiguedad = request.getParameter("antiguedad");
         int ant = Integer.parseInt(antiguedad);
         Fachada fachada = new Fachada();
-        boolean exito = fachada.registrarContacto(nombres, apellidos, cc, cargo, lugar_nto, fecha_nto, nivel_estudio, direccion, ciudad, dpto, celular, fijo, email, genero, etnia, discapacidad, ant, desplazado);
+        boolean exito = fachada.registrarContactoTemporal(nombres, apellidos, cc, cargo, lugar_nto, fecha_nto, nivel_estudio, direccion, ciudad, dpto, celular, fijo, email, genero, etnia, discapacidad, ant, desplazado);
         
         if(exito){
 %>

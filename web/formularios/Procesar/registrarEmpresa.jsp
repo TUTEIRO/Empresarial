@@ -42,6 +42,7 @@
     Fachada fachada = new Fachada();
     boolean exito = fachada.registrarEmpresa(nombreEmpresa, nit, representante, constitucion_legal, fecha_constitucion, direccion, ciudad, fijo, celular, email, sitio_web, tipo_empresa, es_empresa_turistica, codigo_ciiu, actividad_int, paises_trabajo, servicios, reg_mercantil, negocio_internet, cc_contacto);
     boolean exito2 = fachada.registrarEmpleadosEmpresa(nit, empleados_tc, empleados_mt, empleados_directos, emplados_indirectos);
+    boolean exito4 = fachada.registrarContactoEmpresa(cc_contacto);
     if(reg_mercantil.equalsIgnoreCase("si")){
         boolean exito3 = fachada.registrarRegistroMercantil(nit, num_reg_mercantil, ano_renovacion);
     }

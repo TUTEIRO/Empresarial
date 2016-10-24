@@ -47,6 +47,16 @@ public class Fachada {
                 codigo_CIIU, act_internacional, paises_trabajo, servicios, emp_reg_mercantil, internet_bsns, cc_contacto);
     }
     
+     public boolean registrarContactoTemporal(String nombres, String apellidos, String cc, String cargo, String lugar_nto,
+            String fecha_nto, String nivel_estudio, String direccion, String ciudad, String dpto, String celular, 
+            String fijo, String email, String genero, int etnia, String discapacidad, int antiguedad_cargo, 
+            String condicion_desplazado) throws Exception{
+        ControlContacto contacto = new ControlContacto();
+        return contacto.registrarContactoTemporal(nombres, apellidos, cc, cargo, lugar_nto, fecha_nto, nivel_estudio, direccion,
+                ciudad, dpto, celular, fijo, email, genero, etnia, discapacidad, antiguedad_cargo, condicion_desplazado);
+    }
+    
+    
     public boolean registrarEmpresaTur(boolean posee_seguro, boolean posee_reg_nal, boolean export_servicios, boolean libro_migracion_Col, 
             boolean impuesto_turismo, boolean codigo_etica, String seguro, String poliza, String cert_sostenibilidad, 
             String grupo_etnico, String cc_extranjeria, String tipo_turistica, String tipo_alojamiento, 
@@ -64,6 +74,17 @@ public class Fachada {
     public ArrayList<ContactoDTO> consultarContacto(String tipo, String dato) throws Exception{
         ControlContacto con = new ControlContacto();
         return con.consultarContacto(tipo, dato);
+    }
+    
+    public boolean registrarContactoEmpresa( String dato) throws Exception{
+        ControlContacto con = new ControlContacto();
+        ArrayList<ContactoDTO> list = con.consultarContactoTemporal("cc", dato);
+        boolean exito = false;
+        for(ContactoDTO c: list){
+            exito=con.registrarContactoEmpresa(c);
+        }
+        return exito;
+       
     }
     
     public ArrayList<EmpresaDTO> consultarEmpresa(String tipo, String dato) throws Exception{
