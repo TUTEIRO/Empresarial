@@ -28,8 +28,41 @@ function consultarContacto() {
     var dato = document.getElementById("buscar_contacto");
     ajax = nuevoAjax();
 
-    parametros = "tipo="+radios.value+"&dato="+dato.value;
+    parametros = "tipo=" + radios.value + "&dato=" + dato.value;
     url = "Procesar/ejecutarConsulta.jsp";
+    ajax.open("POST", url, true);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.send(parametros);
+    ajax.onreadystatechange = function ()
+    {
+        if (ajax.readyState == 4)
+        {
+            if (ajax.status == 200)
+            {
+
+                document.getElementById(div).innerHTML = ajax.responseText;
+
+            } else
+            {
+
+                document.getElementById(div).innerHTML = ajax.responseText;
+
+            }
+        } else
+        {
+            document.getElementById(div).value = "Cargando";
+        }
+    }
+}
+
+function consultarEmpresa() {
+    var div = "tablaV";
+    var radios = document.getElementById("tipo");
+    var dato = document.getElementById("buscar_empresa");
+    ajax = nuevoAjax();
+
+    parametros = "tipo=" + radios.value + "&dato=" + dato.value;
+    url = "Procesar/ejecutarConsultaEmpresa.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     ajax.send(parametros);

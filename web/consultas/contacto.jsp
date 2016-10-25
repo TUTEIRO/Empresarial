@@ -41,7 +41,6 @@
                 <label for="cedula">Cedula</label>
             </p> 
         </div>
-
     </div>
     <input hidden="true" id="tipo" name="tipo"/>
 

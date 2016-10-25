@@ -8,6 +8,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
+        response.setContentType("text/html;charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
         String nombres = request.getParameter("nombres");
         String apellidos = request.getParameter("apellidos");
         String cc = request.getParameter("cc");

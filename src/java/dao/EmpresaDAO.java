@@ -19,14 +19,13 @@ import util.Conexion;
  *
  * @author quagg
  */
-public class EmpresaDAO implements IEmpresaDAO{
+public class EmpresaDAO implements IEmpresaDAO {
 
-    
-     private Connection conn = null;
-     
+    private Connection conn = null;
+
     @Override
     public boolean registrarEmpresa(EmpresaDTO dto) throws Exception {
-       conn = Conexion.conectar();
+        conn = Conexion.conectar();
         boolean exito = false;
         PreparedStatement stmt = null;
         try {
@@ -93,23 +92,50 @@ public class EmpresaDAO implements IEmpresaDAO{
 
     @Override
     public ArrayList<EmpresaDTO> consultarEmpresa(String tipo, String dato) throws Exception {
-        
+
         ArrayList<EmpresaDTO> list = new ArrayList();
         conn = Conexion.conectar();
         PreparedStatement stmt = null;
         EmpresaDTO empresa = null;
         try {
             if (tipo.equals("nombre")) {
-                stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_nombre LIKE '%"+ dato+"%'");
+                stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_nombre LIKE '%" + dato + "%'");
                 ResultSet res = stmt.executeQuery();
                 while (res.next()) {
-                    empresa = new EmpresaDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(6), res.getString(7), res.getString(8), res.getString(10), res.getString(11));
+                    empresa = new EmpresaDTO();
+                    empresa.setNombre(res.getString(1));
+                    empresa.setNit(res.getString(2));
+                    empresa.setNombre_rep_legal(res.getString(3));
+                    empresa.setTipo_constitucion(res.getString(4));
+                    empresa.setDireccion(res.getString(6));
+                    empresa.setCiudad(res.getString(7));
+                    empresa.setTelefono(res.getString(8));
+                    empresa.setEmail(res.getString(10));
+                    empresa.setUrl_website(res.getString(11));
                     list.add(empresa);
                 }
                 stmt.close();
                 res.close();
             } else if (tipo.equals("nit")) {
-                stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_nit="+ dato);
+                stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_nit=" + dato);
+                ResultSet res = stmt.executeQuery();
+                while (res.next()) {
+                    empresa = new EmpresaDTO();
+                    empresa.setNombre(res.getString(1));
+                    empresa.setNit(res.getString(2));
+                    empresa.setNombre_rep_legal(res.getString(3));
+                    empresa.setTipo_constitucion(res.getString(4));
+                    empresa.setDireccion(res.getString(6));
+                    empresa.setCiudad(res.getString(7));
+                    empresa.setTelefono(res.getString(8));
+                    empresa.setEmail(res.getString(10));
+                    empresa.setUrl_website(res.getString(11));
+                    list.add(empresa);
+                }
+                stmt.close();
+                res.close();
+            } else if (tipo.equals("cc")) {
+                stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_contacto_ref=" + dato);
                 ResultSet res = stmt.executeQuery();
                 while (res.next()) {
                     empresa = new EmpresaDTO();
@@ -207,5 +233,4 @@ public class EmpresaDAO implements IEmpresaDAO{
         return exito;
     }
 
- 
 }
