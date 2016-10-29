@@ -52,9 +52,9 @@
     
     Fachada fachada = new Fachada();
     boolean exito = fachada.registrarEmpresa(nombreEmpresa, nit, representante, constitucion_legal, fecha_constitucion, direccion, ciudad, fijo, celular, email, sitio_web, tipo_empresa, es_empresa_turistica, codigo_ciiu, actividad_int, paises_trabajo, servicios, reg_mercantil, negocio_internet, cc_contacto);
-    boolean exito2 = fachada.registrarEmpleadosEmpresa(nit, empleados_tc, empleados_mt, empleados_directos, emplados_indirectos);
+    boolean exito2 = fachada.registrarEmpleadosEmpresa(empleados_tc, empleados_mt, empleados_directos, emplados_indirectos);
     if(reg_mercantil.equalsIgnoreCase("si")){
-        boolean exito3 = fachada.registrarRegistroMercantil(nit, num_reg_mercantil, ano_renovacion);
+        boolean exito3 = fachada.registrarRegistroMercantil(num_reg_mercantil, ano_renovacion);
     }
     if(es_empresa_turistica.equalsIgnoreCase("si")){
         boolean exito4 = fachada.registrarEmpresaTur(seguro_viaje, reg_nac_turismo, reg_export_servicios, libro_migracion, impuesto_turismo, cod_etica, maneja_poliza, certificado_sostenibilidad, grupo_etnico_empresario, cedula_extranjeria, tipo_emp_turistica, tipo_alojamiento, tipo_turismo_desa, observaciones, nombreEmpresa);
