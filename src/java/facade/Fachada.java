@@ -47,13 +47,13 @@ public class Fachada {
                 codigo_CIIU, act_internacional, paises_trabajo, servicios, emp_reg_mercantil, internet_bsns, cc_contacto);
     }
       
-    public boolean registrarEmpresaTur(boolean posee_seguro, boolean posee_reg_nal, boolean export_servicios, boolean libro_migracion_Col, 
-            boolean impuesto_turismo, boolean codigo_etica, String seguro, String poliza, String cert_sostenibilidad, 
+    public boolean registrarEmpresaTur(String posee_seguro, String posee_reg_nal, String export_servicios, String libro_migracion_Col, 
+            String impuesto_turismo, String codigo_etica, String poliza, String cert_sostenibilidad, 
             String grupo_etnico, String cc_extranjeria, String tipo_turistica, String tipo_alojamiento, 
             String tur_desarrollo, String observaciones, String empresa_asign) throws Exception{
         ControlTuristica turistica = new ControlTuristica();
         return turistica.registrarEmpresaTur(posee_seguro, posee_reg_nal, export_servicios, libro_migracion_Col, impuesto_turismo,
-                codigo_etica, seguro, poliza, cert_sostenibilidad, grupo_etnico, cc_extranjeria, tipo_turistica, tipo_alojamiento,
+                codigo_etica, poliza, cert_sostenibilidad, grupo_etnico, cc_extranjeria, tipo_turistica, tipo_alojamiento,
                 tur_desarrollo, observaciones, empresa_asign);
     }
     
@@ -66,16 +66,6 @@ public class Fachada {
         return con.consultarContacto(tipo, dato);
     }
     
-    public boolean registrarContactoEmpresa( String dato) throws Exception{
-        ControlContacto con = new ControlContacto();
-        ArrayList<ContactoDTO> list = con.consultarContactoTemporal("cc", dato);
-        boolean exito = false;
-        for(ContactoDTO c: list){
-            exito=con.registrarContactoEmpresa(c);
-        }
-        return exito;
-       
-    }
     
     public ArrayList<EmpresaDTO> consultarEmpresa(String tipo, String dato) throws Exception{
         ControlEmpresa emp = new ControlEmpresa();

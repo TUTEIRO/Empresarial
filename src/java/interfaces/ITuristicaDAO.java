@@ -12,6 +12,6 @@ import dto.TuristicaDTO;
  */
 public interface ITuristicaDAO {
     
-    public boolean registrarTuristica(TuristicaDTO dto) throws Exception;
+    public boolean registrarTuristica(TuristicaDTO dto, String nombre_emp) throws Exception;
     public TuristicaDTO consultarTuristica(String dato) throws Exception;
 }

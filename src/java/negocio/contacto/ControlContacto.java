@@ -33,14 +33,5 @@ public class ControlContacto {
         return actualizar.actualizarContacto(cedula, dto);
     }
 
-     public ArrayList<ContactoDTO> consultarContactoTemporal(String tipo, String dato) throws Exception{
-        ContactoDAO dao = new ContactoDAO();
-        return dao.consultarContactoTemporal(tipo, dato);
-    }
-     
-     public boolean registrarContactoEmpresa(ContactoDTO dto) throws Exception{
-         
-         ContactoDAO dao = new ContactoDAO();
-         return dao.registrarContacto(dto);
-     }
+
 }
