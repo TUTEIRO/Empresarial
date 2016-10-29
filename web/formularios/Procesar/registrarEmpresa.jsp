@@ -38,13 +38,26 @@
     String tipo_emp_turistica = request.getParameter("tipo_emp_turistica");
     String tipo_alojamiento = request.getParameter("tipo_alojamiento");
     String tipo_turismo_desa = request.getParameter("tipo_turismo_desa");
+    String seguro_viaje = request.getParameter("seguro_viaje");
+    String reg_nac_turismo = request.getParameter("reg_nac_turismo");
+    String maneja_poliza = request.getParameter("maneja_poliza");
+    String certificado_sostenibilidad = request.getParameter("certificado_sostenibilidad");
+    String reg_export_servicios = request.getParameter("reg_expor_servicios");
+    String libro_migracion = request.getParameter("libro_migracion");
+    String impuesto_turismo = request.getParameter("impuesto_turismo");
+    String cod_etica = request.getParameter("cod_etica");
+    String grupo_etnico_empresario = request.getParameter("grupo_etnico_empresario");
+    String cedula_extranjeria = request.getParameter("cedula_extranjeria");
+    String observaciones = request.getParameter("observaciones");
     
     Fachada fachada = new Fachada();
     boolean exito = fachada.registrarEmpresa(nombreEmpresa, nit, representante, constitucion_legal, fecha_constitucion, direccion, ciudad, fijo, celular, email, sitio_web, tipo_empresa, es_empresa_turistica, codigo_ciiu, actividad_int, paises_trabajo, servicios, reg_mercantil, negocio_internet, cc_contacto);
     boolean exito2 = fachada.registrarEmpleadosEmpresa(nit, empleados_tc, empleados_mt, empleados_directos, emplados_indirectos);
-    boolean exito4 = fachada.registrarContactoEmpresa(cc_contacto);
     if(reg_mercantil.equalsIgnoreCase("si")){
         boolean exito3 = fachada.registrarRegistroMercantil(nit, num_reg_mercantil, ano_renovacion);
+    }
+    if(es_empresa_turistica.equalsIgnoreCase("si")){
+        boolean exito4 = fachada.registrarEmpresaTur(seguro_viaje, reg_nac_turismo, reg_export_servicios, libro_migracion, impuesto_turismo, cod_etica, maneja_poliza, certificado_sostenibilidad, grupo_etnico_empresario, cedula_extranjeria, tipo_emp_turistica, tipo_alojamiento, tipo_turismo_desa, observaciones, nombreEmpresa);
     }
     
 %>

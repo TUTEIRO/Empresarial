@@ -44,6 +44,7 @@ function registrarContacto() {
     var discapacidad = document.getElementById("discapacidad");
     var antiguedad_cargo = document.getElementById("anos_cargo");
     var condicion_desplazado = document.getElementById("desplazado");
+    var correo_mas = document.getElementById("correo_masivo");
     var despla = "";
     if (condicion_desplazado.type === 'checkbox' && condicion_desplazado.checked === true) {
         despla = "Si";
@@ -56,11 +57,18 @@ function registrarContacto() {
     } else {
         dis = "No";
     }
+    var corr = "";
+    if (correo_mas.type === 'checkbox' && correo_mas.checked === true) {
+        corr = "Si";
+    } else {
+        corr = "No";
+    }
     ajax = nuevoAjax();
 
     parametros = "nombres=" + nombre.value + "&apellidos=" + apellidos.value + "&cc=" + cc.value + "&cargo=" + cargo.value + "&lugar_nto=" + lugar_nto.value +
             "&fecha_nto=" + fecha_nto.value + "&nivel_estudio=" + nivel_estudio.value + "&direccion=" + direccion.value + "&ciudad=" + ciudad.value + "&dpto=" + dpto.value +
-            "&celular=" + celular.value + "&fijo=" + fijo.value + "&email=" + email.value + "&genero=" + genero.value + "&etnia=" + etnia.value + "&discapacidad=" + dis + "&antiguedad=" + antiguedad_cargo.value + "&desplazado=" + despla;
+            "&celular=" + celular.value + "&fijo=" + fijo.value + "&email=" + email.value + "&genero=" + genero.value + "&etnia=" + etnia.value + "&discapacidad=" + dis + 
+            "&antiguedad=" + antiguedad_cargo.value + "&desplazado=" + despla +"&correo_mas="+corr;
     url = "Procesar/registrarContacto.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');

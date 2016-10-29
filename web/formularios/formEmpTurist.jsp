@@ -349,15 +349,11 @@
                 <label for="cong_conv">Congreso y convenciones</label>
             </p>
         </div>
-        <div class="input-field col s4">
-            <p>
-                <input type="checkbox" id="otro2" />
-                <label for="otro2">Otro</label>
-            </p>
-        </div>
-        <div class="input-field col s4">
-            <label for="cual">¿Cuál?<input type="text" name="cual" id="cual" class="validate"></label>
-
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea  required id="observaciones" class="materialize-textarea"></textarea>
+            <label for="observaciones">Observaciones</label>
         </div>
     </div>
 </form>

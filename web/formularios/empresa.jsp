@@ -114,22 +114,7 @@
 
         });
 
-        $('#contactoBTN').click(function () {
-            cambiarForm3();
-            cambiarForm("true");
-
-        });
-
-        $('#empresaBTN').click(function () {
-            cambiarForm2();
-            cambiarForm("false");
-
-        });
-        $('#registrarCont').click(function () {
-            cambiarForm3();
-            cambiarForm("true");
-
-        });
+       
 
         
     });
@@ -146,55 +131,12 @@
     </div>
 </div>
 --%>
-<div id="selec" class="row ">
-    <a id="contactoBTN" >
-        <div   class="col s6 card-panel grey black-text">
-            <center>
-                <span >
-                    Contacto
-                </span>
-            </center>
-        </div>
-    </a>
-    <a id="empresaBTN">
-        <div  class="col s6 card-panel grey lighten-2 black-text">
-            <center>
-                <span >
-                    Empresa
-                </span>
-            </center>
-        </div>
-    </a>
-</div>
-<div id="contacto" class="col s12">
-    <jsp:include page="formCon.jsp"/>
-
-    <div class="row">
-        <div class="input-field col s12">
-            <input id="registrarCont"type="submit" class="waves-effect waves-light modal-trigger btn right" value="Continuar" >
-        </div>
-    </div>
-    <div id="modal3" class="modal">
-        <div id="mostrarModal">
-
-        </div>
-    </div>
-</form>
-</div>   
-
-</div>
-</form>
-</div>
-</div>
-
-
-</div>
-
-</section>
 
 
 
-<div id="empresa" class="col s12" style="display: none;  ">
+
+
+<div id="empresa" class="col s12" >
     <jsp:include page="formEmpre.jsp"/>
     <div class="row">
         <div class="input-field col s12">
