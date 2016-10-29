@@ -7,50 +7,26 @@
 <script type="text/javascript" src="js/consultas.js"></script>
 <%@page import="java.util.ArrayList"%>
 <%@page import="facade.Fachada"%>
-<script type="text/javascript">
-    $(document).ready(function () {
-
-
-        $('#radios').click(function () {
-
-            var var_name = $("input[name='group13']:checked").val();
-            $('#tipo').val(var_name);
-
-        });
-
-
-    });
+<script language="javascript">
+    $('select').material_select();
 </script>
 <br></br>
 <div class="card-panel  white" >
-
-    <div class="row" id="radios">
-        <div class="input-field col s3">
-
-            <label for=""><h5>Buscar por</h5></label> 
+    <div class="row">
+        <div class="input-field col s12">
+            <select id="valor_busq">
+                <option value="" disabled selected>--Seleccione una opción--</option>
+                <option value="nombre">Nombre de la Empresa</option>
+                <option value="ctocc">Documento de Id. del Contacto</option>
+                <option value="ciiu">Código CIIU de la Empresa</option>
+                <option value="mun">Municipio originario de la Empresa</option>
+                <option value="tur">Empresas Turísticas</option>
+                <option value="inter">Empresas que hacen negocios internacionales</option>
+                <option value="internet">Empresas que hacen negocios por Internet</option>
+            </select>
+            <label for="valor_busq">Buscar por...</label>
         </div>
-
-        <div class="input-field col s3">
-            <p>
-                <input name="group13" type="radio" id="nombre_empresa" value="nombre"/>
-                <label for="nombre_empresa">Nombre de empresa</label>
-            </p> 
-        </div>
-        <div class="input-field col s3">
-            <p>
-                <input name="group13" type="radio" id="nit_empresa" value="nit"/>
-                <label for="nit_empresa">NIT de empresa</label>
-            </p> 
-        </div>
-        <div class="input-field col s3">
-            <p>
-                <input name="group13" type="radio" id="cc_contacto" value="cc"/>
-                <label for="cc_contacto">CC. Contacto</label>
-            </p> 
-        </div>
-
     </div>
-    <input hidden="true" id="tipo" name="tipoEmp"/>
     <nav>
         <div class="nav-wrapper">
             <form name="busq_emp" id="busq_emp" action="javascript:consultarEmpresa()" method="post">

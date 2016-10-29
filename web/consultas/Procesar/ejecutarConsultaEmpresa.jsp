@@ -9,7 +9,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    String tipo = request.getParameter("tipo");
+    String tipo = request.getParameter("valor_busq");
     String dato = request.getParameter("dato");
     Fachada fachada = new Fachada();
     ArrayList<EmpresaDTO> emp = fachada.consultarEmpresa(tipo, dato);

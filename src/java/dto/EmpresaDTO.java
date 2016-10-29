@@ -56,16 +56,14 @@ public class EmpresaDTO {
         this.url_website = url_website;
     }
 
-    public EmpresaDTO(String nit, int emp_tc, int emp_mc, int emp_directos, int emp_indirectos) {
-        this.nit = nit;
+    public EmpresaDTO(int emp_tc, int emp_mc, int emp_directos, int emp_indirectos) {
         this.emp_tc = emp_tc;
         this.emp_mc = emp_mc;
         this.emp_directos = emp_directos;
         this.emp_indirectos = emp_indirectos;
     }
 
-    public EmpresaDTO(String nit, String num_mercantil, String date_renov_mercantil) {
-        this.nit = nit;
+    public EmpresaDTO(String num_mercantil, String date_renov_mercantil) {
         this.num_mercantil = num_mercantil;
         this.date_renov_mercantil = date_renov_mercantil;
     }

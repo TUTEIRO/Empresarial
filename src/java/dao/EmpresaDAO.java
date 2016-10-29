@@ -30,6 +30,7 @@ public class EmpresaDAO implements IEmpresaDAO {
         PreparedStatement stmt = null;
         try {
             stmt = conn.prepareStatement("INSERT INTO  `ufps_1`.`empresa` (\n"
+                    + "`emp_fakeid`,\n"
                     + "`emp_nombre` ,\n"
                     + "`emp_nit` ,\n"
                     + "`emp_nombre_rep_legal` ,\n"
@@ -52,28 +53,28 @@ public class EmpresaDAO implements IEmpresaDAO {
                     + "`emp_contacto_ref` \n"
                     + ")\n"
                     + "VALUES (\n"
-                    + "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?\n"
+                    + "NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?\n"
                     + ");");
-            stmt.setString(1, dto.getNombre());
-            stmt.setString(2, dto.getNit());
-            stmt.setString(3, dto.getNombre_rep_legal());
-            stmt.setString(4, dto.getTipo_constitucion());
-            stmt.setString(5, dto.getFecha_constitucion());
-            stmt.setString(6, dto.getDireccion());
-            stmt.setString(7, dto.getCiudad());
-            stmt.setString(8, dto.getTelefono());
-            stmt.setString(9, dto.getCelular());
-            stmt.setString(10, dto.getEmail());
-            stmt.setString(11, dto.getUrl_website());
-            stmt.setString(12, dto.getTipo_empresa());
-            stmt.setString(13, dto.getEmp_reg_mercantil());
-            stmt.setString(14, dto.getTipo_empresa());
-            stmt.setString(15, dto.getCodigo_CIIU());
-            stmt.setString(16, dto.getAct_internacional());
-            stmt.setString(17, dto.getPaises_trabajo());
-            stmt.setString(18, dto.getInternet_bsns());
-            stmt.setString(19, dto.getServicios());
-            stmt.setString(20, dto.getCc_contacto());
+            stmt.setString(2, dto.getNombre());
+            stmt.setString(3, dto.getNit());
+            stmt.setString(4, dto.getNombre_rep_legal());
+            stmt.setString(5, dto.getTipo_constitucion());
+            stmt.setString(6, dto.getFecha_constitucion());
+            stmt.setString(7, dto.getDireccion());
+            stmt.setString(8, dto.getCiudad());
+            stmt.setString(9, dto.getTelefono());
+            stmt.setString(10, dto.getCelular());
+            stmt.setString(11, dto.getEmail());
+            stmt.setString(12, dto.getUrl_website());
+            stmt.setString(13, dto.getTipo_empresa());
+            stmt.setString(14, dto.getEmp_reg_mercantil());
+            stmt.setString(15, dto.getTipo_empresa());
+            stmt.setString(16, dto.getCodigo_CIIU());
+            stmt.setString(17, dto.getAct_internacional());
+            stmt.setString(18, dto.getPaises_trabajo());
+            stmt.setString(19, dto.getInternet_bsns());
+            stmt.setString(20, dto.getServicios());
+            stmt.setString(21, dto.getCc_contacto());
             int total = stmt.executeUpdate();
             if (total > 0) {
                 stmt.close();
@@ -97,61 +98,26 @@ public class EmpresaDAO implements IEmpresaDAO {
         conn = Conexion.conectar();
         PreparedStatement stmt = null;
         EmpresaDTO empresa = null;
+        ResultSet res = null;
         try {
-            if (tipo.equals("nombre")) {
-                stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_nombre LIKE '%" + dato + "%'");
-                ResultSet res = stmt.executeQuery();
-                while (res.next()) {
-                    empresa = new EmpresaDTO();
-                    empresa.setNombre(res.getString(1));
-                    empresa.setNit(res.getString(2));
-                    empresa.setNombre_rep_legal(res.getString(3));
-                    empresa.setTipo_constitucion(res.getString(4));
-                    empresa.setDireccion(res.getString(6));
-                    empresa.setCiudad(res.getString(7));
-                    empresa.setTelefono(res.getString(8));
-                    empresa.setEmail(res.getString(10));
-                    empresa.setUrl_website(res.getString(11));
-                    list.add(empresa);
-                }
-                stmt.close();
-                res.close();
-            } else if (tipo.equals("nit")) {
-                stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_nit=" + dato);
-                ResultSet res = stmt.executeQuery();
-                while (res.next()) {
-                    empresa = new EmpresaDTO();
-                    empresa.setNombre(res.getString(1));
-                    empresa.setNit(res.getString(2));
-                    empresa.setNombre_rep_legal(res.getString(3));
-                    empresa.setTipo_constitucion(res.getString(4));
-                    empresa.setDireccion(res.getString(6));
-                    empresa.setCiudad(res.getString(7));
-                    empresa.setTelefono(res.getString(8));
-                    empresa.setEmail(res.getString(10));
-                    empresa.setUrl_website(res.getString(11));
-                    list.add(empresa);
-                }
-                stmt.close();
-                res.close();
-            } else if (tipo.equals("cc")) {
-                stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_contacto_ref=" + dato);
-                ResultSet res = stmt.executeQuery();
-                while (res.next()) {
-                    empresa = new EmpresaDTO();
-                    empresa.setNombre(res.getString(1));
-                    empresa.setNit(res.getString(2));
-                    empresa.setNombre_rep_legal(res.getString(3));
-                    empresa.setTipo_constitucion(res.getString(4));
-                    empresa.setDireccion(res.getString(6));
-                    empresa.setCiudad(res.getString(7));
-                    empresa.setTelefono(res.getString(8));
-                    empresa.setEmail(res.getString(10));
-                    empresa.setUrl_website(res.getString(11));
-                    list.add(empresa);
-                }
-                stmt.close();
-                res.close();
+            switch (tipo) {
+                case "nombre":
+                    stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_nombre LIKE '%" + dato + "%'");
+                    break;
+                case "nit":
+                    stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_nombre LIKE '%" + dato + "%'");
+                    break;
+                case "cc":
+                    stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_nombre LIKE '%" + dato + "%'");
+                    break;
+                default:
+                    break;
+            }
+            res = stmt.executeQuery();
+            while(res.next()){
+                empresa = new EmpresaDTO();
+                empresa.setNombre(res.getString(2));
+                
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
@@ -168,7 +134,14 @@ public class EmpresaDAO implements IEmpresaDAO {
         conn = Conexion.conectar();
         boolean exito = false;
         PreparedStatement stmt = null;
+        PreparedStatement stmt2 = null;
+        int id = 0;
         try {
+            stmt2 = conn.prepareStatement("SELECT MAX(emp_fakeid) FROM empresa");
+            ResultSet res = stmt2.executeQuery();
+            while(res.next()){
+                id = res.getInt(1);
+            }
             stmt = conn.prepareStatement("INSERT INTO  `ufps_1`.`empresa_empleados` (\n"
                     + "`empp_nit` ,\n"
                     + "`empp_tc` ,\n"
@@ -179,7 +152,7 @@ public class EmpresaDAO implements IEmpresaDAO {
                     + "VALUES (\n"
                     + "?,?,?,?,?\n"
                     + ");");
-            stmt.setString(1, dto.getNit());
+            stmt.setInt(1, id);
             stmt.setInt(2, dto.getEmp_tc());
             stmt.setInt(3, dto.getEmp_mc());
             stmt.setInt(4, dto.getEmp_directos());
@@ -205,7 +178,14 @@ public class EmpresaDAO implements IEmpresaDAO {
         conn = Conexion.conectar();
         boolean exito = false;
         PreparedStatement stmt = null;
+        PreparedStatement stmt2 = null;
+        int id = 0;
         try {
+            stmt2 = conn.prepareStatement("SELECT MAX(emp_fakeid) FROM empresa");
+            ResultSet res = stmt2.executeQuery();
+            while(res.next()){
+                id = res.getInt(1);
+            }
             stmt = conn.prepareStatement("INSERT INTO  `ufps_1`.`empresa_reg_mercantil` (\n"
                     + "`empresa_nit` ,\n"
                     + "`emp_num_reg_mercantil` ,\n"
@@ -214,7 +194,7 @@ public class EmpresaDAO implements IEmpresaDAO {
                     + "VALUES (\n"
                     + "?,?,?\n"
                     + ");");
-            stmt.setString(1, dto.getNit());
+            stmt.setInt(1, id);
             stmt.setString(2, dto.getNum_mercantil());
             stmt.setString(3, dto.getDate_renov_mercantil());
             int total = stmt.executeUpdate();

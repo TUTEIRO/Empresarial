@@ -99,32 +99,27 @@ public class ContactoDAO implements IContactoDAO {
             switch (tipo) {
                 case "nombre":
                     stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_nombres LIKE '%" + dato + "%'");
-                    res = stmt.executeQuery();
                     break;
                 case "apellido":
                     stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_apellidos LIKE '%" + dato + "%'");
-                    res = stmt.executeQuery();
                     break;
                 case "cc":
                     stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_cc=" + dato);
-                    res = stmt.executeQuery();
                     break;
                 case "dpto":
                     stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_departamento=" + dato);
-                    res = stmt.executeQuery();
                     break;
                 case "mun":
                     stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_ciudad=" + dato);
-                    res = stmt.executeQuery();
                     break;
                 case "pais":
                     stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_lugar_nacimiento LIKE '%" + dato + "%'");
-                    res = stmt.executeQuery();
                     break;
                 default:
                     break;
             }
-            while(res.next()){
+            res = stmt.executeQuery();
+            while (res.next()) {
                 contacto = new ContactoDTO();
                 contacto.setNombres(res.getString(1));
                 contacto.setApellidos(res.getString(2));

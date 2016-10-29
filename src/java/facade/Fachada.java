@@ -155,13 +155,13 @@ public class Fachada {
         return con.consultarEntidad(tipo, dato);
     }
      
-     public boolean registrarEmpleadosEmpresa(String nit, int empleados_tc, int empleados_mc, int empleados_directos, int empleados_indirectos) throws Exception{
+     public boolean registrarEmpleadosEmpresa(int empleados_tc, int empleados_mc, int empleados_directos, int empleados_indirectos) throws Exception{
          ControlEmpresa control = new ControlEmpresa();
-         return control.registrarEmpleadosEmpresas(nit, empleados_tc, empleados_mc, empleados_directos, empleados_indirectos);
+         return control.registrarEmpleadosEmpresas(empleados_tc, empleados_mc, empleados_directos, empleados_indirectos);
      }
      
-     public boolean registrarRegistroMercantil(String nit, String num_mercantil, String date_renov_mercantil) throws Exception{
+     public boolean registrarRegistroMercantil(String num_mercantil, String date_renov_mercantil) throws Exception{
          ControlEmpresa control = new ControlEmpresa();
-         return control.registrarRegistroMercantil(nit, num_mercantil, date_renov_mercantil);
+         return control.registrarRegistroMercantil(num_mercantil, date_renov_mercantil);
      }
 }

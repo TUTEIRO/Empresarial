@@ -32,15 +32,15 @@ public class ControlEmpresa {
         return dao.consultarEmpresa(tipo, dato);
     }
     
-    public boolean registrarEmpleadosEmpresas(String nit, int empleados_tc, int empleados_mc, int empleados_directos, int empleados_indirectos) throws Exception{
+    public boolean registrarEmpleadosEmpresas(int empleados_tc, int empleados_mc, int empleados_directos, int empleados_indirectos) throws Exception{
         EmpresaDAO dao = new EmpresaDAO();
-        EmpresaDTO dto = new EmpresaDTO(nit, empleados_tc, empleados_mc, empleados_directos, empleados_indirectos);
+        EmpresaDTO dto = new EmpresaDTO(empleados_tc, empleados_mc, empleados_directos, empleados_indirectos);
         return dao.registrarEmpleadosEmpresa(dto);
     }
     
-    public boolean registrarRegistroMercantil(String nit, String num_mercantil, String date_renov_mercantil) throws Exception{
+    public boolean registrarRegistroMercantil(String num_mercantil, String date_renov_mercantil) throws Exception{
         EmpresaDAO dao = new EmpresaDAO();
-        EmpresaDTO empresa = new EmpresaDTO(nit, num_mercantil, date_renov_mercantil);
+        EmpresaDTO empresa = new EmpresaDTO(num_mercantil, date_renov_mercantil);
         return dao.registrarRegistroMercantil(empresa);
     }
 }
