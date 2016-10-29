@@ -85,17 +85,17 @@
             </div>
 
             <ul id="dropdown1" class="dropdown-content green darken-4" >
-                <li><a href="../formularios/registrar.jsp"><i class="tiny material-icons">library_add</i><span class="white-text" >Registrar</span></a></li>
+                <li><a href="../formularios/registrar.jsp"><i class="tiny material-icons white-text">library_add</i><span class="white-text" >Registrar</span></a></li>
                 <li class="divider"></li>
-                <li><a href="../consultas/empresa.jsp"><i class="tiny material-icons">search</i><span class="white-text" >Consultar</span></a></li>
+                <li><a href="../consultas/empresa.jsp"><i class="tiny material-icons white-text">search</i><span class="white-text" >Consultar</span></a></li>
                 <li class="divider"></li>
-                <li><a href="../consultas/contacto.jsp"><i class="tiny material-icons">perm_contact_calendar</i><span class="white-text" whidt="100%">Consultar contactos</span></a></li>
+                <li><a href="../consultas/contacto.jsp"><i class="tiny material-icons white-text">perm_contact_calendar</i><span class="white-text" whidt="100%">Consultar contactos</span></a></li>
             </ul>
 
             <ul id="dropdown2" class="dropdown-content green darken-4" >
-                <li><a href="../formularios/entidades.jsp"><i class="tiny material-icons">library_add</i><span class="white-text" >Registrar</span></a></li>
+                <li><a href="../formularios/entidades.jsp"><i class="tiny material-icons white-text">library_add</i><span class="white-text" >Registrar</span></a></li>
                 <li class="divider"></li>
-                <li><a href="../consultas/entidades.jsp"><i class="tiny material-icons">search</i><span class="white-text" >Consultar</span></a></li>
+                <li><a href="../consultas/entidades.jsp"><i class="tiny material-icons white-text">search</i><span class="white-text" >Consultar</span></a></li>
                 
             </ul>
 
