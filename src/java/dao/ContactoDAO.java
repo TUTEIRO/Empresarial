@@ -71,7 +71,7 @@ public class ContactoDAO implements IContactoDAO {
             stmt.setInt(16, dto.getEtnia());
             stmt.setString(17, dto.getCondicion_desplazado());
             stmt.setString(18, dto.getDiscapacidad());
-            stmt.setInt(19, 0);
+            stmt.setString(19, dto.getCorreo_masivo());
             int total = stmt.executeUpdate();
             if (total > 0) {
                 stmt.close();
