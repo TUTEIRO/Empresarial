@@ -118,7 +118,7 @@ public class ContactoDAO implements IContactoDAO {
                     res = stmt.executeQuery();
                     break;
                 case "pais":
-                    stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_lugar_nacimiento=" + dato);
+                    stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_lugar_nacimiento LIKE '%" + dato + "%'");
                     res = stmt.executeQuery();
                     break;
                 default:
