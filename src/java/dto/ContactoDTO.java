@@ -11,13 +11,13 @@ package dto;
  */
 public class ContactoDTO {
     
-    private String nombres, apellidos, cc, cargo, lugar_nacimiento, fecha_nacimiento, nivel_estudio, direccion, ciudad, dpto, celular, fijo, email, genero, discapacidad, condicion_desplazado;
-    private int anio_cargo, correo_masivo, etnia;
+    private String nombres, apellidos, cc, cargo, lugar_nacimiento, fecha_nacimiento, nivel_estudio, direccion, ciudad, dpto, celular, fijo, email, genero, discapacidad, condicion_desplazado, correo_masivo;
+    private int anio_cargo, etnia;
 
     public ContactoDTO() {
     }
 
-    public ContactoDTO(String nombres, String apellidos, String cc, String cargo, String lugar_nacimiento, String fecha_nacimiento, String nivel_estudio, String direccion, String ciudad, String dpto, String celular, String fijo, String email, String genero, String discapacidad, String condicion_desplazado, int etnia, int anio_cargo) {
+    public ContactoDTO(String nombres, String apellidos, String cc, String cargo, String lugar_nacimiento, String fecha_nacimiento, String nivel_estudio, String direccion, String ciudad, String dpto, String celular, String fijo, String email, String genero, String discapacidad, String condicion_desplazado, int etnia, int anio_cargo, String correo_masivo) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.cc = cc;
@@ -36,7 +36,7 @@ public class ContactoDTO {
         this.condicion_desplazado = condicion_desplazado;
         this.etnia = etnia;
         this.anio_cargo = anio_cargo;
-        this.correo_masivo = 0;
+        this.correo_masivo = correo_masivo;
     }
 
     public ContactoDTO(String nombres, String apellidos, String cc, String cargo, String nivel_estudio, String direccion, String ciudad, String dpto, String celular, String fijo, String email, int anio_cargo) {
@@ -210,13 +210,14 @@ public class ContactoDTO {
         this.anio_cargo = anio_cargo;
     }
 
-    public int getCorreo_masivo() {
+    public String getCorreo_masivo() {
         return correo_masivo;
     }
 
-    public void setCorreo_masivo(int correo_masivo) {
+    public void setCorreo_masivo(String correo_masivo) {
         this.correo_masivo = correo_masivo;
     }
-    
+
+   
     
 }

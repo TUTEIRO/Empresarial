@@ -94,38 +94,61 @@ public class ContactoDAO implements IContactoDAO {
         conn = Conexion.conectar();
         PreparedStatement stmt = null;
         ContactoDTO contacto = null;
+        ResultSet res = null;
         try {
-            if (tipo.equals("nombre")) {
-                stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_nombres LIKE '%"+ dato+"%'");
-                ResultSet res = stmt.executeQuery();
-                while (res.next()) {
-                    contacto = new ContactoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(9), res.getString(10), res.getString(12), res.getString(14));
-                    list.add(contacto);
-                }
-                stmt.close();
-                res.close();
-            } else if (tipo.equals("cc")) {
-                stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_cc="+ dato);
-                ResultSet res = stmt.executeQuery();
-                while (res.next()) {
-                    contacto = new ContactoDTO();
-                    contacto.setNombres(res.getString(1));
-                    contacto.setApellidos(res.getString(2));
-                    contacto.setCc(res.getString(3));
-                    contacto.setCargo(res.getString(4));
-                    contacto.setAnio_cargo(res.getInt(5));
-                    contacto.setNivel_estudio(res.getString(8));
-                    contacto.setDireccion(res.getString(9));
-                    contacto.setCiudad(res.getString(10));
-                    contacto.setDpto(res.getString(11));
-                    contacto.setCelular(res.getString(12));
-                    contacto.setFijo(res.getString(13));
-                    contacto.setEmail(res.getString(14));
-                    list.add(contacto);
-                }
-                stmt.close();
-                res.close();
+            switch (tipo) {
+                case "nombre":
+                    stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_nombres LIKE '%" + dato + "%'");
+                    res = stmt.executeQuery();
+                    break;
+                case "apellido":
+                    stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_apellidos LIKE '%" + dato + "%'");
+                    res = stmt.executeQuery();
+                    break;
+                case "cc":
+                    stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_cc=" + dato);
+                    res = stmt.executeQuery();
+                    break;
+                case "dpto":
+                    stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_departamento=" + dato);
+                    res = stmt.executeQuery();
+                    break;
+                case "mun":
+                    stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_ciudad=" + dato);
+                    res = stmt.executeQuery();
+                    break;
+                case "pais":
+                    stmt = conn.prepareStatement("SELECT * FROM contacto WHERE cto_lugar_nacimiento=" + dato);
+                    res = stmt.executeQuery();
+                    break;
+                default:
+                    break;
             }
+            while(res.next()){
+                contacto = new ContactoDTO();
+                contacto.setNombres(res.getString(1));
+                contacto.setApellidos(res.getString(2));
+                contacto.setCc(res.getString(3));
+                contacto.setCargo(res.getString(4));
+                contacto.setAnio_cargo(res.getInt(5));
+                contacto.setLugar_nacimiento(res.getString(6));
+                contacto.setFecha_nacimiento(res.getString(7));
+                contacto.setNivel_estudio(res.getString(8));
+                contacto.setDireccion(res.getString(9));
+                contacto.setCiudad(res.getString(10));
+                contacto.setDpto(res.getString(11));
+                contacto.setCelular(res.getString(12));
+                contacto.setFijo(res.getString(13));
+                contacto.setEmail(res.getString(14));
+                contacto.setGenero(res.getString(15));
+                contacto.setEtnia(res.getInt(16));
+                contacto.setCondicion_desplazado(res.getString(17));
+                contacto.setDiscapacidad(res.getString(18));
+                contacto.setCorreo_masivo(res.getString(19));
+                list.add(contacto);
+            }
+            stmt.close();
+            res.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {
@@ -142,7 +165,7 @@ public class ContactoDAO implements IContactoDAO {
         PreparedStatement stmt = null;
         boolean exito = false;
         try {
-            stmt = conn.prepareStatement("UPDATE contacto SET cto_nombres=?,cto_apellidos=?,cto_cargo=?,cto_anios_cargo=?,cto_nivel_estudio=?,cto_departamento=?,cto_ciudad=?,cto_direccion=?,cto_fijo=?,cto_celular=?,cto_email=? WHERE cto_cc='"+cc+"'");
+            stmt = conn.prepareStatement("UPDATE contacto SET cto_nombres=?,cto_apellidos=?,cto_cargo=?,cto_anios_cargo=?,cto_nivel_estudio=?,cto_departamento=?,cto_ciudad=?,cto_direccion=?,cto_fijo=?,cto_celular=?,cto_email=? WHERE cto_cc='" + cc + "'");
             stmt.setString(1, dto.getNombres());
             stmt.setString(2, dto.getApellidos());
             stmt.setString(3, dto.getCargo());
@@ -241,7 +264,7 @@ public class ContactoDAO implements IContactoDAO {
         ContactoDTO contacto = null;
         try {
             if (tipo.equals("nombre")) {
-                stmt = conn.prepareStatement("SELECT * FROM contacto_temporal WHERE cto_nombres LIKE '%"+ dato+"%'");
+                stmt = conn.prepareStatement("SELECT * FROM contacto_temporal WHERE cto_nombres LIKE '%" + dato + "%'");
                 ResultSet res = stmt.executeQuery();
                 while (res.next()) {
                     contacto = new ContactoDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(9), res.getString(10), res.getString(12), res.getString(14));
@@ -250,7 +273,7 @@ public class ContactoDAO implements IContactoDAO {
                 stmt.close();
                 res.close();
             } else if (tipo.equals("cc")) {
-                stmt = conn.prepareStatement("SELECT * FROM contacto_temporal WHERE cto_cc="+ dato);
+                stmt = conn.prepareStatement("SELECT * FROM contacto_temporal WHERE cto_cc=" + dato);
                 ResultSet res = stmt.executeQuery();
                 while (res.next()) {
                     contacto = new ContactoDTO();

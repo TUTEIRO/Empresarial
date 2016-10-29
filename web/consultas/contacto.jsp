@@ -7,42 +7,26 @@
 <script type="text/javascript" src="js/consultas.js"></script>
 <%@page import="java.util.ArrayList"%>
 <%@page import="facade.Fachada"%>
-<script type="text/javascript">
-    $(document).ready(function () {
-
-
-        $('#radios').click(function () {
-
-            var var_name = $("input[name='group6']:checked").val();
-            $('#tipo').val(var_name);
-
-        });
-
-
-    });
+<script language="javascript">
+    $('select').material_select();
 </script>
 <br></br>
 <div class="card-panel  white" >
 
-    <div class="row" id="radios">
-        <div class="input-field col s4">
-
-            <label for=""><h5>Buscar por</h5></label> 
-        </div>
-        <div class="input-field col s4">
-            <p>
-                <input name="group6" type="radio" id="nombre_contacto" value="nombre"/>
-                <label for="nombre_contacto">Nombre de contacto</label>
-            </p> 
-        </div>
-        <div class="input-field col s4">
-            <p>
-                <input name="group6" type="radio" id="cedula" value="cc"/>
-                <label for="cedula">Cedula</label>
-            </p> 
+    <div class="row">
+        <div class="input-field col s12">
+            <select id="valor_busq">
+                <option value="" disabled selected>--Seleccione una opción--</option>
+                <option value="nombre">Nombre(s) de Contacto</option>
+                <option value="apellido">Apellido(s) de Contacto</option>
+                <option value="cc">Documento de Identidad</option>
+                <option value="dpto">Departamento de Residencia</option>
+                <option value="mun">Municipio de Residencia</option>
+                <option value="pais">País de Origen</option>
+            </select>
+            <label for="valor_busq">Buscar por...</label>
         </div>
     </div>
-    <input hidden="true" id="tipo" name="tipo"/>
 
     <nav>
         <div class="nav-wrapper">

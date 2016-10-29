@@ -30,10 +30,10 @@ public class Fachada {
     public boolean registrarContacto(String nombres, String apellidos, String cc, String cargo, String lugar_nto,
             String fecha_nto, String nivel_estudio, String direccion, String ciudad, String dpto, String celular, 
             String fijo, String email, String genero, int etnia, String discapacidad, int antiguedad_cargo, 
-            String condicion_desplazado) throws Exception{
+            String condicion_desplazado, String correo_masivo) throws Exception{
         ControlContacto contacto = new ControlContacto();
         return contacto.registrarContacto(nombres, apellidos, cc, cargo, lugar_nto, fecha_nto, nivel_estudio, direccion,
-                ciudad, dpto, celular, fijo, email, genero, etnia, discapacidad, antiguedad_cargo, condicion_desplazado);
+                ciudad, dpto, celular, fijo, email, genero, etnia, discapacidad, antiguedad_cargo, condicion_desplazado, correo_masivo);
     }
     
     public boolean registrarEmpresa(String nombre, String nit, String nombre_rep_legal, String tipo_constitucion, 
@@ -46,17 +46,7 @@ public class Fachada {
                 ciudad, telefono, celular, email, url_website, tipo_empresa, es_empresa_turistica,
                 codigo_CIIU, act_internacional, paises_trabajo, servicios, emp_reg_mercantil, internet_bsns, cc_contacto);
     }
-    
-     public boolean registrarContactoTemporal(String nombres, String apellidos, String cc, String cargo, String lugar_nto,
-            String fecha_nto, String nivel_estudio, String direccion, String ciudad, String dpto, String celular, 
-            String fijo, String email, String genero, int etnia, String discapacidad, int antiguedad_cargo, 
-            String condicion_desplazado) throws Exception{
-        ControlContacto contacto = new ControlContacto();
-        return contacto.registrarContactoTemporal(nombres, apellidos, cc, cargo, lugar_nto, fecha_nto, nivel_estudio, direccion,
-                ciudad, dpto, celular, fijo, email, genero, etnia, discapacidad, antiguedad_cargo, condicion_desplazado);
-    }
-    
-    
+      
     public boolean registrarEmpresaTur(boolean posee_seguro, boolean posee_reg_nal, boolean export_servicios, boolean libro_migracion_Col, 
             boolean impuesto_turismo, boolean codigo_etica, String seguro, String poliza, String cert_sostenibilidad, 
             String grupo_etnico, String cc_extranjeria, String tipo_turistica, String tipo_alojamiento, 
