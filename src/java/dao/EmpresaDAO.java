@@ -81,11 +81,23 @@ public class EmpresaDAO implements IEmpresaDAO {
                 case "nombre":
                     stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_nombre LIKE '%" + dato + "%'");
                     break;
-                case "nit":
-                    stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_nombre LIKE '%" + dato + "%'");
+                case "ctocc":
+                    stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_contacto_ref=" + dato);
                     break;
-                case "cc":
-                    stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_nombre LIKE '%" + dato + "%'");
+                case "ciiu":
+                    stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_codigo_CIIU=" + dato);
+                    break;
+                case "mun":
+                    stmt = conn.prepareStatement("SELECT * FROM empresa WHERE emp_ciudad=" + dato);
+                    break;
+                case "tur":
+                    stmt = conn.prepareStatement("SELECT * from empresa WHERE emp_es_turistica = 'si'");
+                    break;
+                case "inter":
+                    stmt = conn.prepareStatement("SELECT * from empresa WHERE emp_act_internacional = 'si'");
+                    break;
+                case "internet":
+                    stmt = conn.prepareStatement("SELECT * from empresa WHERE emp_internet_bsns = 'si'");
                     break;
                 default:
                     break;
@@ -94,8 +106,21 @@ public class EmpresaDAO implements IEmpresaDAO {
             while(res.next()){
                 empresa = new EmpresaDTO();
                 empresa.setNombre(res.getString(2));
-                
+                empresa.setNit(res.getString(3));
+                empresa.setNombre_rep_legal(res.getString(4));
+                empresa.setDireccion(res.getString(7));
+                empresa.setCiudad(res.getString(8));
+                empresa.setTelefono(res.getString(9));
+                empresa.setCelular(res.getString(10));
+                empresa.setEmail(res.getString(11));
+                empresa.setUrl_website(res.getString(12));
+                empresa.setTipo_empresa(res.getString(15));
+                empresa.setCodigo_CIIU(res.getString(16));
+                empresa.setCc_contacto(res.getString(21));
+                list.add(empresa);
             }
+            stmt.close();
+            res.close();
         } catch (SQLException ex) {
             ex.printStackTrace();
         } finally {

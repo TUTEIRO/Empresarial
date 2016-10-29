@@ -20,7 +20,7 @@
                 <option value="ctocc">Documento de Id. del Contacto</option>
                 <option value="ciiu">Código CIIU de la Empresa</option>
                 <option value="mun">Municipio originario de la Empresa</option>
-                <option value="tur">Empresas Turísticas</option>
+                <option value="tur"">Empresas Turísticas</option>
                 <option value="inter">Empresas que hacen negocios internacionales</option>
                 <option value="internet">Empresas que hacen negocios por Internet</option>
             </select>
