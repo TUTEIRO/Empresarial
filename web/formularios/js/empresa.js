@@ -23,65 +23,65 @@ function nuevoAjax() {
 }
 
 function registrarEmpresa() {
-    alert("entroa registro empresa");
+
     var nombre = document.getElementById("nombre_empresa");
-     alert(nombre.value);
+
     var nit = document.getElementById("nit");
-     alert(nit.value);
+
     var rep_legal = document.getElementById("representante");
-     alert(rep_legal.value);
+
     var constitucion_legal = document.getElementById("cons_ot");
     var otraConstitucion = "";
-    if(constitucion_legal === "otras"){
+    if (constitucion_legal === "otras") {
         otraConstitucion = document.getElementById("cons_otros");
-    }else{
+    } else {
         otraConstitucion = constitucion_legal.value;
     }
-     alert(otraConstitucion);
+
     var fecha_constitucion = document.getElementById("fecha_constitucion");
-     alert(fecha_constitucion.value);
+
     var empleados_tc = document.getElementById("tc");
-     alert(empleados_tc.value);
+
     var empleados_mt = document.getElementById("mt");
-     alert(empleados_mt.value);
+
     var empleados_directo = document.getElementById("directo");
-     alert(empleados_directo.value);
+
     var empleados_indirecto = document.getElementById("indirecto");
-    alert(empleados_indirecto.value);
+
     var direccion = document.getElementById("direccion_empresa");
-    alert(direccion.value);
+
     var ciudad = document.getElementById("ciudad_empresa");
-    alert(ciudad.value);
-    var fijo = document.getElementById("tel_fijo__empresa");
-    alert(fijo.value);
+
+    var fijo = document.getElementById("tel_fijo_empresa");
+
     var celular = document.getElementById("tel_movil_empresa");
-    alert(celular.value);
+
     var email = document.getElementById("correo_empresa");
-    alert(email.value);
+
     var sitio_web = document.getElementById("sitio_web");
-    alert(sitio_web.value);
-    var servicios = document.getElementById("servicios");
-    alert(servicios.value);
+
+    var servicios = document.getElementById("servicios_des");
+
     var reg_mercantil = document.getElementById("regis_mercan");
-    alert(reg_mercantil.value);
+
     var num_reg_mercantil = document.getElementById("num_reg_mercantil");
-    alert(num_reg_mercantil.value);
+
     var renovacion_mercantil = document.getElementById("ano_renovacion");
-    alert(renovacion_mercantil.value);
+    var cc_contac = document.getElementById("num_ced");
     var tipo_empresa = document.getElementById("tipo_emp");
     var otraEmp = "";
-    if(tipo_empresa.value === "otra"){
+    if (tipo_empresa.value === "otra") {
         otraEmp = document.getElementById("tipo_otra");
-    }else{
+    } else {
         otraEmp = tipo_empresa.value;
     }
-    alert(otraEmp);
+
     var codigo_ciiu = document.getElementById("codigoCIIU");
-    alert(codigo_ciiu.value);
+
     var actividad_int = document.getElementById("actividad_int");
-    alert(actividad_int.value);
+
     var paises_trabajo = document.getElementById("paises_comercializa");
-    alert(paises_trabajo.value);
+
     var neg_internet = document.getElementById("neg_internet");
     var negocio_internet = "";
     if (neg_internet.type === 'checkbox' && neg_internet.checked === true) {
@@ -89,108 +89,134 @@ function registrarEmpresa() {
     } else {
         negocio_internet = "No";
     }
-    alert(negocio_internet);
+
     var empresa_turistica = document.getElementById("empT");
+
     var es_empresa_turistica = "";
     if (empresa_turistica.type === 'checkbox' && empresa_turistica.checked === true) {
         es_empresa_turistica = "Si";
     } else {
         es_empresa_turistica = "No";
     }
-    alert(es_empresa_turistica);
-    var checkboxes1 = document.getElementById("tipo_emp_turistica");
-    var tipo_emp_turistica = "";
-    for (var x = 0; x < checkboxes1.elements.length; x++) {
-        if ((checkboxes1[x].type === 'checkbox') && (checkboxes1[x].checked === true)) {
-            var tipo1 = checkboxes1[x].value;
-            tipo_emp_turistica = tipo_emp_turistica.concat(tipo1, "\n");
-        }
-    }
-    var checkboxes2 = document.getElementById("tipo_alojamiento");
-    var tipo_alojamiento = "";
-    for (var x = 0; x < checkboxes2.elements.length; x++) {
-        if ((checkboxes2[x].type === 'checkbox') && (checkboxes2[x].checked === true)) {
-            var tipo2 = checkboxes2[x].value;
-            tipo_alojamiento = tipo_alojamiento.concat(tipo2, "\n");
-        }
-    }
-    var checkboxes3 = document.getElementById("tipo_turismo_desa");
-    var tipo_turismo_desa = "";
-    for (var x = 0; x < checkboxes3.elements.length; x++) {
-        if ((checkboxes3[x].type === 'checkbox') && (checkboxes3[x].checked === true)) {
-            var tipo3 = checkboxes3[x].value;
-            tipo_turismo_desa = tipo_turismo_desa.concat(tipo3, "\n");
-        }
-    }
-    var seguro_viaje = document.getElementById("seg_viaje");
-    var cual = "";
-    if(seguro_viaje.value === "Si"){
-        cual = document.getElementById("seguro_cual");
-    }else{
-        cual = "No";
-    }
-    var reg_nac_turismo = document.getElementById("reg_nac_turismo");
-    var nac_turismo = "";
-    if (reg_nac_turismo.type === 'checkbox' && reg_nac_turismo.checked === true) {
-        nac_turismo = "Si";
-    } else {
-        nac_turismo = "No";
-    }
-    var maneja_poliza = document.getElementById("poliza");
-    var poliza = "";
-    if (maneja_poliza.type === 'checkbox' && maneja_poliza.checked === true) {
-        poliza = "Si";
-    } else {
-        poliza = "No";
-    }
-    var certificado_sostenibilidad = document.getElementById("cer_sostenibilidad");
-    var reg_expor_servicio = document.getElementById("rut");
-    var rut = "";
-    if (reg_expor_servicio.type === 'checkbox' && reg_expor_servicio.checked === true) {
-        rut = "Si";
-    } else {
-        rut = "No";
-    }
-    var libro_migracion = document.getElementById("libro_migracion");
-    var libro = "";
-    if (libro_migracion.type === 'checkbox' && libro_migracion.checked === true) {
-        libro = "Si";
-    } else {
-        libro = "No";
-    }
-    var impues_turismo = document.getElementById("parafiscal");
-    var parafiscal = "";
-    if (impues_turismo.type === 'checkbox' && impues_turismo.checked === true) {
-        parafiscal = "Si";
-    } else {
-        parafiscal = "No";
-    }
-    var cod_etica = document.getElementById("cod_etica");
-    var etica = "";
-    if (cod_etica.type === 'checkbox' && cod_etica.checked === true) {
-        etica = "Si";
-    } else {
-        etica = "No";
-    }
-    var grup_etnico_empresario = document.getElementById("grupo_etnico_empresario");
-    var cedula_extranjera = document.getElementById("ced_extranjeria");
-    var observaciones = document.getElementById("observaciones")
-    ajax = nuevoAjax();
+    parametros = "2";
+    url = "esto";
+    alert("holis x2");
+    if (es_empresa_turistica === "Si") {
 
-    parametros = "nombre=" + nombre.value + "&nit=" + nit.value + "&representante=" + rep_legal.value + "&constitucion_legal=" + otraConstitucion +
-            "&fecha_constitucion=" + fecha_constitucion.value + "&empleados_tc=" + empleados_tc.value + "&empleados_mt=" + empleados_mt.value +
-            "&empleados_directo=" + empleados_directo.value + "&empleados_indirecto=" + empleados_indirecto.value + "&direccion=" + direccion.value +
-            "&ciudad=" + ciudad.value + "&fijo=" + fijo.value + "&celular=" + celular.value + "&email=" + email.value + "&sitio_web=" + sitio_web.value +
-            "&servicios=" + servicios.value + "&reg_mercantil=" + reg_mercantil.value + "&num_reg_mercantil=" + num_reg_mercantil.value +
-            "&ano_renovacion=" + renovacion_mercantil.value + "&tipo_empresa=" + otraEmp + "&codigo_ciiu=" + codigo_ciiu.value + "&actividad_int=" + actividad_int.value + "&paises_trabajo=" + paises_trabajo.value + "&negocio_internet=" + negocio_internet + "&es_empresa_turistica=" + es_empresa_turistica + "&tipo_emp_turistica=" + tipo_emp_turistica +
-            "&tipo_alojamiento=" + tipo_alojamiento + "&tipo_turismo_desa=" + tipo_turismo_desa + "&seguro_viaje=" +cual+ "&reg_nac_turismo=" +nac_turismo+
-            "&maneja_poliza=" +poliza+ "&certificado_sostenibilidad=" +certificado_sostenibilidad.value+ "&reg_expor_servicio=" +rut+
-            "&libro_migracion=" +libro+ "&impuesto_turismo=" +parafiscal+ "&cod_etica=" +etica+ "&grupo_etnico_empresario=" +grup_etnico_empresario.value+
-            "&cedula_extranjeria=" +cedula_extranjera.value+ "&observaciones=" +observaciones.value;
-    url = "Procesar/registrarEmpresa.jsp";
+        var checkboxes = document.getElementById("tipo_emp_turistica");
+        alert("holis no");
+        var tipo_emp_turistica = "";
+        for (var x = 0; x < 12; x++) {
+            if ((checkboxes[x].type === 'checkbox') && (checkboxes[x].checked === true)) {
+                var tipo1 = checkboxes[x].value;
+                tipo_emp_turistica = tipo_emp_turistica.concat(tipo1, "\n");
+            }
+        }
+        alert("holis no");
+        var checkboxes2 = document.getElementById("tipo_alojamiento");
+        var tipo_alojamiento = "";
+        for (var y = 0; y < 9; y++) {
+            if ((checkboxes2[y].type == 'checkbox') && (checkboxes2[y].checked === true)) {
+                var tipo2 = checkboxes2[y].value;
+                tipo_alojamiento = tipo_alojamiento.concat(tipo2, "\n");
+            }
+        }
+
+        var checkboxes3 = document.getElementById("tipo_turismo_desa");
+        var tipo_turismo_desa = "";
+        for (var z = 0; z < 7; z++) {
+            if ((checkboxes3[z].type == 'checkbox') && (checkboxes3[z].checked === true)) {
+                var tipo3 = checkboxes3[z].value;
+                tipo_turismo_desa = tipo_turismo_desa.concat(tipo3, "\n");
+            }
+        }
+
+        var seguro_viaje = document.getElementById("seg_viaje");
+        var cual = "";
+        if (seguro_viaje.value === "Si") {
+            cual = document.getElementById("seguro_cual");
+        } else {
+            cual = "No";
+        }
+        var reg_nac_turismo = document.getElementById("reg_nac_turismo");
+        var nac_turismo = "";
+        if (reg_nac_turismo.type === 'checkbox' && reg_nac_turismo.checked === true) {
+            nac_turismo = "Si";
+        } else {
+            nac_turismo = "No";
+        }
+        var maneja_poliza = document.getElementById("poliza");
+        var poliza = "";
+        if (maneja_poliza.type === 'checkbox' && maneja_poliza.checked === true) {
+            poliza = "Si";
+        } else {
+            poliza = "No";
+        }
+        var certificado_sostenibilidad = document.getElementById("cer_sostenibilidad");
+        var reg_expor_servicio = document.getElementById("rut");
+        var rut = "";
+        if (reg_expor_servicio.type === 'checkbox' && reg_expor_servicio.checked === true) {
+            rut = "Si";
+        } else {
+            rut = "No";
+        }
+        var libro_migracion = document.getElementById("libro_migracion");
+        var libro = "";
+        if (libro_migracion.type === 'checkbox' && libro_migracion.checked === true) {
+            libro = "Si";
+        } else {
+            libro = "No";
+        }
+        var impues_turismo = document.getElementById("parafiscal");
+        var parafiscal = "";
+        if (impues_turismo.type === 'checkbox' && impues_turismo.checked === true) {
+            parafiscal = "Si";
+        } else {
+            parafiscal = "No";
+        }
+        var cod_etica = document.getElementById("cod_etica");
+        var etica = "";
+        if (cod_etica.type === 'checkbox' && cod_etica.checked === true) {
+            etica = "Si";
+        } else {
+            etica = "No";
+        }
+        var grup_etnico_empresario = document.getElementById("grupo_etnico_empresario");
+        var cedula_extranjera = document.getElementById("ced_extranjeria");
+        var observaciones = document.getElementById("observaciones")
+
+        parametros = "nombre=" + nombre.value + "&nit=" + nit.value + "&representante=" + rep_legal.value + "&constitucion_legal=" + otraConstitucion +
+                "&fecha_constitucion=" + fecha_constitucion.value + "&empleados_tc=" + empleados_tc.value + "&empleados_mt=" + empleados_mt.value +
+                "&empleados_directo=" + empleados_directo.value + "&empleados_indirecto=" + empleados_indirecto.value + "&direccion=" + direccion.value +
+                "&ciudad=" + ciudad.value + "&fijo=" + fijo.value + "&celular=" + celular.value + "&email=" + email.value + "&sitio_web=" + sitio_web.value +
+                "&servicios=" + servicios.value + "&reg_mercantil=" + reg_mercantil.value + "&num_reg_mercantil=" + num_reg_mercantil.value +
+                "&ano_renovacion=" + renovacion_mercantil.value + "&tipo_empresa=" + otraEmp + "&codigo_ciiu=" + codigo_ciiu.value + "&actividad_int=" + actividad_int.value + "&paises_trabajo=" + paises_trabajo.value + "&negocio_internet=" + negocio_internet + "&es_empresa_turistica=" + es_empresa_turistica + "&tipo_emp_turistica=" + tipo_emp_turistica +
+                "&tipo_alojamiento=" + tipo_alojamiento + "&tipo_turismo_desa=" + tipo_turismo_desa + "&seguro_viaje=" + cual + "&reg_nac_turismo=" + nac_turismo +
+                "&maneja_poliza=" + poliza + "&certificado_sostenibilidad=" + certificado_sostenibilidad.value + "&reg_expor_servicio=" + rut +
+                "&libro_migracion=" + libro + "&impuesto_turismo=" + parafiscal + "&cod_etica=" + etica + "&grupo_etnico_empresario=" + grup_etnico_empresario.value +
+                "&cedula_extranjeria=" + cedula_extranjera.value + "&observaciones=" + observaciones.value+"&cc_contacto="+cc_contac.value;
+        url = "Procesar/registrarEmpresaTuris.jsp";
+    } else {
+        alert("holis x2");
+        parametros = "nombre=" + nombre.value + "&nit=" + nit.value + "&representante=" + rep_legal.value + "&constitucion_legal=" + otraConstitucion +
+                "&fecha_constitucion=" + fecha_constitucion.value + "&empleados_tc=" + empleados_tc.value + "&empleados_mt=" + empleados_mt.value +
+                "&empleados_directos=" + empleados_directo.value + "&empleados_indirectos=" + empleados_indirecto.value + "&direccion=" + direccion.value +
+                "&ciudad=" + ciudad.value + "&fijo=" + fijo.value + "&celular=" + celular.value + "&email=" + email.value + "&sitio_web=" + sitio_web.value +
+                "&servicios=" + servicios.value + "&reg_mercantil=" + reg_mercantil.value + "&num_reg_mercantil=" + num_reg_mercantil.value +
+                "&ano_renovacion=" + renovacion_mercantil.value + "&tipo_empresa=" + otraEmp + "&codigo_ciiu=" + codigo_ciiu.value + "&actividad_int=" + actividad_int.value +
+                "&paises_trabajo=" + paises_trabajo.value + "&negocio_internet=" + negocio_internet + "&es_empresa_turistica=" + es_empresa_turistica+"&cc_contacto="+cc_contac.value;
+        alert(parametros);
+
+        url = "Procesar/registrarEmpresa.jsp";
+
+    }
+    ajax = nuevoAjax();
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     ajax.send(parametros);
+    alert(parametros);
+    alert(url);
+
 
     ajax.onreadystatechange = function ()
     {

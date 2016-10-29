@@ -15,6 +15,13 @@
             <div class="col s12 ">
                 <div class="row">
                     <form class="col s12" action="javascript:registrarEmpresa()" name="formEmpresa" id="formEmpresa">
+                        <%
+                            String cc = request.getParameter("cc");
+                        %>
+                        <div class="input-field col s12">
+                            <input  readonly="true" id="num_ced" type="text" value="<%=cc%>">
+                            <label for="num_ced">Numero de cedula</label>
+                        </div>
                         <div class="row">
                             <div class="input-field col s6">
                                 <input required id="nombre_empresa" type="text" class="validate">
@@ -280,14 +287,14 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea  required id="servicios" class="materialize-textarea"></textarea>
-                                <label for="servicios">Descripción de servicios que ofrece</label>
+                                <textarea  required id="servicios_des" class="materialize-textarea"></textarea>
+                                <label for="servicios_des">Descripción de servicios que ofrece</label>
                             </div>
                         </div>
                         <div class="input-field col s3">
                             <label for="empT">¿Es empresa turistica?</label> 
                         </div>
-                        <div class="input-field col s3">
+                        <div class="input1-field col s3">
                             <div class="switch">
                                 <label>
                                     No
