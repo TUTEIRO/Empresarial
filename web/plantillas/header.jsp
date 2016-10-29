@@ -85,19 +85,18 @@
             </div>
 
             <ul id="dropdown1" class="dropdown-content green darken-4" >
-                <li><a href="../formularios/contacto.jsp"><i class="tiny material-icons">perm_identity</i><span class="white-text" >Contacto</span></a></li>
+                <li><a href="../formularios/registrar.jsp"><i class="tiny material-icons">library_add</i><span class="white-text" >Registrar</span></a></li>
                 <li class="divider"></li>
-                <li><a href="../formularios/empresa.jsp"><i class="tiny material-icons">business</i><span class="white-text" >Empresa</span></a></li>
+                <li><a href="../consultas/empresa.jsp"><i class="tiny material-icons">search</i><span class="white-text" >Consultar</span></a></li>
                 <li class="divider"></li>
-                <li><a href="../formularios/entidades.jsp"><i class="tiny material-icons">store</i><span class="white-text" whidt="100%">Entidades adscritas</span></a></li>
+                <li><a href="../consultas/contacto.jsp"><i class="tiny material-icons">perm_contact_calendar</i><span class="white-text" whidt="100%">Consultar contactos</span></a></li>
             </ul>
 
             <ul id="dropdown2" class="dropdown-content green darken-4" >
-                <li><a href="../consultas/contacto.jsp"><i class="tiny material-icons">perm_identity</i><span class="white-text" >Contacto</span></a></li>
+                <li><a href="../formularios/entidades.jsp"><i class="tiny material-icons">library_add</i><span class="white-text" >Registrar</span></a></li>
                 <li class="divider"></li>
-                <li><a href="../consultas/empresa.jsp"><i class="tiny material-icons">business</i><span class="white-text" >Empresa</span></a></li>
-                <li class="divider"></li>
-                <li><a href="../consultas/entidades.jsp"><i class="tiny material-icons">store</i><span class="white-text" >Entidades adscritas</span></a></li>
+                <li><a href="../consultas/entidades.jsp"><i class="tiny material-icons">search</i><span class="white-text" >Consultar</span></a></li>
+                
             </ul>
 
 
@@ -109,11 +108,12 @@
                     <a href="../inicio/principal.jsp" class="brand-logo">MINCIT<i class="material-icons left">business</i></a>
                     <ul class="right hide-on-med-and-down"> 
 
-                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Registrar
-                                <i class="material-icons right">library_add</i></a></li>
-
-                        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Consultar
-                                <i class="material-icons right">search</i></a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Empresa
+                                <i class="material-icons right">business</i></a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Entidades Adscritas
+                                <i class="material-icons right">store</i></a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Logros
+                                <i class="material-icons right">done_all</i></a></li>
                     </ul>
                 </div>
             </nav>

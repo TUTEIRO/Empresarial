@@ -38,8 +38,9 @@
 <jsp:include page="formCon.jsp"/>
 
 <div class="row">
-    <div class="col s12">
-        <input id="buttoncheck" type="submit" class="waves-effect waves-light btn modal-trigger" href="#modal1" value="Registrar" >
+    <div class="col s9"></div>
+    <div class="col s3">
+        <input  id="buttoncheck" type="submit" class="waves-effect waves-light btn modal-trigger " href="#modal1" value="Registrar" >
 
     </div>
 </div>

@@ -5,14 +5,7 @@
  */
 
 
-var pos = 1;
-var posD = 1;
-
-
-/* Crea el objeto AJAX. Esta funcion es generica para cualquier utilidad de este tipo, por
- lo que se puede copiar tal como esta aqui */
-function nuevoAjax()
-{
+function nuevoAjax() {
     var xmlhttp = false;
     try {
         // Creacion del objeto AJAX para navegadores no IE Ejemplo:Mozilla, Safari 
@@ -30,25 +23,18 @@ function nuevoAjax()
 }
 
 
-function validarUsuario() {
+function validarCedula() {
 
-    var usuario = document.getElementById("usuario");
-
-    var contrasena = document.getElementById("contrasena");
-
-    var tipo_usuario = document.getElementById("tipo_usuario");
-
-
-    aleatorio = Math.random();
-    ajax = nuevoAjax();
     
-    parametros = "usuario=" + usuario.value + "&contrasena=" + contrasena.value + "&aleatorio=" + aleatorio + "&tipo=" + tipo_usuario.value;
-    url = "procesar/procesarSesion.jsp";
+    var cc = document.getElementById("num_cc");
+    
+    ajax = nuevoAjax();
+    parametros = "cc=" + cc.value;
+    url = "Procesar/validarCedula.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     ajax.send(parametros);
-
-    ajax.onreadystatechange = function () {
+     ajax.onreadystatechange = function () {
         if (ajax.readyState == 4) {
             if (ajax.status == 200) {
                 var rta = ajax.responseText;
@@ -58,29 +44,29 @@ function validarUsuario() {
 
                 } else {
                     if (rta.indexOf("1") >= 0) {
-                        login.action = "../inicio/principal.jsp";
-                        login.submit();
+                      
+                        location.href= "contacto.jsp?cc="+cc.value;
+                        
+                        
                     } else if (rta.indexOf("2") >= 0) {
-                        login.action = "";
-                        login.submit();
+                       
+                        location.href=  "empresa.jsp?cc="+cc.value;
                         
                     }
                 }
             } else {
                 var rta = ajax.responseText;
-                if (rta.indexOf("1") < 0 && rta.indexOf("2") < 0 && rta.indexOf("3") < 0) {
+                if (rta.indexOf("1") < 0 && rta.indexOf("2") < 0) {
                     document.getElementById("divError").innerHTML = ajax.responseText;
                 } else {
                     if (rta.indexOf("1") >= 0) {
-                        login.action = "../inicio/principal.jsp";
-                        login.submit();
+                    
+                        location.href= "contacto.jsp?cc="+cc.value;
+                        comienzoRegistro.submit();
                     } else if (rta.indexOf("2") >= 0) {
-                        login.action = "";
-                        login.submit();
-                    } else if(rta.indexOf("3") >= 0){
-                        alert("Error de autenticación");
-                        login.action = "";
-                        login.submit();
+                     
+                        location.href= "empresa.jsp?cc="+cc.value;
+                        comienzoRegistro.submit();
                     }
                 }
             }
@@ -89,4 +75,10 @@ function validarUsuario() {
             document.getElementById("divError").value = "Verificando Usuario...";
         }
     }
+
 }
+
+
+
+
+
