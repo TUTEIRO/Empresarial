@@ -24,6 +24,11 @@ public class ControlUtilidades {
         return dao.cargarDptos();
     }
     
+    public ArrayList<String> cargarPaises() throws Exception{
+        UtilidadesDAO dao = new UtilidadesDAO();
+        return dao.cargarPais();
+    }
+    
     public boolean asociar(String contacto_dato, String empresa_dato, String form_dato) throws Exception{
         UtilidadesDAO dao = new UtilidadesDAO();
         return dao.asociar(contacto_dato, empresa_dato, form_dato);

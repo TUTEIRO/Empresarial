@@ -191,6 +191,26 @@ public class UtilidadesDAO implements IUtilidadesDAO {
         }
         return agencias;
     }
+    
+    @Override
+    public ArrayList<String> cargarPais() throws Exception{
+        ArrayList<String> paises = new ArrayList<String>();
+        conn = Conexion.conectar();
+        PreparedStatement stmt = null;
+        try{
+            stmt = conn.prepareStatement("SELECT * from countries");
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                paises.add(rs.getString(3) + " - " + rs.getString(2));
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }finally{
+            if(conn != null)
+                conn.close();
+        }
+        return paises;
+    }
 
     @Override
     public ArrayList<String> cargarTipoAlojamientoTuristico() throws Exception {

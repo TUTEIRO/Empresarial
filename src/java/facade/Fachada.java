@@ -127,6 +127,11 @@ public class Fachada {
         return utilidades.cargarDptos();
     }
     
+    public ArrayList<String> cargarPaises() throws Exception{
+        ControlUtilidades utilidades = new ControlUtilidades();
+        return utilidades.cargarPaises();
+    }
+    
     public ArrayList<String> cargarTipoAlojamientoTuristico() throws Exception{
         ControlUtilidades utilidades = new ControlUtilidades();
         return utilidades.cargarTipoAlojamientoTuristico();
