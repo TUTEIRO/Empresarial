@@ -70,8 +70,17 @@
 
                         <div class="row">
                             <div class="input-field col s8">
-                                <input required id="lugar_nac" type="text" class="validate">
-                                <label for="lugar_nac">Lugar nacimiento</label>
+                                <select id="lugar_nac" name="lugar_nac">
+                                    <option value="" disabled selected>Elige una opcion</option>
+                                    <% Fachada fachada = new Fachada();
+                                        ArrayList<String> listaPais = fachada.cargarPaises();
+                                        for (String x : listaPais) {
+                                    %>
+                                    <option value="<%=x%>"><%=x%></option>
+                                    <%}
+                                    %>
+                                </select>
+                                <label>País de Nacimiento</label>
                             </div>
                             <div class="input-field col s4">
                                 <label for="fecha_nac">Fecha nacimiento</label>
@@ -115,7 +124,7 @@
                             <div class="input-field col s6">
                                 <select id="departamento" name="departamento" onchange="javascript:cargarMunicipiosAjax(this)" >
                                     <option value="" disabled selected>Elige una opcion</option>
-                                    <% Fachada fachada = new Fachada();
+                                    <% 
                                         ArrayList<String> lista = fachada.cargarDptos();
                                         for (String d : lista) {
                                     %>
