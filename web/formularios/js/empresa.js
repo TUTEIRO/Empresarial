@@ -59,11 +59,8 @@ function registrarEmpresa() {
     }
 
     var codigo_ciiu = document.getElementById("codigoCIIU");
-
     var actividad_int = document.getElementById("actividad_int");
-
     var paises_trabajo = document.getElementById("paises_comercializa");
-
     var neg_internet = document.getElementById("neg_internet");
     var negocio_internet = "";
     if (neg_internet.type === 'checkbox' && neg_internet.checked === true) {
@@ -71,9 +68,7 @@ function registrarEmpresa() {
     } else {
         negocio_internet = "No";
     }
-
     var empresa_turistica = document.getElementById("empT");
-
     var es_empresa_turistica = "";
     if (empresa_turistica.type === 'checkbox' && empresa_turistica.checked === true) {
         es_empresa_turistica = "Si";
@@ -82,7 +77,6 @@ function registrarEmpresa() {
     }
     
     if (es_empresa_turistica === "Si") {
-
         var checkboxes = document.getElementsByName("tipo_emp_turis");
         var tipo_emp_turistica = "";
         for (var x = 0; x < checkboxes.length; x++) {
@@ -309,8 +303,6 @@ function registrarContacto() {
     var email = document.getElementById("email");
     var genero = document.getElementById("genero");
     var etnia = document.getElementById("etnia");
-
-
     var discapacidad = document.getElementById("discapacidad");
     var antiguedad_cargo = document.getElementById("anos_cargo");
     var condicion_desplazado = document.getElementById("desplazado");
