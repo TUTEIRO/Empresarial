@@ -25,26 +25,7 @@ public class TuristicaDAO implements ITuristicaDAO{
         boolean exito = false;
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("INSERT INTO  `ufps_1`.`empresa_turistica` (\n"
-                    + "`tur_seguro` ,\n"
-                    + "`tur_registro_nal` ,\n"
-                    + "`tur_poliza` ,\n"
-                    + "`tur_cert_sostenibilidad` ,\n"
-                    + "`tur_export_servicios` ,\n"
-                    + "`tur_libro_migracion_col` ,\n"
-                    + "`tur_impuesto_turismo` ,\n"
-                    + "`tur_codigo_etica` ,\n"
-                    + "`tur_grupo_etnico` ,\n"
-                    + "`tur_cc_extranjeria` ,\n"
-                    + "`tur_observaciones` ,\n"
-                    + "`tur_tipo_turistica` ,\n"
-                    + "`tur_tipo_alojamiento` ,\n"
-                    + "`tur_turismo_desarrollo` ,\n"
-                    + "`tur_empresa_ref` ,\n"
-                    + ")\n"
-                    + "VALUES (\n"
-                    + "?,?,?,?,?,?,?,?,?,?,?,?,?,?,?\n"
-                    + ");");
+            stmt = conn.prepareStatement("INSERT INTO `empresa_turistica`(`tur_seguro`, `tur_registro_nal`, `tur_poliza`,`tur_cert_sostenibilidad`, `tur_export_servicios`, `tur_libro_migracion_Col`, `tur_impuesto_turismo`, `tur_codigo_etica`, `tur_grupo_etnico`, `tur_cc_extranjeria`, `tur_observaciones`, `tur_tipo_turistica`, `tur_tipo_alojamiento`, `tur_turismo_desarrollo`, `tur_empresa_ref`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             
             stmt.setString(1, dto.getPosee_seguro());
             stmt.setString(2, dto.getPosee_reg_nal());

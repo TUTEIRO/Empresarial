@@ -25,11 +25,8 @@ function nuevoAjax() {
 function registrarEmpresa() {
 
     var nombre = document.getElementById("nombre_empresa");
-
     var nit = document.getElementById("nit");
-
     var rep_legal = document.getElementById("representante");
-
     var constitucion_legal = document.getElementById("cons_ot");
     var otraConstitucion = "";
     if (constitucion_legal === "otras") {
@@ -37,35 +34,20 @@ function registrarEmpresa() {
     } else {
         otraConstitucion = constitucion_legal.value;
     }
-
     var fecha_constitucion = document.getElementById("fecha_constitucion");
-
     var empleados_tc = document.getElementById("tc");
-
     var empleados_mt = document.getElementById("mt");
-
     var empleados_directo = document.getElementById("directo");
-
     var empleados_indirecto = document.getElementById("indirecto");
-
     var direccion = document.getElementById("direccion_empresa");
-
     var ciudad = document.getElementById("ciudad_empresa");
-
     var fijo = document.getElementById("tel_fijo_empresa");
-
     var celular = document.getElementById("tel_movil_empresa");
-
     var email = document.getElementById("correo_empresa");
-
     var sitio_web = document.getElementById("sitio_web");
-
     var servicios = document.getElementById("servicios_des");
-
     var reg_mercantil = document.getElementById("regis_mercan");
-
     var num_reg_mercantil = document.getElementById("num_reg_mercantil");
-
     var renovacion_mercantil = document.getElementById("ano_renovacion");
     var cc_contac = document.getElementById("num_ced");
     var tipo_empresa = document.getElementById("tipo_emp");
@@ -98,34 +80,30 @@ function registrarEmpresa() {
     } else {
         es_empresa_turistica = "No";
     }
-    parametros = "2";
-    url = "esto";
-    alert("holis x2");
+    
     if (es_empresa_turistica === "Si") {
 
-        var checkboxes = document.getElementById("tipo_emp_turistica");
-        alert("holis no");
+        var checkboxes = document.getElementsByName("tipo_emp_turis");
         var tipo_emp_turistica = "";
-        for (var x = 0; x < 12; x++) {
+        for (var x = 0; x < checkboxes.length; x++) {
             if ((checkboxes[x].type === 'checkbox') && (checkboxes[x].checked === true)) {
                 var tipo1 = checkboxes[x].value;
                 tipo_emp_turistica = tipo_emp_turistica.concat(tipo1, "\n");
             }
         }
-        alert("holis no");
-        var checkboxes2 = document.getElementById("tipo_alojamiento");
+        var checkboxes2 = document.getElementsByName("tipo_aloja");
         var tipo_alojamiento = "";
-        for (var y = 0; y < 9; y++) {
-            if ((checkboxes2[y].type == 'checkbox') && (checkboxes2[y].checked === true)) {
+        for (var y = 0; y < checkboxes2.length; y++) {
+            if ((checkboxes2[y].type === 'checkbox') && (checkboxes2[y].checked === true)) {
                 var tipo2 = checkboxes2[y].value;
                 tipo_alojamiento = tipo_alojamiento.concat(tipo2, "\n");
             }
         }
 
-        var checkboxes3 = document.getElementById("tipo_turismo_desa");
+        var checkboxes3 = document.getElementsByName("tipo_turismo");
         var tipo_turismo_desa = "";
-        for (var z = 0; z < 7; z++) {
-            if ((checkboxes3[z].type == 'checkbox') && (checkboxes3[z].checked === true)) {
+        for (var z = 0; z < checkboxes3.length; z++) {
+            if ((checkboxes3[z].type === 'checkbox') && (checkboxes3[z].checked === true)) {
                 var tipo3 = checkboxes3[z].value;
                 tipo_turismo_desa = tipo_turismo_desa.concat(tipo3, "\n");
             }
@@ -197,7 +175,6 @@ function registrarEmpresa() {
                 "&cedula_extranjeria=" + cedula_extranjera.value + "&observaciones=" + observaciones.value+"&cc_contacto="+cc_contac.value;
         url = "Procesar/registrarEmpresaTuris.jsp";
     } else {
-        alert("holis x2");
         parametros = "nombre=" + nombre.value + "&nit=" + nit.value + "&representante=" + rep_legal.value + "&constitucion_legal=" + otraConstitucion +
                 "&fecha_constitucion=" + fecha_constitucion.value + "&empleados_tc=" + empleados_tc.value + "&empleados_mt=" + empleados_mt.value +
                 "&empleados_directos=" + empleados_directo.value + "&empleados_indirectos=" + empleados_indirecto.value + "&direccion=" + direccion.value +
@@ -205,7 +182,7 @@ function registrarEmpresa() {
                 "&servicios=" + servicios.value + "&reg_mercantil=" + reg_mercantil.value + "&num_reg_mercantil=" + num_reg_mercantil.value +
                 "&ano_renovacion=" + renovacion_mercantil.value + "&tipo_empresa=" + otraEmp + "&codigo_ciiu=" + codigo_ciiu.value + "&actividad_int=" + actividad_int.value +
                 "&paises_trabajo=" + paises_trabajo.value + "&negocio_internet=" + negocio_internet + "&es_empresa_turistica=" + es_empresa_turistica+"&cc_contacto="+cc_contac.value;
-        alert(parametros);
+
 
         url = "Procesar/registrarEmpresa.jsp";
 
@@ -214,8 +191,7 @@ function registrarEmpresa() {
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     ajax.send(parametros);
-    alert(parametros);
-    alert(url);
+
 
 
     ajax.onreadystatechange = function ()
@@ -277,7 +253,7 @@ function cargarEmpresaT() {
                     var var_name = $("input[name='group10']:checked").val();
 
                     $('#seg_viaje').val(var_name);
-                    alert(var_name.valueOf());
+                  
                     if (var_name === 'Si') {
 
                         $('#seguro_cual').prop("readonly", false);

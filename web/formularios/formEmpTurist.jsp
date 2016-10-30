@@ -7,7 +7,7 @@
 
 
 
-<form id="emp_turistica">
+
     <div class="row" id="seguro_viaje">
         <div class="input-field col s3">
             <label>Seguro de viaje:</label>
@@ -158,7 +158,7 @@
         </div>
     </div>
     <br>
-    <div class="row" id="tipo_emp_turistica">
+    <form id="tipo_emp_turistica">
         <div class="input-field col s4">
             <label>Tipo de empresa turistica</label>
         </div>
@@ -166,79 +166,79 @@
         <br></br>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="alojamiento" value="alojamiento"/>
+                <input name="tipo_emp_turis" type="checkbox" id="alojamiento" value="alojamiento"/>
                 <label for="alojamiento">Alojamiento</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="transporte" value="transporte" />
+                <input name="tipo_emp_turis" type="checkbox" id="transporte" value="transporte" />
                 <label for="transporte">Transporte</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="agen_Viaje" value="agencia de viaje"/>
+                <input name="tipo_emp_turis" type="checkbox" id="agen_Viaje" value="agencia de viaje"/>
                 <label for="agen_viaje">Agencia de viaje</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="receptivo" value="receptivo"/>
+                <input name="tipo_emp_turis" type="checkbox" id="receptivo" value="receptivo"/>
                 <label for="receptivo">Receptivo</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="guia" value="guia"/>
+                <input name="tipo_emp_turis" type="checkbox" id="guia" value="guia"/>
                 <label for="guia">Guía</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="rep_turistica" value="representacion turistica"/>
+                <input name="tipo_emp_turis" type="checkbox" id="rep_turistica" value="representacion turistica"/>
                 <label for="rep_turistica">Representación turístic</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="cap_ahorro" value="captadora de ahorros"/>
+                <input name="tipo_emp_turis" type="checkbox" id="cap_ahorro" value="captadora de ahorros"/>
                 <label for="cap_ahorro">Captadora de ahorros</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="bar_rest" value="bar y restaurante"/>
+                <input name="tipo_emp_turis" type="checkbox" id="bar_rest" value="bar y restaurante"/>
                 <label for="bar_rest">Bar y restaurante</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="inter_vaca" value="intercambio vacacional"/>
+                <input name="tipo_emp_turis" type="checkbox" id="inter_vaca" value="intercambio vacacional"/>
                 <label for="inter_vaca">Intercambio vacacional</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="pro_tiem_comp" value="promotores tiempo compartido"/>
+                <input name="tipo_emp_turis" type="checkbox" id="pro_tiem_comp" value="promotores tiempo compartido"/>
                 <label for="pro_tiem_comp">Promotores tiempo compartido</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="comer_comp" value="comercializadora compartido"/>
+                <input name="tipo_emp_turis" type="checkbox" id="comer_comp" value="comercializadora compartido"/>
                 <label for="comer_comp">Comercializadora compartido</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="operador" value="operador congreso, ferias, etc"/>
+                <input name="tipo_emp_turis" type="checkbox" id="operador" value="operador congreso, ferias, etc"/>
                 <label for="operador">Operador congreso, ferias, etc</label>
             </p>
         </div>
-    </div>
-
-    <div class="row" id="tipo_alojamiento">
+</form>
+    
+    <form id="tipo_alojamiento">
         <div class="input-field col s4">
             <label>Tipo de alojamiento</label>
         </div>
@@ -246,62 +246,62 @@
         <br></br>   
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="hotel" value="hotel"/>
+                <input name="tipo_aloja" type="checkbox" id="hotel" value="hotel"/>
                 <label for="hotel">Hotel</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="apart_hotel" value="aparta hotel"/>
+                <input name="tipo_aloja" type="checkbox" id="apart_hotel" value="aparta hotel"/>
                 <label for="apart_hotel">Aparta hotel</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="receptivo" value="posada turistica"/>
+                <input name="tipo_aloja" type="checkbox" id="receptivo" value="posada turistica"/>
                 <label for="receptivo">Posada turística</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="apart_turi" value="apartamento turistico"/>
+                <input name="tipo_aloja" type="checkbox" id="apart_turi" value="apartamento turistico"/>
                 <label for="apart_turi">Apartamento turístico</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="pos_nat" value="posada nativa"/>
+                <input name="tipo_aloja" type="checkbox" id="pos_nat" value="posada nativa"/>
                 <label for="pos_nat">Posada nativa</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="apart" value="apartamentos"/>
+                <input name="tipo_aloja" type="checkbox" id="apart" value="apartamentos"/>
                 <label for="apart">Apartamento</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="aloj_rural" value="alojamiento rural"/>
+                <input name="tipo_aloja" type="checkbox" id="aloj_rural" value="alojamiento rural"/>
                 <label for="aloj_rural">Alojamiento rural</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="alb_ref_host" value="albergue, refugio, hostal"/>
+                <input name="tipo_aloja" type="checkbox" id="alb_ref_host" value="albergue, refugio, hostal"/>
                 <label for="alb_ref_host">Albergue, refugio, hostal</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="campamento" value="campamento"/>
+                <input name="tipo_aloja" type="checkbox" id="campamento" value="campamento"/>
                 <label for="campamento">Campamento</label>
             </p>
         </div>
-    </div>
+    </form>
 
 
-    <div class="row" id="tipo_turismo_desa">
+    <form id="tipo_turismo_desa">
         <div class="input-field col s4">
             <label>Tipo de turismo que desarrolla</label>
         </div>
@@ -309,54 +309,53 @@
         <br></br>   
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="naturaleza" value="naturaleza"/>
+                <input name="tipo_turismo" type="checkbox" id="naturaleza" value="naturaleza"/>
                 <label for="naturaleza">Naturaleza</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="cultural" value="cultura"/>
+                <input name="tipo_turismo" type="checkbox" id="cultural" value="cultura"/>
                 <label for="cultural">Cultural</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="aventura" value="aventura"/>
+                <input name="tipo_turismo" type="checkbox" id="aventura" value="aventura"/>
                 <label for="aventura">Aventura</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="nautico" value="nautico"/>
+                <input name="tipo_turismo" type="checkbox" id="nautico" value="nautico"/>
                 <label for="nautico">Náutico</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="sol_playa" value="sol y playa"/>
+                <input name="tipo_turismo" type="checkbox" id="sol_playa" value="sol y playa"/>
                 <label for="sol_playa">Sol y playa</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="sal_bienes" value="salud y bienestar"/>
+                <input name="tipo_turismo" type="checkbox" id="sal_bienes" value="salud y bienestar"/>
                 <label for="sal_bienes">Salud y bienestar</label>
             </p>
         </div>
         <div class="input-field col s4">
             <p>
-                <input type="checkbox" id="cong_conv" value="congreso y convenciones"/>
+                <input name="tipo_turismo" type="checkbox" id="cong_conv" value="congreso y convenciones"/>
                 <label for="cong_conv">Congreso y convenciones</label>
             </p>
         </div>
-    </div>
+    </form>
     <div class="row">
         <div class="input-field col s12">
             <textarea  required id="observaciones" class="materialize-textarea"></textarea>
             <label for="observaciones">Observaciones</label>
         </div>
     </div>
-</form>
 <script type="text/javascript">
     $(document).ready(function () {
 

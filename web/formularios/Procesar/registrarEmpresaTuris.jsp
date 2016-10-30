@@ -8,7 +8,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%
-  System.out.println("aqui");
     String cc_contacto = request.getParameter("cc_contacto");
     String nombreEmpresa = request.getParameter("nombre");
     String nit = request.getParameter("nit");
@@ -17,8 +16,8 @@
     String fecha_constitucion = request.getParameter("fecha_constitucion");
     int empleados_tc = Integer.parseInt(request.getParameter("empleados_tc"));
     int empleados_mt = Integer.parseInt(request.getParameter("empleados_mt"));
-    int empleados_directos = Integer.parseInt(request.getParameter("empleados_directos"));
-    int emplados_indirectos = Integer.parseInt(request.getParameter("empleados_indirectos"));
+    int empleados_directos = Integer.parseInt(request.getParameter("empleados_directo"));
+    int emplados_indirectos = Integer.parseInt(request.getParameter("empleados_indirecto"));
     String direccion = request.getParameter("direccion");
     String ciudad = request.getParameter("ciudad");
     String fijo = request.getParameter("fijo");
@@ -42,14 +41,14 @@
     String reg_nac_turismo = request.getParameter("reg_nac_turismo");
     String maneja_poliza = request.getParameter("maneja_poliza");
     String certificado_sostenibilidad = request.getParameter("certificado_sostenibilidad");
-    String reg_export_servicios = request.getParameter("reg_expor_servicios");
+    String reg_export_servicios = request.getParameter("reg_expor_servicio");
     String libro_migracion = request.getParameter("libro_migracion");
     String impuesto_turismo = request.getParameter("impuesto_turismo");
     String cod_etica = request.getParameter("cod_etica");
     String grupo_etnico_empresario = request.getParameter("grupo_etnico_empresario");
     String cedula_extranjeria = request.getParameter("cedula_extranjeria");
     String observaciones = request.getParameter("observaciones");
-    System.out.println("aqui 2");
+
     
     Fachada fachada = new Fachada();
     boolean exito = fachada.registrarEmpresa(nombreEmpresa, nit, representante, constitucion_legal, fecha_constitucion, direccion, ciudad, fijo, celular, email, sitio_web, tipo_empresa, es_empresa_turistica, codigo_ciiu, actividad_int, paises_trabajo, servicios, reg_mercantil, negocio_internet, cc_contacto);
