@@ -9,6 +9,7 @@ import dto.TuristicaDTO;
 import interfaces.ITuristicaDAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import util.Conexion;
 
 /**
@@ -24,7 +25,14 @@ public class TuristicaDAO implements ITuristicaDAO{
        conn = Conexion.conectar();
         boolean exito = false;
         PreparedStatement stmt = null;
-        try {
+        PreparedStatement stmt2 = null;
+        int id = 0;
+        try{ 
+            stmt2 = conn.prepareStatement("SELECT MAX(emp_fakeid) FROM empresa");
+            ResultSet res = stmt2.executeQuery();
+            while(res.next()){
+                id = res.getInt(1);
+            }
             stmt = conn.prepareStatement("INSERT INTO `empresa_turistica`(`tur_seguro`, `tur_registro_nal`, `tur_poliza`,`tur_cert_sostenibilidad`, `tur_export_servicios`, `tur_libro_migracion_Col`, `tur_impuesto_turismo`, `tur_codigo_etica`, `tur_grupo_etnico`, `tur_cc_extranjeria`, `tur_observaciones`, `tur_tipo_turistica`, `tur_tipo_alojamiento`, `tur_turismo_desarrollo`, `tur_empresa_ref`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             
             stmt.setString(1, dto.getPosee_seguro());
@@ -41,7 +49,7 @@ public class TuristicaDAO implements ITuristicaDAO{
             stmt.setString(12, dto.getTipo_turistica());
             stmt.setString(13, dto.getTipo_alojamiento());
             stmt.setString(14, dto.getTur_desarrollo());
-            stmt.setString(15, nombre_emp);
+            stmt.setInt(15, id);
             int total = stmt.executeUpdate();
             if (total > 0) {
                 stmt.close();
