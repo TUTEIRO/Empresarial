@@ -19,15 +19,9 @@
         <ul class="collection">
             <li class="collection-item avatar">
                 <i class="material-icons circle red">library_add</i>
-                <span class="title" style="font-weight: bold;">Registrar contacto</span>
-                <p>Haz click para registrar un contacto en el MINCIT</p>
-                <a href="../formularios/contacto.jsp" class="secondary-content"><i class="material-icons">input</i></a>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle green">library_add</i>
-                <span class="title" style="font-weight: bold;">Registrar empresa</span>
-                <p>Haz click para registrar un empresa en el MINCIT</p>
-                <a href="../formularios/empresa.jsp" class="secondary-content"><i class="material-icons">input</i></a>
+                <span class="title" style="font-weight: bold;">Registrar contacto o empresa</span>
+                <p>Haz click para registrar un contacto o empresa en el MINCIT</p>
+                <a href="../formularios/registar.jsp" class="secondary-content"><i class="material-icons">input</i></a>
             </li>
             <li class="collection-item avatar">
                 <i class="material-icons circle blue">library_add</i>
