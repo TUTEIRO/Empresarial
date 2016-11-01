@@ -17,6 +17,7 @@
 <div class="row card-panel  white " id="registro">
     <form class="col s12" name="registrar" id="registrar" action="validarCedula.jsp" method="post">
         <div class="container">
+            <br></br>
             <div class="input-field col s12 ">
                 <i class="material-icons prefix">account_circle</i>
                 <input placeholder="Numero de cedula contacto" id="num_cc" type="text" class="validate ">
@@ -29,8 +30,10 @@
 
             </div>
             <div id="divError"></div>
+             <br></br>
         </div>
     </form>
+     <br></br>
 </div>
 
 
