@@ -28,8 +28,7 @@ public class EmpresaDAO implements IEmpresaDAO {
         conn = Conexion.conectar();
         boolean exito = false;
         PreparedStatement stmt = null;
-        System.out.println("contacto"+ dto.getCc_contacto());
-        System.out.println("servicios"+ dto.getServicios());
+
         try {
             stmt = conn.prepareStatement("INSERT INTO `empresa`(`emp_nombre`, `emp_nit`, `emp_nombre_rep_legal`, `emp_constitucion_legal`, `emp_fecha_constitucion`, `emp_direccion`, `emp_ciudad`, `emp_telefono`, `emp_celular`, `emp_email`, `emp_url_website`, `emp_es_turistica`, `emp_reg_mercantil`, `tipo_empresa`, `emp_codigo_CIIU`, `emp_act_internacional`, `emp_paises_trabajo`, `emp_internet_bsns`, `emp_servicios`, `emp_contacto_ref`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             stmt.setString(1, dto.getNombre());

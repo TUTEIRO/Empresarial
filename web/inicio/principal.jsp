@@ -21,13 +21,13 @@
                 <i class="material-icons circle red">library_add</i>
                 <span class="title" style="font-weight: bold;">Registrar contacto o empresa</span>
                 <p>Haz click para registrar un contacto o empresa en el MINCIT</p>
-                <a href="../formularios/registar.jsp" class="secondary-content"><i class="material-icons">input</i></a>
+                <a href="../formularios/registrar.jsp" class="secondary-content"><i class="material-icons">input</i></a>
             </li>
             <li class="collection-item avatar">
                 <i class="material-icons circle blue">library_add</i>
                 <span class="title" style="font-weight: bold;">Registrar entidad adscrita</span>
                 <p>Haz click para registrar un entidad en el MINCIT</p>
-                <a href="../formularios/entidades.jsp" class="secondary-content"><i class="material-icons">input</i></a>
+                <a href="../formularios/formEntidades.jsp" class="secondary-content"><i class="material-icons">input</i></a>
             </li>
         </ul>
 

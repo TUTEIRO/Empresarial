@@ -7,8 +7,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
 <script type="text/javascript" src="js/cargarFormulario.js"></script>
+<%if (session.getAttribute("usuario") == null) {
+        System.out.println("usuario");
 
-
+        response.sendRedirect("../index.jsp");
+    }%>
+<jsp:include page="../plantillas/header.jsp"/>
 <section id="entidad" class="entidad">
 
     <div class="card-panel  white" >
@@ -78,4 +82,18 @@
                                 <input class="file-path validate" type="text" placeholder="Subir archivo de imagen del logo de la entidad">
                             </div>
                         </div>
+                         <div class="row">
+                                <div class="input-field col s12">
+                                    <button class="btn waves-effect waves-light" type="submit" name="">Registrar
+                                        <i class="mdi-content-send right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
 
+<jsp:include page="../plantillas/footer.jsp"/>

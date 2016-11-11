@@ -15,16 +15,16 @@
 <script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
 
 <div class="row card-panel  white " id="registro">
-    <form class="col s12" name="registrar" id="registrar" action="validarCedula.jsp" method="post">
+    <form class="col s12" name="registrar" id="registrar"  method="post">
         <div class="container">
             <br></br>
             <div class="input-field col s12 ">
                 <i class="material-icons prefix">account_circle</i>
-                <input placeholder="Numero de cedula contacto" id="num_cc" type="text" class="validate ">
+                <input required placeholder="Numero de cedula contacto" id="num_cc" type="text" class="validate">
                 <label for="num_cc">Numero de cedula contacto</label>
             </div>
             <div class="input-field col s12 ">
-                <button type="button" class="btn  btn-success" onclick="validarCedula();"
+                <button type="button" class="btn  btn-success" onclick="validarCedula()"
                         name="ingresar" id="ingresar" value="Ingresar" />Ingresar</button>
 
 

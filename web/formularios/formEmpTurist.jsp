@@ -7,7 +7,7 @@
 
 
 
-
+<h4><span class="green-text" style="font-weight: bold;">INFORMACIÓN DE LA EMPRESA TURISTICA</span></h4>
     <div class="row" id="seguro_viaje">
         <div class="input-field col s3">
             <label>Seguro de viaje:</label>
@@ -158,9 +158,8 @@
         </div>
     </div>
     <br>
-    <form id="tipo_emp_turistica">
         <div class="input-field col s4">
-            <label>Tipo de empresa turistica</label>
+            <label>Tipo de empresa turistica:</label>
         </div>
         <div class="input-field col s8"></div>
         <br></br>
@@ -236,11 +235,9 @@
                 <label for="operador">Operador congreso, ferias, etc</label>
             </p>
         </div>
-</form>
-    
-    <form id="tipo_alojamiento">
+        <br><br><br>
         <div class="input-field col s4">
-            <label>Tipo de alojamiento</label>
+            <label>Tipo de alojamiento:</label>
         </div>
         <div class="input-field col s8"></div>
         <br></br>   
@@ -298,12 +295,9 @@
                 <label for="campamento">Campamento</label>
             </p>
         </div>
-    </form>
-
-
-    <form id="tipo_turismo_desa">
+        <br><br><br>
         <div class="input-field col s4">
-            <label>Tipo de turismo que desarrolla</label>
+            <label>Tipo de turismo que desarrolla:</label>
         </div>
         <div class="input-field col s8"></div>
         <br></br>   
@@ -349,7 +343,7 @@
                 <label for="cong_conv">Congreso y convenciones</label>
             </p>
         </div>
-    </form>
+        <br><br><br><br>
     <div class="row">
         <div class="input-field col s12">
             <textarea  required id="observaciones" class="materialize-textarea"></textarea>

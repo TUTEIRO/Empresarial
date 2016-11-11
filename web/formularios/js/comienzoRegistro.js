@@ -27,9 +27,9 @@ function validarCedula() {
 
     
     var cc = document.getElementById("num_cc");
-    
+
     ajax = nuevoAjax();
-    parametros = "cc=" + cc.value;
+    parametros = "cc=" + cc.value;  
     url = "Procesar/validarCedula.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -50,7 +50,7 @@ function validarCedula() {
                         
                     } else if (rta.indexOf("2") >= 0) {
                        
-                        location.href=  "empresa.jsp?cc="+cc.value;
+                        location.href= "datosCliente.jsp?cc="+cc.value;
                         
                     }
                 }
@@ -65,7 +65,7 @@ function validarCedula() {
                         comienzoRegistro.submit();
                     } else if (rta.indexOf("2") >= 0) {
                      
-                        location.href= "empresa.jsp?cc="+cc.value;
+                        location.href= "datosCliente.jsp?cc="+cc.value;
                         comienzoRegistro.submit();
                     }
                 }
@@ -77,6 +77,7 @@ function validarCedula() {
     }
 
 }
+
 
 
 

@@ -9,7 +9,7 @@
 <section id="empresaForm" class="empresa">
 
     <div class="card-panel  white" >
-        <h4><span class="green-text" style="font-weight: bold;">EMPRESA</span></h4>
+        <h4><span class="green-text" style="font-weight: bold;">INFORMACIÓN DE LA EMPRESA</span></h4>
 
         <div class="row">
             <div class="col s12 ">
