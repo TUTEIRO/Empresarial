@@ -77,9 +77,3 @@ function validarCedula() {
     }
 
 }
-
-
-
-
-
-

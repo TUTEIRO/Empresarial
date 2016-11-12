@@ -112,8 +112,6 @@
                                 <i class="material-icons right">business</i></a></li>
                         <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Entidades Adscritas
                                 <i class="material-icons right">store</i></a></li>
-                        <li><a class="dropdown-button" href="#!" data-activates="dropdown3">Logros
-                                <i class="material-icons right">done_all</i></a></li>
                     </ul>
                 </div>
             </nav>

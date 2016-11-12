@@ -16,7 +16,7 @@
 <section id="entidad" class="entidad">
 
     <div class="card-panel  white" >
-        <h4><span class="green-text" style="font-weight: bold;">ENTIDADES ADSCRITAS</span></h4>
+        <h4><span class="green-text" style="font-weight: bold;">INFORMACIÓN DE ENTIDADES ADSCRITAS</span></h4>
 
         <div class="row">
             <div class="col s12 ">
@@ -82,16 +82,49 @@
                                 <input class="file-path validate" type="text" placeholder="Subir archivo de imagen del logo de la entidad">
                             </div>
                         </div>
-                         <div class="row">
-                                <div class="input-field col s12">
-                                    <button class="btn waves-effect waves-light" type="submit" name="">Registrar
-                                        <i class="mdi-content-send right"></i>
-                                    </button>
-                                </div>
+                        <br>
+                        <h4><span class="green-text" style="font-weight: bold;">REGISTRAR SERVICIOS DE LA ENTIDAD</span></h4>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <select id="servicios_enti">
+                                    <option value="" disabled selected>--Seleccione una opción--</option>
+
+                                </select>
+                                <label for="servicios_enti">Ingrese servicios:</label>
                             </div>
-                        </form>
-                    </div>
+                            <div class="input-field col s12">
+                                <input id="servicio_nuevo" name="servicio_nuevo" type="text" class="validate">
+                                <label for="servicio_nuevo">Ingrese nuevo servicio:</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <input id="buttoncheck" type="submit" class="waves-effect waves-light btn modal-trigger" value="Registrar servicio" onclick="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <table class="bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre del servicio</th>
+                                            <th>Ver logros</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tablaRegistro">
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12">
+                                <input id="buttoncheck" type="submit" class="waves-effect waves-light btn modal-trigger" href="#modal1" value="Registrar Entidad" onclick="">
+                            </div>
+                        </div>
+                    </form>
                 </div>
+            </div>
         </div>
     </div>
 </section>
