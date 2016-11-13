@@ -93,7 +93,7 @@
             </ul>
 
             <ul id="dropdown2" class="dropdown-content green darken-4" >
-                <li><a href="../formularios/entidades.jsp"><i class="tiny material-icons white-text">library_add</i><span class="white-text" >Registrar</span></a></li>
+                <li><a href="../formularios/formEntidades.jsp"><i class="tiny material-icons white-text">library_add</i><span class="white-text" >Registrar</span></a></li>
                 <li class="divider"></li>
                 <li><a href="../consultas/entidades.jsp"><i class="tiny material-icons white-text">search</i><span class="white-text" >Consultar</span></a></li>
                 

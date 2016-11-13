@@ -114,4 +114,12 @@
                                 <a class="btn waves-effect waves-light green" href="empresa.jsp?cc=<%=c.getCc()%>">Registrar empresa</a>
                             </div>
                         </div>
-                        <jsp:include page="../plantillas/footer.jsp"/>
+                    </form>
+                    <%}
+                    %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<jsp:include page="../plantillas/footer.jsp"/>
