@@ -9,10 +9,13 @@ import dao.EntidadDAO;
 import dto.ContactoDTO;
 import dto.EmpresaDTO;
 import dto.EntidadDTO;
+import dto.LogroDTO;
+import dto.ServicioDTO;
 import java.util.ArrayList;
 import negocio.contacto.ControlContacto;
 import negocio.empresa.ControlEmpresa;
 import negocio.entidad.ControlEntidad;
+import negocio.serviciologro.ControlServicioLogro;
 import negocio.turistica.ControlTuristica;
 import negocio.utilidades.ControlUtilidades;
 
@@ -153,5 +156,25 @@ public class Fachada {
      public boolean registrarRegistroMercantil(String num_mercantil, String date_renov_mercantil) throws Exception{
          ControlEmpresa control = new ControlEmpresa();
          return control.registrarRegistroMercantil(num_mercantil, date_renov_mercantil);
+     }
+     
+     public boolean crearServicio(String servicio) throws Exception{
+         ControlServicioLogro control = new ControlServicioLogro();
+         return control.crearServicio(servicio);
+     }
+     
+     public boolean crearLogro(String logro) throws Exception{
+         ControlServicioLogro control = new ControlServicioLogro();
+         return control.crearLogro(logro);
+     }
+     
+     public ArrayList<ServicioDTO> listarServicios() throws Exception{
+         ControlServicioLogro control = new ControlServicioLogro();
+         return control.listarServicios();
+     }
+     
+     public ArrayList<LogroDTO> listarLogros() throws Exception{
+         ControlServicioLogro control = new ControlServicioLogro();
+         return control.listarLogros();
      }
 }
