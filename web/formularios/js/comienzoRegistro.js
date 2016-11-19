@@ -25,55 +25,59 @@ function nuevoAjax() {
 
 function validarCedula() {
 
-    
+
     var cc = document.getElementById("num_cc");
+    
+    if (cc.value !== "") {
+        ajax = nuevoAjax();
+        parametros = "cc=" + cc.value;
+        url = "Procesar/validarCedula.jsp";
+        ajax.open("POST", url, true);
+        ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        ajax.send(parametros);
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4) {
+                if (ajax.status == 200) {
+                    var rta = ajax.responseText;
+                    if (rta.indexOf("1") < 0 && rta.indexOf("2") < 0) {
 
-    ajax = nuevoAjax();
-    parametros = "cc=" + cc.value;  
-    url = "Procesar/validarCedula.jsp";
-    ajax.open("POST", url, true);
-    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    ajax.send(parametros);
-     ajax.onreadystatechange = function () {
-        if (ajax.readyState == 4) {
-            if (ajax.status == 200) {
-                var rta = ajax.responseText;
-                if (rta.indexOf("1") < 0 && rta.indexOf("2") < 0) {
+                        document.getElementById("divError").innerHTML = ajax.responseText;
 
-                    document.getElementById("divError").innerHTML = ajax.responseText;
+                    } else {
+                        if (rta.indexOf("1") >= 0) {
 
+                            location.href = "contacto.jsp?cc=" + cc.value;
+
+
+                        } else if (rta.indexOf("2") >= 0) {
+
+                            location.href = "datosCliente.jsp?cc=" + cc.value;
+
+                        }
+                    }
                 } else {
-                    if (rta.indexOf("1") >= 0) {
-                      
-                        location.href= "contacto.jsp?cc="+cc.value;
-                        
-                        
-                    } else if (rta.indexOf("2") >= 0) {
-                       
-                        location.href= "datosCliente.jsp?cc="+cc.value;
-                        
+                    var rta = ajax.responseText;
+                    if (rta.indexOf("1") < 0 && rta.indexOf("2") < 0) {
+                        document.getElementById("divError").innerHTML = ajax.responseText;
+                    } else {
+                        if (rta.indexOf("1") >= 0) {
+
+                            location.href = "contacto.jsp?cc=" + cc.value;
+                            
+                        } else if (rta.indexOf("2") >= 0) {
+
+                            location.href = "datosCliente.jsp?cc=" + cc.value;
+                            
+                        }
                     }
                 }
-            } else {
-                var rta = ajax.responseText;
-                if (rta.indexOf("1") < 0 && rta.indexOf("2") < 0) {
-                    document.getElementById("divError").innerHTML = ajax.responseText;
-                } else {
-                    if (rta.indexOf("1") >= 0) {
-                    
-                        location.href= "contacto.jsp?cc="+cc.value;
-                        comienzoRegistro.submit();
-                    } else if (rta.indexOf("2") >= 0) {
-                     
-                        location.href= "datosCliente.jsp?cc="+cc.value;
-                        comienzoRegistro.submit();
-                    }
-                }
+            } else
+            {
+                document.getElementById("divError").value = "Verificando Usuario...";
             }
-        } else
-        {
-            document.getElementById("divError").value = "Verificando Usuario...";
         }
+    } else {
+        alert("Ingrese una cedula");
     }
 
 }

@@ -22,26 +22,26 @@
                             <input  readonly="true" id="num_ced" type="text" value="<%=cc%>">
                             <label for="num_ced">Numero de cedula</label>
                         </div>
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input required id="nombre_empresa" type="text" class="validate">
-                                <label for="nombre_empresa">Nombre de la empresa</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input required id="nit" type="text" class="validate">
-                                <label for="nit">Nit</label>
-                            </div>
+
+                        <div class="input-field col s6">
+                            <input required id="nombre_empresa" type="text" class="validate">
+                            <label for="nombre_empresa">Nombre de la empresa</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input required id="nit" type="text" class="validate">
+                            <label for="nit">Nit</label>
                         </div>
 
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <input required id="representante" type="text" class="validate">
-                                <label for="representante">Nombre del representante legal</label>
-                            </div>
+
+
+                        <div class="input-field col s12">
+                            <input required id="representante" type="text" class="validate">
+                            <label for="representante">Nombre del representante legal</label>
                         </div>
 
-                        <div class="row" id="cons_legal">
-                            <div class="input-field col s3">
+
+                        <div id="cons_legal">
+                            <div class="input-field col s3" >
 
                                 <label>Constitución legal</label> 
                             </div>
@@ -83,74 +83,74 @@
                             <input hidden="true" name="cons_ot" id="cons_ot" type="text" value="sas" class="validate">
                         </div>
 
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input required id="fecha_constitucion" type="text" class="datepicker">
-                                <label for="fecha_constitucion">Fecha de constitución</label>
-                            </div>
-                            <div class="input-field col s2">
-                                <label> No de empleados</label>
-                            </div>
-                            <div class="input-field col s1">
-                                <p>
-                                    <input required class="validate" type="number" min="0" id="tc"/>
-                                    <label for="tc">TC</label>
-                                </p>
-                            </div>
-                            <div class="input-field col s1">
-                                <p>
-                                    <input required class="validate" type="number" min="0" id="mt"/>
-                                    <label for="mt">MT</label>
-                                </p>
-                            </div>
-                            <div class="input-field col s1">
-                                <p>
-                                    <input required class="validate" type="number" min="0" id="directo"/>
-                                    <label for="directo">Directo</label>
-                                </p>
-                            </div>
-                            <div class="input-field col s1">
-                                <p>
-                                    <input required class="validate" type="number" min="0" id="indirecto"/>
-                                    <label for="indirecto">Indirecto</label>
-                                </p>
-                            </div>
+
+                        <div class="input-field col s6">
+                            <input required id="fecha_constitucion" type="text" class="datepicker">
+                            <label for="fecha_constitucion">Fecha de constitución</label>
+                        </div>
+                        <div class="input-field col s2">
+                            <label> No de empleados</label>
+                        </div>
+                        <div class="input-field col s1">
+                            <p>
+                                <input required class="validate" type="number" min="0" id="tc"/>
+                                <label for="tc">TC</label>
+                            </p>
+                        </div>
+                        <div class="input-field col s1">
+                            <p>
+                                <input required class="validate" type="number" min="0" id="mt"/>
+                                <label for="mt">MT</label>
+                            </p>
+                        </div>
+                        <div class="input-field col s1">
+                            <p>
+                                <input required class="validate" type="number" min="0" id="directo"/>
+                                <label for="directo">Directo</label>
+                            </p>
+                        </div>
+                        <div class="input-field col s1">
+                            <p>
+                                <input required class="validate" type="number" min="0" id="indirecto"/>
+                                <label for="indirecto">Indirecto</label>
+                            </p>
                         </div>
 
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input required id="direccion_empresa" type="text" class="validate">
-                                <label for="direccion_empresa">Dirección de la empresa</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input required id="ciudad_empresa" type="text" class="validate">
-                                <label for="ciudad_empresa">Ciudad</label>
-                            </div>
+
+
+                        <div class="input-field col s6">
+                            <input required id="direccion_empresa" type="text" class="validate">
+                            <label for="direccion_empresa">Dirección de la empresa</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input required id="ciudad_empresa" type="text" class="validate">
+                            <label for="ciudad_empresa">Ciudad</label>
                         </div>
 
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input required id="tel_fijo_empresa" type="tel" class="validate">
-                                <label for="tel_fijo_empresa">Teléfono fijo</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input required id="tel_movil_empresa" type="tel" class="validate">
-                                <label for="tel_movil_empresa">Teléfono móvil</label>
-                            </div>
+
+
+                        <div class="input-field col s6">
+                            <input required id="tel_fijo_empresa" type="tel" class="validate">
+                            <label for="tel_fijo_empresa">Teléfono fijo</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input required id="tel_movil_empresa" type="tel" class="validate">
+                            <label for="tel_movil_empresa">Teléfono móvil</label>
                         </div>
 
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input required id="correo_empresa" type="email" class="validate">
-                                <label for="correo_empresa">Correo electrónico</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input required id="sitio_web" type="text" placeholder="www.example.com" class="validate">
-                                <label for="sitio_web">Sitio web</label>
-                            </div>
+
+
+                        <div class="input-field col s6">
+                            <input required id="correo_empresa" type="email" class="validate">
+                            <label for="correo_empresa">Correo electrónico</label>
                         </div>
-                         <br> <br> <br>
-                        <div class="row" id="tipo_empresa">
+                        <div class="input-field col s6">
+                            <input required id="sitio_web" type="text" placeholder="www.example.com" class="validate">
+                            <label for="sitio_web">Sitio web</label>
+                        </div>
+
+
+                        <div id="tipo_empresa">
                             <div class="input-field col s3">
 
                                 <label>Tipo de empresa</label> 
@@ -161,7 +161,7 @@
                                     <label for="industrial">Industrial</label>
                                 </p> 
                             </div>
-                             <div class="input-field col s2">
+                            <div class="input-field col s2">
                                 <p>
                                     <input name="group8" type="radio" id="comercial" value="comercial"/>
                                     <label for="comercial">Comercial:</label>
@@ -203,8 +203,9 @@
                             </div>
                             <input hidden="true" name="tipo_emp" id="tipo_emp" type="text" value="industrial" class="validate">
                         </div>
-                         <br> <br> <br> 
-                        <div class="row" id="regis_mer">
+
+
+                        <div id="regis_mer">
                             <div class="input-field col s2">
                                 <label>Tiene registro mercantil</label>
                             </div>
@@ -233,15 +234,15 @@
                             </div>
                             <input hidden="true" name="regis_mercan" id="regis_mercan" type="text" value="no" class="validate">
                         </div>
-                         <br> <br> <br> 
-                           <div class="input-field col s4">
-                                <p>
-                                    <input required class="validate" type="text" id="codigoCIIU"/>
-                                    <label for="codigoCIIU">Codigo principal CIIU</label>
-                                </p>
-                            </div>
+
+                        <div class="input-field col s4">
+                            <p>
+                                <input required class="validate" type="text" id="codigoCIIU"/>
+                                <label for="codigoCIIU">Codigo principal CIIU</label>
+                            </p>
+                        </div>
                         <div class="row" id="act_internacional">
-                        <div class="input-field col s2">
+                            <div class="input-field col s2">
                                 <label>Actividad internacional:</label>
                             </div>
                             <div class="input-field col s2">
@@ -256,7 +257,7 @@
                                     <label for="importacion">Importación</label>
                                 </p>
                             </div>
-                        <div class="input-field col s1">
+                            <div class="input-field col s1">
                                 <p>
                                     <input name="group9" type="radio" id="ambas" value="ambas"/>
                                     <label for="ambas">Ambas</label>
@@ -264,12 +265,12 @@
                             </div>
                             <input hidden="true" name="actividad_int" id="actividad_int" type="text" value="exportacion" class="validate">
                         </div>
-                          <div class="input-field col s4">
-                                <p>
-                                    <input required class="validate" type="text" id="paises_comercializa"/>
-                                    <label for="paises_comercializa">Mencione los paises con los cuales comercializa:</label>
-                                </p>
-                            </div>
+                        <div class="input-field col s4">
+                            <p>
+                                <input required class="validate" type="text" id="paises_comercializa"/>
+                                <label for="paises_comercializa">Mencione los paises con los cuales comercializa:</label>
+                            </p>
+                        </div>
                         <div class="input-field col s4">
                             <label for="neg_internet">¿Realiza negocios por internet?</label> 
                         </div>
@@ -290,21 +291,22 @@
                                 <textarea  required id="servicios_des" class="materialize-textarea"></textarea>
                                 <label for="servicios_des">Descripción de servicios que ofrece</label>
                             </div>
-                        </div>
-                        <div class="input-field col s3">
-                            <label for="empT">¿Es empresa turistica?</label> 
-                        </div>
-                        <div class="input1-field col s3">
-                            <div class="switch">
-                                <label>
-                                    No
-                                    <input type="checkbox" id="empT" onclick="cargarEmpresaT()">
-                                    <span class="lever"></span>
-                                    Si
-                                </label>
+                            <div class="input-field col s3">
+                                <label for="empT">¿Es empresa turistica?</label> 
+                            </div>
+                            <div class="input-field col s3">
+                                <div class="switch">
+                                    <label>
+                                        No
+                                        <input type="checkbox" id="empT" onclick="cargarEmpresaT()">
+                                        <span class="lever"></span>
+                                        Si
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                        <br><br><br><br>
+
+                        <br><br>
                         <div id="formEmpresaT">
 
                         </div>
