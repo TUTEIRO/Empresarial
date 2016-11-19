@@ -16,9 +16,9 @@ import java.util.ArrayList;
  */
 public class ControlEntidad {
     
-    public boolean registrarEntidad(String nombre, String nit, String direccion, String ciudad, String fijo, String celular, String email, String sitio_web, String descripcion, String url_imagen) throws Exception{
+    public boolean registrarEntidad(String nombre, String nit, String direccion, String ciudad, String fijo, String celular, String email, String sitio_web, String url_imagen) throws Exception{
         EntidadDAO dao = new EntidadDAO();
-        EntidadDTO entidad = new EntidadDTO(nombre, nit, direccion, ciudad, fijo, celular, email, sitio_web, descripcion, url_imagen);
+        EntidadDTO entidad = new EntidadDTO(nombre, nit, direccion, ciudad, fijo, celular, email, sitio_web, url_imagen);
         return dao.registrarEntidad(entidad);
     }
     

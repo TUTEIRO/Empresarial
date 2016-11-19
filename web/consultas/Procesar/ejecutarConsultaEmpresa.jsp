@@ -9,10 +9,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
+    Fachada fachada = new Fachada();
     String tipo = request.getParameter("valor_busq");
     String dato = request.getParameter("dato");
-    Fachada fachada = new Fachada();
-    ArrayList<EmpresaDTO> emp = fachada.consultarEmpresa(tipo, dato);
+    ArrayList<EmpresaDTO> emp = null;
+    if (tipo.equals("mun") || tipo.equals("tur") || tipo.equals("inter") || tipo.equals("internet")) {
+        emp = fachada.consultarEmpresa(tipo, "");
+    }else{
+        emp = fachada.consultarEmpresa(tipo, dato);
+    }
+
     if (!emp.isEmpty()) {
 %>
 
@@ -37,9 +43,9 @@
     <tr>
         <th data-field="nombre"> <%=e.getNombre()%></th>
         <th data-field="nit"><%=e.getNit()%></th>
-        <th data-field="rep_legal"><%=e.getNombre_rep_legal() %></th>
-        <th data-field="tipo_constitucion"><%= e.getTipo_constitucion() %></th>
-        <th data-field="direccion"><%=e.getDireccion() %></th>
+        <th data-field="rep_legal"><%=e.getNombre_rep_legal()%></th>
+        <th data-field="tipo_constitucion"><%= e.getTipo_constitucion()%></th>
+        <th data-field="direccion"><%=e.getDireccion()%></th>
         <th data-field="ciudad"><%=e.getCiudad()%></th>
         <th data-field="telefono"><%=e.getTelefono()%></th>
         <th data-field="email"<%=e.getEmail()%></th>
@@ -68,16 +74,7 @@
         </tr>
     </thead>
     <tr>
-        <th></th>
-        <th ></th>
-        <th ></th>
-        <th ></th>
-        <th ></th>
-        <th >No se encontrarón resultados</th>
-        <th ></th>
-        <th ></th>
-        <th></th>
-        <th></th>
-    </tr>
+        <td colspan ="10" ><center>No se encuentran datos con la busqueda digitada</center></td>
+</tr>
 </table>
 <%}%>

@@ -136,9 +136,9 @@ public class Fachada {
         ControlUtilidades utilidades = new ControlUtilidades();
         return utilidades.login(type, user, pw);
     }
-     public boolean registrarEntidad(String nombre, String nit, String direccion, String ciudad, String fijo, String celular, String email, String sitio_web, String descripcion, String url_imagen) throws Exception{
+     public boolean registrarEntidad(String nombre, String nit, String direccion, String ciudad, String fijo, String celular, String email, String sitio_web, String url_imagen) throws Exception{
         ControlEntidad control = new ControlEntidad();
-        return control.registrarEntidad(nombre, nit, direccion, ciudad, fijo, celular, email, sitio_web, descripcion, url_imagen);
+        return control.registrarEntidad(nombre, nit, direccion, ciudad, fijo, celular, email, sitio_web, url_imagen);
     }
      public ArrayList<EntidadDTO> consultarEntidad(String tipo, String dato) throws Exception{
         ControlEntidad con = new ControlEntidad();

@@ -14,13 +14,13 @@
 <div class="card-panel  white" >
     <div class="row">
         <div class="input-field col s12">
-            <select id="valor_busq">
+            <select id="valor_busq" onchange="javascript:consultarEmpresa()">
                 <option value="" disabled selected>--Seleccione una opción--</option>
                 <option value="nombre">Nombre de la Empresa</option>
                 <option value="ctocc">Documento de Id. del Contacto</option>
                 <option value="ciiu">Código CIIU de la Empresa</option>
                 <option value="mun">Municipio originario de la Empresa</option>
-                <option value="tur"">Empresas Turísticas</option>
+                <option value="tur">Empresas Turísticas</option>
                 <option value="inter">Empresas que hacen negocios internacionales</option>
                 <option value="internet">Empresas que hacen negocios por Internet</option>
             </select>

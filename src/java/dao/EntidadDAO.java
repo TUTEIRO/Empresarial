@@ -29,7 +29,7 @@ public class EntidadDAO implements IEntidadDAO{
         boolean exito = false;
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("INSERT INTO  `ufps_1`.`entidad` (\n"
+            stmt = conn.prepareStatement("INSERT INTO  `ufps_1`.`entidad_adscrita` (\n"
                     + "`ent_nombre` ,\n"
                     + "`ent_nit` ,\n"
                     + "`ent_direccion` ,\n"
@@ -42,7 +42,7 @@ public class EntidadDAO implements IEntidadDAO{
                     + "`ent_url_imagen` ,\n"
                     + ")\n"
                     + "VALUES (\n"
-                    + "?,?,?,?,?,?,?,?,?,?\n"
+                    + "?,?,?,?,?,?,?,?,?\n"
                     + ");");
             stmt.setString(1, dto.getNombre());
             stmt.setString(2, dto.getNit());
@@ -52,8 +52,7 @@ public class EntidadDAO implements IEntidadDAO{
             stmt.setString(6, dto.getCelular());
             stmt.setString(7, dto.getEmail());
             stmt.setString(8, dto.getSitio_web());
-            stmt.setString(9, dto.getDescripcion());
-            stmt.setString(10, dto.getUrl_imagen());
+            stmt.setString(9, dto.getUrl_imagen());
             int total = stmt.executeUpdate();
             if (total > 0) {
                 stmt.close();
@@ -78,10 +77,10 @@ public class EntidadDAO implements IEntidadDAO{
         EntidadDTO entidad = null;
         try {
             if (tipo.equals("nombre")) {
-                stmt = conn.prepareStatement("SELECT * FROM entidad WHERE ent_nombre LIKE '%"+ dato+"%'");
+                stmt = conn.prepareStatement("SELECT * FROM entidad_adscrita WHERE entidad_nombre LIKE '%"+ dato+"%'");
                 ResultSet res = stmt.executeQuery();
                 while (res.next()) {
-                    entidad = new EntidadDTO(res.getString(1), res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(8));
+                    entidad = new EntidadDTO(res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10));
                     list.add(entidad);
                 }
                 stmt.close();
@@ -91,12 +90,14 @@ public class EntidadDAO implements IEntidadDAO{
                 ResultSet res = stmt.executeQuery();
                 while (res.next()) {
                     entidad = new EntidadDTO();
-                    entidad.setNombre(res.getString(1));
-                    entidad.setNit(res.getString(2));
-                    entidad.setDireccion(res.getString(3));
-                    entidad.setCiudad(res.getString(4));
-                    entidad.setFijo(res.getString(5));
-                    entidad.setSitio_web(res.getString(8));
+                    entidad.setNombre(res.getString(2));
+                    entidad.setNit(res.getString(3));
+                    entidad.setDireccion(res.getString(4));
+                    entidad.setCiudad(res.getString(5));
+                    entidad.setFijo(res.getString(6));
+                    entidad.setCelular(res.getString(7));
+                    entidad.setEmail(res.getString(8));
+                    entidad.setSitio_web(res.getString(9));
                     list.add(entidad);
                 }
                 stmt.close();
