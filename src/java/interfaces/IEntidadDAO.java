@@ -15,4 +15,5 @@ public interface IEntidadDAO {
     
     public boolean registrarEntidad(EntidadDTO dto) throws Exception;
     public ArrayList<EntidadDTO> consultarEntidad(String dato, String tipo) throws Exception;
+    public boolean asociarServicio(String entidad_nombre, String servicio) throws Exception;
 }

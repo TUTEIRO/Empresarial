@@ -117,10 +117,58 @@ public class ServicioLogroDAO implements IServicioLogroDAO{
         }
         return logros;
     }
-
+    
     @Override
-    public boolean asociar(ServicioDTO servicio, LogroDTO logro) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean asociar(String servicio, ArrayList<String> logro) throws Exception {
+        conn = Conexion.conectar();
+        boolean exito = false;
+        PreparedStatement stmt = null;
+        int servicio_id = 0;
+        ArrayList<Integer> logro_id = new ArrayList();
+        try{
+            stmt = conn.prepareStatement("SELECT servicio.servicio_id FROM servicio WHERE servicio.servicio_nombre = ?");
+            stmt.setString(1, servicio);
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                servicio_id = rs.getInt(1);
+            }
+            rs.close();
+            
+            for(String s : logro){
+                stmt = conn.prepareStatement("SELECT logro.logro_id FROM logro WHERE logro.logro_nombre = ?");
+                stmt.setString(1, s);
+                ResultSet rs2 = stmt.executeQuery();
+                while(rs2.next()){
+                    logro_id.add(rs2.getInt(1));
+                }
+                rs2.close();
+            }
+            
+            int iterator = 0;
+            for(int i : logro_id){
+                stmt = conn.prepareStatement("INSERT INTO `ufps_1`.`servicio_x_logro`(`servicio_id`, `logro_id`) VALUES(?,?)");
+                stmt.setInt(1, servicio_id);
+                stmt.setInt(2, i);
+                
+                int sc = stmt.executeUpdate();
+                if(sc > 0){
+                    iterator++;
+                }
+            }
+            
+            if(iterator == logro_id.size()){
+                exito = true;
+                stmt.close();
+            }
+            
+            stmt.close();
+        }catch(Exception ex){
+            System.err.println(ex);
+        }finally{
+            if(conn != null)
+                conn.close();
+        }
+        return exito;
     }
     
 }

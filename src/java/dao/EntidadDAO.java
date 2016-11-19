@@ -113,6 +113,21 @@ public class EntidadDAO implements IEntidadDAO{
         return list;
     }
 
+    @Override
+    public boolean asociarServicio(String entidad_nombre, String servicio) throws Exception {
+        conn = Conexion.conectar();
+        boolean exito = false;
+        try{
+            
+        }catch(Exception ex){
+            System.err.println(ex);
+        }finally{
+            if(conn != null)
+                conn.close();
+        }
+        return exito;
+    }
+
   
     
 }
