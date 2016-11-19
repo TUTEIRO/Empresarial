@@ -22,75 +22,28 @@ function nuevoAjax() {
     return xmlhttp;
 }
 
-function modificarContacto() {
-    var div = "actualizar";
-    var nombre = document.getElementById("first_name");
-    var apellidos = document.getElementById("last_name");
-    var cc = document.getElementById("num_ced");
-    var cargo = document.getElementById("cargo");
-    var nivel_estudio = document.getElementById("niv_estud");
-    var direccion = document.getElementById("direccion");
-    var ciudad = document.getElementById("mun");
-    var dpto = document.getElementById("departamento");
-    var celular = document.getElementById("tel_cel");
-    var fijo = document.getElementById("tel_fijo");
-    var email = document.getElementById("email");
-    var antiguedad_cargo = document.getElementById("anos_cargo");
+function cargarServicio() {
+    alert("ento");
+    var servicioSelect = document.getElementById("servicios_enti").value;
+    var servicioText = document.getElementById("servicio_nuevo").value;
+    alert(servicioText);
     ajax = nuevoAjax();
-
-    parametros = "nombres=" + nombre.value + "&apellidos=" + apellidos.value + "&cc=" + cc.value + "&cargo=" + cargo.value +
-            "&nivel_estudio=" + nivel_estudio.value + "&direccion=" + direccion.value + "&ciudad=" + ciudad.value + "&dpto=" + dpto.value +
-            "&celular=" + celular.value + "&fijo=" + fijo.value + "&email=" + email.value + "&antiguedad=" + antiguedad_cargo.value;
-    url = "Procesar/actualizarContacto.jsp";
-    ajax.open("POST", url, true);
-    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    ajax.send(parametros);
-    ajax.onreadystatechange = function ()
-    {
-        if (ajax.readyState == 4)
-        {
-            if (ajax.status == 200)
-            {
-                $(document).ready(function () {
-                    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-                    $('.modal-trigger').leanModal();
-                });
-                $('#modal2').openModal();
-                document.getElementById(div).innerHTML = ajax.responseText;
-
-            } else
-            {
-
-                document.getElementById(div).innerHTML = ajax.responseText;
-
-            }
-        } else
-        {
-            document.getElementById(div).value = "Cargando";
-        }
-
-    }
-}
-
-function cargarMunicipiosModi(sel) {
-
-    var div = "municipio";
-    var resul = sel;
-    ajax = nuevoAjax();
-    parametros = "departamento=" + resul.value;
-    url = "Procesar/cargarMunicipio.jsp";
+    parametros = "servicioSelect=" + servicioSelect + "&servicioText=" + servicioText;
+    url = "Procesar/cargarServicios.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     ajax.send(parametros);
     ajax.onreadystatechange = function () {
-        if (ajax.readyState == 4) {
-            if (ajax.status == 200) {
+        if (ajax.readyState === 4) {
+            if (ajax.status === 200) {
                 var rta = ajax.responseText;
-                document.getElementById(div).innerHTML = rta;
-                $('#mun').material_select();
+                document.getElementById('tablaRegistro').innerHTML += rta;
+                $('#servicios_enti').material_select();
             }
         }
-    }
+    };
+  
+
+    document.getElementById("servicio_nuevo").value = '';
+
 }
-
-
