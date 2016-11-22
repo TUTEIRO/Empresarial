@@ -23,10 +23,8 @@ function nuevoAjax() {
 }
 
 function cargarServicio() {
-    alert("ento");
     var servicioSelect = document.getElementById("servicios_enti").value;
     var servicioText = document.getElementById("servicio_nuevo").value;
-    alert(servicioText);
     ajax = nuevoAjax();
     parametros = "servicioSelect=" + servicioSelect + "&servicioText=" + servicioText;
     url = "Procesar/cargarServicios.jsp";

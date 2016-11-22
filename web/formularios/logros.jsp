@@ -6,12 +6,29 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+
+<jsp:include page="../plantillas/header2.jsp"/>
+<%
+    String servicio = request.getParameter("servicio");
+%>
+<section id="logros" class="logros">
+    <div class="card-panel white">
+        <h4><span class="green-text" style="font-weight: bold;">SERVICIO:  <%=servicio%></span></h4>
+    </div>
+    
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<jsp:include page="../plantillas/footer.jsp"/>
