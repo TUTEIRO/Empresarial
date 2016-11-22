@@ -25,6 +25,9 @@ function nuevoAjax() {
 function cargarServicio() {
     var servicioSelect = document.getElementById("servicios_enti").value;
     var servicioText = document.getElementById("servicio_nuevo").value;
+    if(servicioSelect==="" && servicioText===""){
+        alert("Por favor seleccione o ingrese un servicio");
+    }else{
     ajax = nuevoAjax();
     parametros = "servicioSelect=" + servicioSelect + "&servicioText=" + servicioText;
     url = "Procesar/cargarServicios.jsp";
@@ -44,4 +47,5 @@ function cargarServicio() {
 
     document.getElementById("servicio_nuevo").value = '';
 
+}
 }
