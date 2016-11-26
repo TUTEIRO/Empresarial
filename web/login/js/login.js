@@ -36,10 +36,9 @@ function validarUsuario() {
 
     var contrasena = document.getElementById("contrasena");
 
-    aleatorio = Math.random();
     ajax = nuevoAjax();
 
-    parametros = "usuario=" + usuario.value + "&contrasena=" + contrasena.value + "&aleatorio=" + aleatorio;
+    parametros = "usuario=" + usuario.value + "&contrasena=" + contrasena.value;
     url = "procesar/procesarSesion.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
@@ -61,13 +60,13 @@ function validarUsuario() {
                 }
             } else {
                 var rta = ajax.responseText;
-                if (rta.indexOf("1") < 0 && rta.indexOf("3") < 0) {
+                if (rta.indexOf("1") < 0 && rta.indexOf("2") < 0) {
                     document.getElementById("divError").innerHTML = ajax.responseText;
                 } else {
                     if (rta.indexOf("1") >= 0) {
                         login.action = "../inicio/principal.jsp";
                         login.submit();
-                    } else if(rta.indexOf("3") >= 0){
+                    } else if(rta.indexOf("2") >= 0){
                         alert("Error de autenticación");
                         login.action = "";
                         login.submit();

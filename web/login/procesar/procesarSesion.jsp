@@ -16,10 +16,10 @@
         if(f.login(user, password)){
             mensaje = "1";
         }else{
-            mensaje = "3";
+            mensaje = "2";
         }
    
-    session.setAttribute("usuario", tipo);;
+    session.setAttribute("usuario", "administrador");;
     session.setAttribute("estadoSesion", true);
 
     session.setMaxInactiveInterval(1 * 60 * 60);

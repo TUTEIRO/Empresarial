@@ -30,15 +30,14 @@ function registrarEntidad() {
     var tel_mov = document.getElementById("tel_movil_entidad").value;
     var mail = document.getElementById("correo_entidad").value;
     var url_web = document.getElementById("sitio_web_entidad").value;
-    var file1 = document.getElementById("logo_file").value;
 
 
     ajax = nuevoAjax();
     parametros = "nombre=" + nombre + "&nit=" + nit+"&direccion="+direccion+"&ciudad="+ciudad+"&tel_fijo="+tel_fijo+
-            "&tel_mov="+tel_mov+"&url_web="+url_web+"&mail="+mail+"&file1="+file1;
+            "&tel_mov="+tel_mov+"&url_web="+url_web+"&mail="+mail;
     url = "Procesar/registrarEntidad.jsp";
     ajax.open("POST", url, true);
-    ajax.setRequestHeader('Content-Type', 'multipart/form-data');
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     
    
     ajax.send(parametros);

@@ -69,16 +69,6 @@
                                 <label for="sitio_web_entidad">Sitio web</label>
                             </div>
                         </div>
-
-                        <div class="file-field input-field col s12">
-                            <div class="btn">
-                                <span>Logo de la entidad</span>
-                                <input id="logo_file" accept="image/x-png, image/gif, image/jpeg" type="file">
-                            </div>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text" placeholder="Subir archivo de imagen del logo de la entidad">
-                            </div>
-                        </div>
                         <br>
 
                         <h4><span class="green-text" style="font-weight: bold;">REGISTRAR SERVICIOS DE LA ENTIDAD</span></h4>

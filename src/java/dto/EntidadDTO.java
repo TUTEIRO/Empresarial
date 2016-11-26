@@ -11,9 +11,9 @@ package dto;
  */
 public class EntidadDTO {
     
-    private String nombre, nit, direccion, ciudad, fijo, celular, email, sitio_web, url_imagen;
+    private String nombre, nit, direccion, ciudad, fijo, celular, email, sitio_web;
 
-    public EntidadDTO(String nombre, String nit, String direccion, String ciudad, String fijo, String celular, String email, String sitio_web, String url_imagen) {
+    public EntidadDTO(String nombre, String nit, String direccion, String ciudad, String fijo, String celular, String email, String sitio_web) {
         this.nombre = nombre;
         this.nit = nit;
         this.direccion = direccion;
@@ -22,20 +22,16 @@ public class EntidadDTO {
         this.celular = celular;
         this.email = email;
         this.sitio_web = sitio_web;
-        this.url_imagen = url_imagen;
+
     }
 
     public EntidadDTO() {
+        
     }
 
-    public EntidadDTO(String nombre, String nit, String direccion, String ciudad, String fijo, String sitio_web) {
-        this.nombre = nombre;
-        this.nit = nit;
-        this.direccion = direccion;
-        this.ciudad = ciudad;
-        this.fijo = fijo;
-        this.sitio_web = sitio_web;
-    }
+    
+
+   
     
     
 
@@ -103,13 +99,7 @@ public class EntidadDTO {
         this.sitio_web = sitio_web;
     }
 
-    public String getUrl_imagen() {
-        return url_imagen;
-    }
-
-    public void setUrl_imagen(String url_imagen) {
-        this.url_imagen = url_imagen;
-    }
+   
     
     
 }

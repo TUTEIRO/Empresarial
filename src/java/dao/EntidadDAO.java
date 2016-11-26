@@ -29,21 +29,7 @@ public class EntidadDAO implements IEntidadDAO{
         boolean exito = false;
         PreparedStatement stmt = null;
         try {
-            stmt = conn.prepareStatement("INSERT INTO  `ufps_1`.`entidad_adscrita` (\n"
-                    + "`ent_nombre` ,\n"
-                    + "`ent_nit` ,\n"
-                    + "`ent_direccion` ,\n"
-                    + "`ent_ciudad` ,\n"
-                    + "`ent_fijo` ,\n"
-                    + "`ent_celular` ,\n"
-                    + "`ent_email` ,\n"
-                    + "`ent_url_website` ,\n"
-                    + "`ent_descripcion` ,\n"
-                    + "`ent_url_imagen` ,\n"
-                    + ")\n"
-                    + "VALUES (\n"
-                    + "?,?,?,?,?,?,?,?,?\n"
-                    + ");");
+            stmt = conn.prepareStatement("INSERT INTO `entidad_adscrita`(`entidad_nombre`, `entidad_NIT`, `entidad_dir`, `entidad_ciudad`, `entidad_fijo`, `entidad_movil`, `entidad_email`, `entidad_website`) VALUES (?,?,?,?,?,?,?,?);");
             stmt.setString(1, dto.getNombre());
             stmt.setString(2, dto.getNit());
             stmt.setString(3, dto.getDireccion());
@@ -52,7 +38,6 @@ public class EntidadDAO implements IEntidadDAO{
             stmt.setString(6, dto.getCelular());
             stmt.setString(7, dto.getEmail());
             stmt.setString(8, dto.getSitio_web());
-            stmt.setString(9, dto.getUrl_imagen());
             int total = stmt.executeUpdate();
             if (total > 0) {
                 stmt.close();
@@ -80,7 +65,7 @@ public class EntidadDAO implements IEntidadDAO{
                 stmt = conn.prepareStatement("SELECT * FROM entidad_adscrita WHERE entidad_nombre LIKE '%"+ dato+"%'");
                 ResultSet res = stmt.executeQuery();
                 while (res.next()) {
-                    entidad = new EntidadDTO(res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9), res.getString(10));
+                    entidad = new EntidadDTO(res.getString(2), res.getString(3), res.getString(4), res.getString(5), res.getString(6), res.getString(7), res.getString(8), res.getString(9));
                     list.add(entidad);
                 }
                 stmt.close();
