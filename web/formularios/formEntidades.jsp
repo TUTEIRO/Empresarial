@@ -32,36 +32,36 @@
                                 <label for="nom_entidad">Nombre de la entidad</label>
                             </div>
                             <div class="input-field col s6">
-                                <input required id="nit_entidad" type="text" class="validate">
+                                <input id="nit_entidad" type="text" class="validate">
                                 <label for="nit_entidad">Nit</label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col s6">
-                                <input required id="dir_entidad" type="text" class="validate">
+                                <input id="dir_entidad" type="text" class="validate">
                                 <label for="dir_entidad">Dirección de la entidad</label>
                             </div>
                             <div class="input-field col s6">
-                                <input required id="ciudad_entidad" type="text" class="validate">
+                                <input id="ciudad_entidad" type="text" class="validate">
                                 <label for="ciudad_entidad">Ciudad</label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col s6">
-                                <input required id="tel_fijo_entidad" type="tel" class="validate">
+                                <input id="tel_fijo_entidad" type="tel" class="validate">
                                 <label for="tel_fijo_entidad">Teléfono fijo</label>
                             </div>
                             <div class="input-field col s6">
-                                <input required id="tel_movil_entidad" type="tel" class="validate">
+                                <input id="tel_movil_entidad" type="tel" class="validate">
                                 <label for="tel_movil_entidad">Teléfono móvil</label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col s6">
-                                <input required id="correo_entidad" type="email" class="validate">
+                                <input id="correo_entidad" type="email" class="validate">
                                 <label for="correo_entidad">Correo electrónico</label>
                             </div>
                             <div class="input-field col s6">

@@ -103,7 +103,7 @@
 
                 <div class="nav-wrapper green darken-3">
 
-                    <center><a href="" class="brand-logo center">Logros</a></center>
+                    <center><a class="brand-logo center">Logros</a></center>
                     
                 </div>
             </nav>

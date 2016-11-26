@@ -135,9 +135,9 @@ public class Fachada {
         return utilidades.cargarEtnicidad();
     }
     
-    public boolean login(String type, String user, String pw) throws Exception{
+    public boolean login(String user, String pw) throws Exception{
         ControlUtilidades utilidades = new ControlUtilidades();
-        return utilidades.login(type, user, pw);
+        return utilidades.login("administrador", user, pw);
     }
      public boolean registrarEntidad(String nombre, String nit, String direccion, String ciudad, String fijo, String celular, String email, String sitio_web, String url_imagen) throws Exception{
         ControlEntidad control = new ControlEntidad();

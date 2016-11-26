@@ -70,17 +70,6 @@ and open the template in the editor.
 
                                 </div>
 
-                                <div class="input-field col s12">
-
-                                    <i class="material-icons prefix">recent_actors</i>
-                                    <select id="tipo_usuario">
-                                        <option value="" disabled selected>--Seleccione una opción--</option>
-                                        <option value="administrador">Administrador</option>
-                                        <option value="empresa">Empresa</option>
-                                    </select>
-                                    <label for="tipo_usuario">Tipo usuario</label>
-                                </div>
-
                                 <div class="input-field col s12 ">
                                     <button type="button" class="btn  btn-success" onclick="validarUsuario();"
                                             name="ingresar" id="ingresar" value="Ingresar" />Ingresar</button>
