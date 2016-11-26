@@ -25,10 +25,10 @@
         <div class="row">
             <div class="col s12 ">
                 <div class="row">
-                    <form class="col s12">
+                   
                         <div class="row">
                             <div class="input-field col s6">
-                                <input required id="nom_entidad" type="text" class="validate">
+                                <input  id="nom_entidad" type="text" class="validate">
                                 <label for="nom_entidad">Nombre de la entidad</label>
                             </div>
                             <div class="input-field col s6">
@@ -73,7 +73,7 @@
                         <div class="file-field input-field col s12">
                             <div class="btn">
                                 <span>Logo de la entidad</span>
-                                <input accept="image/x-png, image/gif, image/jpeg" type="file">
+                                <input id="logo_file" accept="image/x-png, image/gif, image/jpeg" type="file">
                             </div>
                             <div class="file-path-wrapper">
                                 <input class="file-path validate" type="text" placeholder="Subir archivo de imagen del logo de la entidad">
@@ -124,11 +124,11 @@
 
                         <div class="row">
                             <div class="col s12">
-                                <input id="buttoncheck" type="submit" class="waves-effect waves-light btn modal-trigger" href="#modal1" value="Registrar Entidad" onclick="">
+                                <button id="buttonEntidad"  class="waves-effect waves-light btn" onclick="registrarEntidad()">Registrar Entidad</button>
                             </div>
                         </div>
 
-                    </form>
+                    
                 </div>
             </div>
         </div>

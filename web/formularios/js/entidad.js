@@ -21,31 +21,67 @@ function nuevoAjax() {
     }
     return xmlhttp;
 }
+function registrarEntidad() {
+    var nombre = document.getElementById("nom_entidad").value;
+    var nit = document.getElementById("nit_entidad").value;
+    var direccion = document.getElementById("dir_entidad").value;
+    var ciudad = document.getElementById("ciudad_entidad").value;
+    var tel_fijo = document.getElementById("tel_fijo_entidad").value;
+    var tel_mov = document.getElementById("tel_movil_entidad").value;
+    var mail = document.getElementById("correo_entidad").value;
+    var url_web = document.getElementById("sitio_web_entidad").value;
+    var file1 = document.getElementById("logo_file").value;
 
-function cargarServicio() {
-    var servicioSelect = document.getElementById("servicios_enti").value;
-    var servicioText = document.getElementById("servicio_nuevo").value;
-    if(servicioSelect==="" && servicioText===""){
-        alert("Por favor seleccione o ingrese un servicio");
-    }else{
+
     ajax = nuevoAjax();
-    parametros = "servicioSelect=" + servicioSelect + "&servicioText=" + servicioText;
-    url = "Procesar/cargarServicios.jsp";
+    parametros = "nombre=" + nombre + "&nit=" + nit+"&direccion="+direccion+"&ciudad="+ciudad+"&tel_fijo="+tel_fijo+
+            "&tel_mov="+tel_mov+"&url_web="+url_web+"&mail="+mail+"&file1="+file1;
+    url = "Procesar/registrarEntidad.jsp";
     ajax.open("POST", url, true);
-    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.setRequestHeader('Content-Type', 'multipart/form-data');
+    
+   
     ajax.send(parametros);
     ajax.onreadystatechange = function () {
         if (ajax.readyState === 4) {
             if (ajax.status === 200) {
                 var rta = ajax.responseText;
-                document.getElementById('tablaRegistro').innerHTML += rta;
+                document.getElementById('tablaRegistro').innerHTML = ajax.responseText;
                 $('#servicios_enti').material_select();
             }
         }
     };
-  
 
-    document.getElementById("servicio_nuevo").value = '';
+
+
 
 }
+
+
+function cargarServicio() {
+    var servicioSelect = document.getElementById("servicios_enti").value;
+    var servicioText = document.getElementById("servicio_nuevo").value;
+    if (servicioSelect === "" && servicioText === "") {
+        alert("Por favor seleccione o ingrese un servicio");
+    } else {
+        ajax = nuevoAjax();
+        parametros = "servicioSelect=" + servicioSelect + "&servicioText=" + servicioText;
+        url = "Procesar/cargarServicios.jsp";
+        ajax.open("POST", url, true);
+        ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        ajax.send(parametros);
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState === 4) {
+                var rta = ajax.responseText;
+                if (ajax.status === 200) {
+                    document.getElementById('tablaRegistro').innerHTML += rta;
+                    $('#servicios_enti').material_select();
+                }
+            }
+        };
+
+
+        document.getElementById("servicio_nuevo").value='';
+
+    }
 }
