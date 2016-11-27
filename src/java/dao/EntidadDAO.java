@@ -102,8 +102,36 @@ public class EntidadDAO implements IEntidadDAO{
     public boolean asociarServicio(String entidad_nombre, String servicio) throws Exception {
         conn = Conexion.conectar();
         boolean exito = false;
+        PreparedStatement stmt = null;
+        int servicio_id = 0, entidad_id = 0;
         try{
+            stmt = conn.prepareStatement("SELECT servicio.servicio_id FROM servicio WHERE servicio.servicio_nombre = ?");
+            stmt.setString(1, servicio);
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                servicio_id = rs.getInt(1);
+            }
+            rs.close();
             
+            stmt = conn.prepareStatement("SELECT entidad_adscrita.entidad_id FROM entidad_adscrita WHERE entidad_adscrita.entidad_nombre = ?");
+            stmt.setString(1, entidad_nombre);
+            ResultSet rs2 = stmt.executeQuery();
+            while(rs2.next()){
+                entidad_id = rs.getInt(1);
+            }
+            rs2.close();
+            
+            stmt = conn.prepareStatement("INSERT INTO `ufps_1`.`entidad_x_servicio`(`entidad_id`,`servicio_id`) VALUES(?,?)");
+            stmt.setInt(1, entidad_id);
+            stmt.setInt(2, servicio_id);
+            
+            int result = stmt.executeUpdate();
+            if(result > 0){
+                exito = true;
+                stmt.close();
+            }
+            
+            stmt.close();
         }catch(Exception ex){
             System.err.println(ex);
         }finally{

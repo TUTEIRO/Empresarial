@@ -22,8 +22,13 @@ public class ControlEntidad {
         return dao.registrarEntidad(entidad);
     }
     
-     public ArrayList<EntidadDTO> consultarEntidad(String tipo, String dato) throws Exception{
+    public ArrayList<EntidadDTO> consultarEntidad(String tipo, String dato) throws Exception{
         EntidadDAO dao = new EntidadDAO();
         return dao.consultarEntidad(dato, tipo);
+    }
+     
+    public boolean asociarServicio(String entidad_nombre, String servicio) throws Exception{
+        EntidadDAO dao = new EntidadDAO();
+        return dao.asociarServicio(entidad_nombre, servicio);
     }
 }

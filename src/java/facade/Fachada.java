@@ -5,7 +5,6 @@
  */
 package facade;
 
-import dao.EntidadDAO;
 import dto.ContactoDTO;
 import dto.EmpresaDTO;
 import dto.EntidadDTO;
@@ -182,5 +181,10 @@ public class Fachada {
     public boolean asociarServicioLogro(String nombre_s, String infoLogro) throws Exception{
         ControlServicioLogro control = new ControlServicioLogro();
         return control.asociarServicioLogro(nombre_s, infoLogro);
+    }
+    
+    public boolean asociarServicio(String entidad_nombre, String servicio) throws Exception{
+        ControlEntidad control = new ControlEntidad();
+        return control.asociarServicio(entidad_nombre, servicio);
     }
 }
