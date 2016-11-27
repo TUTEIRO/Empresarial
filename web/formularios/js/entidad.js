@@ -22,6 +22,8 @@ function nuevoAjax() {
     return xmlhttp;
 }
 function registrarEntidad() {
+    var div = "mostrarRegistro";
+    alert("aqui");
     var nombre = document.getElementById("nom_entidad").value;
     var nit = document.getElementById("nit_entidad").value;
     var direccion = document.getElementById("dir_entidad").value;
@@ -72,7 +74,12 @@ function registrarEntidad() {
         if (ajax.readyState === 4) {
             if (ajax.status === 200) {
                 var rta = ajax.responseText;
-                document.getElementById('tablaRegistro').innerHTML = ajax.responseText;
+                document.getElementById(div).innerHTML = ajax.responseText;
+                 $(document).ready(function () {
+                    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+                    $('.modal-trigger').leanModal();
+                });
+                $('#modal3').openModal();
                 $('#servicios_enti').material_select();
             }
         }

@@ -39,23 +39,23 @@
     boolean exito = fachada.asociarServicioEntidad(nombre, infoServicio);
     if (msg == true && exito == true) {
 %><div class="modal-content">
-    <h2><label class="blue-text"><center>¡¡REGISTRO EXITOSO!!</center></label></h2>
+    <h2><label class="green-text"><center>¡¡REGISTRO EXITOSO!!</center></label></h2>
     <p>La entidad se ha registrado satifactoriamente en la base de datos</p>
 </div>
 <div class="modal-footer">
-    <a href="registrarHabitacion.jsp" class=" modal-action modal-close waves-effect waves-green btn-flat">Continuar</a>
+    <a href="../inicio/principal.jsp" class=" modal-action modal-close waves-effect waves-green btn-flat">Volver al inicio</a>
 </div>
-
 
 <%
 } else {
 
 %><div class="modal-content">
-    <h2><label class="blue-text"><center>¡¡REGISTRO FALLIDO!!</center></label></h2>
-    <p>Ha ocurrido un errror a la hora de registrar la entidad. Puede ser fallo de conexión a la base de datos o la habitación con su id ya existe en la base de datos, si es esta por favor verifque la id</p>
+    <h2><label class="green-text"><center>¡¡REGISTRO FALLIDO!!</center></label></h2>
+    <p>Ha ocurrido un errror a la hora de registrar la entidad. Puede ser fallo de conexión a la base de datos o el contacto ya existe en la base de datos, si es esta por favor verifque la cedula</p>
 </div>
 <div class="modal-footer">
-    <a href="registrarHabitacion.jsp" class=" modal-action modal-close waves-effect waves-green btn-flat">Continuar</a>
+    <a href="../inicio/principal.jsp" class=" modal-action modal-close waves-effect waves-green btn-flat">Volver al inicio</a>
+    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Continuar</a>
 </div>
 
 <%    }

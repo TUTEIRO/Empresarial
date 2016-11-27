@@ -25,100 +25,105 @@
         <div class="row">
             <div class="col s12 ">
                 <div class="row">
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input  id="nom_entidad" type="text" class="validate">
+                            <label for="nom_entidad">Nombre de la entidad</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="nit_entidad" type="text" class="validate">
+                            <label for="nit_entidad">Nit</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="dir_entidad" type="text" class="validate">
+                            <label for="dir_entidad">Dirección de la entidad</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="ciudad_entidad" type="text" class="validate">
+                            <label for="ciudad_entidad">Ciudad</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="tel_fijo_entidad" type="tel" class="validate">
+                            <label for="tel_fijo_entidad">Teléfono fijo</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="tel_movil_entidad" type="tel" class="validate">
+                            <label for="tel_movil_entidad">Teléfono móvil</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="correo_entidad" type="email" class="validate">
+                            <label for="correo_entidad">Correo electrónico</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="sitio_web_entidad" type="text" placeholder="www.example.com" class="validate">
+                            <label for="sitio_web_entidad">Sitio web</label>
+                        </div>
+                    </div>
+                    <br>
+
+                    <h4><span class="green-text" style="font-weight: bold;">REGISTRAR SERVICIOS DE LA ENTIDAD</span></h4>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <select name="select" id="servicios_enti">
+                                <option value=""></option>
+                                <%
+                                    Fachada fachada = new Fachada();
+                                    ArrayList<ServicioDTO> servicios = fachada.listarServicios();
+                                    for (ServicioDTO s : servicios) {
+                                %>
+                                <option value="<%=s.getServicio()%>"><%=s.getServicio()%></option>
+                                <%}%>
+                            </select>
+                            <label for="servicios_enti">Ingrese servicios:</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="servicio_nuevo" name="servicio_nuevo" type="text" class="validate">
+                            <label for="servicio_nuevo">Ingrese nuevo servicio:</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <button id="buttonServicios"  class="waves-effect waves-light btn" onclick="cargarServicio()">Registrar Servicio</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <table class="bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre del servicio</th>
+                                        <th>Ver logros</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablaRegistro">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <button id="buttonServicios"  class="waves-effect waves-light btn" onclick="registrarEntidad()">Registrar Entidad</button>
+                        </div>
+                    </div>
                    
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input  id="nom_entidad" type="text" class="validate">
-                                <label for="nom_entidad">Nombre de la entidad</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="nit_entidad" type="text" class="validate">
-                                <label for="nit_entidad">Nit</label>
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="dir_entidad" type="text" class="validate">
-                                <label for="dir_entidad">Dirección de la entidad</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="ciudad_entidad" type="text" class="validate">
-                                <label for="ciudad_entidad">Ciudad</label>
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="tel_fijo_entidad" type="tel" class="validate">
-                                <label for="tel_fijo_entidad">Teléfono fijo</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="tel_movil_entidad" type="tel" class="validate">
-                                <label for="tel_movil_entidad">Teléfono móvil</label>
-                            </div>
-                        </div>
+                </div>
+                <div id="modal3" class="modal">
+                    <div id="mostrarRegistro">
 
-                        <div class="row">
-                            <div class="input-field col s6">
-                                <input id="correo_entidad" type="email" class="validate">
-                                <label for="correo_entidad">Correo electrónico</label>
-                            </div>
-                            <div class="input-field col s6">
-                                <input id="sitio_web_entidad" type="text" placeholder="www.example.com" class="validate">
-                                <label for="sitio_web_entidad">Sitio web</label>
-                            </div>
-                        </div>
-                        <br>
-
-                        <h4><span class="green-text" style="font-weight: bold;">REGISTRAR SERVICIOS DE LA ENTIDAD</span></h4>
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <select name="select" id="servicios_enti">
-                                    <option value=""></option>
-                                    <%
-                                        Fachada fachada = new Fachada();
-                                        ArrayList<ServicioDTO> servicios = fachada.listarServicios();
-                                        for (ServicioDTO s : servicios) {
-                                    %>
-                                    <option value="<%=s.getServicio()%>"><%=s.getServicio()%></option>
-                                    <%}%>
-                                </select>
-                                <label for="servicios_enti">Ingrese servicios:</label>
-                            </div>
-                            <div class="input-field col s12">
-                                <input id="servicio_nuevo" name="servicio_nuevo" type="text" class="validate">
-                                <label for="servicio_nuevo">Ingrese nuevo servicio:</label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s12">
-                                <button id="buttonServicios"  class="waves-effect waves-light btn" onclick="cargarServicio()">Registrar Servicio</button>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col s12">
-                                <table class="bordered">
-                                    <thead>
-                                        <tr>
-                                            <th>Nombre del servicio</th>
-                                            <th>Ver logros</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="tablaRegistro">
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col s12">
-                                <button id="buttonEntidad"  class="waves-effect waves-light btn" onclick="registrarEntidad()">Registrar Entidad</button>
-                            </div>
-                        </div>
-
-                    
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,9 +133,9 @@
     function abrir(url) {
         open(url, '', 'top=1000,left=1000,width=1000,height=1000');
     }
-    
-    function cerrar(){
-        
+
+    function cerrar() {
+
     }
 
     $(document).ready(function () {
