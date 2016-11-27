@@ -27,7 +27,7 @@ public class ControlEntidad {
         return dao.consultarEntidad(dato, tipo);
     }
      
-    public boolean asociarServicio(String entidad_nombre, String servicio) throws Exception{
+    public boolean asociarServicio(String entidad_nombre, ArrayList<String> servicio) throws Exception{
         EntidadDAO dao = new EntidadDAO();
         return dao.asociarServicio(entidad_nombre, servicio);
     }

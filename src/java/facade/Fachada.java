@@ -183,7 +183,7 @@ public class Fachada {
         return control.asociarServicioLogro(nombre_s, infoLogro);
     }
     
-    public boolean asociarServicio(String entidad_nombre, String servicio) throws Exception{
+    public boolean asociarServicio(String entidad_nombre, ArrayList<String> servicio) throws Exception{
         ControlEntidad control = new ControlEntidad();
         return control.asociarServicio(entidad_nombre, servicio);
     }
