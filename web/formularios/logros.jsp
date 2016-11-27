@@ -19,8 +19,8 @@
         <h4><span class="green-text" style="font-weight: bold;">SERVICIO:  <%=servicio%></span></h4>
         <div class="row">
             <div class="input-field col s12">
-                <select name="select" id="logros_enti" onchange="">
-                    <option value=""></option>
+                <select name="select" id="logros_enti">
+                    <option value=" "></option>
                     <%
                         Fachada fachada = new Fachada();
                         ArrayList<LogroDTO> lista = fachada.listarLogros();
@@ -40,6 +40,17 @@
                     <button id="listarLogro"  class="waves-effect waves-light btn" onclick="listarLogro()">Listar</button>
                 </div>
             </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#listarLogro').click(function () {
+                        var logro = $('#logros_enti').val();
+                        if (logro !== "") {
+                            $('#logros_enti').material_select();
+                            $('#logros_enti > option[value=" "]').attr('selected', 'selected');
+                        }
+                    });
+                });
+            </script>
         </div>
         <div class="row">
             <div class="col s12">
@@ -58,7 +69,8 @@
 
         <div class="row">
             <div class="col s12">
-                <input id="buttoncheck" type="submit" class="waves-effect waves-light btn modal-trigger" href="#modal1" value="Registrar Logros al servicio <%=servicio%>" onclick="">
+                <button id="registrarLogros"  class="waves-effect waves-light btn" onclick="asociarLogroServicio('<%=servicio%>')">Registrar Logros al servicio <%=servicio%></button>
+
             </div>
         </div>
         <br><br>
@@ -70,15 +82,5 @@
 
 
 </section>
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#listarLogro').click(function () {   
-            var esto = $('#logros_enti').val();
-            if (esto !== "") {
-                $('#logros_enti').material_select();
-                $('#logros_enti > option[value=""]').attr('selected', 'selected');
-            }
-        });
-    });
-</script>
+
 <jsp:include page="../plantillas/footer.jsp"/>

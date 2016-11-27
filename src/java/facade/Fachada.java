@@ -178,4 +178,9 @@ public class Fachada {
         ControlServicioLogro control = new ControlServicioLogro();
         return control.listarLogros();
     }
+    
+    public boolean asociarServicioLogro(String nombre_s, String infoLogro) throws Exception{
+        ControlServicioLogro control = new ControlServicioLogro();
+        return control.asociarServicioLogro(nombre_s, infoLogro);
+    }
 }

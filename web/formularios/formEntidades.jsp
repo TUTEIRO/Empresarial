@@ -128,6 +128,7 @@
     function abrir(url) {
         open(url, '', 'top=1000,left=1000,width=1000,height=1000');
     }
+
     $(document).ready(function () {
         $('#buttonServicios').click(function () {
             var esto = $('#servicios_enti').val();

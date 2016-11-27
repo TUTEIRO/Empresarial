@@ -23,9 +23,13 @@ function nuevoAjax() {
 }
 
 function listarLogro(){
+    alert("entrooo");
     var logroSelect = document.getElementById("logros_enti").value;
     var logroText = document.getElementById("logro_nuevo").value;
-    if(logroSelect === "" && logroText===""){
+    alert(logroSelect);
+    alert(logroText);
+    if(logroSelect === " " && logroText === " "){
+        alert("entro");
         alert("¡¡Seleccione o ingrese un logro!!");
     }else{
     ajax = nuevoAjax();
@@ -35,17 +39,80 @@ function listarLogro(){
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     ajax.send(parametros);
     ajax.onreadystatechange = function () {
-        if (ajax.readyState === 4) {
-            if (ajax.status === 200) {
+            if (ajax.readyState === 4) {
                 var rta = ajax.responseText;
-                document.getElementById('tablaRegistroLogros').innerHTML += rta;
-                 $('#logro_enti').material_select();
+                if (ajax.status === 200) {
+                    document.getElementById('tablaRegistroLogros').innerHTML += rta;
+                    $('#servicios_enti').material_select();
+                       
+                }
             }
-        }
-    };
-  
-
-    document.getElementById("logro_nuevo").value = '';
-
+        };
+        document.getElementById("logro_nuevo").value = '';
 }
+}
+
+function asociarLogroServicio(servicio){
+    var logro = document.getElementsByTagName('td');
+    var infoLogro = "";
+    var j=1;
+    var n, p;
+    for(var i=0; i<logro.length; i++){
+        n = logro[i];
+        while(n){
+            p=n;
+            n=p.childNodes[0];
+        }
+        if(true){
+            if(j==1){
+                infoLogro += p.parentNode.innerHTML;
+                infoLogro +="::";
+                j = 1;
+                alert(infoLogro);
+        }
+    }
+    }
+   
+    ajax = nuevoAjax();
+    parametros = "nombre_s=" + servicio.value + "&infoLogro=" + infoLogro;
+
+    url = "procesar/asociarLogro.jsp";
+    ajax.open("POST", url, true);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.send(parametros);
+
+    ajax.onreadystatechange = function ()
+    {
+        if (ajax.readyState == 4)
+        {
+            if (ajax.status == 200)
+            {
+                var rta = ajax.responseText;
+                if(rta.indexOf("1") < 0){
+                     document.getElementById("divError").innerHTML = ajax.responseText;
+                }else
+                    if(rta.indexOf("0") >= 0){
+                        alert("Registro de logros Exitoso");
+                        logros.close();
+                }
+            } else
+            {
+               var rta = ajax.responseText;
+                if (rta.indexOf("0") < 0 && rta.indexOf("1") < 0) {
+                    document.getElementById("divError").innerHTML = ajax.responseText;
+                } else {
+                    if (rta.indexOf("0") >= 0) {
+                        alert("Registro de logros Exitoso");
+                        logros.close();
+                    } else if(rta.indexOf("1") >= 0){
+                        alert("Error en la conexión");
+
+                    }
+                } 
+            }
+        } else
+        {
+         document.getElementById("divError").value = "Cargando...";
+        }
+    }
 }

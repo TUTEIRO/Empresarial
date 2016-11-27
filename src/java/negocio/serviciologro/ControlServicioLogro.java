@@ -35,4 +35,15 @@ public class ControlServicioLogro {
         ServicioLogroDAO dao = new ServicioLogroDAO();
         return dao.listarLogros();
     }
+    
+
+    public boolean asociarServicioLogro(String nombre_s, String infoLogro) throws Exception{
+        ArrayList<String> logros = new ArrayList<>();
+        String info[] = infoLogro.split("::");
+        ServicioLogroDAO dao = new ServicioLogroDAO();
+        for(int i=0; i<info.length;i++){
+            logros.add(info[i]);
+        }
+        return dao.asociar(nombre_s, logros);
+    }
 }

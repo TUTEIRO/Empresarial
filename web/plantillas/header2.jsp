@@ -75,9 +75,9 @@
 
         <div class="container">
             <div class="imagen" style="width:100%;" style="position: relative; display:block; overflow: hidden; margin: auto;"> 
-                <a href="../inicio/principal.jsp">
+          
                     <img src="../images/banner.png" alt="" style="max-width:100%;" alt='' >
-                </a>
+             
             </div>
         
 
