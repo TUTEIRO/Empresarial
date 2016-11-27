@@ -76,7 +76,7 @@ function asociarLogroServicio(servicio){
     ajax = nuevoAjax();
     parametros = "nombre_s=" + servicio.value + "&infoLogro=" + infoLogro;
 
-    url = "procesar/asociarLogro.jsp";
+    url = "Procesar/asociarLogro.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     ajax.send(parametros);
@@ -93,7 +93,7 @@ function asociarLogroServicio(servicio){
                 }else
                     if(rta.indexOf("0") >= 0){
                         alert("Registro de logros Exitoso");
-                        logros.close();
+                        window.close();
                 }
             } else
             {
@@ -103,7 +103,7 @@ function asociarLogroServicio(servicio){
                 } else {
                     if (rta.indexOf("0") >= 0) {
                         alert("Registro de logros Exitoso");
-                        logros.close();
+                        window.close();
                     } else if(rta.indexOf("1") >= 0){
                         alert("Error en la conexión");
 
