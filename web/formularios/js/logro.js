@@ -25,7 +25,7 @@ function nuevoAjax() {
 function listarLogro(){
     var logroSelect = document.getElementById("logros_enti").value;
     var logroText = document.getElementById("logro_nuevo").value;
-    if(logroSelect === " " && logroText === " "){
+    if(logroSelect === "" && logroText === ""){
         alert("¡¡Seleccione o ingrese un logro!!");
     }else{
     ajax = nuevoAjax();

@@ -20,7 +20,7 @@
         <div class="row">
             <div class="input-field col s12">
                 <select name="select" id="logros_enti">
-                    <option value=" "></option>
+                    <option value=""></option>
                     <%
                         Fachada fachada = new Fachada();
                         ArrayList<LogroDTO> lista = fachada.listarLogros();
@@ -45,8 +45,9 @@
                     $('#listarLogro').click(function () {
                         var logro = $('#logros_enti').val();
                         if (logro !== "") {
+                            
+                            $('#logros_enti > option[value=""]').attr('selected', 'selected');
                             $('#logros_enti').material_select();
-                            $('#logros_enti > option[value=" "]').attr('selected', 'selected');
                         }
                     });
                 });
