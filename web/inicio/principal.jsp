@@ -12,7 +12,45 @@
     }%>
 <div class="row">
 
-    <div class="col s5">
+     <div class="col s5">
+        <div class="card-panel green darken-3 ">
+            <span class="white-text">Calendario</span>
+        </div>
+        <ul class="collection">
+            <li class="collection-item avatar">
+                <i class="material-icons circle grey">today</i>
+                <span class="title" style="font-weight: bold;">Evento 1</span>
+                <p>Descripcion del evento a concertar</p>
+            </li>
+            <li class="collection-item avatar">
+                <i class="material-icons circle grey">today</i>
+                <span class="title" style="font-weight: bold;">Evento 2</span>
+                <p>Descripcion del evento a concertar</p>
+            </li>
+            <li class="collection-item avatar">
+                <i class="material-icons circle grey">today</i>
+                <span class="title" style="font-weight: bold;">Evento 3</span>
+                <p>Descripcion del evento a concertar</p>
+            </li>
+            <li class="collection-item avatar">
+                <i class="material-icons circle grey">today</i>
+                <span class="title" style="font-weight: bold;">Evento 4</span>
+                <p>Descripcion del evento a concertar</p>
+            </li>
+            <li class="collection-item avatar">
+                <i class="material-icons circle grey">today</i>
+                <span class="title" style="font-weight: bold;">Evento 5</span>
+                <p>Descripcion del evento a concertar</p>
+            </li>
+            <li class="collection-item avatar">
+                <i class="material-icons circle grey">today</i>
+                <span class="title" style="font-weight: bold;">Evento 6</span>
+                <p>Descripcion del evento a concertar</p>
+            </li>
+        </ul>
+
+    </div>
+    <div class="col s7">
         <div class="card-panel green darken-3 ">
             <span class="white-text">Registro</span>
         </div>
@@ -56,44 +94,7 @@
         </ul>
 
     </div>
-    <div class="col s7">
-        <div class="card-panel green darken-3 ">
-            <span class="white-text">Calendario</span>
-        </div>
-        <ul class="collection">
-            <li class="collection-item avatar">
-                <i class="material-icons circle grey">today</i>
-                <span class="title" style="font-weight: bold;">Evento 1</span>
-                <p>Descripcion del evento a concertar</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle grey">today</i>
-                <span class="title" style="font-weight: bold;">Evento 2</span>
-                <p>Descripcion del evento a concertar</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle grey">today</i>
-                <span class="title" style="font-weight: bold;">Evento 3</span>
-                <p>Descripcion del evento a concertar</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle grey">today</i>
-                <span class="title" style="font-weight: bold;">Evento 4</span>
-                <p>Descripcion del evento a concertar</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle grey">today</i>
-                <span class="title" style="font-weight: bold;">Evento 5</span>
-                <p>Descripcion del evento a concertar</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle grey">today</i>
-                <span class="title" style="font-weight: bold;">Evento 6</span>
-                <p>Descripcion del evento a concertar</p>
-            </li>
-        </ul>
-
-    </div>
+   
 
 </div>
 
