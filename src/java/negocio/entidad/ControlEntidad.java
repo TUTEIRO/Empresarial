@@ -27,8 +27,15 @@ public class ControlEntidad {
         return dao.consultarEntidad(dato, tipo);
     }
      
-    public boolean asociarServicio(String entidad_nombre, ArrayList<String> servicio) throws Exception{
+    public boolean asociarServicioEntidad(String entidad_nombre, String infoServicio) throws Exception{
         EntidadDAO dao = new EntidadDAO();
-        return dao.asociarServicio(entidad_nombre, servicio);
+        ArrayList<String> listaServicio = new ArrayList<>();
+        String informacionServicio[] = infoServicio.split("::");
+        
+        for(int i=0; i<informacionServicio.length; i++){
+            String servicio[] = informacionServicio[i].split(";");
+            listaServicio.add(servicio[0]);
+        }
+        return dao.asociarServicio(entidad_nombre, listaServicio);
     }
 }

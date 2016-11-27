@@ -12,11 +12,11 @@
 <script type="text/javascript" src="js/logro.js"></script>
 <jsp:include page="../plantillas/header2.jsp"/>
 <%
-    String servicio = request.getParameter("servicio").toUpperCase();
+    String servicio = request.getParameter("servicio");
 %>
 <section id="logros" class="logros">
     <div class="card-panel white">
-        <h4><span class="green-text" style="font-weight: bold;">SERVICIO:  <%=servicio%></span></h4>
+        <h4><span class="green-text" style="font-weight: bold;">SERVICIO:  <%=request.getParameter("servicio").toUpperCase()%></span></h4>
         <div class="row">
             <div class="input-field col s12">
                 <select name="select" id="logros_enti">

@@ -108,7 +108,6 @@ public class EntidadDAO implements IEntidadDAO{
         try{
             servicios_id = new ArrayList();
             for(String s : servicios){
-                System.out.println(s);
                 stmt = conn.prepareStatement("SELECT servicio.servicio_id FROM servicio WHERE servicio.servicio_nombre = ?");
                 stmt.setString(1, s);
                 ResultSet rs = stmt.executeQuery();

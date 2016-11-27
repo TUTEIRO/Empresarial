@@ -135,7 +135,6 @@ public class ServicioLogroDAO implements IServicioLogroDAO{
             rs.close();
             
             for(String s : logro){
-                System.out.println(s);
                 stmt = conn.prepareStatement("SELECT logro.logro_id FROM logro WHERE logro.logro_nombre = ?");
                 stmt.setString(1, s);
                 ResultSet rs2 = stmt.executeQuery();

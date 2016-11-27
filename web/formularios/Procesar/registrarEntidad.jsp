@@ -21,7 +21,6 @@
     String tel_mov = "";
     String url_web = "";
     String mail = "";
-    System.out.println("hello");
 
     Fachada fachada = new Fachada();
 
@@ -34,10 +33,11 @@
     tel_mov = request.getParameter("tel_mov");
     url_web = request.getParameter("url_web");
     mail = request.getParameter("mail");
+    String infoServicio = request.getParameter("infoServicio");
 
     boolean msg = fachada.registrarEntidad(nombre, nit, direccion, ciudad, tel_fijo, tel_mov, mail, url_web);
-
-    if (msg) {
+    boolean exito = fachada.asociarServicioEntidad(nombre, infoServicio);
+    if (msg == true && exito == true) {
 %><div class="modal-content">
     <h2><label class="blue-text"><center>¡¡REGISTRO EXITOSO!!</center></label></h2>
     <p>La entidad se ha registrado satifactoriamente en la base de datos</p>

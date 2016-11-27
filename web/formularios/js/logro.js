@@ -23,13 +23,9 @@ function nuevoAjax() {
 }
 
 function listarLogro(){
-    alert("entrooo");
     var logroSelect = document.getElementById("logros_enti").value;
     var logroText = document.getElementById("logro_nuevo").value;
-    alert(logroSelect);
-    alert(logroText);
     if(logroSelect === " " && logroText === " "){
-        alert("entro");
         alert("¡¡Seleccione o ingrese un logro!!");
     }else{
     ajax = nuevoAjax();
@@ -68,13 +64,12 @@ function asociarLogroServicio(servicio){
                 infoLogro += p.parentNode.innerHTML;
                 infoLogro +="::";
                 j = 1;
-                alert(infoLogro);
         }
     }
     }
    
     ajax = nuevoAjax();
-    parametros = "nombre_s=" + servicio.value + "&infoLogro=" + infoLogro;
+    parametros = "nombre_s=" + servicio + "&infoLogro=" + infoLogro;
 
     url = "Procesar/asociarLogro.jsp";
     ajax.open("POST", url, true);
@@ -91,20 +86,20 @@ function asociarLogroServicio(servicio){
                 if(rta.indexOf("1") < 0){
                      document.getElementById("divError").innerHTML = ajax.responseText;
                 }else
-                    if(rta.indexOf("0") >= 0){
+                    if(rta.indexOf("1") >= 0){
                         alert("Registro de logros Exitoso");
                         window.close();
                 }
             } else
             {
                var rta = ajax.responseText;
-                if (rta.indexOf("0") < 0 && rta.indexOf("1") < 0) {
+                if (rta.indexOf("1") < 0 && rta.indexOf("2") < 0) {
                     document.getElementById("divError").innerHTML = ajax.responseText;
                 } else {
-                    if (rta.indexOf("0") >= 0) {
+                    if (rta.indexOf("1") >= 0) {
                         alert("Registro de logros Exitoso");
                         window.close();
-                    } else if(rta.indexOf("1") >= 0){
+                    } else if(rta.indexOf("2") >= 0){
                         alert("Error en la conexión");
 
                     }

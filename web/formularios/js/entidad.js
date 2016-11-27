@@ -30,11 +30,38 @@ function registrarEntidad() {
     var tel_mov = document.getElementById("tel_movil_entidad").value;
     var mail = document.getElementById("correo_entidad").value;
     var url_web = document.getElementById("sitio_web_entidad").value;
+    var servicio = document.getElementsByTagName('td');
+    var infoServicio = "";
+    var j=1;
+    var n, p;
+    for(var i=0; i<servicio.length; i++){
+        n = servicio[i];
+        while(n){
+            p=n;
+            n=p.childNodes[0];
+        }
+        if(true){
+             if(j<2 && j!== 1){
+                infoServicio += p.parentNode.innerHTML;
+                infoServicio +=";";
+                j += 1;
+            }else if(j==1){
+                infoServicio += p.parentNode.innerHTML;
+                infoServicio +=";";
+                j += 1;
+            }else{
+                infoServicio += p.parentNode.innerHTML;
+                infoServicio +="::";
+                j = 1;
+        }
+    }
+    }
+   
 
 
     ajax = nuevoAjax();
     parametros = "nombre=" + nombre + "&nit=" + nit+"&direccion="+direccion+"&ciudad="+ciudad+"&tel_fijo="+tel_fijo+
-            "&tel_mov="+tel_mov+"&url_web="+url_web+"&mail="+mail;
+            "&tel_mov="+tel_mov+"&url_web="+url_web+"&mail="+mail+ "&infoServicio=" +infoServicio;
     url = "Procesar/registrarEntidad.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
