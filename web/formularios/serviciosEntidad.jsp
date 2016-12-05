@@ -16,10 +16,10 @@
 
         response.sendRedirect("../index.jsp");
     }%>
-    <%
-    
-        String nombreEntidad = request.getParameter("nombre");
-    %>
+<%
+
+    String nombreEntidad = request.getParameter("nombre");
+%>
 <jsp:include page="../plantillas/header.jsp"/>
 <section id="entidad" class="entidad">
 
@@ -67,9 +67,16 @@
 
         <div class="row">
             <div class="col s12">
-                <button id="buttonEntidad"  class="waves-effect waves-light btn" onclick="registrarServiciosEntidad(<%=nombreEntidad%>)">Registrar Entidad</button>
+                <button id="buttonEntidad"  class="waves-effect waves-light btn" onclick="registrarServiciosEntidad('<%=nombreEntidad%>')">Registrar Entidad</button>
             </div>
         </div>
+        
+            <div id="modal3" class="modal">
+                <div id="mostrarRegistroServicio">
+                    
+                </div>
+            </div>
+        
 
     </div>
 </section>

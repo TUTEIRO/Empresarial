@@ -21,17 +21,8 @@ function nuevoAjax() {
     }
     return xmlhttp;
 }
-function registrarEntidad() {
-    var div = "mostrarRegistro";
-    alert("aqui");
-    var nombre = document.getElementById("nom_entidad").value;
-    var nit = document.getElementById("nit_entidad").value;
-    var direccion = document.getElementById("dir_entidad").value;
-    var ciudad = document.getElementById("ciudad_entidad").value;
-    var tel_fijo = document.getElementById("tel_fijo_entidad").value;
-    var tel_mov = document.getElementById("tel_movil_entidad").value;
-    var mail = document.getElementById("correo_entidad").value;
-    var url_web = document.getElementById("sitio_web_entidad").value;
+function registrarServiciosEntidad(nombreEntidad) {
+    var div = "mostrarRegistroServicio";
     var servicio = document.getElementsByTagName('td');
     var infoServicio = "";
     var j=1;
@@ -62,9 +53,8 @@ function registrarEntidad() {
 
 
     ajax = nuevoAjax();
-    parametros = "nombre=" + nombre + "&nit=" + nit+"&direccion="+direccion+"&ciudad="+ciudad+"&tel_fijo="+tel_fijo+
-            "&tel_mov="+tel_mov+"&url_web="+url_web+"&mail="+mail+ "&infoServicio=" +infoServicio;
-    url = "Procesar/registrarEntidad.jsp";
+    parametros = "nombre=" + nombreEntidad +  "&infoServicio=" +infoServicio;
+    url = "Procesar/registrarServicioEntidad.jsp";
     ajax.open("POST", url, true);
     ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     
