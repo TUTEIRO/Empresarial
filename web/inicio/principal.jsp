@@ -1,4 +1,4 @@
-<%-- 
+4<%-- 
     Document   : principal
     Created on : 5/09/2016, 04:24:13 PM
     Author     : tuto2
@@ -65,7 +65,7 @@
                 <i class="material-icons circle blue">library_add</i>
                 <span class="title" style="font-weight: bold;">Registrar entidad adscrita</span>
                 <p>Haz click para registrar un entidad en el MINCIT</p>
-                <a href="../formularios/formEntidades.jsp" class="secondary-content"><i class="material-icons">input</i></a>
+                <a href="../formularios/entidad.jsp" class="secondary-content"><i class="material-icons">input</i></a>
             </li>
         </ul>
 
