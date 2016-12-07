@@ -17,7 +17,7 @@
     }%>
 <jsp:include page="../plantillas/header.jsp"/>
 <section id="entidad" class="entidad">
-    <form  name="formInicioProyectos" action="Procesar/cargarArchivo.jsp"
+    <form  name="formInicioProyectos" action="Procesar/cargarArchivo.jsp" align="center"
            id="formInicioProyectos"  enctype="multipart/form-data" method="post">
         <div class="card-panel  white" >
             <h4><span class="green-text" style="font-weight: bold;">INFORMACIÓN DE ENTIDADES ADSCRITAS</span></h4>
@@ -28,22 +28,22 @@
 
                         <div class="row">
                             <div class="input-field col s6">
-                                <input  name="nom_entidad"id="nom_entidad" type="text" class="validate">
+                                <input  name="nom_entidad"id="nom_entidad" type="text" class="validate" required>
                                 <label for="nom_entidad">Nombre de la entidad</label>
                             </div>
                             <div class="input-field col s6">
-                                <input name="nit_entidad"id="nit_entidad" type="text" class="validate">
+                                <input name="nit_entidad"id="nit_entidad" type="text" class="validate" required>
                                 <label for="nit_entidad">Nit</label>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="input-field col s6">
-                                <input name="dir_entidad"id="dir_entidad" type="text" class="validate">
+                                <input name="dir_entidad"id="dir_entidad" type="text" class="validate" required>
                                 <label for="dir_entidad">Dirección de la entidad</label>
                             </div>
                             <div class="input-field col s6">
-                                <input name="ciudad_entidad"id="ciudad_entidad" type="text" class="validate">
+                                <input name="ciudad_entidad"id="ciudad_entidad" type="text" class="validate" required>
                                 <label for="ciudad_entidad">Ciudad</label>
                             </div>
                         </div>
@@ -81,7 +81,7 @@
                         <br>
                         <div class="row">
                             <div class="col s12">
-                                <button  class="waves-effect waves-light btn modal-trigger " href="#modal3">Registrar</button>
+                                <button  class="waves-effect waves-light btn modal-trigger " href="#modal3">Seguir</button>
                             </div>
                         </div>
                     </div>
@@ -89,14 +89,16 @@
             </div>
         </div>
         <div id="modal3" class="modal">
-            <div id="mostrarRegistro">
-                <h2><label class="green-text"><center>¡¡Atencion!!</center></label></h2>
-                <p>Si continua automaticamente se registraran los datos de la entidad</p>
+            <div id="mostrarRegistro" class="modal-content">
+                <h2><label class="green-text"><h4><center>¡¡Advertencia!!</center></h4></label></h2>
+                <center><p>Si continua automaticamente se registraran los datos de la entidad</p></center>
             </div>
+            <div class="row">
             <div class="modal-footer">
-                <button  href="#!" class="waves-effect waves-light btn">Seguir en la ventana actual</button>
-
-                <button type="submit" class="waves-effect waves-light btn">Continuar</button>
+                <a  class="waves-effect waves-light btn modal-action modal-close">Seguir en la ventana actual</a>
+                <div class="col s1"></div>
+                <button type="submit" class="waves-effect waves-light btn modal-action modal-close">Continuar</button>
+            </div>
             </div>
         </div>
     </form>
@@ -114,6 +116,9 @@
         $('.modal-trigger').leanModal();
         
     });
+    function cerrarModal(){
+        $('#modal3').modal('close');
+    }
 </script>
 
 <jsp:include page="../plantillas/footer.jsp"/>

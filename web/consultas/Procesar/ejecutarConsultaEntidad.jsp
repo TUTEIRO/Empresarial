@@ -23,11 +23,12 @@
             <th data-field="nombre">Nombre</th>
             <th data-field="nit">NIT</th>
             <th data-field="direccion">Dirección</th>
-            <th data-field="ciudad">Ciudad</th>
+
             <th data-field="telefono">Telefono</th>
-            <th data-field="email">E-mail</th>
+
             <th data-field="url">URL Web Site</th>
-            <th data-field="editar">Editar</th>
+            <th data-field="ser">Agregar servicios</th>
+            <th data-field="info">Ver información</th>
         </tr>
     </thead>
     <%
@@ -37,11 +38,12 @@
         <th data-field="nombre"> <%=e.getNombre()%></th>
         <th data-field="nit"><%=e.getNit()%></th>
         <th data-field="direccion"><%=e.getDireccion()%></th>
-        <th data-field="ciudad"><%=e.getCiudad()%></th>
+
         <th data-field="telefono"><%=e.getCelular()%></th>
-        <th data-field="email"<%=e.getEmail()%></th>
-        <th data-field="url"><%=e.getSitio_web()%></th>
-        <th data-field="editar">Editar</th>
+
+        <th data-field="url"><a target="_blank"href="http://<%=e.getSitio_web()%>"><%=e.getSitio_web()%></a></th>
+        <th data-field="ser"><a class="btn  green" href="">Agregar</a></th>
+        <th data-field="info"><a class="btn  green" href="">Ver</a></th>
     </tr>
 
     <% }%>
@@ -54,18 +56,18 @@
         <tr>
             <th data-field="nombre">Nombre</th>
             <th data-field="nit">NIT</th>
-            <th data-field="rep_legal">Representante legal</th>
-            <th data-field="tipo_constitucion">Tipo de constitución</th>
+
             <th data-field="direccion">Dirección</th>
-            <th data-field="ciudad">Ciudad</th>
+
             <th data-field="telefono">Telefono</th>
-            <th data-field="email">E-mail</th>
+
             <th data-field="url">URL Web Site</th>
-            <th data-field="editar">Editar</th>
+            <th data-field="ser">Agregar servicios</th>
+            <th data-field="info">Ver información</th>
         </tr>
     </thead>
     <tr>
         <td colspan ="10" ><center>No se encuentran datos con la busqueda digitada</center></td>
-</tr>
+    </tr>
 </table>
 <%}%>
