@@ -87,3 +87,36 @@ function consultarEmpresa() {
         }
     }
 }
+
+function consultarEntidad() {
+    var div = "tablaV";
+    var valor_busq = document.getElementById("valor_busq");
+    var dato = document.getElementById("buscar_entidad");
+    ajax = nuevoAjax();
+
+    parametros = "valor_busq=" + valor_busq.value + "&dato=" + dato.value;
+    url = "Procesar/ejecutarConsultaEntidad.jsp";
+    ajax.open("POST", url, true);
+    ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    ajax.send(parametros);
+    ajax.onreadystatechange = function ()
+    {
+        if (ajax.readyState == 4)
+        {
+            if (ajax.status == 200)
+            {
+
+                document.getElementById(div).innerHTML = ajax.responseText;
+
+            } else
+            {
+
+                document.getElementById(div).innerHTML = ajax.responseText;
+
+            }
+        } else
+        {
+            document.getElementById(div).value = "Cargando";
+        }
+    }
+}
