@@ -12,42 +12,21 @@
     }%>
 <div class="row">
 
-     <div class="col s5">
+    <div class="col s5" >
         <div class="card-panel green darken-3 ">
-            <span class="white-text">Calendario</span>
+            <span class="white-text">Informacion Personal</span>
         </div>
-        <ul class="collection">
-            <li class="collection-item avatar">
-                <i class="material-icons circle grey">today</i>
-                <span class="title" style="font-weight: bold;">Evento 1</span>
-                <p>Descripcion del evento a concertar</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle grey">today</i>
-                <span class="title" style="font-weight: bold;">Evento 2</span>
-                <p>Descripcion del evento a concertar</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle grey">today</i>
-                <span class="title" style="font-weight: bold;">Evento 3</span>
-                <p>Descripcion del evento a concertar</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle grey">today</i>
-                <span class="title" style="font-weight: bold;">Evento 4</span>
-                <p>Descripcion del evento a concertar</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle grey">today</i>
-                <span class="title" style="font-weight: bold;">Evento 5</span>
-                <p>Descripcion del evento a concertar</p>
-            </li>
-            <li class="collection-item avatar">
-                <i class="material-icons circle grey">today</i>
-                <span class="title" style="font-weight: bold;">Evento 6</span>
-                <p>Descripcion del evento a concertar</p>
-            </li>
-        </ul>
+        <div class="card-panel white">
+            <div class="container ">
+                <img src="../images/empleado_1.png" alt="" class="circle responsive-img">
+            </div>
+            <br></br>
+            <span>Nombre: Esquiles Dario</span><p>
+                <span>Apellidos: Castro Arsiniega</span><p>
+                <span>Ocupacion: Asesor</span><p>
+                <span>Correo: ttutteiro@gmail.com</span><p>
+                 <span>Direccion: Calle 34N # 4B - 53 Desecho </span>
+        </div>
 
     </div>
     <div class="col s7">
@@ -94,7 +73,7 @@
         </ul>
 
     </div>
-   
+
 
 </div>
 
