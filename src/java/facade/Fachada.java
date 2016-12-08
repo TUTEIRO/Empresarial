@@ -188,4 +188,13 @@ public class Fachada {
         return control.asociarServicioEntidad(entidad_nombre, infoServicio);
     }
     
+    public ArrayList<ServicioDTO> mostrarServiciosEntidad(String entidad) throws Exception{
+        ControlServicioLogro control = new ControlServicioLogro();
+        return control.mostrarServicioEntidad(entidad);
+    }
+    
+    public ArrayList<LogroDTO> mostrarLogrosServicio(String logro) throws Exception{
+        ControlServicioLogro control = new ControlServicioLogro();
+        return control.mostrarLogroServicios(logro);
+    }
 }

@@ -46,4 +46,14 @@ public class ControlServicioLogro {
         }
         return dao.asociar(nombre_s, logros);
     }
+    
+    public ArrayList<ServicioDTO> mostrarServicioEntidad(String entidad) throws Exception{
+        ServicioLogroDAO dao = new ServicioLogroDAO();
+        return dao.listarServiciosEmpresa(entidad);
+    }
+    
+    public ArrayList<LogroDTO> mostrarLogroServicios(String servicio) throws Exception{
+        ServicioLogroDAO dao = new ServicioLogroDAO();
+        return dao.listarLogroServicio(servicio);
+    }
 }

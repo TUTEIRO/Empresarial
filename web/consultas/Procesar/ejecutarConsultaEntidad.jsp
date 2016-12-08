@@ -43,7 +43,7 @@
 
         <th data-field="url"><a target="_blank"href="http://<%=e.getSitio_web()%>"><%=e.getSitio_web()%></a></th>
         <th data-field="ser"><a class="btn  green" href="">Agregar</a></th>
-        <th data-field="info"><a class="btn  green" href="">Ver</a></th>
+        <th data-field="info"><a class="btn  green" href="../formularios/mostrarInformacionEntidad.jsp?nit=<%=e.getNit()%>">Ver</a></th>
     </tr>
 
     <% }%>

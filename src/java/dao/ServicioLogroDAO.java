@@ -170,5 +170,63 @@ public class ServicioLogroDAO implements IServicioLogroDAO{
         }
         return exito;
     }
+
+    @Override
+    public ArrayList<ServicioDTO> listarServiciosEmpresa(String entidad) throws Exception {
+        conn = Conexion.conectar();
+        ArrayList<ServicioDTO> servicios = new ArrayList();
+        try{
+            PreparedStatement stmt = conn.prepareStatement("SELET * FROM servicio, entidad_x_servicio, entidad_adscrita"
+                    + " WHERE entidad_adscrita.entidad_nombre = ? "
+                    + "AND entidad_adscrita.entidad_id = entidad_x_servicio.entidad_id "
+                    + "AND entidad_x_servicio.servicio_id = servicio.servicio_id");
+            stmt.setString(1, entidad);
+            ResultSet res = stmt.executeQuery();
+            while(res.next()){
+                ServicioDTO dto = new ServicioDTO();
+                dto.setId(res.getInt(1));
+                dto.setServicio(res.getString(2));
+                servicios.add(dto);
+            }
+            res.close();
+            stmt.close();
+        }catch(Exception ex){
+            System.err.println(ex);
+        }finally{
+            if(conn != null)
+                conn.close();
+        }
+        return servicios;
+    }
+
+    @Override
+    public ArrayList<LogroDTO> listarLogroServicio(String servicio) throws Exception {
+        conn = Conexion.conectar();
+        ArrayList<LogroDTO> logros = new ArrayList();
+        try{
+            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM logro, servicio_x_logro, servicio "
+                    + "WHERE servicio.servicio_nombre = ? "
+                    + "AND servicio.servicio_id = servicio_x_logro.servicio_id "
+                    + "AND servicio_x_logro.logro_id = logro.logro_id");
+            stmt.setString(1, servicio);
+            ResultSet res = stmt.executeQuery();
+            while(res.next()){
+                LogroDTO dto = new LogroDTO();
+                dto.setId(res.getInt(1));
+                dto.setLogro(res.getString(2));
+                logros.add(dto);
+            }
+            res.close();
+            stmt.close();
+        }catch(Exception ex){
+            System.err.println(ex);
+        }finally{
+            if(conn != null)
+                conn.close();
+        }
+        return logros;
+    }
+    
+    
     
 }
