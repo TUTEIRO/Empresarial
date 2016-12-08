@@ -20,4 +20,6 @@ public interface IServicioLogroDAO {
     public ArrayList<ServicioDTO> listarServicios() throws Exception;
     public ArrayList<LogroDTO> listarLogros() throws Exception;
     public boolean asociar(String servicio, ArrayList<String> logro) throws Exception;
+    public ArrayList<ServicioDTO> listarServiciosEmpresa(String empresa) throws Exception;
+    public ArrayList<LogroDTO> listarLogroServicio(String servicio) throws Exception;
 }

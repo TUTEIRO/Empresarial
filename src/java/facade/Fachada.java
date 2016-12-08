@@ -138,9 +138,9 @@ public class Fachada {
         return utilidades.login("administrador", user, pw);
     }
 
-    public boolean registrarEntidad(String nombre, String nit, String direccion, String ciudad, String fijo, String celular, String email, String sitio_web) throws Exception {
+    public boolean registrarEntidad(String nombre, String nit, String direccion, String ciudad, String fijo, String celular, String email, String sitio_web, String imagen) throws Exception {
         ControlEntidad control = new ControlEntidad();
-        return control.registrarEntidad(nombre, nit, direccion, ciudad, fijo, celular, email, sitio_web);
+        return control.registrarEntidad(nombre, nit, direccion, ciudad, fijo, celular, email, sitio_web, imagen);
     }
 
     public ArrayList<EntidadDTO> consultarEntidad(String tipo, String dato) throws Exception {
@@ -188,4 +188,13 @@ public class Fachada {
         return control.asociarServicioEntidad(entidad_nombre, infoServicio);
     }
     
+    public ArrayList<ServicioDTO> mostrarServiciosEntidad(String entidad) throws Exception{
+        ControlServicioLogro control = new ControlServicioLogro();
+        return control.mostrarServicioEntidad(entidad);
+    }
+    
+    public ArrayList<LogroDTO> mostrarLogrosServicio(String logro) throws Exception{
+        ControlServicioLogro control = new ControlServicioLogro();
+        return control.mostrarLogroServicios(logro);
+    }
 }

@@ -4,67 +4,76 @@
     Author     : FARID SANTIAGO
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:include page="../plantillas/header.jsp"/>
 <%if (session.getAttribute("usuario") == null) {
         System.out.println("usuario");
 
         response.sendRedirect("../index.jsp");
     }%>
+<script type="text/javascript" src="js/consultas.js"></script>
+<%@page import="java.util.ArrayList"%>
+<%@page import="facade.Fachada"%>
+<script language="javascript">
+    $('select').material_select();
+</script>
 <br></br>
 <div class="card-panel  white" >
-
     <div class="row">
-        <div class="input-field col s3">
-
-            <label for=""><h5>Buscar por</h5></label> 
+        <div class="input-field col s12">
+            <select id="valor_busq">
+                <option value="" disabled selected>--Seleccione una opción--</option>
+                <option value="nombre">Nombre de la Entidad</option>
+                <option value="nit">NIT de la Entidad</option>
+                <option value="mun">Municipio originario de la Entidad</option>
+                <option value="tel">Teléfono</option>
+            </select>
+            <label for="valor_busq">Buscar por...</label>
         </div>
-        <div class="input-field col s3">
-            <p>
-                <input name="group8" type="radio" id="nombre_entidad" />
-                <label for="nombre_entidad">Nombre de entidad</label>
-            </p> 
-        </div>
-        <div class="input-field col s3">
-            <p>
-                <input name="group8" type="radio" id="nit_entidad" />
-                <label for="nit_entidad">NIT de entidad</label>
-            </p> 
-        </div>
-        
     </div>
-
     <nav>
         <div class="nav-wrapper">
-            <form>
+            <form name="busq_ent" id="busq_ent" action="javascript:consultarEntidad()" method="post">
                 <div class="input-field green darken-3">
                     <input id="buscar_entidad" type="search" required>
                     <label for="buscar_entidad"><i class="material-icons left">search</i></label>
                     <i class="material-icons">close</i>
                 </div>
             </form>
+            <script>
+                $(document).ready(function ()) {
+                    $("#busq").addEventListener('keypress', function (event) {
+                        if (event.keyCode === 13) {
+                            event.preventDefault();
+                        }
+                    });
+                });
+            </script>
         </div>
     </nav>
 </div>
 <br></br>
 
-<table class="striped highlight" bgcolor="white">
-    <thead>
-        <tr>
-            <th data-field="nombre">Nombre</th>
-            <th data-field="nit">NIT</th>
-            <th data-field="direccion">Direccion</th>
-            <th data-field="ciudad">Ciudad</th>
-            <th data-field="telefono">Telefono</th>
-            <th data-field="url">URL Web Site</th>
-            <th data-field="editar">Editar</th>
+<div id="tablaV">
+    <table class="striped highlight" bgcolor="white">
+        <thead>
+            <tr>
+                <th data-field="nombre">Nombre</th>
+                <th data-field="nit">NIT</th>
+                <th data-field="direccion">Dirección</th>
+                
+                <th data-field="telefono">Telefono</th>
+                
+                <th data-field="url">URL Web Site</th>
+                <th data-field="ser">Agregar servicios</th>
+                <th data-field="info">Ver información</th>
 
+            </tr>
+        </thead>
+        <tr>
+            <td colspan ="10" ><center>No se encuentran datos con la busqueda digitada</center></td>
         </tr>
-    </thead>
-    <tr>
-        <td colspan ="7" ><center>No se encuentran datos con la busqueda digitada</center></td>
-</tr>
-</table>
+    </table>
+</div>
 
 <br></br>
 

@@ -105,7 +105,7 @@
 
                 <div class="nav-wrapper green darken-3">
 
-                    <a href="../inicio/principal.jsp" class="brand-logo">MINCIT<i class="material-icons left">business</i></a>
+                    <a href="../inicio/principal.jsp" class="brand-logo">MINCIT</a>
                     <ul class="right hide-on-med-and-down"> 
 
                         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Empresa

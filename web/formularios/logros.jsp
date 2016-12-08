@@ -74,11 +74,6 @@
 
             </div>
         </div>
-        <br><br>
-        <div id="logrosActuales">
-            <h4><span class="green-text" style="font-weight: bold">Logros Actuales</span></h4>
-        </div>
-
     </div>
 
 

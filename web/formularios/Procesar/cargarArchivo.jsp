@@ -71,7 +71,7 @@
     }
     Fachada fachada = new Fachada();
 
-    boolean exito = fachada.registrarEntidad(nombre, nit, direccion, ciudad, fijo, celular, email, sitioWeb);
+    boolean exito = fachada.registrarEntidad(nombre, nit, direccion, ciudad, fijo, celular, email, sitioWeb, url_imagen);
 
     String resp = "";
     if (exito) {
