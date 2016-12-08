@@ -18,8 +18,8 @@ import util.Conexion;
  *
  * @author Mauricio
  */
-public class ServicioLogroDAO implements IServicioLogroDAO{
-    
+public class ServicioLogroDAO implements IServicioLogroDAO {
+
     private Connection conn = null;
 
     @Override
@@ -27,20 +27,21 @@ public class ServicioLogroDAO implements IServicioLogroDAO{
         conn = Conexion.conectar();
         boolean exito = false;
         PreparedStatement stmt = null;
-        try{
+        try {
             stmt = conn.prepareStatement("INSERT INTO `ufps_1`.`servicio`(`servicio_nombre`) VALUES(?)");
             stmt.setString(1, servicio);
             int total = stmt.executeUpdate();
-            if(total > 0){
+            if (total > 0) {
                 stmt.close();
                 exito = true;
             }
             stmt.close();
-        }catch(Exception ex){
+        } catch (Exception ex) {
             System.err.println(ex);
-        }finally{
-            if(conn != null)
+        } finally {
+            if (conn != null) {
                 conn.close();
+            }
         }
         return exito;
     }
@@ -50,20 +51,21 @@ public class ServicioLogroDAO implements IServicioLogroDAO{
         conn = Conexion.conectar();
         boolean exito = false;
         PreparedStatement stmt = null;
-        try{
+        try {
             stmt = conn.prepareStatement("INSERT INTO `ufps_1`.`logro`(`logro_nombre`) VALUES(?)");
             stmt.setString(1, logro);
             int total = stmt.executeUpdate();
-            if(total > 0){
+            if (total > 0) {
                 stmt.close();
                 exito = true;
             }
             stmt.close();
-        }catch(Exception ex){
+        } catch (Exception ex) {
             System.err.println(ex);
-        }finally{
-            if(conn != null)
+        } finally {
+            if (conn != null) {
                 conn.close();
+            }
         }
         return exito;
     }
@@ -73,10 +75,10 @@ public class ServicioLogroDAO implements IServicioLogroDAO{
         conn = Conexion.conectar();
         ArrayList<ServicioDTO> servicios = new ArrayList();
         PreparedStatement stmt = null;
-        try{
+        try {
             stmt = conn.prepareStatement("SELECT * from servicio WHERE 1");
             ResultSet rs = stmt.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 ServicioDTO dto = new ServicioDTO();
                 dto.setId(rs.getInt(1));
                 dto.setServicio(rs.getString(2));
@@ -84,11 +86,12 @@ public class ServicioLogroDAO implements IServicioLogroDAO{
             }
             stmt.close();
             rs.close();
-        }catch(Exception ex){
+        } catch (Exception ex) {
             System.err.println(ex);
-        }finally{
-            if(conn != null)
+        } finally {
+            if (conn != null) {
                 conn.close();
+            }
         }
         return servicios;
     }
@@ -98,10 +101,10 @@ public class ServicioLogroDAO implements IServicioLogroDAO{
         conn = Conexion.conectar();
         ArrayList<LogroDTO> logros = new ArrayList();
         PreparedStatement stmt = null;
-        try{
+        try {
             stmt = conn.prepareStatement("SELECT * from logro WHERE 1");
             ResultSet rs = stmt.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 LogroDTO dto = new LogroDTO();
                 dto.setId(rs.getInt(1));
                 dto.setLogro(rs.getString(2));
@@ -109,15 +112,16 @@ public class ServicioLogroDAO implements IServicioLogroDAO{
             }
             stmt.close();
             rs.close();
-        }catch(Exception ex){
+        } catch (Exception ex) {
             System.err.println(ex);
-        }finally{
-            if(conn != null)
+        } finally {
+            if (conn != null) {
                 conn.close();
+            }
         }
         return logros;
     }
-    
+
     @Override
     public boolean asociar(String servicio, ArrayList<String> logro) throws Exception {
         conn = Conexion.conectar();
@@ -125,48 +129,49 @@ public class ServicioLogroDAO implements IServicioLogroDAO{
         PreparedStatement stmt = null;
         int servicio_id = 0;
         ArrayList<Integer> logro_id = new ArrayList();
-        try{
+        try {
             stmt = conn.prepareStatement("SELECT servicio.servicio_id FROM servicio WHERE servicio.servicio_nombre = ?");
             stmt.setString(1, servicio);
             ResultSet rs = stmt.executeQuery();
-            while(rs.next()){
+            while (rs.next()) {
                 servicio_id = rs.getInt(1);
             }
             rs.close();
-            
-            for(String s : logro){
+
+            for (String s : logro) {
                 stmt = conn.prepareStatement("SELECT logro.logro_id FROM logro WHERE logro.logro_nombre = ?");
                 stmt.setString(1, s);
                 ResultSet rs2 = stmt.executeQuery();
-                while(rs2.next()){
+                while (rs2.next()) {
                     logro_id.add(rs2.getInt(1));
                 }
                 rs2.close();
             }
-            
+
             int iterator = 0;
-            for(int i : logro_id){
+            for (int i : logro_id) {
                 stmt = conn.prepareStatement("INSERT INTO `ufps_1`.`servicio_x_logro`(`servicio_id`, `logro_id`) VALUES(?,?)");
                 stmt.setInt(1, servicio_id);
                 stmt.setInt(2, i);
-                
+
                 int sc = stmt.executeUpdate();
-                if(sc > 0){
+                if (sc > 0) {
                     iterator++;
                 }
             }
-            
-            if(iterator == logro_id.size()){
+
+            if (iterator == logro_id.size()) {
                 exito = true;
                 stmt.close();
             }
-            
+
             stmt.close();
-        }catch(Exception ex){
+        } catch (Exception ex) {
             System.err.println(ex);
-        }finally{
-            if(conn != null)
+        } finally {
+            if (conn != null) {
                 conn.close();
+            }
         }
         return exito;
     }
@@ -175,14 +180,14 @@ public class ServicioLogroDAO implements IServicioLogroDAO{
     public ArrayList<ServicioDTO> listarServiciosEmpresa(String entidad) throws Exception {
         conn = Conexion.conectar();
         ArrayList<ServicioDTO> servicios = new ArrayList();
-        try{
+        try {
             PreparedStatement stmt = conn.prepareStatement("SELET * FROM servicio, entidad_x_servicio, entidad_adscrita"
                     + " WHERE entidad_adscrita.entidad_nombre = ? "
                     + "AND entidad_adscrita.entidad_id = entidad_x_servicio.entidad_id "
                     + "AND entidad_x_servicio.servicio_id = servicio.servicio_id");
             stmt.setString(1, entidad);
             ResultSet res = stmt.executeQuery();
-            while(res.next()){
+            while (res.next()) {
                 ServicioDTO dto = new ServicioDTO();
                 dto.setId(res.getInt(1));
                 dto.setServicio(res.getString(2));
@@ -190,11 +195,12 @@ public class ServicioLogroDAO implements IServicioLogroDAO{
             }
             res.close();
             stmt.close();
-        }catch(Exception ex){
+        } catch (Exception ex) {
             System.err.println(ex);
-        }finally{
-            if(conn != null)
+        } finally {
+            if (conn != null) {
                 conn.close();
+            }
         }
         return servicios;
     }
@@ -203,14 +209,15 @@ public class ServicioLogroDAO implements IServicioLogroDAO{
     public ArrayList<LogroDTO> listarLogroServicio(String servicio) throws Exception {
         conn = Conexion.conectar();
         ArrayList<LogroDTO> logros = new ArrayList();
-        try{
-            PreparedStatement stmt = conn.prepareStatement("SELECT * FROM logro, servicio_x_logro, servicio "
-                    + "WHERE servicio.servicio_nombre = ? "
-                    + "AND servicio.servicio_id = servicio_x_logro.servicio_id "
-                    + "AND servicio_x_logro.logro_id = logro.logro_id");
+        try {
+            PreparedStatement stmt = conn.prepareStatement("SELECT l.logro_nombre\n"
+                    + "FROM logro l, servicio s, servicio_x_logro sl\n"
+                    + "WHERE s.servicio_nombre = ?\n"
+                    + "AND s.servicio_id = sl.servicio_id\n"
+                    + "AND sl.logro_id = l.logro_id");
             stmt.setString(1, servicio);
             ResultSet res = stmt.executeQuery();
-            while(res.next()){
+            while (res.next()) {
                 LogroDTO dto = new LogroDTO();
                 dto.setId(res.getInt(1));
                 dto.setLogro(res.getString(2));
@@ -218,15 +225,14 @@ public class ServicioLogroDAO implements IServicioLogroDAO{
             }
             res.close();
             stmt.close();
-        }catch(Exception ex){
+        } catch (Exception ex) {
             System.err.println(ex);
-        }finally{
-            if(conn != null)
+        } finally {
+            if (conn != null) {
                 conn.close();
+            }
         }
         return logros;
     }
-    
-    
-    
+
 }
